@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE QCM SYSTEM "QCM.dtd">
+<QCM>
+    <meta>
+        <cours>Développement WEB</cours>
+        <difficulte>Facile</difficulte>
+    </meta>
+    <question>
+        <valeur>1</valeur>
+        <enonce>a t'on besoin de faire ces choses ?</enonce>
+        <reponse>non</reponse>
+        <reponse>non en rouge</reponse>
+        <reponse>Non avec une majuscule</reponse>
+        <reponse>NON en majlock</reponse>
+    </question>
+</QCM>

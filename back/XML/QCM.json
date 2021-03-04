@@ -1,0 +1,16 @@
+{
+    "meta": {
+        "cours": "D\u00e9veloppement WEB",
+        "difficulte": "Facile"
+    },
+    "question": {
+        "valeur": "1",
+        "enonce": "a t'on besoin de faire ces choses ?",
+        "reponse": [
+            "non",
+            "non en rouge",
+            "Non avec une majuscule",
+            "NON en majlock"
+        ]
+    }
+}
