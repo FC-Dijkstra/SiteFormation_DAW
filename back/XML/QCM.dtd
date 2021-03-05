@@ -2,7 +2,9 @@
 <!ELEMENT QCM (meta, question+)>
 <!ELEMENT question (valeur, enonce, reponse+)>
 <!ELEMENT enonce (#PCDATA)>
-<!ELEMENT reponse (#PCDATA)>
+<!ELEMENT reponse (type, content)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
 <!ELEMENT meta (cours, difficulte)>
 <!ELEMENT cours (#PCDATA)>
 <!ELEMENT difficulte (#PCDATA)>
