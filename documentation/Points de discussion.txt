@@ -1,10 +1,10 @@
 - Diagrammes UML
     - use case lvl 2            -> pas besoin ?
-    - modele relationnel DB
+    - modele relationnel DB     -> ptet qu'on l'a fait, va savoir
     - navigation                -> a valider
     - structure interface
-    - diagramme de classe
-    - fonctionnalités
+    - diagramme de classe       -> plus tard
+    - fonctionnalités           -> backend a valider
 
 - frontend
     - affichage des cours ?
@@ -28,4 +28,5 @@
     - ajout dans la DB
     - rajouter dépendances par rapport aux cours
     - maintient de la connexion via cookie
-    - 
+    - cooldown QCM si échec
+    - pour la date des conversations, prendre la date du dernier message

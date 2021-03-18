@@ -5,3 +5,14 @@ INTERFACE:
 - form inscription en page entière.
 
 - contenu du menu change en fonction du contexte (connexion ou pas connexion)
+
+Contenu cours:
+    -> Images
+    -> videos
+    -> texte
+    -> tableaux
+
+-> stockage par html/xml
+-> formatage a voir
+-> CKeditor a intégrer
+-> fichiers cours enregistrés sous la forme nom_cours_X.html
