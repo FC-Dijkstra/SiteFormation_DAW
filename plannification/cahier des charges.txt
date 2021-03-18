@@ -1,0 +1,7 @@
+INTERFACE: 
+- Interface conçue pour un ordinateur avec un écran 1920x1080
+- menu supérieur sticky
+- form connexion en modal
+- form inscription en page entière.
+
+- contenu du menu change en fonction du contexte (connexion ou pas connexion)

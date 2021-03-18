@@ -1,7 +1,7 @@
 - Diagrammes UML
-    - use case lvl 2
+    - use case lvl 2            -> pas besoin ?
     - modele relationnel DB
-    - navigation
+    - navigation                -> a valider
     - structure interface
     - diagramme de classe
     - fonctionnalités
