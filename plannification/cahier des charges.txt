@@ -1,18 +1,61 @@
-INTERFACE: 
+FONCTIONNALITES LvL 1:
+- thème sombre
+- thème clair
+- passage de QCM pour évaluation
+- visualisation de cours
+    -> contenu avancé (plus que du texte)
+- ajout de cours via fichier préparé
+- suppression de cours
+- ajout de catégories pour le forum
+- verrouillage d'une conversation
+- suppression d'un utilisateur
+- bannissement d'un utilisateur du forum
+- recommandations pour les cours
+- création d'un "compte" utilisateur
+- modification d'un "compte" utilisateur
+- abonnement d'un utilisateur à un cours
+- création de conversations
+- publications de messages sur le forum
+
+FONCTIONNALITES LvL 2:
+- cooldown pour un QCM si échec
 - Interface conçue pour un ordinateur avec un écran 1920x1080
-- menu supérieur sticky
-- form connexion en modal
-- form inscription en page entière.
+- date d'une conversation basée sur le dernier message envoyé
+- auteur d'une conversation basé sur le premier message envoyé
+- ajout / modification de cours via éditeur intégré et user friendly
+- permettre l'intégration de quizz dans les cours via l'éditeur
+- ajout / modification de QCM via éditeur intégré
+- stockage des cours dans un format custom avec parsing en entrée / sortie
 
-- contenu du menu change en fonction du contexte (connexion ou pas connexion)
+BACKEND:
+- BDD a refaire
+- routeur
+- modèle
+    -> ajout dans la DB
+    -> insertion
+    -> modification
+    -> suppression
+    -> requêtes préparées
+    -> nettoyage de la BDD
+- sanitizer
+    -> htmlentities / htmlspecialchars / trim / virer DROP, etc..
 
-Contenu cours:
-    -> Images
-    -> videos
-    -> texte
-    -> tableaux
+- session
+- parser I/O de cours
+- validateur de QCM
+- intégration CKeditor + modifs user-friendly
+- console admin pour le forum
+    - verrouilage de conversations
+    - suppression d'utilisateurs
+- générateur de recommandations
 
--> stockage par html/xml
--> formatage a voir
--> CKeditor a intégrer
--> fichiers cours enregistrés sous la forme nom_cours_X.html
+FRONTEND:
+- template de base
+- template pour affichage de cours
+- template pour les catégories du forum
+- template pour les conversations du forum
+- vues
+- AJAX
+- thème sombre
+- thème clair
+- affichage contextuel
