@@ -1,0 +1,75 @@
+body
+{
+    margin: 0 auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.header
+{
+    margin: 0 auto;
+    background-color: #DB9A5F;
+    font-size: 1.2em;
+    color: white;
+}
+
+.menu {
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    float: right;
+    height: 140px;
+}
+
+.menu-item
+{
+    text-decoration: none;
+    list-style:none;
+    margin-left: 50px;
+}
+
+.logo
+{
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    margin: 10px;
+}
+
+.menu-item > a
+{
+    color: white;
+    text-decoration: none;
+}
+
+.menu-item > a:visited
+{
+    color: white;
+}
+
+.menu > .menu-item > a:hover
+{
+    border-bottom: solid #25568F 2px;
+}
+
+.submenu
+{
+    padding: 0;
+    margin-right: 20px;
+    
+}
+
+.connexion
+{
+    border: 3px solid #25568F ;
+    margin-bottom: 20px;
+    padding: 4px;
+}
+
+.inscription
+{
+    background-color: #25568F;
+    margin-top: 20px;
+    padding: 4px;
+}
