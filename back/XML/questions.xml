@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE QCM SYSTEM "questions.dtd">
+<QCM>
+    <meta>
+        <id>1</id>
+        <cours>Développement Web</cours>
+        <difficulte>Facile</difficulte>
+    </meta>
+    <question>
+        <id>1</id>
+        <enonce>Quel langage utilise t'on pour gérer une BD ?</enonce>
+        <reponse>
+            <id>a</id>
+            <value>SQL</value>
+        </reponse>
+        <reponse>
+            <id>b</id>
+            <value>HTML</value>
+        </reponse>
+        <reponse>
+            <id>c</id>
+            <value>C++</value>
+        </reponse>
+    </question>
+</QCM>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT QCM (meta, reponse+)>
+<!ELEMENT meta (id)>
+<!ELEMENT reponse (id, value)>
+<!ELEMENT value (#PCDATA)>

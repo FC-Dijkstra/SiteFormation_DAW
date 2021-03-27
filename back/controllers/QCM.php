@@ -6,7 +6,7 @@ function getQCM($id)
     {
         if (file_exists(__DIR__ . "/../XML/QCM.xml"))
         {
-            $xml = simplexml_load_file(__DIR__ . "/../XML/QCM.xml");
+            $xml = simplexml_load_file(__DIR__ . "/../XML/quesions.xml");
             $json = json_encode($xml);
             echo $json;
         }
@@ -15,4 +15,9 @@ function getQCM($id)
             echo "fichier introuvable";
         }
     }
+}
+
+function validateReponses($reponsesXML)
+{
+    
 }

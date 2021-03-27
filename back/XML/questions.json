@@ -1,0 +1,25 @@
+{
+    "meta": {
+        "id": "1",
+        "cours": "D\u00e9veloppement Web",
+        "difficulte": "Facile"
+    },
+    "question": {
+        "id": "1",
+        "enonce": "Quel langage utilise t'on pour g\u00e9rer une BD ?",
+        "reponse": [
+            {
+                "id": "a",
+                "value": "SQL"
+            },
+            {
+                "id": "b",
+                "value": "HTML"
+            },
+            {
+                "id": "c",
+                "value": "C++"
+            }
+        ]
+    }
+}
