@@ -22,4 +22,24 @@
             <value>C++</value>
         </reponse>
     </question>
+    <question>
+        <id>2</id>
+        <enonce>La question 2: </enonce>
+        <reponse>
+            <id>a</id>
+            <value>Réponse a</value>
+        </reponse>
+        <reponse>
+            <id>b</id>
+            <value>Réponse a</value>
+        </reponse>
+        <reponse>
+            <id>c</id>
+            <value>Réponse a</value>
+        </reponse>
+        <reponse>
+            <id>d</id>
+            <value>Réponse a</value>
+        </reponse>
+    </question>
 </QCM>

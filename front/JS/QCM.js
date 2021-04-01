@@ -17,6 +17,8 @@ $(document).ready(function ()
             console.log(error);
         }
     });
+
+    $("#output").on("click", sendReponses);
 })
 
 function generateQCM(data)
@@ -29,11 +31,18 @@ function generateQCM(data)
     data.question.forEach(question =>
     {
         $("#output").append("<article>");
+        $("#output").append("<div id='questionID'>" + question.id + "</div>");
         $("#output").append("<h4>" + question.enonce + "</h4>");
         question.reponse.forEach(rep =>
         {
+            $("#output").append("<span id='reponseID'>" + rep.id + "</span>");
             $("#output").append("<input type='radio' name=" + question.enonce + ">");
-            $("#output").append(rep.content);
+            $("#output").append(rep.value);
         });
     });
+}
+
+function sendReponses()
+{
+    
 }

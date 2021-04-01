@@ -4,9 +4,9 @@ function getQCM($id)
 {
     if ($id == "test")
     {
-        if (file_exists(__DIR__ . "/../XML/QCM.xml"))
+        if (file_exists(__DIR__ . "/../XML/questions.xml"))
         {
-            $xml = simplexml_load_file(__DIR__ . "/../XML/quesions.xml");
+            $xml = simplexml_load_file(__DIR__ . "/../XML/questions.xml");
             $json = json_encode($xml);
             echo $json;
         }
@@ -19,5 +19,4 @@ function getQCM($id)
 
 function validateReponses($reponsesXML)
 {
-    
 }
