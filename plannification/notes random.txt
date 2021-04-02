@@ -1,0 +1,3 @@
+- retirer sanitizer. 
+- tous les appels ajax passent par du json.
+- utilisation absolue des requêtes préparées.

@@ -1,0 +1,9 @@
+FRONTEND:
+    - Jojo
+    - Camille
+    - Gwendal
+
+BACKEND:
+    - Matthieu
+    - Wassim
+    - Yann

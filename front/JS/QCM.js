@@ -1,3 +1,5 @@
+let QCM;
+
 $(document).ready(function ()
 {
     $.ajax({
@@ -18,12 +20,12 @@ $(document).ready(function ()
         }
     });
 
-    $("#output").on("click", sendReponses);
+    $("#validate").on("click", sendReponses);
 })
 
 function generateQCM(data)
 {
-    console.log(data);
+    QCM = data;
     $("#output").append("<h1>" + data.meta.cours + "</h1>");
     $("#output").append("<h2> Difficulté : " + data.meta.difficulte + "</h2>");
     $("#output").append("<hr/>");
@@ -44,5 +46,16 @@ function generateQCM(data)
 
 function sendReponses()
 {
-    
+    let reponses = [];
+
+    $("article").each(function ()
+    {
+        
+
+    })
+
+
+    let json = {
+        "meta": { "id": QCM.meta.id }
+    };
 }

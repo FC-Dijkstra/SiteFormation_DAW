@@ -55,7 +55,7 @@ FRONTEND:
 - template pour les catégories du forum
 - template pour les conversations du forum
 - vues
-- AJAX
+- AJAX ?
 - thème sombre
 - thème clair
 - affichage contextuel
