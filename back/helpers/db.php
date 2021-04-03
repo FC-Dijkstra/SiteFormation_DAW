@@ -34,7 +34,7 @@ class db
         return self::$instance;
     }
 
-    public function query($sql, $params = array())
+    public function query($sql, $params = array(), $callback = true)
     {
         $query = $this->PDO->prepare($sql);
 
@@ -50,8 +50,11 @@ class db
 
         if ($query->execute())
         {
-            $results = $query->fetchAll(PDO::FETCH_OBJ);
-            return $results;
+            if ($callback)
+            {
+                $results = $query->fetchAll(PDO::FETCH_OBJ);
+                return $results;
+            }
         }
         else
         {
@@ -61,33 +64,38 @@ class db
 
     public function get($table, $options)
     {
-        return $this->query("SELECT * FROM {$table} WHERE {$options}");
+        //TODO
     }
 
     public function insert($table, $fields)
     {
-        $keys = array_keys($fields);
-        $values = array_values($fields);
-
-        $key_string = "";
-        $value_string = "";
-
-        for ($i = 0; $i < count($fields); $i++)
+        if (count($fields))
         {
-            if ($i == count($fields) - 1)
+            $keys = array_keys($fields);
+            $values = array_values($fields);
+
+            $keys_string = implode(", ", $keys);
+            $values_string = "";
+
+            $i = 1;
+            foreach ($values as $value)
             {
-                $key_string .= $keys[$i];
-                $value_string .= "'" . $values[$i] . "'";
-            }
-            else
-            {
-                $key_string .= $keys[$i] . ", ";
-                $value_string .= "'" . $values[$i] . "', ";
+                $values_string .= "?";
+                if ($i < count($values)) $values_string .= ", ";
+
+                $i++;
             }
         }
 
-        $sql = "INSERT INTO {$table} (" . $key_string . ") VALUES (" . $value_string . ");";
+        $sql = "INSERT INTO {$table} (" . $keys_string . ") VALUES (" . $values_string . ");";
 
-        $this->query($sql, []);
+        $this->query($sql, $values, false);
+        if (config::$verbose)
+        {
+            echo "<br />";
+            echo $sql;
+            echo "<br />";
+            var_dump($values);
+        }
     }
 }
