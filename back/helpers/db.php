@@ -1,5 +1,6 @@
 <?php
 require_once("config.php");
+include_once("logger.php");
 
 class db
 {
@@ -62,9 +63,32 @@ class db
         }
     }
 
-    public function get($table, $options)
+    public function call($action, $table, $where)
     {
-        //TODO
+        $option = explode(" ", $where);
+        if (count($option) == 3)
+        {
+            $validOperators = ["=", ">", "<", ">=", "<="];
+
+            $field = $option[0];
+            $operator = $option[1];
+            $value = $option[2];
+
+            if (in_array($operator, $validOperators))
+            {
+                $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
+                //$this->query($sql, array($value));
+                if (config::$verbose)
+                {
+                    logger::log($sql);
+                }
+            }
+        }
+    }
+
+    public function get($table, $where)
+    {
+        return $this->call("SELECT *", $table, $where);
     }
 
     public function insert($table, $fields)
