@@ -77,7 +77,7 @@ class db
             if (in_array($operator, $validOperators))
             {
                 $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
-                //$this->query($sql, array($value));
+                $this->query($sql, array($value));
                 if (config::$verbose)
                 {
                     logger::log($sql);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 12 mars 2021 à 22:21
+-- Généré le : Dim 04 avr. 2021 à 10:47
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.0
 
@@ -31,18 +31,28 @@ USE `sf_daw`;
 
 CREATE TABLE `abonnement` (
   `cours` int(11) NOT NULL,
-  `utilisateur` int(11) NOT NULL
+  `user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `categorie`
+-- Structure de la table `admin`
 --
 
-CREATE TABLE `categorie` (
+CREATE TABLE `admin` (
+  `user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categories`
+--
+
+CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
-  `titre` varchar(50) COLLATE utf8_bin NOT NULL
+  `titre` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -54,8 +64,6 @@ CREATE TABLE `categorie` (
 CREATE TABLE `conversation` (
   `id` int(11) NOT NULL,
   `titre` varchar(50) COLLATE utf8_bin NOT NULL,
-  `auteur` int(11) NOT NULL,
-  `lastupdate` date NOT NULL DEFAULT current_timestamp(),
   `categorie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -67,9 +75,10 @@ CREATE TABLE `conversation` (
 
 CREATE TABLE `cours` (
   `id` int(11) NOT NULL,
-  `categorie` varchar(50) COLLATE utf8_bin NOT NULL,
+  `nom` varchar(200) COLLATE utf8_bin NOT NULL,
   `difficulte` enum('Débutant','Intermédiaire','Avancé','Expert') COLLATE utf8_bin NOT NULL,
-  `auteur` int(11) NOT NULL
+  `auteur` int(11) DEFAULT NULL,
+  `categorie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -80,36 +89,35 @@ CREATE TABLE `cours` (
 
 CREATE TABLE `evaluation` (
   `id` int(11) NOT NULL,
-  `questions` int(11) NOT NULL,
-  `reponses` int(11) NOT NULL,
-  `cours` int(11) NOT NULL
+  `cours` int(11) NOT NULL,
+  `question` int(11) NOT NULL,
+  `reponse` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `fichiers`
+-- Structure de la table `fichiersevaluation`
 --
 
-CREATE TABLE `fichiers` (
+CREATE TABLE `fichiersevaluation` (
   `id` int(11) NOT NULL,
-  `file` varchar(200) COLLATE utf8_bin NOT NULL,
-  `cours` int(11) DEFAULT NULL,
-  `evaluation` int(11) DEFAULT NULL
+  `evaluation` int(11) NOT NULL,
+  `dir` varchar(200) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `messages`
+-- Structure de la table `message`
 --
 
-CREATE TABLE `messages` (
+CREATE TABLE `message` (
   `id` int(11) NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp(),
+  `conversation` int(11) NOT NULL,
   `contenu` varchar(1000) COLLATE utf8_bin NOT NULL,
   `auteur` int(11) NOT NULL,
-  `conversation` int(11) NOT NULL
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -119,9 +127,23 @@ CREATE TABLE `messages` (
 --
 
 CREATE TABLE `resultat` (
+  `passage` date NOT NULL,
   `evaluation` int(11) NOT NULL,
   `utilisateur` int(11) NOT NULL,
   `note` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `test`
+--
+
+CREATE TABLE `test` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(20) COLLATE utf8_bin NOT NULL,
+  `prenom` varchar(20) COLLATE utf8_bin NOT NULL,
+  `age` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -146,13 +168,19 @@ CREATE TABLE `utilisateurs` (
 -- Index pour la table `abonnement`
 --
 ALTER TABLE `abonnement`
-  ADD KEY `fk_cours_abonnement` (`cours`),
-  ADD KEY `fk_utilisateur_abonnement` (`utilisateur`);
+  ADD PRIMARY KEY (`cours`,`user`),
+  ADD KEY `fk_utilisateur_abonnement` (`user`);
 
 --
--- Index pour la table `categorie`
+-- Index pour la table `admin`
 --
-ALTER TABLE `categorie`
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`user`);
+
+--
+-- Index pour la table `categories`
+--
+ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -160,47 +188,52 @@ ALTER TABLE `categorie`
 --
 ALTER TABLE `conversation`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_categorie_conversation` (`categorie`),
-  ADD KEY `fk_auteur_conversation` (`auteur`);
+  ADD KEY `fk_categorie_conversation` (`categorie`);
 
 --
 -- Index pour la table `cours`
 --
 ALTER TABLE `cours`
   ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_categorie_cours` (`categorie`),
   ADD KEY `fk_auteur_cours` (`auteur`);
 
 --
 -- Index pour la table `evaluation`
 --
 ALTER TABLE `evaluation`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`,`reponse`),
+  ADD UNIQUE KEY `question` (`question`),
   ADD KEY `fk_cours_evaluation` (`cours`),
-  ADD KEY `fk_question_evaluation` (`questions`),
-  ADD KEY `fk_reponses_evaluation` (`reponses`);
+  ADD KEY `fk_reponses_evaluation` (`reponse`);
 
 --
--- Index pour la table `fichiers`
+-- Index pour la table `fichiersevaluation`
 --
-ALTER TABLE `fichiers`
+ALTER TABLE `fichiersevaluation`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_cours_fichiers` (`cours`),
-  ADD KEY `fk_evaluation_fichiers` (`evaluation`);
+  ADD KEY `fk_evaluation_fichierseval` (`evaluation`);
 
 --
--- Index pour la table `messages`
+-- Index pour la table `message`
 --
-ALTER TABLE `messages`
+ALTER TABLE `message`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_auteur_messages` (`auteur`),
-  ADD KEY `fk_conversation_messages` (`conversation`);
+  ADD KEY `fk_auteur_message` (`conversation`);
 
 --
 -- Index pour la table `resultat`
 --
 ALTER TABLE `resultat`
+  ADD PRIMARY KEY (`passage`,`evaluation`,`utilisateur`),
   ADD KEY `fk_evaluation_resultat` (`evaluation`),
   ADD KEY `fk_utilisateur_resultat` (`utilisateur`);
+
+--
+-- Index pour la table `test`
+--
+ALTER TABLE `test`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `utilisateurs`
@@ -214,9 +247,9 @@ ALTER TABLE `utilisateurs`
 --
 
 --
--- AUTO_INCREMENT pour la table `categorie`
+-- AUTO_INCREMENT pour la table `categories`
 --
-ALTER TABLE `categorie`
+ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -238,16 +271,22 @@ ALTER TABLE `evaluation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `fichiers`
+-- AUTO_INCREMENT pour la table `fichiersevaluation`
 --
-ALTER TABLE `fichiers`
+ALTER TABLE `fichiersevaluation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `messages`
+-- AUTO_INCREMENT pour la table `message`
 --
-ALTER TABLE `messages`
+ALTER TABLE `message`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `test`
+--
+ALTER TABLE `test`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
@@ -264,42 +303,47 @@ ALTER TABLE `utilisateurs`
 --
 ALTER TABLE `abonnement`
   ADD CONSTRAINT `fk_cours_abonnement` FOREIGN KEY (`cours`) REFERENCES `cours` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_utilisateur_abonnement` FOREIGN KEY (`utilisateur`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_utilisateur_abonnement` FOREIGN KEY (`user`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `admin`
+--
+ALTER TABLE `admin`
+  ADD CONSTRAINT `fk_user_admin` FOREIGN KEY (`user`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `conversation`
 --
 ALTER TABLE `conversation`
-  ADD CONSTRAINT `fk_auteur_conversation` FOREIGN KEY (`auteur`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_categorie_conversation` FOREIGN KEY (`categorie`) REFERENCES `categorie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_categorie_conversation` FOREIGN KEY (`categorie`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `cours`
 --
 ALTER TABLE `cours`
-  ADD CONSTRAINT `fk_auteur_cours` FOREIGN KEY (`auteur`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_auteur_cours` FOREIGN KEY (`auteur`) REFERENCES `utilisateurs` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `fk_categorie_cours` FOREIGN KEY (`categorie`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `evaluation`
 --
 ALTER TABLE `evaluation`
   ADD CONSTRAINT `fk_cours_evaluation` FOREIGN KEY (`cours`) REFERENCES `cours` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_question_evaluation` FOREIGN KEY (`questions`) REFERENCES `fichiers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_reponses_evaluation` FOREIGN KEY (`reponses`) REFERENCES `fichiers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_question_evaluation` FOREIGN KEY (`question`) REFERENCES `fichiersevaluation` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_reponses_evaluation` FOREIGN KEY (`reponse`) REFERENCES `fichiersevaluation` (`id`) ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `fichiers`
+-- Contraintes pour la table `fichiersevaluation`
 --
-ALTER TABLE `fichiers`
-  ADD CONSTRAINT `fk_cours_fichiers` FOREIGN KEY (`cours`) REFERENCES `cours` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_evaluation_fichiers` FOREIGN KEY (`evaluation`) REFERENCES `evaluation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `fichiersevaluation`
+  ADD CONSTRAINT `fk_evaluation_fichierseval` FOREIGN KEY (`evaluation`) REFERENCES `evaluation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `messages`
+-- Contraintes pour la table `message`
 --
-ALTER TABLE `messages`
-  ADD CONSTRAINT `fk_auteur_messages` FOREIGN KEY (`auteur`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_conversation_messages` FOREIGN KEY (`conversation`) REFERENCES `conversation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `message`
+  ADD CONSTRAINT `fk_auteur_message` FOREIGN KEY (`conversation`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_conversation_message` FOREIGN KEY (`conversation`) REFERENCES `conversation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `resultat`
