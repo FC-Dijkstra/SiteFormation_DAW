@@ -1,27 +1,38 @@
 <?php
+require_once("../helpers/db.php");
+require_once("DBObject.php");
 
 class utilisateur extends DBObject
 {
-    private int $id;
-    private string $nom;
-    private string $prenom;
-    private string $email;
-    private string $password;
-    private bool $admin;        //? booléen pour les droits admin
-    private array $followed;    //? array pour les cours suivis
-    private array $results;     //? résultats obtenus lors de l'évaluation
+    protected int $id;
+    protected string $nom;
+    protected string $prenom;
+    protected string $email;
+    protected string $passwordHash;
+    protected bool $admin;        //? booléen pour les droits admin
 
-    public function __construct(string $nom, string $prenom, string $email)
+    public function __construct($id, $nom, $prenom, $email, $admin)
     {
+        $this->id = $id;
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->email = $email;
+        $this->password = null;
+        $this->admin = $admin;
     }
 
     public static function load($id)
     {
         $params = db::getInstance()->get("utilisateurs", "id = {$id}");
-        echo $params;
+        $admin = db::getInstance()->get("admin", "user = 1");
+
+        return new utilisateur(
+            $params[0]->id,
+            $params[0]->nom,
+            $params[0]->prenom,
+            $params[0]->email,
+            count($admin) == 0 ? false : true
+        );
     }
 
     public static function save($instance)
@@ -38,6 +49,6 @@ class utilisateur extends DBObject
 
     public function setPassword($value)
     {
-        $this->password = password_hash($value, PASSWORD_BCRYPT);
+        $this->passwordHash = password_hash($value, PASSWORD_BCRYPT);
     }
 }

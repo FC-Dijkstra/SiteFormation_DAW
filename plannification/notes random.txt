@@ -2,25 +2,11 @@ retirer sanitizer.
 tous les appels ajax passent par du json.
 utilisation absolue des requêtes préparées.
 
+format des dates MySQL(TIMESTAMP): date("Y-m-d H:i:s");
+
 prendre en compte le fait que les fichiers ne peuvent pas forcément exister
     -> suppression malveillante
     -> problème support stockage
-
-delete utilisateur -> delete admin 
-delete utilisateur -> delete abonnement
-delete cours -> delete abonnement
-delete utilisateur -> set null cours[auteur]
-delete categorie -> delete cours
-delete utilisateur -> delete resultat
-delete evaluation -> delete resultat
-delete evaluation -> delete fichierEvaluation
-delete fichierevaluation -> RESTRICT
-delete cours -> delete evaluation
-delete conversation -> delete message
-delete utilisateur -> delete message
-delete categorie -> delete conversation
-delete cours -> delete fichiercours
--> Bloquer tous les autres DELETE au niveau PHP ou sql si on trouve
 
 Pour chaque classe:
     - instanciation depuis la db -> méthode statique ?

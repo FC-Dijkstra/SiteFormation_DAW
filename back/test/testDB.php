@@ -1,6 +1,55 @@
 <?php
 require("../helpers/db.php");
+require("../class/utilisateur.php");
+require("../class/message.php");
+require("../class/categorie.php");
+require("../class/conversation.php");
+require("../class/cours.php");
+require("../helpers/print.php");
 
+/*
+//* tests pour db.php
 $db = db::getInstance();
 $db->insert("test", ["nom" => "IAN", "prenom" => "TRUE", "age" => "20"]);
 $db->get("test", "nom = IAN");
+*/
+/* 
+//* tests pour utilisateur.php
+$usr = new utilisateur(1, "IAN", "TRUE", "ian.trou@gmail.com", "aaa", false);
+$usr->setPassword("aaa");
+utilisateur::save($usr);
+
+$usr2 = utilisateur::load("1");
+println();
+echo $usr2->get("id");
+println();
+echo $usr2->get("nom");
+println();
+echo $usr2->get("prenom");
+println();
+echo $usr2->get("email");
+println();
+printbool($usr2->get("admin"));
+*/
+
+/*
+//* tests pour categorie
+$categorie = new categorie(1, "categorie test");
+categorie::save($categorie);
+*/
+
+/*
+//*tests pour conversation
+$conversation = new conversation(1, "conversation de test", 1);
+conversation::save($conversation);
+*/
+
+/*
+//* tests pour message.php
+$message = new message(1, 1, "message de test", 1, date("Y-m-d H:i:s"));
+message::save($message);
+*/
+
+//* tests pour cours
+$cours = new cours(1, "cours de test", "Débutant", 1, 1);
+cours::save($cours);
