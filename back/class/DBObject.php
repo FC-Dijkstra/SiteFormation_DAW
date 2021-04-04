@@ -1,9 +1,9 @@
 <?php
 
-abstract class DBObject
+abstract class DBOject
 {
-    abstract protected static function save($instance);
-    abstract protected static function load($id);
+    abstract protected static function save();
+    abstract protected static function load();
 
     public function get($param)
     {
