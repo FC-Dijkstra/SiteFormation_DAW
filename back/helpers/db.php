@@ -87,6 +87,11 @@ class db
         return $this->call("SELECT *", $table, $where);
     }
 
+    public function getID($table, $id)
+    {
+        return $this->call("SELECT *", $table, "id = {$id}");
+    }
+
     public function insert($table, $fields)
     {
         if (count($fields))

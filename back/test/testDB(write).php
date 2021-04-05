@@ -7,6 +7,7 @@ require("../class/conversation.php");
 require("../class/cours.php");
 require("../helpers/print.php");
 
+//! TESTS POUR ECRITURE
 /*
 //* tests pour db.php
 $db = db::getInstance();
@@ -50,6 +51,8 @@ $message = new message(1, 1, "message de test", 1, date("Y-m-d H:i:s"));
 message::save($message);
 */
 
+/*
 //* tests pour cours
 $cours = new cours(1, "cours de test", "Débutant", 1, 1);
 cours::save($cours);
+*/

@@ -1,6 +1,6 @@
 <?php
 require_once("DBObject.php");
-class Message extends DBObject
+class message extends DBObject
 {
 
     protected int $id;
@@ -20,8 +20,14 @@ class Message extends DBObject
     }
     public static function load($id)
     {
-        $params = db::getInstance()->get("message", "id ={$id}");
-        echo $params;
+        $params = db::getInstance()->getID("messages", $id);
+        return new message(
+            $params[0]->id,
+            $params[0]->conversation,
+            $params[0]->contenu,
+            $params[0]->auteur,
+            $params[0]->date
+        );
     }
     public static function save($instance)
     {

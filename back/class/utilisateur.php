@@ -23,8 +23,8 @@ class utilisateur extends DBObject
 
     public static function load($id)
     {
-        $params = db::getInstance()->get("utilisateurs", "id = {$id}");
-        $admin = db::getInstance()->get("admin", "user = 1");
+        $params = db::getInstance()->getID("utilisateurs", $id);
+        $admin = db::getInstance()->get("admin", "user = {$id}");
 
         return new utilisateur(
             $params[0]->id,

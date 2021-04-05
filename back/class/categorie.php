@@ -1,6 +1,6 @@
 <?php
 require_once("DBObject.php");
-class Categorie extends DBObject
+class categorie extends DBObject
 {
 
     protected int $id;
@@ -15,8 +15,11 @@ class Categorie extends DBObject
 
     public static function load($id)
     {
-        $params = db::getInstance()->get("categorie", "id ={$id}");
-        echo $params;
+        $params = db::getInstance()->getID("categories", $id);
+        return new categorie(
+            $params[0]->id,
+            $params[0]->titre
+        );
     }
     public static function save($instance)
     {

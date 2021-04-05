@@ -34,6 +34,16 @@ class cours extends DBObject
 		$this->auteur = $instance->auteur;
 		$this->categorie = $instance->categorie;
 		*/
+
+		$params = db::getInstance()->getID("cours", $ID);
+
+		return new cours(
+			$params[0]->id,
+			$params[0]->nom,
+			$params[0]->difficulte,
+			$params[0]->auteur,
+			$params[0]->categorie
+		);
 	}
 
 	public static function save($instance)
