@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../CSS/menu.css" type="text/css">
-    <title><?= $title ?></title>
+    <title><?= isset($title)?$title:"Titre inconnu" ?></title>
 </head>
 
 <body>
     <div class="header">
-        <img class="logo" />
+        <img class="logo"  alt="Logo" src="../IMG/logo.png"/>
         <ul class="menu">
             <li class="menu-item"><a href="#">Accueil</a></li>
             <li class="menu-item"><a href="#">Cours</a></li>
@@ -21,6 +21,6 @@
             </li>
         </ul>
     </div>
-    <?= $content ?>
+    <?= isset($content)?$content:"" ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
-    <?= $scripts; ?>
+    <?= isset($scripts)?$scripts:"" ?>
