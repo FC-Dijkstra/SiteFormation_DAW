@@ -1,12 +1,10 @@
-<html>
-
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../CSS/menu.css" type="text/css">
     <title><?= isset($title)?$title:"" ?></title>
 </head>
 
-<body>
+<header>
     <div class="header">
         <img class="logo" src="../IMG/logo.png" alt="Logo" />
         <ul class="menu">
@@ -24,3 +22,4 @@
     <?= isset($content)?$content:"" ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <?= isset($scripts)?$scripts:"" ?>
+</header>

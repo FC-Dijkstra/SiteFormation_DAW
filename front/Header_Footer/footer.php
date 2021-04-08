@@ -1,29 +1,43 @@
-<html>
-
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../CSS/footer.css" type="text/css">
     <title><?= isset($title)?$title:"" ?></title>
 </head>
 
-<body>
-    <div class="header">
-        <img class="logo" />
-        <ul class="menu">
-            <li class="menu-item"><a href="#">Accueil</a></li>
-            <li class="menu-item"><a href="#">Cours</a></li>
-            <li class="menu-item"><a href="#">Forum</a></li>
-            <li class="menu-item">
-                <ul class="submenu">
-                    <li class="menu-item connexion"><a href="#">CONNEXION</a></li>
-                    <li class="menu-item inscription"><a href="#">INSCRIPTION</a></li>
+<footer class="footer">
+    <div class="contenu">
+        <div class="gauche">
+            <h6> A propos</h6>
+            <div>
+                <ul>
+                    <li> <a href="#"> Qui sommes-nous ?</a> </li>
+                    <li> <a href="#"> Nous contacter</a> </li>
                 </ul>
-            </li>
-        </ul>
+            </div>
+        </div>
+        <div class="milieu">
+            <h6> Nous rejoindre </h6>
+            <div>
+                <ul>
+                    <li> <a href="#"> Devenir enseignant</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="trait">
+        </div>
+        <div class="droite">
+            <a href="https://www.facebook.com/" target="_blank"><img src=../IMG/1.png width="50" height="50"></a>
+            <a href="https://twitter.com/" target="_blank"><img src=../IMG/3.png width="50" height="50"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src=../IMG/2.png width="50" height="50"></a>
+        </div>
+
+         <!-- Copyrights -->
+         <div class="copyright">
+                <p class="text-muted mb-0 py-2">© 2021 Université de Bourgogne Franche-Comté tous droits réservés.</p>
+        </div>
     </div>
-    <?= isset($content)?$content:"" ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
-    <?= isset($scripts)?$scripts:"" ?>
-</body>
+
+    
+</footer>
 
 </html>

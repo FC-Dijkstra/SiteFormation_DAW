@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr" >
-    <header>
-        <?php include ('../Header_Footer/template.php') ?>
-    </header>
+    <?php include ('../Header_Footer/template.php') ?>
     <body>
         test
     </body>
-    <footer>
-        <?php include ('../Header_Footer/footer.php') ?>
-    </footer>
+    <?php include ('../Header_Footer/footer.php') ?>
 </html>
