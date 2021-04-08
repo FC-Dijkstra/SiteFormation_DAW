@@ -1,0 +1,67 @@
+accueil: FIXE
+
+accueil forum:
+    -> liste des catégories (dynamique)
+
+liste conversations
+    -> liste des conversations (dynamique)
+    
+liste de messages
+    -> liste des messages (dynamique)
+    -> séparation par bloc 
+    -> si utilisateur est authentifié
+        -> formulaire de saisie
+
+résultat recherche
+    -> liste des résultats (dynamique).
+
+Liste des cours:
+    -> liste des cours (dynamique)
+    -> rangés de base par popularité (nb abonnement)
+    -> combobox pour filtrer par catégorie
+    -> tester avec les slides
+
+affichage des cours:
+    -> récupération du fichier html spécifique (dynamique)
+    -> tester avec les slides
+    -> affichage par défaut.
+    -> un cours doit pouvoir renvoyer vers une évaluation
+
+affichage QCM:
+    -> vérification cooldown
+    -> affichage du QCM (dynamique)
+    -> validation des réponses
+    -> xml -> json -> array php ??
+
+page perso étudiant:
+    -> liste des cours abonnés
+        -> reprendre la liste des cours globale
+    -> recommandations de cours (3 cours basés sur la moyenne des catégories des abonnements)
+    -> liste des résultats
+    -> réglages de compte (modal)
+        -> changement d'informations
+    
+page perso admin:
+    -> même chose que etudiant (pour les modal)
+    -> liste des cours crées
+        -> accès en modification
+
+formulaire d'ajout / modification de cours
+    formulaire d'envoi de fichier
+        -> parcourir...
+        -> métadonnées
+    -> CKeditor ?
+
+gestion du forum:
+    -> affichage "classique" du forum 
+    -> contrôles supplémentaires   
+        -> verrouillage
+        -> suppression
+
+connexion:
+    -> vérification authentification (dynamique)
+    -> vérification saisie de tous les champs.
+    
+Inscription 
+    -> vérification email 
+    -> vérification saisie de tous les champs

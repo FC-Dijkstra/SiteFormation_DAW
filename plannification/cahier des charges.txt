@@ -16,16 +16,19 @@ FONCTIONNALITES LvL 1:
 - abonnement d'un utilisateur à un cours
 - création de conversations
 - publications de messages sur le forum
+- système de recherche 
+- affichage de messages par bloc
 
 FONCTIONNALITES LvL 2:
 - cooldown pour un QCM si échec
 - Interface conçue pour un ordinateur avec un écran 1920x1080
-- date d'une conversation basée sur le dernier message envoyé
-- auteur d'une conversation basé sur le premier message envoyé
-- ajout / modification de cours via éditeur intégré et user friendly
-- permettre l'intégration de quizz dans les cours via l'éditeur
-- ajout / modification de QCM via éditeur intégré
+- date d'une conversation basée sur le dernier message envoyé   ?
+- auteur d'une conversation basé sur le premier message envoyé  ?
+- ajout / modification de cours via éditeur intégré et user friendly    ?
+- permettre l'intégration de quizz dans les cours via l'éditeur ?
+- ajout / modification de QCM via éditeur intégré               ?
 - stockage des cours dans un format custom avec parsing en entrée / sortie
+- photo profil
 
 BACKEND:
 - BDD a refaire
