@@ -1,0 +1,41 @@
+rajouter une fonction getAll() pour DBObject.
+
+controlleur pour la liste des cours    MATTHIEU
+    -> prendre en compte un filtre pour les catégories
+    -> retourner les cours que suit un utilisateur
+    -> retourner la liste des cours crée par un utilisateur
+
+controlleur pour l'affichage d'un cours     MATTHIEU
+    -> chercher le bon fichier
+    -> bloquer si erreur
+    -> retourner la vue avec le cours
+
+controlleur pour l'affichage du QCM     YANN + MATTHIEU
+    -> vérif cooldown
+    -> vérification de l'existence du QCM dans la BD
+    -> vérification de l'existence du fichier de questions et de répponses
+    -> parsing XML -> HTML(PHP) ?
+
+controlleur pour la vérification d'un QCM   YANN + MATTHIEU
+    -> vérification de l'existence du QCM dans la BD
+    -> vérification de l'existence du fichier de questions et de répponses
+    -> chargement et parsing du fichier de reponses (XMl -> array);
+    -> comparaison avec array passé en param.
+
+controlleur pour les recommendations    WASSIM
+
+controlleur pour les résultats      WASSIM
+    -> ajout d'un résultat
+    -> liste des résultats d'un utilisateur
+
+controlleur connexion   YANN
+
+controlleur inscription     YANN
+
+controlleur de cours (et de ses fichiers liés)     YANN   
+    -> ajouter un cours
+    -> supprimer un cours
+    -> modifier un cours 
+
+
++ PARTIE FORUM

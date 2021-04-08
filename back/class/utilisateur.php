@@ -8,7 +8,6 @@ class utilisateur extends DBObject
     protected string $nom;
     protected string $prenom;
     protected string $email;
-    protected string $passwordHash;
     protected bool $admin;        //? booléen pour les droits admin
 
     public function __construct($id, $nom, $prenom, $email, $admin)
@@ -17,7 +16,6 @@ class utilisateur extends DBObject
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->email = $email;
-        $this->password = null;
         $this->admin = $admin;
     }
 
@@ -42,13 +40,7 @@ class utilisateur extends DBObject
                 "nom" => $instance->nom,
                 "prenom" => $instance->prenom,
                 "email" => $instance->email,
-                "user_password" => $instance->password,
             ];
         db::getInstance()->insert("utilisateurs", $params);
-    }
-
-    public function setPassword($value)
-    {
-        $this->passwordHash = password_hash($value, PASSWORD_BCRYPT);
     }
 }
