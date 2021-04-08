@@ -4,16 +4,8 @@ require_once("./../helpers/db.php");
 
 function filtre($filtre) : array
 {
-	$array = //getAllCours;
-	$arrayRes;
-	for(let i = 0;i < $array.count(); i++)
-	{
-		if(str_contains($array[i]->get("nom"),$filtre))
-		{
-			array_push($arrayRes,$array[i]);
-		}
-	}
-	return $arrayRes;
+	$array = db::getInstance()->get("cours","categorie = $filtre");
+	return $array;
 }
 
 function coursSuivi($user) : array
@@ -21,9 +13,9 @@ function coursSuivi($user) : array
 	$res = array();
 	$utilisateur = db::getInstance()->get("utilisateurs","nom = $user");
 	$abo = db::getInstance()->get("abonnements","user = $utilisateur[0]->id");
-	for(let i = 0;i < $abo.count();i++)
+	for(let $i = 0;$i < $abo.count();$i++)
 	{
-		$cours = db::getInstance()->get("cours","id = $abo[i]->cours");
+		$cours = db::getInstance()->get("cours","id = $abo[$i]->cours");
 		$res = $res + $cours;
 	}
 	return $cours;
