@@ -69,4 +69,6 @@ class cours extends DBObject
 
 		db::getInstance()->insert("cours", $params);
 	}
+	
+	
 }
