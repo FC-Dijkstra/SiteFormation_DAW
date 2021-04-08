@@ -1,6 +1,6 @@
 <?php 
 	// ./../data/fichier.html
-	require_once("./../class/Cours.php");
+	require_once("./../class/cours.php");
 	
 	$filepath;
 	function verifFichier($nom)

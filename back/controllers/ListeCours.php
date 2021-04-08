@@ -1,5 +1,5 @@
 <?php
-require_once("./../class/Cours.php");
+require_once("./../class/cours.php");
 require_once("./../helpers/db.php");
 
 function filtre($filtre) : array
