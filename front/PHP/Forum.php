@@ -10,9 +10,9 @@
         <div class="header">
             <img class="logo" />
             <ul class="menu">
-                <li class="menu-item"><a href="#">Accueil</a></li>
+                <li class="menu-item"><a href="Accueil.html">Accueil</a></li>
                 <li class="menu-item"><a href="Cours.html">Cours</a></li>
-                <li class="menu-item"><a href="Forum.html">Forum</a></li>
+                <li class="menu-item"><a href="#">Forum</a></li>
                 <li class="menu-item">
                     <ul class="submenu">
                         <li class="menu-item connexion"><a href="#">CONNEXION</a></li>
