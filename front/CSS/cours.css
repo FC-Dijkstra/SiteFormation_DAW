@@ -1,0 +1,46 @@
+body {
+    overflow: hidden;
+}
+.base-text {
+
+    text-align: center;
+    width: 100%;
+    background-color: lightgray;
+    height: 300px;
+}
+.base-text h2 {
+    margin-top: 0;
+    padding-top: 50px;
+}
+.base-text p {
+    width: 500px;
+    display: inline-block;
+}
+
+#cours {
+
+    height: 300px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+.slide-cours {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    background-color: darkgray;
+    height: 100%;
+    z-index: 1;
+}
+.slide-cours:hover {
+    //background-color: #555555;
+    cursor: pointer;
+}
+
+.slide-cours h2 {
+    line-height: 100px;
+}
+.slide-cours p {
+    line-height: 100px;
+}

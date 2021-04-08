@@ -22,5 +22,5 @@
         </ul>
     </div>
     <?= isset($content)?$content:"" ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <?= isset($scripts)?$scripts:"" ?>
