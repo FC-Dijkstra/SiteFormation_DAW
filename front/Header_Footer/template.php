@@ -8,7 +8,7 @@
 
 <body>
     <div class="header">
-        <img class="logo" />
+        <img class="logo" src="../IMG/logo.png" alt="Logo" />
         <ul class="menu">
             <li class="menu-item"><a href="#">Accueil</a></li>
             <li class="menu-item"><a href="#">Cours</a></li>
