@@ -1,2 +1,0 @@
-03-04-2021 11:40:52 - db::call()[91 - SELECT * FROM test WHERE nom = ?
-03-04-2021 11:41:13 - db::call()[91] - SELECT * FROM test WHERE nom = ?

@@ -77,11 +77,7 @@ class db
             if (in_array($operator, $validOperators))
             {
                 $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
-                $this->query($sql, array($value));
-                if (config::$verbose)
-                {
-                    logger::log($sql);
-                }
+                return $this->query($sql, array($value));
             }
         }
     }
@@ -89,6 +85,11 @@ class db
     public function get($table, $where)
     {
         return $this->call("SELECT *", $table, $where);
+    }
+
+    public function getID($table, $id)
+    {
+        return $this->call("SELECT *", $table, "id = {$id}");
     }
 
     public function insert($table, $fields)

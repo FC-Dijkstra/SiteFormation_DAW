@@ -1,9 +1,12 @@
 <?php
-class Conversation extends DBOject{
+require_once("DBObject.php");
 
-    private int $id;
-    private string $titre;
-    private int $categorie;
+class conversation extends DBObject
+{
+
+    protected int $id;
+    protected string $titre;
+    protected int $categorie;
 
 
     public function __construct(int $id, string $titre, int $categorie)
@@ -14,21 +17,25 @@ class Conversation extends DBOject{
     }
 
 
-    public static function load($id){
-        $params = db::getInstance()->get("conversation", "id ={$id}");
-        echo $params;
-
+    public static function load($id)
+    {
+        $params = db::getInstance()->getID("conversations", $id);
+        return new conversation(
+            $params[0]->id,
+            $params[0]->titre,
+            $params[0]->categorie
+        );
     }
-    public static function save($instance){
-        
-        $param = 
-        [
-            "id" => $instance->id,
-            "titre" => $instance->titre,
-            "categorie" => $instance->categorie,
+    public static function save($instance)
+    {
 
-        ];
-    db::getInstance()->insert("conversation", $param);    
+        $param =
+            [
+                "id" => $instance->id,
+                "titre" => $instance->titre,
+                "categorie" => $instance->categorie,
 
+            ];
+        db::getInstance()->insert("conversations", $param);
     }
 }
