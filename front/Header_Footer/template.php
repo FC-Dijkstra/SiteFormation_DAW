@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../CSS/menu.css" type="text/css">
+    <link rel="stylesheet" href="/front/CSS/menu.css" type="text/css">
     <title><?= isset($title)?$title:"" ?></title>
 </head>
 
