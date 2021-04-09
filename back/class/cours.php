@@ -1,6 +1,6 @@
 <?php
-require_once("./../helpers/db.php");
-require_once("DBObject.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/back/helpers/db.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/back/class/DBObject.php");
 
 class cours extends DBObject
 {
