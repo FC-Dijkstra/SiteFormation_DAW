@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../CSS/footer.css" type="text/css">
+    <link rel="stylesheet" href="/front/CSS/footer.css" type="text/css">
     <title><?= isset($title)?$title:"" ?></title>
 </head>
 
@@ -26,9 +26,9 @@
         <div class="trait">
         </div>
         <div class="droite">
-            <a href="https://www.facebook.com/" target="_blank"><img src=../IMG/1.png width="50" height="50"></a>
-            <a href="https://twitter.com/" target="_blank"><img src=../IMG/3.png width="50" height="50"></a>
-            <a href="https://www.instagram.com/" target="_blank"><img src=../IMG/2.png width="50" height="50"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src=/front/IMG/1.png width="50" height="50"></a>
+            <a href="https://twitter.com/" target="_blank"><img src=/front/IMG/3.png width="50" height="50"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src=/front/IMG/2.png width="50" height="50"></a>
         </div>
 
          <!-- Copyrights -->
