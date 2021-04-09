@@ -10,14 +10,14 @@ include_once("../Header_Footer/template.php");
     </p>
 </div>
 <div id="cours">
-    <div class="slide-cours" onclick="window.location.href='./web.php'">
+    <div class="slide-cours" onclick="window.location.href='./Cours/web.php'">
         <h2>Développement Web</h2>
         <p>
             Cassez vous la tête en essayant de créer vous-même votre site internet. <br />
             Spoiler : Vous allez détester le CSS ♥
         </p>
     </div>
-    <div class="slide-cours" onclick="window.location.href='./application.php'">
+    <div class="slide-cours" onclick="window.location.href='./Cours/application.php'">
         <h2>Développement d'applications</h2>
         <p>
             Créez vos applications en apprenant un des cours dans cette catégorie.

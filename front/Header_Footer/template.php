@@ -8,9 +8,9 @@
     <div class="header">
         <img class="logo" src="/front/IMG/logo.png" alt="Logo" />
         <ul class="menu">
-            <li class="menu-item"><a href="accueil.php">Accueil</a></li>
-            <li class="menu-item"><a href="cours.php">Cours</a></li>
-            <li class="menu-item"><a href="forum.php">Forum</a></li>
+            <li class="menu-item"><a href="/front/PHP/accueil.php">Accueil</a></li>
+            <li class="menu-item"><a href="/front/PHP/cours.php">Cours</a></li>
+            <li class="menu-item"><a href="/front/PHP/forum.php">Forum</a></li>
             <li class="menu-item">
                 <ul class="submenu">
                     <li class="menu-item connexion"><a href="#">CONNEXION</a></li>
