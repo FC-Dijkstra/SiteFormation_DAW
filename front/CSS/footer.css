@@ -4,9 +4,7 @@ footer{
     overflow:auto;
 }
 
-footer p, footer a
-{
-    
+footer p, footer a{
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
 }
@@ -31,19 +29,21 @@ footer h6:after {
     
 }
 
-ul{
+footer ul{
     list-style-type: none;
     margin-left: 4px;
 }
 
-a:hover {
+footer a:hover {
     text-decoration: none;
     color: #f5f5f5 !important;
 }
 
-a{
+footer a{
     text-decoration: none;
     color:#606060;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .droite{
