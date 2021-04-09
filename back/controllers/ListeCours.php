@@ -13,7 +13,7 @@ function coursSuivi($user) : array
 	$res = array();
 	$utilisateur = db::getInstance()->get("utilisateurs","nom = $user");
 	$abo = db::getInstance()->get("abonnements","user = $utilisateur[0]->id");
-	for(let $i = 0;$i < $abo.count();$i++)
+	for($i = 0;$i < count($abo);$i++)
 	{
 		$cours = db::getInstance()->get("cours","id = $abo[$i]->cours");
 		$res = $res + $cours;
