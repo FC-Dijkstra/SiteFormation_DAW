@@ -1,10 +1,5 @@
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="/front/CSS/footer.css" type="text/css">
-    <title><?= isset($title)?$title:"" ?></title>
-</head>
-
 <footer class="footer">
+    <link rel="stylesheet" href="/front/CSS/footer.css" type="text/css">
     <div class="contenu">
         <div class="gauche">
             <h6> A propos</h6>
