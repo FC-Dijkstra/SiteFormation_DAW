@@ -31,4 +31,21 @@ class categorie extends DBObject
             ];
         db::getInstance()->insert("categories", $param);
     }
+
+    public static function getAll()
+    {
+        $dbValues = db::getInstance()->getAll("categories");
+        $output = array();
+        for ($i = 0; $i < count($dbValues); $i++)
+        {
+            $categorie = new categorie(
+                $dbValues[$i]->id,
+                $dbValues[$i]->titre
+            );
+
+            array_push($output, $categorie);
+        }
+
+        return $output;
+    }
 }

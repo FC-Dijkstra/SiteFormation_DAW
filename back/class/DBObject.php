@@ -3,6 +3,7 @@ abstract class DBObject
 {
     abstract protected static function save($instance);
     abstract protected static function load($id);
+    abstract protected static function getAll();
 
     public function get($param)
     {

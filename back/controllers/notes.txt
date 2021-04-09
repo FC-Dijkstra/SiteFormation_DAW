@@ -1,0 +1,6 @@
+dans certains cas ça peut être plus opti de faire les appels dans les controlleurs plutot que passer par getAll
+notamment si il faut retraiter les données internes aux objets...
+
+pour les requêtes spéciales, utiliser db::query avec une requête de la forme
+    <action> FROM <table> WHERE <valeur1> = ? <valeur2> = ? [ORDER BY <...>]; etc..
+et en param un tableau contenant les valeurs des variables, dans l'ordre ou elles sont listées dans le SQL.

@@ -38,4 +38,22 @@ class conversation extends DBObject
             ];
         db::getInstance()->insert("conversations", $param);
     }
+
+    public static function getAll()
+    {
+        $dbValues =  db::getInstance()->getAll("conversations");
+        $output = array();
+        for ($i = 0; $i < count($dbValues); $i++)
+        {
+            $conversation = new conversation(
+                $dbValues[$i]->id,
+                $dbValues[$i]->titre,
+                $dbValues[$i]->categorie
+            );
+
+            array_push($output, $conversation);
+        }
+
+        return $output;
+    }
 }

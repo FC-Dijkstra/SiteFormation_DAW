@@ -41,7 +41,7 @@ class db
         $this->error = false;
         $query = $this->PDO->prepare($sql);
 
-        if (count($params))
+        if (count($params)) //si params il y a -> bind
         {
             $x = 1;
             foreach ($params as $param)
@@ -88,6 +88,11 @@ class db
                 return $this->query($sql, array($value));
             }
         }
+        else
+        {
+            $sql = "{$action} FROM {$table}";
+            return $this->query($sql, []);
+        }
     }
 
     public function get($table, $where)
@@ -98,6 +103,11 @@ class db
     public function getID($table, $id)
     {
         return $this->call("SELECT *", $table, "id = {$id}");
+    }
+
+    public function getAll($table)
+    {
+        return $this->call("SELECT *", $table, "");
     }
 
     public function insert($table, $fields)

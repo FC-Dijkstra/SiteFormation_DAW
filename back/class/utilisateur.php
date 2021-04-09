@@ -31,7 +31,7 @@ class utilisateur extends DBObject
             $params[0]->nom,
             $params[0]->prenom,
             $params[0]->email,
-            $params[0]->passwordHash,
+            $params[0]->user_password,
             count($admin) == 0 ? false : true
         );
     }
@@ -46,5 +46,27 @@ class utilisateur extends DBObject
                 "user_password" => $instance->passwordHash
             ];
         db::getInstance()->insert("utilisateurs", $params);
+    }
+
+    public static function getAll()
+    {
+        $dbValues = db::getInstance()->getAll("utilisateurs");
+        $output = array();
+        for ($i = 0; $i < count($dbValues); $i++)
+        {
+            $admin = db::getInstance()->get("admin", "user = {$dbValues[$i]->id}");
+            $user = new utilisateur(
+                $dbValues[$i]->id,
+                $dbValues[$i]->nom,
+                $dbValues[$i]->prenom,
+                $dbValues[$i]->email,
+                $dbValues[$i]->user_password,
+                count($admin) == 0 ? false : true
+            );
+
+            array_push($output, $user);
+        }
+
+        return $output;
     }
 }
