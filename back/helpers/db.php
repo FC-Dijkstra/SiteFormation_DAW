@@ -1,11 +1,12 @@
 <?php
-require_once("config.php");
-include_once("logger.php");
+require_once(__DIR__ . "./config.php");
+include_once(__DIR__ . "./logger.php");
 
 class db
 {
     private static $instance = null;
     private PDO $pdo;
+    private bool $error;
 
     private function __construct()
     {
@@ -37,9 +38,10 @@ class db
 
     public function query($sql, $params = array(), $callback = true)
     {
+        $this->error = false;
         $query = $this->PDO->prepare($sql);
 
-        if (count($params))
+        if (count($params)) //si params il y a -> bind
         {
             $x = 1;
             foreach ($params as $param)
@@ -49,17 +51,23 @@ class db
             }
         }
 
-        if ($query->execute())
+        try
+        {
+            $query->execute();
+        }
+        catch (PDOException $e)
+        {
+            $this->error = true;
+            return null;
+        }
+
+        if (!$this->error)
         {
             if ($callback)
             {
                 $results = $query->fetchAll(PDO::FETCH_OBJ);
                 return $results;
             }
-        }
-        else
-        {
-            return null;    //! attention 
         }
     }
 
@@ -80,6 +88,11 @@ class db
                 return $this->query($sql, array($value));
             }
         }
+        else
+        {
+            $sql = "{$action} FROM {$table}";
+            return $this->query($sql, []);
+        }
     }
 
     public function get($table, $where)
@@ -90,6 +103,11 @@ class db
     public function getID($table, $id)
     {
         return $this->call("SELECT *", $table, "id = {$id}");
+    }
+
+    public function getAll($table)
+    {
+        return $this->call("SELECT *", $table, "");
     }
 
     public function insert($table, $fields)
@@ -115,12 +133,10 @@ class db
         $sql = "INSERT INTO {$table} (" . $keys_string . ") VALUES (" . $values_string . ");";
 
         $this->query($sql, $values, false);
-        if (config::$verbose)
-        {
-            echo "<br />";
-            echo $sql;
-            echo "<br />";
-            var_dump($values);
-        }
+    }
+
+    public function hasError()
+    {
+        return $this->error;
     }
 }

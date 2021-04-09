@@ -1,5 +1,5 @@
 <?php
-require_once("DBObject.php");
+require_once(__DIR__ . "./DBObject.php");
 class categorie extends DBObject
 {
 
@@ -30,5 +30,22 @@ class categorie extends DBObject
                 "titre" => $instance->titre,
             ];
         db::getInstance()->insert("categories", $param);
+    }
+
+    public static function getAll()
+    {
+        $dbValues = db::getInstance()->getAll("categories");
+        $output = array();
+        for ($i = 0; $i < count($dbValues); $i++)
+        {
+            $categorie = new categorie(
+                $dbValues[$i]->id,
+                $dbValues[$i]->titre
+            );
+
+            array_push($output, $categorie);
+        }
+
+        return $output;
     }
 }

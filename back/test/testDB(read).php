@@ -1,11 +1,11 @@
 <?php
-require("../helpers/db.php");
-require("../class/utilisateur.php");
-require("../class/message.php");
-require("../class/categorie.php");
-require("../class/conversation.php");
-require("../class/cours.php");
-require("../helpers/print.php");
+require(__DIR__ . "./../helpers/db.php");
+require(__DIR__ . "./../class/utilisateur.php");
+require(__DIR__ . "./../class/message.php");
+require(__DIR__ . "./../class/categorie.php");
+require(__DIR__ . "./../class/conversation.php");
+require(__DIR__ . "./../class/cours.php");
+require(__DIR__ . "./../helpers/print.php");
 
 //! TESTS POUR LECTURE
 
@@ -13,6 +13,11 @@ require("../helpers/print.php");
 $user = utilisateur::load(1);
 println();
 var_dump($user);
+println();
+$users = utilisateur::getAll();
+println();
+var_dump($users);
+println();
 
 //* tests pour message.php
 $message = message::load(1);
@@ -33,3 +38,5 @@ var_dump($categorie);
 $conversation = conversation::load(1);
 println();
 var_dump($conversation);
+
+

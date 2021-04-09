@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/back/helpers/db.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/back/class/DBObject.php");
+require_once(__DIR__ . "./../helpers/db.php");
+require_once(__DIR__ . "./DBObject.php");
 
 class cours extends DBObject
 {
@@ -70,5 +70,23 @@ class cours extends DBObject
 		db::getInstance()->insert("cours", $params);
 	}
 	
-	
+	public static function getAll()
+    {
+        $dbValues = db::getInstance()->getAll("cours");
+        $output = array();
+        for ($i = 0; $i < count($dbValues); $i++)
+        {
+            $cours = new cours(
+                $dbValues[$i]->id,
+                $dbValues[$i]->nom,
+                $dbValues[$i]->difficulte,
+                $dbValues[$i]->auteur,
+                $dbValues[$i]->categorie
+            );
+
+            array_push($output, $cours);
+        }
+
+        return $output;
+    }
 }
