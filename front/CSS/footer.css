@@ -2,6 +2,10 @@ footer{
     background: #E3E3E3;
     color: #606060;
     overflow:auto;
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    
 }
 
 footer p, footer a{
