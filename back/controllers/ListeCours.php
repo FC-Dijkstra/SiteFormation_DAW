@@ -1,6 +1,6 @@
 <?php
-require_once("./../class/cours.php");
-require_once("./../helpers/db.php");
+require_once(__DIR__ . "./../class/cours.php");
+require_once(__DIR__ . "./../helpers/db.php");
 
 function filtre($filtre) : array
 {

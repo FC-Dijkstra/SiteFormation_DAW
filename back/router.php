@@ -1,6 +1,6 @@
 <?php
-
-require("controllers/QCM.php");
+session_start();
+require(__DIR__ . "./controllers/QCM.php");
 
 if (isset($_POST['action']))
 {

@@ -6,7 +6,7 @@ controlleur pour la liste des cours    MATTHIEU
     -> retourner la liste des cours crée par un utilisateur
 
 controlleur pour l'affichage d'un cours     MATTHIEU
-    -> chercher le bon fichier
+    -> chercher le bon fichier (dans la DB puis dans data)
     -> bloquer si erreur
     -> retourner la vue avec le cours
 
