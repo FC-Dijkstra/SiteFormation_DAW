@@ -1,16 +1,15 @@
 body {
-    overflow: hidden;
+    //overflow: hidden;
 }
 .base-text {
-
     text-align: center;
     width: 100%;
     background-color: lightgray;
-    height: 300px;
+    height: calc((100% - 310px) / 2);
 }
 .base-text h2 {
     margin-top: 0;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 .base-text p {
     width: 500px;
@@ -18,11 +17,10 @@ body {
 }
 
 #cours {
-
-    height: 300px;
+    height: calc((100% - 310px) / 2);
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: 170px;
     overflow: hidden;
 }
 .slide-cours {
@@ -34,13 +32,16 @@ body {
     z-index: 1;
 }
 .slide-cours:hover {
-    //background-color: #555555;
+    /*background-color: #555555;*/
     cursor: pointer;
 }
 
 .slide-cours h2 {
-    line-height: 100px;
+    line-height: 80px;
 }
-.slide-cours p {
-    line-height: 100px;
+footer {
+    height: 170px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

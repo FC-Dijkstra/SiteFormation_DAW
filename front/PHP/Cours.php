@@ -10,25 +10,23 @@ include_once("../Header_Footer/template.php");
     </p>
 </div>
 <div id="cours">
-    <div class="slide-cours" onclick="window.location.href='#'">
-        <h2>Vive le HTML</h2>
+    <div class="slide-cours" onclick="window.location.href='./web.php'">
+        <h2>Développement Web</h2>
         <p>
-            C'est pas un langage de programmation mais t'as pas le choix
+            Cassez vous la tête en essayant de créer vous-même votre site internet. <br />
+            Spoiler : Vous allez détester le CSS ♥
         </p>
     </div>
-    <div class="slide-cours" onclick="window.location.href='#'">
-        <h2>CSS</h2>
+    <div class="slide-cours" onclick="window.location.href='./application.php'">
+        <h2>Développement d'applications</h2>
         <p>
-            Développez votre envie de vous suicider, jamais ce que vous ferez ne fonctionnera comme vous le voudrez
-        </p>
-    </div>
-    <div class="slide-cours" onclick="window.location.href='#'">
-        <h2>JavaScript</h2>
-        <p>
-            C'est sympa quand tu comprends comment ça marche
+            Créez vos applications en apprenant un des cours dans cette catégorie.
         </p>
     </div>
 </div>
 <script type="text/javascript" src="../JS/Cours.js"></script>
-</body>
+<?php
+include('../Header_Footer/footer.php');
+?>
+
 </html>
