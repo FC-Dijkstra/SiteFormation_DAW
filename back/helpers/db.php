@@ -57,6 +57,7 @@ class db
         }
         catch (PDOException $e)
         {
+            logger::log($e->getMessage());
             $this->error = true;
             return null;
         }
@@ -71,7 +72,7 @@ class db
         }
     }
 
-    public function call($action, $table, $where)
+    public function call($action, $table, $where, $single = true)
     {
         $option = explode(" ", $where);
         if (count($option) == 3)
@@ -85,7 +86,15 @@ class db
             if (in_array($operator, $validOperators))
             {
                 $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
-                return $this->query($sql, array($value));
+                if ($single)
+                {
+                    return current($this->query($sql, array($value)));
+                }
+                else
+                {
+                    return $this->query($sql, array($value));
+                }
+
             }
         }
         else

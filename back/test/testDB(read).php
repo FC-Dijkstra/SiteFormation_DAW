@@ -28,6 +28,9 @@ var_dump($message);
 $cours = cours::load(1);
 println();
 var_dump($cours);
+println();
+$allCours = cours::getAll();
+
 
 //* tests pour categorie.php
 $categorie = categorie::load(1);

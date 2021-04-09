@@ -13,12 +13,12 @@ class utilisateur extends DBObject
 
     public function __construct($id, $nom, $prenom, $email, $passwordHash, $admin)
     {
-        $this->id = $id;
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->email = $email;
-        $this->passwordHash = $passwordHash;
-        $this->admin = $admin;
+        $this->id = (int) $id;
+        $this->nom = (string) $nom;
+        $this->prenom = (string) $prenom;
+        $this->email = (string) $email;
+        $this->passwordHash = (string) $passwordHash;
+        $this->admin = (bool) $admin;
     }
 
     public static function load($id)
@@ -27,12 +27,12 @@ class utilisateur extends DBObject
         $admin = db::getInstance()->get("admin", "user = {$id}");
 
         return new utilisateur(
-            $params[0]->id,
-            $params[0]->nom,
-            $params[0]->prenom,
-            $params[0]->email,
-            $params[0]->user_password,
-            count($admin) == 0 ? false : true
+            $params->id,
+            $params->nom,
+            $params->prenom,
+            $params->email,
+            $params->user_password,
+            $admin
         );
     }
 
@@ -52,8 +52,7 @@ class utilisateur extends DBObject
     {
         $dbValues = db::getInstance()->getAll("utilisateurs");
         $output = array();
-        for ($i = 0; $i < count($dbValues); $i++)
-        {
+        for ($i = 0; $i < count($dbValues); $i++) {
             $admin = db::getInstance()->get("admin", "user = {$dbValues[$i]->id}");
             $user = new utilisateur(
                 $dbValues[$i]->id,
@@ -69,4 +68,5 @@ class utilisateur extends DBObject
 
         return $output;
     }
+
 }
