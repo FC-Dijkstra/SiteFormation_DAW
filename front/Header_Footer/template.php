@@ -1,18 +1,16 @@
-<html>
-
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../CSS/menu.css" type="text/css">
+    <link rel="stylesheet" href="/front/CSS/menu.css" type="text/css">
     <title><?= isset($title)?$title:"" ?></title>
 </head>
 
-<body>
+<header>
     <div class="header">
-        <img class="logo" />
+        <img class="logo" src="/front/IMG/logo.png" alt="Logo" />
         <ul class="menu">
-            <li class="menu-item"><a href="#">Accueil</a></li>
-            <li class="menu-item"><a href="#">Cours</a></li>
-            <li class="menu-item"><a href="#">Forum</a></li>
+            <li class="menu-item"><a href="/front/PHP/accueil.php">Accueil</a></li>
+            <li class="menu-item"><a href="/front/PHP/cours.php">Cours</a></li>
+            <li class="menu-item"><a href="/front/PHP/forum.php">Forum</a></li>
             <li class="menu-item">
                 <ul class="submenu">
                     <li class="menu-item connexion"><a href="#">CONNEXION</a></li>
@@ -22,8 +20,6 @@
         </ul>
     </div>
     <?= isset($content)?$content:"" ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <?= isset($scripts)?$scripts:"" ?>
-</body>
-
-</html>
+</header>

@@ -1,5 +1,5 @@
 <?php
-require_once("DBObject.php");
+require_once(__DIR__ . "./DBObject.php");
 class message extends DBObject
 {
 
@@ -40,5 +40,26 @@ class message extends DBObject
                 "date" => $instance->date
             ];
         db::getInstance()->insert("messages", $params);
+    }
+
+    public static function getAll()
+    {
+        $dbValues = db::getInstance()->getAll("messages");
+        $output = array();
+
+        for ($i = 0; $i < count($dbValues); $i++)
+        {
+            $message = new message(
+                $dbValues[$i]->id,
+                $dbValues[$i]->conversation,
+                $dbValues[$i]->contenu,
+                $dbValues[$i]->auteur,
+                $dbValues[$i]->date
+            );
+
+            array_push($output,$message);
+        }
+
+        return $output;
     }
 }

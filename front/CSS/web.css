@@ -1,0 +1,67 @@
+.cours{
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 30% 70%;
+    border: 1px solid rgba(233, 233, 233, 0.205);
+    box-shadow: 2px 2px 0px 0px rgba(221, 221, 221, 0.3); 
+}
+
+.cours:hover{
+    background-color: #ececec4f;
+}
+
+.box1
+{
+    width:150px;
+    height:150px;
+    padding:1em 1em 1em 1em;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.box2 {
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.box3{
+    text-align: center;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.box4{
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    vertical-align: text-top;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.langage{
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid rgb(151, 151, 151);
+    height: 2em;
+    width: 30%;
+
+}
+
+.langage:after{
+    float:bottom;
+    width:10%;
+}

@@ -1,0 +1,47 @@
+body {
+    //overflow: hidden;
+}
+.base-text {
+    text-align: center;
+    width: 100%;
+    background-color: lightgray;
+    height: calc((100% - 310px) / 2);
+}
+.base-text h2 {
+    margin-top: 0;
+    padding-top: 30px;
+}
+.base-text p {
+    width: 500px;
+    display: inline-block;
+}
+
+#cours {
+    height: calc((100% - 310px) / 2);
+    width: 100%;
+    position: absolute;
+    bottom: 170px;
+    overflow: hidden;
+}
+.slide-cours {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    background-color: darkgray;
+    height: 100%;
+    z-index: 1;
+}
+.slide-cours:hover {
+    /*background-color: #555555;*/
+    cursor: pointer;
+}
+
+.slide-cours h2 {
+    line-height: 80px;
+}
+footer {
+    height: 170px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
