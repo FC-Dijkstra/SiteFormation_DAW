@@ -8,6 +8,9 @@ class db
     private PDO $pdo;
     private bool $error;
 
+    /*
+     * constructeur d'un objet DB.
+     */
     private function __construct()
     {
         try
@@ -25,7 +28,10 @@ class db
         }
     }
 
-
+    /*
+     * Méthode d'initialisation de db.
+     * pattern singleton donc méthode statique
+     */
     public static function getInstance()
     {
         if (!isset(self::$instance))
@@ -36,6 +42,13 @@ class db
         return self::$instance;
     }
 
+    /*
+     * méthode pour effectuer un appel SQL brut.
+     *  En cas d'erreur, l'attribut error devient vrai l'erreur est enregistrée dans les logs.
+     * @param $sql : string, contient la requête préparée
+     * @param $params : array, contient les paramètres a placer dans la requête.
+     * @param $calback : bool, indique si on doit fetch et return un résultat.
+     */
     public function query($sql, $params = array(), $callback = true)
     {
         $this->error = false;
@@ -66,12 +79,19 @@ class db
         {
             if ($callback)
             {
-                $results = $query->fetchAll(PDO::FETCH_OBJ);
+                $results = $query->fetchAll(PDO::FETCH_ASSOC);
                 return $results;
             }
         }
     }
 
+    /*
+     * Méthode simplifiée pour faire des appels SQL.
+     * @param $action : string, 1ere partie de la requête "SELECT colonne1, colonne2"
+     * @param $table : string, table ou sera effectuée la requête
+     * @param $where : string, clause where sous la forme "user = {$var}"
+     * @param $single : bool, retourne un élément unique ou un set d'éléments
+     */
     public function call($action, $table, $where, $single = true)
     {
         $option = explode(" ", $where);
@@ -104,9 +124,9 @@ class db
         }
     }
 
-    public function get($table, $where)
+    public function get($table, $where, $single = true)
     {
-        return $this->call("SELECT *", $table, $where);
+        return $this->call("SELECT *", $table, $where, $single);
     }
 
     public function getID($table, $id)
@@ -116,7 +136,7 @@ class db
 
     public function getAll($table)
     {
-        return $this->call("SELECT *", $table, "");
+        return $this->call("SELECT *", $table, "", false);
     }
 
     public function insert($table, $fields)

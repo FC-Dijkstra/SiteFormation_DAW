@@ -23,6 +23,9 @@ controlleur pour la vérification d'un QCM   YANN + MATTHIEU
     -> comparaison avec array passé en param.
 
 controlleur pour les recommendations    WASSIM
+    -> SELECT id FROM cours WHERE id in (SELECT * FROM abonnements WHERE cours = id) + COUNT + ORDER BY
+    -> sortir les 3 premières catégories que regarde l'utilisateur.
+    -> séléction aléatoire pour un cours de chaque catégorie qui n'est pas dans les abonnements.
 
 controlleur pour les résultats      WASSIM
     -> ajout d'un résultat

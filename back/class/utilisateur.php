@@ -48,6 +48,12 @@ class utilisateur extends DBObject
         db::getInstance()->insert("utilisateurs", $params);
     }
 
+    public static function saveAdmin($instance)
+    {
+        utilisateur::save($instance);
+        db::getInstance()->insert("admin", ["user" => $instance->id]);
+    }
+
     public static function getAll()
     {
         $dbValues = db::getInstance()->getAll("utilisateurs");

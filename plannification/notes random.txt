@@ -4,6 +4,8 @@ utilisation absolue des requêtes préparées.
 
 format des dates MySQL(TIMESTAMP): date("Y-m-d H:i:s");
 
+fichiers cours indique un dossier -> charger 1.html en premier.
+
 prendre en compte le fait que les fichiers ne peuvent pas forcément exister
     -> suppression malveillante
     -> problème support stockage

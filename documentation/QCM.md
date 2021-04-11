@@ -24,10 +24,10 @@ Ou alors récupération par la vue ?
 
 Bref.
 
-Les questions que l'utilisateur a saisi sont mises dans un objet JS corresponant à questions.json.
+Les questions que l'utilisateur a saisi sont mises dans un objet JS corresponant à reponses.json.
 
 Le JSON est envoyé au serveur.
 
-quand le serveur va recevoir le JSON, il va le convertir en objet PHP.
+quand le serveur va recevoir le JSON, il va le convertir en objet PHP (array).
 il va charger le fichier de réponses correspondant au questionnaire, le convertir en objet PHP puis va comparer les deux objets, en attribuant les points correctement.
 Une fois que la note est obtenue, elle est ajoutée à la base de données.

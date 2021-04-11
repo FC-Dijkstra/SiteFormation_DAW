@@ -29,6 +29,8 @@ FONCTIONNALITES LvL 2:
 - ajout / modification de QCM via éditeur intégré               ?
 - stockage des cours dans un format custom avec parsing en entrée / sortie
 - photo profil
+- photo cours
+- correction avancée QCM.
 
 BACKEND:
 - BDD a refaire
