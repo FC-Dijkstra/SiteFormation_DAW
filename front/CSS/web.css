@@ -65,3 +65,6 @@
     float:bottom;
     width:10%;
 }
+.footer{
+    bottom: auto;
+}
