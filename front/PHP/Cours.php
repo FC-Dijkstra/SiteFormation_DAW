@@ -1,5 +1,5 @@
 <?php
-include_once("../Header_Footer/template.php");
+include_once("../Header_Footer/header.php");
 ?>
 <link rel="stylesheet" href="../CSS/cours.css" type="text/css"/>
 <div class="base-text">

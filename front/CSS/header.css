@@ -73,3 +73,14 @@ body
     margin-top: 20px;
     padding: 4px;
 }
+/* Dark theme*/
+
+.dark {
+    background-color: #112F41;
+    color: #ffffff;
+  }
+  
+  .dark button {
+    background: #144098;
+    color: #fff;
+  }

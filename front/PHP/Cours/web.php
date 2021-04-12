@@ -10,7 +10,7 @@ array_push($liste, new cours(3, "Apprenez CSS", "WANNA KMS", -1, 2));
 array_push($liste, new cours(4, "Apprenez JS", "EZ", -1, 3));
 ?>
 
-    <?php include ('../../Header_Footer/template.php') ?>
+    <?php include ('../../Header_Footer/header.php') ?>
     <body>
         <div class="html">
             <h4 class="langage">HTML</h4>

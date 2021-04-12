@@ -1,6 +1,7 @@
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/front/CSS/menu.css" type="text/css">
+    <link rel="stylesheet" href="/front/CSS/header.css" type="text/css">
+    <script type="text/javascript" src="/front/JS/Sombre.js"></script>
     <title><?= isset($title)?$title:"" ?></title>
 </head>
 
@@ -15,6 +16,7 @@
                 <ul class="submenu">
                     <li class="menu-item connexion"><a href="#">CONNEXION</a></li>
                     <li class="menu-item inscription"><a href="#">INSCRIPTION</a></li>
+                    <li class="menu-item darkmode"><button onclick="toggleTheme()" type="button">Dark Mode</button></li>
                 </ul>
             </li>
         </ul>

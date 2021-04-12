@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="../../CSS/web.css" type="text/css"/>
 <?php
 include_once($_SERVER['DOCUMENT_ROOT']."/back/class/cours.php");
-include($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/template.php");
+include($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");
 
 $liste = array();
 array_push($liste, new cours(1, "Apprenez HTML", "EZ", -1, 1));

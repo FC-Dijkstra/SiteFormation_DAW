@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" >
-    <?php include_once ('../Header_Footer/template.php') ?>
+    <?php include_once ('../Header_Footer/header.php') ?>
     <body>
         test
     </body>
