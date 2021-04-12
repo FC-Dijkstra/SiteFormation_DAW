@@ -54,6 +54,6 @@ function updateCours(cours) {
 }
 
 search.oninput = () => {
-    nouveauxCours = cours.filter(e=>e.nom.toLowerCase().includes(search.value.toLowerCase()) || e.description.toLowerCase().includes(search.value.toLowerCase()))
+    nouveauxCours = cours.filter(e=>e.nom.toLowerCase().includes(search.value.toLowerCase()) || (e.description !== undefined && e.description.toLowerCase().includes(search.value.toLowerCase())))
     updateCours(nouveauxCours);
 }
