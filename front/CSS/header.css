@@ -6,81 +6,96 @@ body
 
 .header
 {
-    margin: 0 auto;
-    background-color: #DB9A5F;
-    font-size: 1.2em;
-    color: white;
-}
-
-.menu {
-    padding-left: 0;
-    margin: 0;
-    display: flex;
-    justify-content:end;
-    align-items: center;
-    float: right;
     height: 140px;
-}
-
-.menu-item
-{
-    text-decoration: none;
-    list-style:none;
-    margin-left: 50px;
-}
-
-.logo
-{
-    width: 120px;
-    height: 120px;
-    background-color: white;
-    margin: 10px;
-}
-
-.menu-item > a
-{
+    display:grid;
+    margin: 0 auto;
+    background-color: #d3d3d3;
+    grid-template-columns: 1fr 3fr 1.5fr;
     color: white;
+    border-bottom:0.5px solid rgba(117, 117, 117, 0.295);
+}
+
+
+header ul{
+    list-style-type: none;
+}
+
+header a{
     text-decoration: none;
+    color:#606060;
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
 }
 
-.menu-item > a:visited
-{
-    color: white;
+header a:hover {
+    text-decoration: none;
+    color: #949494 !important;
 }
 
-.menu > .menu-item > a:hover
+/*GRILLE*/
+
+.hbox1 /*img*/
 {
-    border-bottom: solid #25568F 2px;
+    
+    grid-column-start: 1;
+    padding:1em 1em 1em 2em;
+    width:100px;
+    height:90px;
+} /*fin img*/
+
+.hbox2 /*menu1*/
+{
+    padding-inline-start: 0;
+    
+    grid-column-start: 2;
 }
 
-.submenu
-{
+.hbox2 li{ 
+    float:left;  
+    width:100px;
+    margin-top: 2.4em;
+}
+
+.htrait{
+
+    float: right;
+    margin-right: 6.55em;
     padding: 0;
-    margin-right: 20px;
+    border-left: 1px solid #606060;
+    height: 100%;
+}
+/* fin menu1 */
+/*debut menu2*/
+.hbox3 li{ 
+    float:left;  
+    width:100px;
+    margin-top: 2em;
+}
+
+.hbox3 a
+{
+    border:1px solid black;
+    border-radius: 3px;
+    padding: 5px 5px 5px 5px;
+}
+
+.hbox3
+{
+    text-align: center;
+    grid-column-start: 3;
     
 }
 
-.connexion
-{
-    border: 3px solid #25568F ;
-    margin-bottom: 20px;
-    padding: 4px;
+
+/* DARK */
+
+.header.dark{
+    background-color: #2F2F2F;
+    color:#95FF3D;
+    transition: all 500ms;
 }
 
-.inscription
+.header.light
 {
-    background-color: #25568F;
-    margin-top: 20px;
-    padding: 4px;
+    transition: all 500ms;
 }
-/* Dark theme*/
-
-.dark {
-    background-color: #112F41;
-    color: #ffffff;
-  }
-  
-  .dark button {
-    background: #144098;
-    color: #fff;
-  }
