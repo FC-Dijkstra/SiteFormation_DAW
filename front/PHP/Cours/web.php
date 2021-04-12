@@ -14,66 +14,38 @@ array_push($liste, new cours(4, "Apprenez JS", 1, -1, 3));
 
 
     <body>
+    <div class="search">
+        <input type="text" id="searchBox" placeholder="Recherche..."/>
+    </div>
         <div class="html">
             <h4 class="langage">HTML</h4>
-            <?php
-                foreach(array_filter($liste, function ($e){
-                    return $e->get('categorie') == 1;
-                }) as $cours){
-            ?>
-            <div class="cours">
-                <img class="box1" src="/front/IMG/girl.png">
-                <h3 class="box2"><?php echo $cours->get('nom') ?></h3>
-                <p class="box3"><?php for($i=0;$i<3;$i++) echo $cours->get('difficulte')>$i?'★':'✩' ?></p>
-                <p class="box4"> Ceci est une description</p>
+            <div id="html_cours">
+
             </div>
-            <?php } ?>
         </div>
         <div class="CSS">
             <h4 class="langage">CSS</h4>
-            <?php
-            foreach(array_filter($liste, function ($e){
-                return $e->get('categorie') == 2;
-            }) as $cours){
-                ?>
-                <div class="cours">
-                    <img class="box1" src="/front/IMG/girl.png">
-                    <h3 class="box2"><?php echo $cours->get('nom') ?></h3>
-                    <p class="box3"><?php for($i=0;$i<3;$i++) echo $cours->get('difficulte')>$i?'★':'✩' ?></p>
-                    <p class="box4"> Ceci est une description</p>
-                </div>
-            <?php } ?>
+            <div id="css_cours">
+
+            </div>
         </div>
         <div class="JS">
             <h4 class="langage">JAVASCRIPT</h4>
-            <?php
-            foreach(array_filter($liste, function ($e){
-                return $e->get('categorie') == 3;
-            }) as $cours){
-                ?>
-                <div class="cours">
-                    <img class="box1" src="/front/IMG/girl.png">
-                    <h3 class="box2"><?php echo $cours->get('nom') ?></h3>
-                    <p class="box3"><?php for($i=0;$i<3;$i++) echo $cours->get('difficulte')>$i?'★':'✩' ?></p>
-                    <p class="box4"> Ceci est une description</p>
-                </div>
-            <?php } ?>
+            <div id="js_cours">
+
+            </div>
         </div>
         <div class="PHP">
             <h4 class="langage">PHP</h4>
-            <?php
-            foreach(array_filter($liste, function ($e){
-                return $e->get('categorie') == 4;
-            }) as $cours){
-                ?>
-                <div class="cours">
-                    <img class="box1" src="/front/IMG/girl.png">
-                    <h3 class="box2"><?php echo $cours->get('nom') ?></h3>
-                    <p class="box3"><?php for($i=0;$i<3;$i++) echo $cours->get('difficulte')>$i?'★':'✩' ?></p>
-                    <p class="box4"> Ceci est une description</p>
-                </div>
-            <?php } ?>
+            <div id="php_cours">
+
+            </div>
         </div>
+    <script src="/front/JS/Liste_Cours.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        let cours = <?php echo json_encode($liste); ?>;
+        updateCours(cours);
+    </script>
     </body>
     <?php include ('../../Header_Footer/footer.php') ?>
 </html>

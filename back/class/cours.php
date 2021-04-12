@@ -2,7 +2,7 @@
 require_once(__DIR__ . "./../helpers/db.php");
 require_once(__DIR__ . "./DBObject.php");
 
-class cours extends DBObject
+class cours extends DBObject implements JsonSerializable
 {
 
 	protected int $id;
@@ -88,5 +88,17 @@ class cours extends DBObject
         }
 
         return $output;
+    }
+
+    public function jsonSerialize()
+    {
+        // TODO: Implement jsonSerialize() method.
+        return array(
+            'id'=>$this->id,
+            'nom'=>$this->nom,
+            'difficulte'=>$this->categorie,
+            'auteur'=>$this->auteur,
+            'categorie'=>$this->categorie
+        );
     }
 }
