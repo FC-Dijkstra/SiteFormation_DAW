@@ -1,4 +1,9 @@
-11-04-2021 03:59:45 - db::query()[164] - SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'utilisateur' cannot be null
-11-04-2021 04:10:49 - db::query()[111] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.fichierevaluations' doesn't exist
-11-04-2021 04:11:11 - db::query()[111] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.fichierevaluations' doesn't exist
-11-04-2021 04:11:30 - db::query()[111] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.fichierevaluations' doesn't exist
+12-04-2021 01:03:48 - db::query()[7] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.abonnement' doesn't exist
+12-04-2021 01:04:26 - db::query()[7] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.abonnement' doesn't exist
+12-04-2021 01:04:27 - db::query()[7] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.abonnement' doesn't exist
+12-04-2021 01:04:57 - db::query()[7] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.abonnement' doesn't exist
+12-04-2021 01:05:16 - db::query()[7] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.abonnement' doesn't exist
+12-04-2021 01:05:47 - db::query()[7] - SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)
+12-04-2021 01:05:50 - db::query()[7] - SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)
+12-04-2021 01:05:50 - db::query()[7] - SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)
+12-04-2021 01:05:50 - db::query()[7] - SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)

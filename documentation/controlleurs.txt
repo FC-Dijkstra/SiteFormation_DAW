@@ -42,3 +42,7 @@ controlleur de cours (et de ses fichiers liés)     YANN
 
 
 + PARTIE FORUM
+
+les cours qui sont suivis par l'utilisateur
+
+SELECT * FROM cours WHERE id IN (SELECT * FROM abonnement WHERE cours = cours.id AND user = ${id});
