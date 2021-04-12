@@ -81,3 +81,10 @@ body.light
 {
     transition: all 500ms;
 }
+#searchBox {
+    height: 35px;
+    width: 350px;
+    position: relative;
+    left: calc(50% - 350px / 2);
+    top: 10px;
+}
