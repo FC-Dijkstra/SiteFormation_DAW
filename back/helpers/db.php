@@ -79,8 +79,7 @@ class db
         {
             if ($callback)
             {
-                $results = $query->fetchAll(PDO::FETCH_ASSOC);
-                return $results;
+                return $query->fetchAll(PDO::FETCH_ASSOC);
             }
         }
     }
@@ -108,7 +107,8 @@ class db
                 $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
                 if ($single)
                 {
-                    return current($this->query($sql, array($value)));
+                    $result = $this->query($sql, array($value));
+                    return $result == null ? [] : current($result);
                 }
                 else
                 {

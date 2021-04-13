@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__ . "./DBObject.php");
-
+require_once(__DIR__ . "./../helpers/config.php");
 class conversation extends DBObject
 {
 
@@ -9,7 +9,7 @@ class conversation extends DBObject
     protected int $categorie;
 
 
-    public function __construct(int $id, string $titre, int $categorie)
+    public function __construct(int $id, int $categorie, string $titre)
     {
         $this->id = $id;
         $this->titre = $titre;
@@ -19,11 +19,11 @@ class conversation extends DBObject
 
     public static function load($id)
     {
-        $params = db::getInstance()->getID("conversations", $id);
+        $params = db::getInstance()->getID(config::$CONV_TABLE, $id);
         return new conversation(
-            $params[0]->id,
-            $params[0]->titre,
-            $params[0]->categorie
+            $params["id"],
+            $params["categorie"],
+            $params["titre"]
         );
     }
     public static function save($instance)
@@ -32,23 +32,23 @@ class conversation extends DBObject
         $param =
             [
                 "id" => $instance->id,
-                "titre" => $instance->titre,
                 "categorie" => $instance->categorie,
+                "titre" => $instance->titre,
 
             ];
-        db::getInstance()->insert("conversations", $param);
+        db::getInstance()->insert(config::$CONV_TABLE, $param);
     }
 
     public static function getAll()
     {
-        $dbValues =  db::getInstance()->getAll("conversations");
+        $dbValues =  db::getInstance()->getAll(config::$CONV_TABLE);
         $output = array();
         for ($i = 0; $i < count($dbValues); $i++)
         {
             $conversation = new conversation(
-                $dbValues[$i]->id,
-                $dbValues[$i]->titre,
-                $dbValues[$i]->categorie
+                $dbValues[$i]["id"],
+                $dbValues[$i]["categorie"],
+                $dbValues[$i]["titre"],
             );
 
             array_push($output, $conversation);

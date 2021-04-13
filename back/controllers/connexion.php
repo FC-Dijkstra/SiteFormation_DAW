@@ -4,10 +4,10 @@ require_once(__DIR__ . "./../helpers/print.php");
 
 //TODO: Suppression et modification de compte.
 
-function createAccount($nom, $prenom, $email, $password, $admin = false)
+function createAccount($nom, $prenom, $email, $password, $userIcon, $admin = false)
 {
     $pHash = password_hash($password, PASSWORD_BCRYPT);
-    $user = new utilisateur(0, $nom, $prenom, $email, $pHash, false);
+    $user = new utilisateur(0, $nom, $prenom, $email, $pHash, $userIcon, false);
 
     if ($admin)
     {
@@ -21,6 +21,7 @@ function createAccount($nom, $prenom, $email, $password, $admin = false)
 
     if (!db::getInstance()->hasError())
     {
+        echo "inscription valide <br/>";
         //redirect::to("homeUser.php");
     }
     else
