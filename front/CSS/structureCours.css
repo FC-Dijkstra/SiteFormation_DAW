@@ -1,0 +1,74 @@
+#sommaire, #Cours{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+
+.m_Chapitre{ /* les UL */
+    list-style-type :  disclosure-closed ;
+    border: 1px solid black;
+    background-color: #93C5FF;
+}
+
+.m_Chapitre li a{
+    padding-right: 85.35%;
+}
+.m_Section{ /* Les sous UL*/
+    list-style-type :  disclosure-closed ;
+}
+
+#bvn{
+    text-align: center;
+    font-size: 27px;
+  }
+  
+#titre{
+  font-size: 20px;
+  text-decoration: underline;
+  width: auto;
+  }
+  
+#apprendre p{
+    font-size: 18px;
+    margin-left: 10px;
+
+}
+  
+#apprendre{
+    margin-left: 27%;
+    margin-right: 27%;
+    background-color: #EBC098;
+    text-align: left;
+}
+
+#progress{
+    background-color: #EBC098;
+    height: 7px;
+    width: 0;
+    position: fixed;
+    top : 0;
+    left : 0;
+    z-index: 9999;
+}
+
+.footer{
+    bottom: auto;
+}
+
+body.dark
+{
+    background-color: #424242  ;
+    color:#3E9D89;
+    transition: all 500ms;
+
+}
+
+body.dark #progress{
+    background-color: #93C5FF;
+}
+}
+
+body.light
+{
+    transition: all 500ms;
+}
