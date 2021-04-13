@@ -36,7 +36,7 @@ header a:hover {
 
 .hbox1 /*img*/
 {
-    
+
     grid-column-start: 1;
     padding:1em 1em 1em 2em;
     width:100px;
@@ -47,12 +47,12 @@ header a:hover {
 {
     text-align: center;
     padding-inline-start: 0;
-    
+
     grid-column-start: 2;
 }
 
-.hbox2 li{ 
-    float:left;  
+.hbox2 li{
+    float:left;
     width:100px;
     margin-top: 2.4em;
 }
@@ -67,8 +67,8 @@ header a:hover {
 }
 /* fin menu1 */
 /*debut menu2*/
-.hbox3 li{ 
-    float:left;  
+.hbox3 li{
+    float:left;
     width:100px;
     margin-top: 2.4em;
     margin-right: 1em;
@@ -85,12 +85,10 @@ header a:hover {
 {
     text-align: center;
     grid-column-start: 3;
-    
+
 }
 
-
-/* DARK */
-
+/*dark mode */
 .header.dark{
     background-color: #2F2F2F;
     color:#95FF3D;
@@ -100,4 +98,60 @@ header a:hover {
 .header.light
 {
     transition: all 500ms;
+}
+
+.menu-item-dark-mode{
+  margin-bottom: 10px;
+}
+/* mise en place du bouton dark / light */
+.switch-dark-light {
+  display: flex;
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #EBC098; /* couleur du bouton avant switch*/
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: white; /*couleur du rond*/
+  bottom: 4px;
+  content: ""; /* pour qu'il y ait le rond */
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: grey; /* couleur du bouton apres switch*/
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /*slide*/
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

@@ -15,13 +15,20 @@
             <div class="htrait">
             </div>
         </ul>
-        
+
         <ul class="hbox3">
             <li class="menu-item connexion"><a href="#">Connexion</a></li>
             <li class="menu-item inscription"><a href="#">Inscription</a></li>
-            <li class="menu-item darkmode"><button onclick="toggleTheme()" type="button">Dark Mode</button></li>
+            <li class="menu-item-dark-mode">
+              <div class="switch-dark-light">
+                <label class="theme-switch" for="checkbox">
+                  <input type="checkbox" id="checkbox" onclick="toggleTheme()"/>
+                  <div class="slider round"></div>
+                </label>
+              </div>
+            </li>
         </ul>
-       
+
     </div>
     <?= isset($content)?$content:"" ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
