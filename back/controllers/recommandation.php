@@ -1,6 +1,9 @@
 <?php
 require_once (__DIR__ . "./../helpers/db.php");
 require_once (__DIR__ . "./../helpers/print.php");
+
+//TODO: optimisations SQL.
+
 function recommandations()
 {
     $id = 2;
@@ -15,7 +18,4 @@ function recommandations()
         var_dump($idCours);
         println();
     }
-
-
-
 }

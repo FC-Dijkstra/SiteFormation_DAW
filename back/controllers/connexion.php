@@ -2,6 +2,7 @@
 require_once(__DIR__ . "./../class/utilisateur.php");
 require_once(__DIR__ . "./../helpers/print.php");
 
+//TODO: Suppression et modification de compte.
 
 function createAccount($nom, $prenom, $email, $password, $admin = false)
 {
@@ -20,7 +21,7 @@ function createAccount($nom, $prenom, $email, $password, $admin = false)
 
     if (!db::getInstance()->hasError())
     {
-        //redirection vers page de connexion front.
+        //redirect::to("homeUser.php");
     }
     else
     {

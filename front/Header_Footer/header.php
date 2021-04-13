@@ -1,17 +1,17 @@
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/front/CSS/header.css" type="text/css">
-    <script type="text/javascript" src="/front/JS/Sombre.js"></script>
+    <link rel="stylesheet" href="../CSS/header.css" type="text/css">
+    <script type="text/javascript" src="../JS/Sombre.js"></script>
     <title><?= isset($title)?$title:"" ?></title>
 </head>
 
 <header>
     <div class="header">
-        <img class="hbox1" src="/front/IMG/logo.png" alt="Logo" />
+        <img class="hbox1" src="../IMG/logo.png" alt="Logo" />
         <ul class="hbox2">
-            <li class="menu-item"><a href="/front/PHP/accueil.php">Accueil</a></li>
-            <li class="menu-item"><a href="/front/PHP/cours.php">Cours</a></li>
-            <li class="menu-item"><a href="/front/PHP/forum.php">Forum</a></li>
+            <li class="menu-item"><a href="../PHP/accueil.php">Accueil</a></li>
+            <li class="menu-item"><a href="../PHP/cours.php">Cours</a></li>
+            <li class="menu-item"><a href="../PHP/forum.php">Forum</a></li>
             <div class="htrait">
             </div>
         </ul>
