@@ -6,11 +6,8 @@ class db
 {
     private static $instance = null;
     private PDO $pdo;
-    private bool $error;
+    private bool $error;    //mis a true s'il y a eu une erreur => VOIR LOGS POUR + DETAIL.
 
-    /*
-     * constructeur d'un objet DB.
-     */
     private function __construct()
     {
         try
@@ -157,11 +154,42 @@ class db
 
                 $i++;
             }
+
+            $sql = "INSERT INTO {$table} (" . $keys_string . ") VALUES (" . $values_string . ");";
+
+            $this->query($sql, $values, false);
         }
 
-        $sql = "INSERT INTO {$table} (" . $keys_string . ") VALUES (" . $values_string . ");";
 
-        $this->query($sql, $values, false);
+    }
+
+
+    /*
+     * fonction pour mettre a jour un élément de la base de données.
+     * @param $table : string, indique la table ou effectuer la maj
+     * @param $whereid : string, clause where de la forme "<colonne identifiant> = <valeur unique>"
+     * @param $fields : array(assoc), tableau regroupant les noms de colonne et les nouvelles valeurs.
+     */
+    public function update($table, $whereid, $fields)
+    {
+        $where = explode(" ", $whereid);
+        if (count($fields) && count($where) == 3)
+        {
+            $keys = array_keys($fields);
+            $values = array_values($fields);
+
+            $keys_string = "";
+            $i = 0;
+            foreach($keys as $key)
+            {
+                $keys_string .= "{$key} = ?";
+                $i < count($keys) ? $keys_string .= ", " : null;
+                $i++;
+            }
+
+            $sql = "UPDATE {$table} SET {$keys_string} WHERE {$where[0]} = {$where[2]}";
+            $this->query($sql, $values, false);
+        }
     }
 
     public function delete($table, $id)
