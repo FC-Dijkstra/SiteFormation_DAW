@@ -14,7 +14,7 @@ $db = db::getInstance();
 $db->insert("test", ["nom" => "IAN", "prenom" => "TRUE", "age" => "20"]);
 $db->get("test", "nom = IAN");
 */
-/* 
+/*
 //* tests pour utilisateur.php
 $usr = new utilisateur(1, "IAN", "TRUE", "ian.trou@gmail.com", "aaa", false);
 $usr->setPassword("aaa");

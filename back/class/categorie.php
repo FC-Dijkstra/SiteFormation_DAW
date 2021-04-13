@@ -1,5 +1,7 @@
 <?php
 require_once(__DIR__ . "./DBObject.php");
+require_once(__DIR__ . "./../helpers/config.php");
+
 class categorie extends DBObject
 {
 
@@ -15,12 +17,18 @@ class categorie extends DBObject
 
     public static function load($id)
     {
-        $params = db::getInstance()->getID("categories", $id);
+        $params = db::getInstance()->getID(config::$CAT_TABLE, $id);
         return new categorie(
-            $params[0]->id,
-            $params[0]->titre
+            $params["id"],
+            $params["titre"]
         );
     }
+
+    public static function delete($id)
+    {
+        return db::getInstance()->delete(config::$CAT_TABLE, $id);
+    }
+
     public static function save($instance)
     {
 
@@ -29,18 +37,18 @@ class categorie extends DBObject
                 "id" => $instance->id,
                 "titre" => $instance->titre,
             ];
-        db::getInstance()->insert("categories", $param);
+        db::getInstance()->insert(config::$CAT_TABLE, $param);
     }
 
     public static function getAll()
     {
-        $dbValues = db::getInstance()->getAll("categories");
+        $dbValues = db::getInstance()->getAll(config::$CAT_TABLE);
         $output = array();
         for ($i = 0; $i < count($dbValues); $i++)
         {
             $categorie = new categorie(
-                $dbValues[$i]->id,
-                $dbValues[$i]->titre
+                $dbValues[$i]["id"],
+                $dbValues[$i]["titre"]
             );
 
             array_push($output, $categorie);
