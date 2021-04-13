@@ -23,6 +23,12 @@ class categorie extends DBObject
             $params["titre"]
         );
     }
+
+    public static function delete($id)
+    {
+        return db::getInstance()->delete(config::$CAT_TABLE, $id);
+    }
+
     public static function save($instance)
     {
 

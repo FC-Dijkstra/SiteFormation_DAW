@@ -31,6 +31,11 @@ class message extends DBObject
             $params["date"]
         );
     }
+
+    public static function delete($id)
+    {
+        return db::getInstance()->delete(config::$MES_TABLE, $id);
+    }
     public static function save($instance)
     {
         $params =

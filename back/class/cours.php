@@ -50,7 +50,13 @@ class cours extends DBObject implements JsonSerializable
 
 		db::getInstance()->insert("cours", $params);
 	}
-	
+
+	public static function delete($id)
+    {
+        //TODO: supprimer fichiers résiduels dans data/cours
+        db::getInstance()->delete($id);
+    }
+
 	public static function getAll()
     {
         $dbValues = db::getInstance()->getAll("cours");

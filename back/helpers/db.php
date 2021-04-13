@@ -164,6 +164,11 @@ class db
         $this->query($sql, $values, false);
     }
 
+    public function delete($table, $id)
+    {
+        return $this->call("DELETE", $table, "id = {$id}");
+    }
+
     public function hasError()
     {
         return $this->error;

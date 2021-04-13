@@ -54,6 +54,12 @@ class utilisateur extends DBObject
         db::getInstance()->insert(config::$USER_TABLE, $params);
     }
 
+    public static function delete($id)
+    {
+        //TODO: supprimer fichiers résiduels dans data/userIcons
+        return db::getInstance()->delete(config::$USER_TABLE, $id);
+    }
+
     public static function saveAdmin($instance)
     {
         utilisateur::save($instance);

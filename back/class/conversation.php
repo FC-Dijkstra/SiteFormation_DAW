@@ -26,6 +26,11 @@ class conversation extends DBObject
             $params["titre"]
         );
     }
+
+    public static function delete($id)
+    {
+        return db::getInstance()->delete(config::$CONV_TABLE, $id);
+    }
     public static function save($instance)
     {
 

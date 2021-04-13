@@ -4,6 +4,11 @@ require_once(__DIR__ . "./../helpers/print.php");
 
 //TODO: Suppression et modification de compte.
 
+function deleteAccount($id)
+{
+
+}
+
 function createAccount($nom, $prenom, $email, $password, $userIcon, $admin = false)
 {
     $pHash = password_hash($password, PASSWORD_BCRYPT);
