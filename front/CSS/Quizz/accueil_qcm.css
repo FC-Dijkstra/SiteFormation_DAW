@@ -1,28 +1,39 @@
-#cate{
-  border: solid;
-}
 #centre{
 text-align: center;
 }
 
-#bouton{
-  width: 10em;
-  margin-top: 20px;
-  font-size: 20px;
+#line1{
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#web, #app{
+  color:#93C5FF;
+  font-size: 25px;
+  font-family: Palatino, URW Palladio L, serif;
 }
 
 hr{
   width: 80%;
 }
-legend{
-  color:#EBC098;
-	font-size:20pt;
-  }
 
-.reponse{
-  color:#2F2F2F;
-	font-size:15pt;
-  padding: inherit;
+a:link
+{
+ text-decoration:none;
+}
+
+#webhtml, #webcss, #webjs, #appjava, #appswift{
+  text-align: center;
+  color:#EBC098;
+	font-size:25px;
+  border: solid;
+  border-width:0.1px;
+  border-color: grey;
+  display : inline-block;
+  padding : 35px;
+  height: 2em;
+  width: 60%;
   }
 
 #qcm{
@@ -31,18 +42,10 @@ legend{
 }
 
 #bvn{
-  font-size: 25px;
+  font-size: 28px;
+  font-family: Palatino, URW Palladio L, serif;
 }
 
-#progress{
-    background-color: #EBC098;
-    height: 10px;
-    width: 0;
-    position: fixed;
-    top : 0;
-    left : 0;
-    z-index: 9999;
-}
 
 .footer{
     bottom: auto;
@@ -56,16 +59,24 @@ body.dark
 
 }
 
-body.dark #progress{
-    background-color: #93C5FF;
+body.dark #webhtml{
+  color:white;
 }
 
-body.dark .reponse{
-    color: white;
+body.dark #webcss{
+  color:white;
 }
 
-body.dark legend{
-    color: #3E9D89;
+body.dark #webjs{
+  color:white;
+}
+
+body.dark #appjava{
+  color:white;
+}
+
+body.dark #appswift{
+  color:white;
 }
 
 body.light

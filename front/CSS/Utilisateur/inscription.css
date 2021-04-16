@@ -1,6 +1,6 @@
 body{
     padding: 0;
-    
+    background-color: #f5f5f5;
 }
 
 #page{
@@ -16,7 +16,7 @@ body{
 }
 
 .form{
-    background-color: #d3d3d3;
+    background-color: #dedede;
 }
 
 button, label, #input{
@@ -27,6 +27,3 @@ label{
     border:1px solid #e7a76b;
     padding: 1px 1em 1px;
 }
-
-
-

@@ -10,7 +10,6 @@ include_once("../../Header_Footer/header.php");
 <div id="progress"></div>
 
 <h3 id="bvn"> Teste ton niveau ! </h3>
-<div id="line0"><hr></div>
 <div id="qcm">
 <br/>
 <br/>
