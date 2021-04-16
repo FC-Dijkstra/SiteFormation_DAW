@@ -1,9 +1,6 @@
-fieldset{
-  width:50em;
-	border-color:#d3d3d3;
-
-  }
-
+#cate{
+  border: solid;
+}
 #centre{
 text-align: center;
 }

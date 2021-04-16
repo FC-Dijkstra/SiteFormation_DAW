@@ -6,6 +6,7 @@ include_once("../../Header_Footer/header.php");
 <link rel="stylesheet" href="/front/CSS/Quizz/qcm.css" type="text/css"/>
 <script type="text/javascript" src="/front/JS/qcm.js"></script>
 <body class="light">
+<div id="centre">
 <div id="progress"></div>
 
 <h3 id="bvn"> Teste ton niveau ! </h3>
@@ -59,12 +60,14 @@ include_once("../../Header_Footer/header.php");
   <input type="radio" name="62" value="62"/><span class="reponse">Reponse2</span><br/>
   <input type="radio" name="63" value="63"/><span class="reponse">Reponse3</span><br/><br/>
 </fieldset>
+<input id="bouton" type="button" value="Valider">
 <br/>
 <br/>
 </div>
 <br/>
 <br/>
 </fieldset>
+</div>
 </body>
 <?php include ('../../Header_Footer/footer.php') ?>
 </html>
