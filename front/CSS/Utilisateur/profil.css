@@ -1,0 +1,55 @@
+hr{
+    width: 80%;
+}
+
+.footer{
+    bottom: auto;
+}
+
+#profil, #cours, #recommandations {
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+#photoprofil{
+    width:300px;
+    height:160px;
+}
+
+#profil{
+    display:grid;
+    grid-template-columns: 0.1fr 0.9fr;
+}
+
+#pbox1{
+    grid-column-start: 1;
+}
+
+#pbox2{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5%;
+    grid-column-start: 2;
+    display:block;
+}
+
+.reco{
+    background-color: #d3d3d3;
+    margin-right: 80%;
+
+  }
+  .reco img{
+    /*width:250px;
+    height:230px;*/
+    width:100%;
+    height:100%;
+    display:block;
+  }
+  .reco h3{
+    float : bottom;
+    text-align: left;
+  }
+  .reco p{
+    float : bottom;
+    text-align: left;
+  }

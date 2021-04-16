@@ -64,6 +64,7 @@ header a:hover {
     padding: 0;
     border-left: 1px solid #606060;
     height: 100%;
+    position:relative;
 }
 /* fin menu1 */
 /*debut menu2*/

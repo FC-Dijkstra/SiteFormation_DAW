@@ -17,8 +17,8 @@ include_once("../../Header_Footer/header.php");
 <div id="sommaire">
   <h3> Sommaire : </h3>
   <ul class="m_Chapitre" id="Chapitre_1">
-
-    <li><a onclick="afficherMasquer('listeChapitre1')">Chapitre 1</a></li>
+  
+  <a onclick="afficherMasquer('listeChapitre1')"><li>Chapitre 1</li></a>
     
     <ul id="listeChapitre1" class="m_Section" style="display: none;">
       <li class="liste"><a href="#Chapitre1_Section1">Section1</a></li>
@@ -29,7 +29,7 @@ include_once("../../Header_Footer/header.php");
   </ul>
   <ul class="m_Chapitre" id="Chapitre_2">
     
-    <li ><a onclick="afficherMasquer('listeChapitre2')" >Chapitre 2</a></li>
+  <a onclick="afficherMasquer('listeChapitre2')" ><li >Chapitre 2</li></a>
     <ul id="listeChapitre2" class="m_Section" style="display: none;">
       <li class="liste"><a href="#Chapitre2_Section1">Section1</a></li>
       <li class="liste"><a href="#Chapitre2_Section2">Section2</a></li>
