@@ -2,13 +2,11 @@ let search = document.getElementById("searchBox");
 let html = document.getElementById("html_cours");
 let css = document.getElementById("css_cours");
 let js = document.getElementById("js_cours");
-let php = document.getElementById("php_cours");
 
 function updateCours(cours) {
     html.innerHTML = "";
     css.innerHTML = "";
     js.innerHTML = "";
-    php.innerHTML = "";
     for (let i = 0; i < cours.length; i++) {
         let node = document.createElement("div");
 
@@ -43,10 +41,6 @@ function updateCours(cours) {
                 break;
             case 3:
                 js.appendChild(node);
-                break;
-            case 4:
-                php.appendChild(node);
-
         }
 
 

@@ -35,12 +35,6 @@ array_push($liste, new cours(4, "Apprenez JS", 1, -1, 3,1));
 
             </div>
         </div>
-        <div class="PHP">
-            <h4 class="langage">PHP</h4>
-            <div id="php_cours">
-
-            </div>
-        </div>
     <script src="/front/JS/Liste_Cours.js" type="text/javascript"></script>
     <script type="text/javascript">
         let cours = <?php echo json_encode($liste); ?>;
