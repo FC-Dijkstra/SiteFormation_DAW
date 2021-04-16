@@ -4,33 +4,39 @@ body {
 .base-text {
     text-align: center;
     width: 100%;
-    background-color: lightgray;
-    height: calc((100% - 310px) / 2);
 }
 .base-text h2 {
     margin-top: 0;
     padding-top: 30px;
 }
 .base-text p {
-    width: 500px;
+    width: 750px;
     display: inline-block;
+    padding: 2em;
+    background-color: rgba(255, 154, 0, 0.57);
 }
-
 #cours {
-    height: calc((100% - 310px) / 2);
+    text-align: center;
+    font-size: larger;
+    padding-top: 2em;
+    margin-bottom: 20em;
+}
+#coursDiv {
+
+    height: 238px;
     width: 100%;
     position: absolute;
-    bottom: 170px;
     overflow: hidden;
 }
 .slide-cours {
     text-align: center;
-    position: absolute;
-    width: 100%;
-    background-color: darkgray;
     height: 100%;
+    width: 100%;
+    /*background-color: darkgray;*/
     z-index: 1;
+    position: inherit;
 }
+
 .slide-cours:hover {
     /*background-color: #555555;*/
     cursor: pointer;
@@ -40,8 +46,41 @@ body {
     line-height: 80px;
 }
 footer {
-    height: 170px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    position: relative !important;
+    top: 300px;
 }
+
+#description {
+    margin-top: 5em;
+    background-color: #00FFFFA0;
+}
+#description p {
+    width: 80%;
+    overflow-wrap: break-word;
+    padding: 2em;
+    font-size: x-large;
+}
+
+#description img {
+    float: right;
+    position: relative;
+    transform: translateY(-15%);
+}
+
+#description2 {
+    margin-top: 10em;
+}
+#description2 img {
+    height: 45%;
+    position: relative;
+    left: 10%;
+}
+#description2 span {
+    width: 46%;
+    overflow-wrap: break-word;
+    padding: 2em;
+    font-size: x-large;
+    float: right;
+    position: relative;
+    top: 1em;
+ }
