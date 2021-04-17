@@ -11,11 +11,11 @@ function filtre($filtre) : array
 function coursSuivi($user) : array
 {
 	$res = array();
-	$utilisateur = db::getInstance()->get("utilisateurs","nom = $user");
-	$abo = db::getInstance()->get("abonnements","user = {$utilisateur->id}");
+	$utilisateur = db::getInstance()->get("utilisateurs","nom = {$user}");
+	$abo = db::getInstance()->get("abonnements","user = {$utilisateur["id"]}");
 	for($i = 0;$i < count($abo);$i++)
 	{
-		$cours = db::getInstance()->get("cours","id = {$abo[$i]->cours}");
+		$cours = db::getInstance()->get("cours","id = {$abo[$i]["cours"]}");
 		$res = $res + $cours;
 	}
 	return $res;
@@ -24,8 +24,8 @@ function coursSuivi($user) : array
 
 function coursCree($user) : array
 {
-	$utilisateur = db::getInstance()->get("utilisateurs","nom = $user");
-	$cours = db::getInstance()->get("cours","auteur = {$utilisateur->id}");
+	$utilisateur = db::getInstance()->get("utilisateurs","nom = {$user}");
+	$cours = db::getInstance()->get("cours","auteur = {$utilisateur["id"]}");
 	return $cours;
 	//return db::getInstance()->get("utilisateurs u,cours c","u.nom = $user AND u.id = a.auteur");
 }
