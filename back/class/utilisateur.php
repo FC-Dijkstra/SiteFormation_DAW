@@ -5,7 +5,7 @@ require_once(__DIR__ . "./../helpers/config.php");
 
 class utilisateur extends DBObject
 {
-    private static string $defaultIcon = "./../data/userIcons/DEFAULT.png";
+    private static string $defaultIcon = "DEFAULT.png";
     protected int $id;
     protected string $nom;
     protected string $prenom;

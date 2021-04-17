@@ -1,0 +1,4 @@
+13-04-2021 04:14:54 - db::query()[111] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'where clause'
+13-04-2021 04:19:41 - db::query()[111] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'where clause'
+13-04-2021 04:20:26 - db::query()[112] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'where clause'
+13-04-2021 04:21:04 - db::query()[112] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'where clause'

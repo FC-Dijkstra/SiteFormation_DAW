@@ -2,7 +2,7 @@
 session_start();
 
 require_once(__DIR__ . "./controllers/QCM.php");
-require_once(__DIR__ . "./controllers/connexion.php");
+require_once(__DIR__ . "./controllers/compte.php");
 
 //définition du token anti csrf
 if (empty($_SESSION["token"]))
