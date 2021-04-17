@@ -1,0 +1,85 @@
+#centre{
+text-align: center;
+}
+
+#line1{
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#web, #app{
+  color:#93C5FF;
+  font-size: 25px;
+  font-family: Palatino, URW Palladio L, serif;
+}
+
+hr{
+  width: 80%;
+}
+
+a:link
+{
+ text-decoration:none;
+}
+
+#webhtml, #webcss, #webjs, #appjava, #appswift{
+  text-align: center;
+  color:#EBC098;
+	font-size:25px;
+  border: solid;
+  border-width:0.1px;
+  border-color: grey;
+  display : inline-block;
+  padding : 35px;
+  height: 2em;
+  width: 60%;
+  }
+
+#qcm{
+  margin-left: 28%;
+  margin-right: 28%;
+}
+
+#bvn{
+  font-size: 28px;
+  font-family: Palatino, URW Palladio L, serif;
+}
+
+
+.footer{
+    bottom: auto;
+}
+
+body.dark
+{
+    background-color: #424242  ;
+    color:#0D5949;
+    transition: all 500ms;
+
+}
+
+body.dark #webhtml{
+  color:white;
+}
+
+body.dark #webcss{
+  color:white;
+}
+
+body.dark #webjs{
+  color:white;
+}
+
+body.dark #appjava{
+  color:white;
+}
+
+body.dark #appswift{
+  color:white;
+}
+
+body.light
+{
+    transition: all 500ms;
+}

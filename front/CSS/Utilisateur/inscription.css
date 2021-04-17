@@ -1,0 +1,29 @@
+body{
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+#page{
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-top: 8%;
+    text-align: center;
+}
+
+#logo{
+    width:120px;
+    height: 100px;
+}
+
+.form{
+    background-color: #dedede;
+}
+
+button, label, #input{
+    background-color: #EBC098;
+}
+
+label{
+    border:1px solid #e7a76b;
+    padding: 1px 1em 1px;
+}

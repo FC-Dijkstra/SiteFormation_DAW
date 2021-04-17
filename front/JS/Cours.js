@@ -2,6 +2,7 @@ let slides = $(".slide-cours")
 let currentSlideId = 0;
 let animFlag = false;
 
+
 for(let i=0; i<slides.length; i++){
     //On affiche la slide qu'on veut
     if(i!==currentSlideId)
@@ -9,11 +10,12 @@ for(let i=0; i<slides.length; i++){
 
     //On met l'event
     slides[i].addEventListener('wheel', e=>{
+        e.preventDefault();
         if(!$(slides[i]).is(":animated")){
-
-
+            console.log("Test")
             let nextSlideId = (currentSlideId+(e.deltaY<0?-1:1))%slides.length
             if(nextSlideId === -1) nextSlideId = slides.length-1;
+            console.log("Test2")
 
             if(nextSlideId !== currentSlideId && !animFlag) {
                 //On doit faire une animation
@@ -53,7 +55,7 @@ for(let i=0; i<slides.length; i++){
             }
         }
 
-    }, {passive: true})
+    }, {passive: false})
 }
 
 

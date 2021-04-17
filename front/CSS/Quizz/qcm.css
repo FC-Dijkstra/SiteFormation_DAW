@@ -1,0 +1,77 @@
+fieldset{
+  width:50em;
+	border-color:#d3d3d3;
+
+  }
+
+#centre{
+text-align: center;
+}
+
+#bouton{
+  width: 10em;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+hr{
+  width: 80%;
+}
+legend{
+  color:#EBC098;
+	font-size:20pt;
+  }
+
+.reponse{
+  color:#2F2F2F;
+	font-size:15pt;
+  padding: inherit;
+  }
+
+#qcm{
+  margin-left: 28%;
+  margin-right: 28%;
+}
+
+#bvn{
+  font-size: 25px;
+}
+
+#progress{
+    background-color: #EBC098;
+    height: 10px;
+    width: 0;
+    position: fixed;
+    top : 0;
+    left : 0;
+    z-index: 9999;
+}
+
+.footer{
+    bottom: auto;
+}
+
+body.dark
+{
+    background-color: #424242  ;
+    color:#0D5949;
+    transition: all 500ms;
+
+}
+
+body.dark #progress{
+    background-color: #93C5FF;
+}
+
+body.dark .reponse{
+    color: white;
+}
+
+body.dark legend{
+    color: #3E9D89;
+}
+
+body.light
+{
+    transition: all 500ms;
+}

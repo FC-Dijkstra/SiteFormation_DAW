@@ -17,8 +17,8 @@
         </ul>
 
         <ul class="hbox3">
-            <li class="menu-item connexion"><a href="#">Connexion</a></li>
-            <li class="menu-item inscription"><a href="#">Inscription</a></li>
+            <li class="menu-item connexion"><a href="/front/PHP/utilisateur/connexion.php">Connexion</a></li>
+            <li class="menu-item inscription"><a href="/front/PHP/utilisateur/inscription.php">Inscription</a></li>
             <li class="menu-item-dark-mode">
               <div class="switch-dark-light">
                 <label class="theme-switch" for="checkbox">

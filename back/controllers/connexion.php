@@ -37,11 +37,11 @@ function createAccount($nom, $prenom, $email, $password, $userIcon, $admin = fal
 
 function login($email, $password)
 {
-    $hash = db::getInstance()->call("SELECT user_password", "utilisateurs", "email = {$email}")->user_password;
+    $hash = db::getInstance()->call("SELECT passwordhash", "utilisateurs", "email = {$email}")["user_password"];
 
     if (!db::getInstance()->hasError() && password_verify($password, $hash))
     {
-        $id = db::getInstance()->call("SELECT id", "utilisateurs", "email = {$email}")->id;
+        $id = db::getInstance()->call("SELECT id", "utilisateurs", "email = {$email}")["id"];
         $user = utilisateur::load($id);
         $_SESSION["userID"] = $user->get("id");
         $_SESSION["admin"] = $user->get("admin");
