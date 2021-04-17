@@ -21,9 +21,8 @@ function saveUserIcon()
         if (in_array($filetype, $formats))
         {
             $filename = hash("sha256", $filename . time());
-            $fileDir = "data/userIcons/" . $filename . $extension;
-            move_uploaded_file($_FILES["photo"]["tmp_name"], __DIR__ . "./back/" . $fileDir);
-            return $fileDir;
+            move_uploaded_file($_FILES["photo"]["tmp_name"], __DIR__ . "./../data/userIcons" . $filename . "." .$extension);
+            return $filename . "." . $extension;
         }
         else
         {
@@ -48,12 +47,27 @@ function deleteUserIcon($iconName)
 
 function saveCours($id)
 {
-    $files = array_filter($_FILES["cours"]["name"]);
+    $formats = array("html"=>"text/html", "jpg"=>"image/jpg", "jpeg"=>"image/jpeg", "png"=>"image/png", "mp4"=>"video/mp4", "gif"=>"image/gif");
     $total = count($_FILES["cours"]["name"]);
 
-    for ($i = 0; i < $total; $i++)
-    {
+    mkdir(__DIR__ . "./../data/cours/" . $id);
 
+    for ($i = 0; $i < $total; $i++)
+    {
+        $filename = $_FILES["cours"]["name"][$i];
+        $filetype = $_FILES["cours"]["type"][$i];
+        $filesize = $_FILES["cours"]["size"][$i];
+
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        if (!array_key_exists($extension, $formats)) die("Erreur, extension invalide");
+
+        $maxsize = 5 * 1024 * 1024;
+        if ($filesize > $maxsize) die("Erreur, fichier trop grand");
+
+        if (in_array($filetype, $formats))
+        {
+            move_uploaded_file($_FILES["cours"]["tmp_name"][$i], __DIR__ . "./../data/cours/" . $id . "/" . $_FILES["cours"]["name"][$i]);
+        }
     }
 }
 
