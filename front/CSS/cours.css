@@ -13,7 +13,7 @@ body {
     width: 750px;
     display: inline-block;
     padding: 2em;
-    background-color: rgba(255, 154, 0, 0.57);
+    background-color: #EBC098;
 }
 #cours {
     text-align: center;
@@ -52,7 +52,7 @@ footer {
 
 #description {
     margin-top: 5em;
-    background-color: #00FFFFA0;
+    background-color: #93C5FF;
 }
 #description p {
     width: 80%;
@@ -82,5 +82,6 @@ footer {
     font-size: x-large;
     float: right;
     position: relative;
-    top: 1em;
+    top: 4em;
+    margin-left: 30px;
  }

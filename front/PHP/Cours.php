@@ -25,16 +25,15 @@ include_once("../Header_Footer/header.php");
 <div id="description">
     <img src="../IMG/cours.PNG">
     <p>
-        Différents professeurs sont disponibles pour vous donner des cours. Passez un quizz pour évaluer votre niveau, puis accédez ensuite aux cours qui vous
-        plaisent ! Chaque jour, nous postons de nouveaux cours pour permettre à chacun d'accéder à ce dont il a besoin.
+      Nous avons différents professeurs qui vous donnent des cours. Passez un quizz pour voir votre niveau, puis accéder ensuite aux cours qui vous plaisent ! Chaque jours, nous postons de nouveaux cours avec des professeurs différents. 
     </p>
 </div>
 
 <div id="description2">
     <img src="../IMG/coursOrdi.PNG">
     <span>
-        Différents professeurs sont disponibles pour vous donner des cours. Passez un quizz pour évaluer votre niveau, puis accédez ensuite aux cours qui vous
-        plaisent ! Chaque jour, nous postons de nouveaux cours pour permettre à chacun d'accéder à ce dont il a besoin.
+      Apprenez différents langages de programmation (web, application...) gratuitement !
+      Nous nous efforçons à vous proposez un contenu ludique, complet et formateur.
     </span>
 </div>
 <script type="text/javascript" src="../JS/Cours.js"></script>
