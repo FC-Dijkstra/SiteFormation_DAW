@@ -6,7 +6,7 @@ hr{
     bottom: auto;
 }
 
-#profil, #cours, #recommandations {
+#profil, #cours, #recommandations, #profiltitre{
     margin-right: 5%;
     margin-left: 5%;
 }
@@ -17,6 +17,8 @@ hr{
 }
 
 #profil{
+    margin-left: 24%;
+    margin-right: 24%;
     display:grid;
     grid-template-columns: 0.1fr 0.9fr;
 }
@@ -40,9 +42,6 @@ hr{
 .reco:hover{
     background-color: #e2e2e2;
     transition: .2s all;
-    .reco img{
-        opacity: 0.25;
-    }
 }
 
 .reco{

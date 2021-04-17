@@ -5,10 +5,14 @@
 ?>
 
     <body>
+        <h1 id="profiltitre"> Mon profil </h1>
         <div id="profil">
-        <h1> Mon profil </h1>
+            
             <div id="pbox1">
                 <img id="photoprofil" src="/front/IMG/defaut_profil.png" alt="profil" />
+                <label">Changer de photo : </label>
+
+                <input type="file" name="image" id="file">
             </div>
             <div id="pbox2">
             <form id="modifprofil">
@@ -21,7 +25,7 @@
                 <label id="mail" type="text">Adresse mail liée:</label>
                 <input type="email" id="info_mail" value="jonathan.martinmaestre71@gmail.com" readonly><br><br>
 
-                <a id="mdp">Changer mot de passe </a><br>
+                <a id="mdp">Mot de passe </a><br>
 
                 <label class="mdp" type="text">Nouveau mot de passe</label>
                 <input class="mdp" type=text id="info_nouveaumdp" value=""><br>

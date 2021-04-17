@@ -6,13 +6,15 @@ body
 
 .header
 {
-    height: 140px;
+    height: 15%;
     display:grid;
     margin: 0 auto;
     background-color: #d3d3d3;
     grid-template-columns: 0.7fr 3fr 1.5fr;
+
     color: white;
     border-bottom:0.5px solid rgba(117, 117, 117, 0.295);
+    resize: block;
 }
 
 
