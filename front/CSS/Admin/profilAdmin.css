@@ -6,7 +6,7 @@ hr{
     bottom: auto;
 }
 
-#profil, #cours, #recommandations {
+#profil, #cours, #moderation, #profiltitre{
     margin-right: 5%;
     margin-left: 5%;
 }
@@ -17,6 +17,8 @@ hr{
 }
 
 #profil{
+    margin-left: 24%;
+    margin-right: 24%;
     display:grid;
     grid-template-columns: 0.1fr 0.9fr;
 }
@@ -35,35 +37,6 @@ hr{
 
 .footer{
     bottom: auto;
-}
-
-.reco:hover{
-    background-color: #e2e2e2;
-    transition: .2s all;
-    .reco img{
-        opacity: 0.25;
-    }
-}
-
-.reco{
-background-color: #eeeeee;
-width: 250px;
-
-}
-.reco img{
-width:250px;
-height:230px;
-
-}
-.reco h3{
-float : bottom;
-text-align: center;
-margin-bottom: 1%;
-}
-.reco p{
-float : bottom;
-text-align: center;
-padding-bottom: 1em;
 }
 
 #enregistrer, .mdp
@@ -117,6 +90,26 @@ padding-bottom: 1em;
     grid-template-rows: 30% 70%;
     border: 1px solid rgba(233, 233, 233, 0.205);
     box-shadow: 2px 2px 0px 0px rgba(221, 221, 221, 0.3);
+}
+
+.ajoutCours{
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+}
+
+.mod{
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}
+
+#add{
+  width: 10em;
+  margin-top: 10px;
+  font-size: 17px;
+  margin-top: 2%;
+  margin-bottom: 5%;
 }
 
 .cours:hover{

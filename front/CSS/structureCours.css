@@ -28,20 +28,33 @@
 #bvn{
     text-align: center;
     font-size: 27px;
+    margin-bottom: 0;
   }
-  
+
+#abonnement{
+  left: 64%;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2%;
+  width: 7%;
+  color: white;
+  background-color: #EBC098;
+  border-color: #EBC098;
+  bottom: 30px;
+}
+
 #titre{
   font-size: 20px;
   text-decoration: underline;
   width: auto;
   }
-  
+
 #apprendre p{
     font-size: 18px;
     margin-left: 10px;
 
 }
-  
+
 #apprendre{
     margin-left: 27%;
     margin-right: 27%;

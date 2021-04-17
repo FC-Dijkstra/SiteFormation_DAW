@@ -27,3 +27,16 @@ window.onload = () => {
     document.getElementById("progress").style.width = barre +"px"
   })
 }
+
+function AboDesabo()
+{
+  if(document.getElementById("abonnement").innerHTML == "S'abonner"){
+    document.getElementById("abonnement").value = "Se désabonner";
+    document.getElementById("abonnement").innerHTML = "Se désabonner";
+
+  }
+  else{
+    document.getElementById("abonnement").value = "S'abonner";
+    document.getElementById("abonnement").innerHTML = "S'abonner";
+  }
+}
