@@ -1,14 +1,20 @@
 rajouter une fonction getAll() pour DBObject.
 
 controlleur pour la liste des cours    MATTHIEU
-    -> prendre en compte un filtre pour les catégories
-    -> retourner les cours que suit un utilisateur
-    -> retourner la liste des cours crée par un utilisateur
+    -> prendre en compte un filtre pour les catégories 1 
+    -> retourner les cours que suit un utilisateur 1 
+    -> retourner la liste des cours crée par un utilisateur 1
 
 controlleur pour l'affichage d'un cours     MATTHIEU
+<<<<<<< Updated upstream
     -> chercher le bon fichier (dans la DB puis dans data)
     -> bloquer si erreur
     -> retourner la vue avec le cours
+=======
+    -> chercher le bon fichier 1 
+    -> bloquer si erreur 0 
+    -> retourner la vue avec le cours 0
+>>>>>>> Stashed changes
 
 controlleur pour l'affichage du QCM     YANN + MATTHIEU
     -> vérif cooldown

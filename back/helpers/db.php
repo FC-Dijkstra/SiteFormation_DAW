@@ -51,7 +51,7 @@ class db
         $this->error = false;
         $query = $this->PDO->prepare($sql);
 
-        if (count($params)) //si params il y a -> bind
+        if (count($params)) //si params il y a => bind
         {
             $x = 1;
             foreach ($params as $param)
@@ -150,9 +150,9 @@ class db
             foreach ($values as $value)
             {
                 $values_string .= "?";
-                if ($i < count($values)) $values_string .= ", ";
-
-                $i++;
+                if ($i < count($values)) 
+					$values_string .= ", ";
+				$i++;
             }
 
             $sql = "INSERT INTO {$table} (" . $keys_string . ") VALUES (" . $values_string . ");";
