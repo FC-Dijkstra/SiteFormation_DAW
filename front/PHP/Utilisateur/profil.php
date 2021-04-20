@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" >
 <link rel="stylesheet" href="../../CSS/Utilisateur/profil.css" type="text/css"/>
-<?php
-include_once(__DIR__ . "./../../Header_Footer/header.php");
+<?php include_once($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");
 ?>
 
     <body>
@@ -10,7 +9,7 @@ include_once(__DIR__ . "./../../Header_Footer/header.php");
         <div id="profil">
             
             <div id="pbox1">
-                <img id="photoprofil" src="../../IMG/defaut_profil.png" alt="profil" />
+                <img id="photoprofil" src="/front/IMG/defaut_profil.png" alt="profil" />
                 <label class="file">Changer de photo : </label>
 
                 <input type="file" name="image" class="file">
@@ -48,8 +47,8 @@ include_once(__DIR__ . "./../../Header_Footer/header.php");
             <h1> Cours suivis : </h1>
             <hr>
             </br>
-            <div class="cours" onclick="location.href='../Cours/structureCours.php'">
-                <img class="box1" src="../../IMG/girl.png">
+            <div class="cours" onclick="location.href='/front/PHP/Cours/structureCours.php'">
+                <img class="box1" src="/front/IMG/girl.png">
                 <h3 class="box2"> Les bases du html</h3>
                 <p class="box3">Facile ★✩✩ </p>
                 <p class="box4"> Ceci est une description</p>
@@ -59,18 +58,17 @@ include_once(__DIR__ . "./../../Header_Footer/header.php");
 
         
         <div id="recommandations">
-        <p>Tu ne sais pas quels cours suivre ? <a href="../Quizz/accueil_qcm.php">Teste ton niveau !</a></p>
+        <p>Tu ne sais pas quels cours suivre ? <a href="/front/PHP/Quizz/accueil_qcm.php">Teste ton niveau !</a></p>
             <h1> Mes recommandations : </h1>
             <hr>
             </br>
             <div class="reco">
-                <img src="../../IMG/girl.png">
+                <img src="/front/IMG/girl.png">
                 <h3> Les bases du html</h3>
                 <p>facile ★✩✩</p>
             </div>
         </div>
     </body>
     <script type="text/javascript" src="../../JS/Utilisateur/profil.js"></script>
-    <?php include_once(__DIR__ . "./../../Header_Footer/footer.php"); ?>
-
+    <?php include_once($_SERVER['DOCUMENT_ROOT']."//front/Header_Footer/footer.php"); ?>
 </html>

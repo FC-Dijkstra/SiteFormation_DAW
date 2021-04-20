@@ -73,7 +73,7 @@ function saveCours($id)
 
 function deleteCours($coursName)
 {
-	$check = explode(".", $coursName);
+	check = explode(".", $coursName);
     if (count($check) != 2) die("Erreur, fichier inconnu");
     if (file_exists(__DIR__ . "./../data/cours/" . $coursName))
     {
@@ -86,8 +86,7 @@ function saveQCM($id)
 	$formats = array("xml"=>"text/xml");
     $total = count($_FILES["QCM"]["name"]);
 
-    mkdir(__DIR__ . "./../data/evaluation/questions/" . $id);
-    mkdir(__DIR__ . './../data/evaluation/reponses/')
+    mkdir(__DIR__ . "./../data/QCM/" . $id);
 
     for ($i = 0; $i < $total; $i++)
     {
@@ -110,7 +109,7 @@ function saveQCM($id)
 
 function deleteQCM($QCMName)
 {
-	$check = explode(".", $QCMName);
+	check = explode(".", $QCMName);
     if (count($check) != 2) die("Erreur, fichier inconnu");
     if (file_exists(__DIR__ . "./../data/QCM/" . $QCMName))
     {

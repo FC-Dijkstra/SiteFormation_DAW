@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" >
 <link rel="stylesheet" href="../../CSS/Admin/profilAdmin.css" type="text/css"/>
-<?php include_once(__DIR__ . "./../../Header_Footer/header.php");
+<?php include_once($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");
 ?>
 
     <body>
@@ -9,7 +9,7 @@
         <div id="profil">
 
             <div id="pbox1">
-                <img id="photoprofil" src="../../IMG/defaut_profil.png" alt="profil"/>
+                <img id="photoprofil" src="/front/IMG/defaut_profil.png" alt="profil"/>
                 <label>Changer de photo : </label>
 
                 <input type="file" name="image" id="file">
@@ -45,13 +45,13 @@
             <hr>
             <br/>
             <div class="ajoutCours">
-              <button id="add" type="button" onclick="location.href='ajoutCours.php'">Ajouter un cours</button>
+              <button id="add" type="button" onclick="location.href='/front/PHP/Admin/ajoutCours.php'">Ajouter un cours</button>
               <h1> Cours postés : </h1>
               <hr>
               <br/>
             </div>
             <div class="cours">
-                <img class="box1" src="../../../IMG/girl.png">
+                <img class="box1" src="/front/IMG/girl.png">
                 <h3 class="box2"> Les bases du html</h3>
                 <p class="box3">Facile ★✩✩ </p>
                 <p class="box4"> Ceci est une description</p>
@@ -64,9 +64,9 @@
           <hr>
           </br>
           <div class="mod">
-              <button id="add" type="button" onclick="location.href='gererUser.php'"> Modérer les utilisateurs</button>
+              <button id="add" type="button" onclick="location.href='/front/PHP/Admin/gererUser.php'"> Modérer les utilisateurs</button>
           </div>
         </div>
     </body>
-    <?php include_once(__DIR__ ."../../Header_Footer/footer.php"); ?>
+    <?php include_once($_SERVER['DOCUMENT_ROOT']."//front/Header_Footer/footer.php"); ?>
 </html>

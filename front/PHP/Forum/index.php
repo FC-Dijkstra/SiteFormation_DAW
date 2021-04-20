@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<link rel="stylesheet" href="../../CSS/Forum/index.css" type="text/css">
+<link rel="stylesheet" href="/front/CSS/Forum/index.css" type="text/css">
 <?php
 include_once(__DIR__."./../../Header_Footer/header.php");
 ?>
