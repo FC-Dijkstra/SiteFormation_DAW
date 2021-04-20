@@ -6,6 +6,7 @@
     grid-template-rows: 30% 70%;
     border: 1px solid rgba(233, 233, 233, 0.205);
     box-shadow: 2px 2px 0px 0px rgba(221, 221, 221, 0.3);
+    cursor: pointer;
 }
 
 .cours:hover{
@@ -67,6 +68,7 @@
 }
 .footer{
     bottom: auto;
+    margin-top: 3%;
 }
 /* DARK */
 

@@ -9,7 +9,7 @@ function updateCours(cours) {
     js.innerHTML = "";
     for (let i = 0; i < cours.length; i++) {
         let node = document.createElement("div");
-
+        node.onclick=()=>{location.href='/front/PHP/Cours/structureCours.php'};
         let img = document.createElement("img");
         img.src = "/front/IMG/girl.png";
         img.className = "box1"

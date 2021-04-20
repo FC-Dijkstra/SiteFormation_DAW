@@ -10,9 +10,9 @@
             
             <div id="pbox1">
                 <img id="photoprofil" src="/front/IMG/defaut_profil.png" alt="profil" />
-                <label">Changer de photo : </label>
+                <label class="file">Changer de photo : </label>
 
-                <input type="file" name="image" id="file">
+                <input type="file" name="image" class="file">
             </div>
             <div id="pbox2">
             <form id="modifprofil">
@@ -34,6 +34,7 @@
                 <input class="mdp" type=text id="info_nouveaumdp" value=""><br>
 
                 <input type="submit" id="enregistrer" value="Enregistrer">
+                <input type="reset" id="annuler" value="Annuler" onclick="ModifierInfos()">
                 <button id="modifier" type="button" onclick="ModifierInfos()" >Modifier </button>
                 
             <form>
@@ -46,16 +47,18 @@
             <h1> Cours suivis : </h1>
             <hr>
             </br>
-            <div class="cours">
+            <div class="cours" onclick="location.href='/front/PHP/Cours/structureCours.php'">
                 <img class="box1" src="/front/IMG/girl.png">
                 <h3 class="box2"> Les bases du html</h3>
                 <p class="box3">Facile ★✩✩ </p>
                 <p class="box4"> Ceci est une description</p>
+                <button class="box5"  onclick="location.href='#'" type="button" value="désabo">Se désabonner</button>
             </div>
         </div>
 
         
         <div id="recommandations">
+        <p>Tu ne sais pas quels cours suivre ? <a href="/front/PHP/Quizz/accueil_qcm.php">Teste ton niveau !</a></p>
             <h1> Mes recommandations : </h1>
             <hr>
             </br>

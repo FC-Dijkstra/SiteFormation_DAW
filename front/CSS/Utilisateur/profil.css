@@ -11,6 +11,11 @@ hr{
     margin-left: 5%;
 }
 
+#recommandations p{
+    text-align: center;
+    font-size: 1.2em;
+}
+
 #photoprofil{
     width:350px;
     height:200px;
@@ -26,8 +31,7 @@ hr{
 }
 
 #pbox2{
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 2%;
     margin-left: 5%;
     grid-column-start: 2;
     display:block;
@@ -66,10 +70,9 @@ text-align: center;
 padding-bottom: 1em;
 }
 
-#enregistrer, .mdp
+#enregistrer, .mdp, #annuler, .file
 {
     display: none;
-
 }
 
 .box1
@@ -104,9 +107,20 @@ padding-bottom: 1em;
     text-align: left;
     vertical-align: text-top;
     grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.box5{
+    grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
+    height: 26%;
+    width: 75%;
+    margin-left: 12%;
+    margin-top: 15%;
 }
 
 .cours{
@@ -117,10 +131,15 @@ padding-bottom: 1em;
     grid-template-rows: 30% 70%;
     border: 1px solid rgba(233, 233, 233, 0.205);
     box-shadow: 2px 2px 0px 0px rgba(221, 221, 221, 0.3);
+    cursor: pointer;
 }
 
 .cours:hover{
     background-color: #ececec4f;
+}
+
+button, input[type=submit],input[type=reset]{
+    cursor: pointer;
 }
 
 #nom{

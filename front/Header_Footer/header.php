@@ -11,7 +11,7 @@
         <ul class="hbox2">
             <li class="menu-item"><a href="/front/PHP/accueil.php">Accueil</a></li>
             <li class="menu-item"><a href="/front/PHP/cours.php">Cours</a></li>
-            <li class="menu-item"><a href="/front/PHP/forum.php">Forum</a></li>
+            <li class="menu-item"><a href="/front/PHP/Forum">Forum</a></li>
             <div class="htrait">
             </div>
         </ul>
