@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<link rel="stylesheet" href="/front/CSS/Forum/index.css" type="text/css">
+<link rel="stylesheet" href="../../CSS/Forum/index.css" type="text/css">
 <?php
 include(__DIR__ . "./../../Header_Footer/header.php");
-include_once($_SERVER['DOCUMENT_ROOT'] . "/back/class/conversation.php");
+include_once(__DIR__ . "./../../../back/class/conversation.php");
 $test = new conversation(1, 1, "Titre de la conversation");
 ?>
 <body>

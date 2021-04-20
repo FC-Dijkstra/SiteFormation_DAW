@@ -2,7 +2,7 @@
 <html lang="fr" >
 <link rel="stylesheet" href="../../CSS/Utilisateur/inscription.css" type="text/css"/>
     <div id="page">
-        <img id="logo" src="/front/IMG/logo.png" alt="Logo" />
+        <img id="logo" src="../../IMG/logo.png" alt="Logo" />
         <form>
             <fieldset class="form">
                 <h2> Inscription </h2>
@@ -48,10 +48,10 @@
 
                 <p> Tu as déjà un compte ? <br/> Connecte-toi ! </p>
 
-                <button class="connexion" type="button" onclick="location.href='/front/PHP/utilisateur/connexion.php'"> Je me connecte ! </button>
+                <button class="connexion" type="button" onclick="location.href='connexion.php'"> Je me connecte ! </button>
  </fieldset>
     </form>
-        <a href="/front/PHP/accueil.php">Accueil</a>
+        <a href="../accueil.php">Accueil</a>
     </div>
     </body> 
 </html> 
