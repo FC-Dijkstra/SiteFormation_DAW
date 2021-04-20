@@ -55,7 +55,7 @@ function validateReponses($qcmID, $reponses)
                     }
                 }
 
-                echo $note;
+                //echo $note;
                 $params = [
                     "passage"=> date("Y-m-d H:i:s"),
                     "evaluation"=>$qcmID,

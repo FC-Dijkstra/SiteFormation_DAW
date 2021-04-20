@@ -11,7 +11,6 @@ class message extends DBObject
     protected int $auteur;
     protected $date;
 
-
     public function __construct(int $id, int $conversation, int $auteur, string $contenu, $date)
     {
         $this->id = $id;
@@ -20,6 +19,7 @@ class message extends DBObject
         $this->auteur = $auteur;
         $this->date = $date;
     }
+
     public static function load($id)
     {
         $params = db::getInstance()->getID("messages", $id);

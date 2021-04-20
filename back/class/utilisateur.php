@@ -2,10 +2,11 @@
 require_once(__DIR__  . "./../helpers/db.php");
 require_once(__DIR__ . "./DBObject.php");
 require_once(__DIR__ . "./../helpers/config.php");
+require_once(__DIR__ . "./../helpers/file.php");
 
 class utilisateur extends DBObject
 {
-    private static string $defaultIcon = "DEFAULT.png";
+    public static string $defaultIcon = "DEFAULT.png";
     protected int $id;
     protected string $nom;
     protected string $prenom;
@@ -56,8 +57,9 @@ class utilisateur extends DBObject
 
     public static function delete($id)
     {
-        //TODO: supprimer fichiers résiduels dans data/userIcons
-        return db::getInstance()->delete(config::$USER_TABLE, $id);
+        $user = utilisateur::load($id);
+        deleteUserIcon($user->get("userIcon"));
+        return db::getInstance()->delete(config::$USER_TABLE, $user->get("id"));
     }
 
     public static function saveAdmin($instance)

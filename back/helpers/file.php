@@ -11,27 +11,27 @@ function saveUserIcon()
         $filesize = $_FILES["photo"]["size"];
 
         $extension = pathinfo($filename, PATHINFO_EXTENSION);
-        if (!array_key_exists($extension, $formats)) die("Erreur: extension invalide");
+        if (!array_key_exists($extension, $formats)) throw new Exception("Erreur: extension invalide");
 
         $maxsize = 5 * 1024 * 1024;
-        if ($filesize > $maxsize) die("Erreur: fichier trop grand");
+        if ($filesize > $maxsize) throw new Exception("Erreur: fichier trop grand");
 
         //TODO: voir avec frontend pour la taille max des images.
 
         if (in_array($filetype, $formats))
         {
             $filename = hash("sha256", $filename . time());
-            move_uploaded_file($_FILES["photo"]["tmp_name"], __DIR__ . "./../data/userIcons" . $filename . "." .$extension);
+            move_uploaded_file($_FILES["photo"]["tmp_name"], __DIR__ . "./../data/userIcons/" . $filename . "." .$extension);
             return $filename . "." . $extension;
         }
         else
         {
-            die("Erreur lors de l'enregistrement de l'image");
+            throw new Exception("Erreur lors de l'enregistrement de l'image");
         }
     }
     else
     {
-        die("Erreur: " . $_FILES["photo"]["error"]);
+        throw new Exception("Erreur: " . $_FILES["photo"]["error"]);
     }
 }
 

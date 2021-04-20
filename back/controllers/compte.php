@@ -8,34 +8,44 @@ require_once(__DIR__ . "./../helpers/logger.php");
 
 function deleteAccount($id)
 {
-
+    utilisateur::delete($id);
 }
 
-function editAccount()
+function editAccount($id, $nNom, $nPrenom, $nEmail, $nPassword)
 {
-
+    $params =
+        [
+            "nom" => $nNom,
+            "prenom"=>$nPrenom,
+            "email"=>$nEmail,
+            "passwordhash"=>$nPassword
+        ];
+    db::getInstance()->update("utilisateurs", "id = {$id}", $params);
+    redirect::to("PagePersoUser.php");
 }
 
 function disconnect()
 {
-
+    unset($_SESSION["userID"]);
+    unset($_SESSION["admin"]);
+    echo "déconnecté";
+    //redirect::to("accueilFront.php");
 }
 
-function createAccount($nom, $prenom, $email, $password, $userIcon, $admin = false)
+function createAccount($nom, $prenom, $email, $pHash)
 {
-    $pHash = password_hash($password, PASSWORD_BCRYPT);
-    //TODO: ajouter enregistrement d'image.
-    $user = new utilisateur(0, $nom, $prenom, $email, $pHash, $userIcon, false);
+    $user = new utilisateur(0, $nom, $prenom, $email, $pHash, "", false);
 
-    if ($admin)
+    try{
+        $icon = saveUserIcon();
+        $user->set("userIcon", $icon);
+    }catch(Exception $e)
     {
-        utilisateur::saveAdmin($user);
-    }
-    else
-    {
-        utilisateur::save($user);
+        $user->set("userIcon", utilisateur::$defaultIcon);
+        //logger::log($e->getMessage());
     }
 
+    utilisateur::save($user);
 
     if (!db::getInstance()->hasError())
     {
@@ -45,6 +55,8 @@ function createAccount($nom, $prenom, $email, $password, $userIcon, $admin = fal
     else
     {
         echo "inscription invalide <br/>" ;
+        deleteUserIcon($icon);
+        //redirect::to("accueil.php");
     }
 }
 
@@ -64,9 +76,13 @@ function login($email, $password)
         $user = utilisateur::load($id);
         $_SESSION["userID"] = $user->get("id");
         $_SESSION["admin"] = $user->get("admin");
+
+        echo "bienvenue";
+        //redirect::to("PagePersoUser.php");
     }
     else
     {
         echo "connexion invalide";
+        //redirect::to("PageConnexion.php");
     }
 }

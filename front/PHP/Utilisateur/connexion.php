@@ -4,7 +4,6 @@
     <div id="page">
         <img id="logo" src="/front/IMG/logo.png" alt="Logo" />
         <form class="connexion">
-        <form>
             <fieldset class="form">
                 <h2> Connexion </h2>
                 <p> Pressé d'apprendre ? <br/> Connecte-toi ! </p>
