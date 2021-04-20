@@ -71,48 +71,17 @@ function saveCours($id)
     }
 }
 
-function deleteCours($coursName)
+function deleteCours()
 {
-	$check = explode(".", $coursName);
-	if (count($check) != 2) die("Erreur, fichier inconnu");
-	if (file_exists(__DIR__ . "./../data/cours/" . $coursName))
-    {
-        unlink(__DIR__ . "./../data/cours/" . $coursName);
-    }
+
 }
 
-function saveQCM($id)
+function saveQCM()
 {
-	$formats = array("xml"=>"text/xml");
-    $total = count($_FILES["QCM"]["name"]);
 
-    mkdir(__DIR__ . "./../data/QCM/" . $id);
-
-    for ($i = 0; $i < $total; $i++)
-    {
-        $filename = $_FILES["QCM"]["name"][$i];
-        $filetype = $_FILES["QCM"]["type"][$i];
-        $filesize = $_FILES["QCM"]["size"][$i];
-
-        $extension = pathinfo($filename, PATHINFO_EXTENSION);
-        if (!array_key_exists($extension, $formats)) die("Erreur, extension invalide");
-
-        $maxsize = 5 * 1024 * 1024;
-        if ($filesize > $maxsize) die("Erreur, fichier trop grand");
-
-        if (in_array($filetype, $formats))
-        {
-            move_uploaded_file($_FILES["QCM"]["tmp_name"][$i], __DIR__ . "./../data/QCM/" . $id . "/" . $_FILES["QCM"]["name"][$i]);
-        }
-    }
 }
 
-function deleteQCM($QCMName)
+function deleteQCM()
 {
-	$check = explode(".", $QCMName);
-	if (count($check) != 2) die("Erreur, fichier inconnu");
-	if (file_exists(__DIR__ . "./../data/QCM/" . $QCMName))
-    {
-        unlink(__DIR__ . "./../data/QCM/" . $QCMName);
-    }
+
 }
