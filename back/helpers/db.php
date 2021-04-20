@@ -162,8 +162,6 @@ class db
 
 
     }
-
-
     /*
      * fonction pour mettre a jour un élément de la base de données.
      * @param $table : string, indique la table ou effectuer la maj

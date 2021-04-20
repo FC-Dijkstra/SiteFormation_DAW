@@ -1,7 +1,7 @@
 <?php
 
-require_once (__DIR__ . "./../helpers/db.php");
-require_once (__DIR__ . "./../helpers/print.php");
+require_once(__DIR__ . "./../helpers/db.php");
+require_once(__DIR__ . "./../helpers/print.php");
 
 
 function getQCM($qcmID)
@@ -28,7 +28,7 @@ function getQCM($qcmID)
     }
 }
 
-function validateReponses($qcmID, $reponses)
+function validateReponses($qcmID, $reponses, $user)
 {
     $eval = db::getInstance()->getID("evaluations", $qcmID);
     $dirReponses = $eval["reponsesFile"];
@@ -38,14 +38,14 @@ function validateReponses($qcmID, $reponses)
         $reponsesServer = simplexml_load_file(__DIR__ . "./../" . $dirReponses);
         $reponsesUser = json_decode($reponses, true);
 
-
-        //TODO: rajouter vérification note maximale.
         $note = 0;
-        try{
+        try
+        {
             if ($reponsesServer->meta->id == $reponsesUser["meta"]["id"])
             {
-                foreach($reponsesServer->reponse as $reponse)
+                foreach ($reponsesServer->reponse as $reponse)
                 {
+
                     if ($reponsesUser["reponse"]["id"] == $reponse->id)
                     {
                         if ($reponsesUser["reponse"]["value"] == $reponse->value)
@@ -55,18 +55,21 @@ function validateReponses($qcmID, $reponses)
                     }
                 }
 
-                //echo $note;
-                $params = [
-                    "passage"=> date("Y-m-d H:i:s"),
-                    "evaluation"=>$qcmID,
-                    "utilisateur"=>$_SESSION["userID"],
-                    "note"=>$note
-                ];
-                db::getInstance()->insert("resultats", $params);
+                if ($note < $eval["maxResultat"])
+                {
+                    echo $note;
+                    $params = [
+                        "passage" => date("Y-m-d H:i:s"),
+                        "evaluation" => $qcmID,
+                        "utilisateur" => $_SESSION["userID"],
+                        "note" => $note
+                    ];
+                    db::getInstance()->insert("resultats", $params);
+                }
             }
         }
-        catch(Exception $e)
-        {}
-
+        catch (Exception $e)
+        {
+        }
     }
 }
