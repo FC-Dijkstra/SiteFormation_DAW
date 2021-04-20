@@ -28,7 +28,7 @@ function getQCM($qcmID)
     }
 }
 
-function validateReponses($qcmID, $reponses)
+function validateReponses($qcmID, $reponses, $user)
 {
     $eval = db::getInstance()->getID("evaluations", $qcmID);
     $dirReponses = $eval["reponsesFile"];
@@ -38,14 +38,13 @@ function validateReponses($qcmID, $reponses)
         $reponsesServer = simplexml_load_file(__DIR__ . "./../" . $dirReponses);
         $reponsesUser = json_decode($reponses, true);
 
-
-        //TODO: rajouter vérification note maximale.
         $note = 0;
         try{
             if ($reponsesServer->meta->id == $reponsesUser["meta"]["id"])
             {
                 foreach($reponsesServer->reponse as $reponse)
                 {
+                
                     if ($reponsesUser["reponse"]["id"] == $reponse->id)
                     {
                         if ($reponsesUser["reponse"]["value"] == $reponse->value)
@@ -54,7 +53,9 @@ function validateReponses($qcmID, $reponses)
                         }
                     }
                 }
-
+               
+                if ( $note < $eval["maxResultat"])
+                {
                 echo $note;
                 $params = [
                     "passage"=> date("Y-m-d H:i:s"),
@@ -63,6 +64,7 @@ function validateReponses($qcmID, $reponses)
                     "note"=>$note
                 ];
                 db::getInstance()->insert("resultats", $params);
+                }
             }
         }
         catch(Exception $e)
