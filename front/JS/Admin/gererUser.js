@@ -1,21 +1,8 @@
-function change(moi)
-{
-  if (document.formulaire.elements[moi].checked == true)
-  {
-    document.getElementById(moi).style.backgroundColor = 'red';
+function afficher() {
+  var span = document.getElementById("dureeban");
+  if(span.style.display == "none") {
+    span.style.display = "inline";
+  } else {
+    span.style.display = "none";
   }
-  else
-  {
-    document.getElementById(moi).style.backgroundColor = 'blue';
-  }
-}
-
-$("#moi").click(fonction(){
-  if(this.checked){
-    document.getElementById(moi).style.backgroundColor = 'red';
-  }
-}
-
-function ban(){
-  $("#raisonBan").show();
 }

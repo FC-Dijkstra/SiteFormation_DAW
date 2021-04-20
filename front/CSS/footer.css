@@ -1,11 +1,11 @@
 footer{
-    background: #E3E3E3;
+    background: #d3d3d3;
     color: #606060;
     overflow:auto;
     position:absolute;
     bottom:0;
     width: 100%;
-    
+
 }
 
 footer p, footer a{
@@ -30,7 +30,7 @@ footer h6:after {
     left: 0;
     bottom: -10px;
     text-decoration: none;
-    
+
 }
 
 footer ul{

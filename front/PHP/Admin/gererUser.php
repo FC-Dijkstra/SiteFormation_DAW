@@ -1,4 +1,4 @@
-+<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr" >
 <?php
 include($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");
@@ -9,15 +9,20 @@ include($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");
     <h2> Gérer les utilisateurs </h2>
     <hr/>
     </br>
-    <input id="ban" type="button" onclick="ban()" value="Bannir">
+    <div id="tabbut">
+    <input id="ban" type="button" onclick="afficher()" value="Bannir">
     <input id="supp" type="button" value="Supprimer">
-
+    <div id="dureeban" style="display:none;">
+      <label> Durée (en jour)</label>
+      <textarea id="duree" rows="1" cols="2"></textarea>
+      <input id="valider" type="button" value="Valider ban">
+    </div>
     <form name="formulaire">
     <table class="listeUser">
         <tbody>
           <caption> Liste des étudiants </caption>
         <tr>
-          <td id="moi" class="check"> <input type="checkbox"></td>
+          <td class="check"> <input type="checkbox"></td>
           <td>Prénom Nom Mail</td>
         </tr>
         <tr>
@@ -36,7 +41,8 @@ include($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");
       </table>
     </form>
     </div>
-<script type="text/javascript" src="../JS/Admin/gererUser.js"></script>
+  </div>
+<script type="text/javascript" src="../../JS/Admin/gererUser.js"></script>
     </body>
 
   <?php include_once($_SERVER['DOCUMENT_ROOT']."//front/Header_Footer/footer.php"); ?>
