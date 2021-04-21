@@ -36,6 +36,7 @@ class cours extends DBObject implements JsonSerializable
 			$params["categorie"]
 		);
 	}
+	
 
 	public static function save($instance)
 	{
@@ -84,7 +85,7 @@ class cours extends DBObject implements JsonSerializable
         return array(
             'id'=>$this->id,
             'nom'=>$this->nom,
-            'difficulte'=>$this->categorie,
+            'difficulte'=>$this->difficulte,
             'auteur'=>$this->auteur,
             'categorie'=>$this->categorie
         );
