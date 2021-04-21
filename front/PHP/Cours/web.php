@@ -16,24 +16,7 @@ $categories = categorie::getAllByType("Web");
     <input type="text" id="searchBox" placeholder="Recherche..."/>
 </div>
 <div class="cours_container">
-    <div class="html">
-        <h4 class="langage">HTML</h4>
-        <div id="html_cours">
 
-        </div>
-    </div>
-    <div class="CSS">
-        <h4 class="langage">CSS</h4>
-        <div id="css_cours">
-
-        </div>
-    </div>
-    <div class="JS">
-        <h4 class="langage">JAVASCRIPT</h4>
-        <div id="js_cours">
-
-        </div>
-    </div>
 </div>
 <script src="/front/JS/Liste_Cours.js" type="text/javascript"></script>
 <script type="text/javascript">
