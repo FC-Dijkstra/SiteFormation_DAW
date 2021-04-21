@@ -11,17 +11,21 @@
         <textarea  class="apprendre" placeholder="Ce cours va vous permettre d'apprendre..."></textarea>
         </input>
     </div>
+
+
     <div id="sommaire">
         <h3> Sommaire : </h3>
         <ul class="m_Chapitre" id="Chapitre_1">
+
             <a onclick="afficherMasquer('listeChapitre1')"><li>Chapitre 1</li></a>
+            
             <ul id="listeChapitre1" class="m_Section" style="display: none;">
                 <li class="liste"><a href="#Chapitre1_Section1">Section1</a></li>
             </ul>
         </ul>
         <br>
     </div>
-    
+
         <div id="Cours">
 
             <div class="Chapitre">

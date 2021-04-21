@@ -1,6 +1,7 @@
-body {
-    //overflow: hidden;
+html, body {
+  height : 100%;
 }
+
 .base-text {
     text-align: center;
     width: 100%;
@@ -10,10 +11,12 @@ body {
     padding-top: 30px;
 }
 .base-text p {
-    width: 750px;
+    margin-top: 30px;
+    width: 35%;
     display: inline-block;
     padding: 2em;
     background-color: #EBC098;
+    font-size: 18px;
 }
 #cours {
     text-align: center;
@@ -21,8 +24,13 @@ body {
     padding-top: 2em;
     margin-bottom: 20em;
 }
-#coursDiv {
 
+#cours p{
+  margin-bottom: 30px;
+}
+
+#coursDiv {
+    margin-top:10px;
     height: 238px;
     width: 100%;
     position: absolute;
@@ -47,7 +55,6 @@ body {
 }
 footer {
     position: relative !important;
-    top: 300px;
 }
 
 #description {
@@ -55,44 +62,44 @@ footer {
     background-color: #93C5FF;
 }
 #description p {
-    width: 80%;
+    width: 60%;
     overflow-wrap: break-word;
-    padding: 2em;
+    padding: 4em;
     font-size: x-large;
+    margin-left: 7%;
 }
 
 #description img {
     float: right;
     position: relative;
     transform: translateY(-25%);
-    height: 45%;
+    width: 25%;
 }
 
 #description2 {
     margin-top: 10em;
 }
+
 #description2 img {
     height: 45%;
     position: relative;
     left: 10%;
 }
 #description2 span {
-    width: 37%;
+    width: 27%;
     overflow-wrap: break-word;
     padding: 2em;
     font-size: x-large;
     float: right;
     position: relative;
     top: 4em;
-    margin-left: 30px;
- }
+}
 
-/*
+
  .egg {
    width: 100%;
-   height: 50%;
-   background-color: #d3d3d3;
-   border-radius: 50% / 80% 40% 0% 0%;
+   height: 30%;
+   background-color: #F5F5F5;
+   border-radius: 50% / 60% 60% 0% 0%;
    margin: auto;
  }
-*/
