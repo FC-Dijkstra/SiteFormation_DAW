@@ -71,6 +71,9 @@ function updateCours(cats, type) {
 }
 
 search.oninput = () => {
-    nouveauxCours = cours.filter(e=>e.nom.toLowerCase().includes(search.value.toLowerCase()) || (e.description !== undefined && e.description.toLowerCase().includes(search.value.toLowerCase())))
-    updateCours(nouveauxCours);
+    nouvellesCats = [];
+    cats.forEach(cat=>{
+        nouvellesCats.push(cat.filter(e=>e.nom.toLowerCase().includes(search.value.toLowerCase()) || (e.description !== undefined && e.description.toLowerCase().includes(search.value.toLowerCase()))))
+    })
+    updateCours(nouvellesCats, "Web/");
 }
