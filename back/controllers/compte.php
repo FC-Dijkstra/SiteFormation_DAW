@@ -12,25 +12,38 @@ function deleteAccount($id)
     utilisateur::delete($id);
 }
 
-function editAccount($id, $nNom, $nPrenom, $nEmail, $nPassword)
+function editAccount($id, $nNom, $nPrenom, $nEmail, $nPassword, $oPassword)
 {
-    $params =
-        [
-            "nom" => $nNom,
-            "prenom"=>$nPrenom,
-            "email"=>$nEmail,
-            "passwordhash"=>$nPassword
-        ];
-    db::getInstance()->update("utilisateurs", "id = {$id}", $params);
+    try {
+        $hash = db::getInstance()->get(config::$USER_TABLE, "id = {$id}")["passwordhash"];
+    }catch(Exception $e)
+    {
+        //logger::log($e->getMessage());
+    }
 
+    if (!empty($hash) && password_verify($hash, $oPassword))
+    {
+        $params =
+            [
+                "nom" => $nNom,
+                "prenom"=>$nPrenom,
+                "email"=>$nEmail,
+                "passwordhash"=>$nPassword
+            ];
+        db::getInstance()->update("utilisateurs", "id = {$id}", $params);
+    }
+    else
+    {
+        redirect::to("/front/PHP/accueil.php");
+    }
 }
 
 function disconnect()
 {
     unset($_SESSION["userID"]);
     unset($_SESSION["admin"]);
-    echo "déconnecté";
-    //redirect::to("accueilFront.php");
+    //echo "déconnecté";
+    redirect::to("/front/PHP/accueil.php");
 }
 
 function createAccount($nom, $prenom, $email, $pHash)
