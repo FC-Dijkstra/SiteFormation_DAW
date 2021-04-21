@@ -1,49 +1,59 @@
 let search = document.getElementById("searchBox");
-let html = document.getElementById("html_cours");
-let css = document.getElementById("css_cours");
-let js = document.getElementById("js_cours");
+let container = $($(".cours_container")[0])
 
-function updateCours(cours) {
-    html.innerHTML = "";
-    css.innerHTML = "";
-    js.innerHTML = "";
-    for (let i = 0; i < cours.length; i++) {
-        let node = document.createElement("div");
-        node.onclick=()=>{location.href='/front/PHP/Cours/structureCours.php'};
-        let img = document.createElement("img");
-        img.src = "/front/IMG/girl.png";
-        img.className = "box1"
+function updateCours(cours, type) {
+    container.empty();
+    // Création des catégories
+    for(let i=0; i<listCat.length; i++){
+        let titre = listCat[i].titre.replace(type, '');
+        let cat = document.createElement('div');
+        cat.className = titre;
 
-        let title = document.createElement("h3");
-        title.className = "box2";
-        title.innerText = cours[i].nom;
+        let title = document.createElement('h4');
+        title.className='langage';
+        title.innerText = titre;
 
-        let diff = document.createElement("p");
-        diff.className = "box3";
-        for (let i2 = 0; i2 < 3; i2++)
-            diff.innerText += cours[i].difficulte > i2 ? '★' : '✩'
+        let cours = document.createElement('div')
+        cours.className = 'cours_'+titre
 
-        let desc = document.createElement("p");
-        desc.className = "box4";
-        desc.innerText = cours[i].description;
+        cat.append(title);
+        cat.append(cours);
+        container.append(cat);
+    }
+    for(let j=0; j<cours.length; j++)
+    {
+        let cat = cours[j]
+        for (let i = 0; i < cat.length; i++) {
+            let node = document.createElement("div");
+            node.onclick=()=>{location.href='/front/PHP/Cours/structureCours.php'};
+            let img = document.createElement("img");
+            img.src = "/front/IMG/girl.png";
+            img.className = "box1"
 
-        node.className = "cours";
-        node.appendChild(img);
-        node.appendChild(title);
-        node.appendChild(diff);
-        node.appendChild(desc);
-        switch (cours[i].categorie){
-            case 1:
-                html.appendChild(node);
-                break;
-            case 2:
-                css.appendChild(node);
-                break;
-            case 3:
-                js.appendChild(node);
+            let title = document.createElement("h3");
+            title.className = "box2";
+            title.innerText = cat[i].nom;
+
+            let diff = document.createElement("p");
+            diff.className = "box3";
+            /*for (let i2 = 0; i2 < 3; i2++)
+                diff.innerText += cat[i].difficulte > i2 ? '★' : '✩'*/
+            diff.innerText = cat[i].difficulte
+
+            let desc = document.createElement("p");
+            desc.className = "box4";
+            desc.innerText = cat[i].description;
+
+            node.className = "cours";
+            node.appendChild(img);
+            node.appendChild(title);
+            node.appendChild(diff);
+            node.appendChild(desc);
+            $(".cours_"+listCat.find(e=>e.id===cat[i].categorie).titre.split('/')[1]).append(node)
+
+
+
         }
-
-
     }
 }
 
