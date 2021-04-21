@@ -1,3 +1,74 @@
 .footer{
     bottom: auto;
 }
+
+#bvn{
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#debut{
+  margin-left: 25%;
+  margin-top: 5%;
+}
+
+#debut img{
+  width: 160px;
+  height: 170px;
+  float:left;
+}
+
+#debut h3{
+margin-left: 40%;
+font-size: 22px;
+}
+
+#debut p{
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 2%;
+  font-size: 20px;
+}
+
+#gauche{
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+#gauche h3{
+font-size: 22px;
+margin-right: 75%;
+text-align: center;
+}
+
+#gauche p{
+  margin-right: 75%;
+  margin-top: 2%;
+  font-size: 20px;
+}
+
+#milieu{
+  margin-left: 10%;
+  margin-top: 10%;
+  position:relative;
+}
+
+
+#milieu h3{
+font-size: 22px;
+margin-right: 70%;
+text-align: center;
+}
+
+#milieu p{
+  margin-right: 65%;
+  margin-top: 2%;
+  font-size: 20px;
+  float: right;
+}
+
+#droite{
+  margin-left: 10%;
+  margin-top: 10%;
+}
