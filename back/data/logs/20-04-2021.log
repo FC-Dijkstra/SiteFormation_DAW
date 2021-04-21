@@ -1,0 +1,1 @@
+20-04-2021 03:31:31 - db::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'adad@gmail.com' for key 'email'

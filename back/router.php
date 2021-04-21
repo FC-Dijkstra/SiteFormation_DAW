@@ -11,8 +11,6 @@ if (Input::exists())
 {
     if (token::check(Input::get("csrf_token")))
     {
-        echo "before switch";
-        println();
         switch(Input::get("action"))
         {
             case "getQCM":
@@ -31,21 +29,27 @@ if (Input::exists())
                 $prenom = htmlentities(Input::get("prenom"), ENT_QUOTES | ENT_SUBSTITUTE);
                 $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
                 $pHash = password_hash(Input::get("password"), PASSWORD_BCRYPT);
-                createAccount($nom, $prenom, $email, $pHash);
+
+                if (isset($nom) && isset($prenom) && isset($email) && isset($pHash))
+                    createAccount($nom, $prenom, $email, $pHash);
+                else
+                    redirect::to($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Utilisateur/inscription.php");
                 break;
 
             case "connexion":
                 $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
                 $password = Input::get("password");
 
-                login($email, $password);
+                if (isset($email) && isset($password))
+                    login($email, $password);
+                else
+                    redirect::to($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Utilisateur/connexion.php");
                 break;
 
             case "deconnexion":
                 if (isset($_SESSION["userID"]))
-                {
                     disconnect();
-                }
+
                 break;
 
             default:

@@ -3,6 +3,7 @@ require_once(__DIR__ . "./../class/utilisateur.php");
 require_once(__DIR__ . "./../helpers/print.php");
 require_once(__DIR__ . "./../helpers/warning2error.php");
 require_once(__DIR__ . "./../helpers/logger.php");
+require_once(__DIR__ . "./../helpers/redirect.php");
 
 //TODO: Suppression et modification de compte.
 
@@ -21,7 +22,7 @@ function editAccount($id, $nNom, $nPrenom, $nEmail, $nPassword)
             "passwordhash"=>$nPassword
         ];
     db::getInstance()->update("utilisateurs", "id = {$id}", $params);
-    redirect::to("PagePersoUser.php");
+
 }
 
 function disconnect()
@@ -49,14 +50,14 @@ function createAccount($nom, $prenom, $email, $pHash)
 
     if (!db::getInstance()->hasError())
     {
-        echo "inscription valide <br/>";
-        //redirect::to("homeUser.php");
+        //echo "inscription valide";
+        redirect::to("/front/PHP/Utilisateur/connexion.php");
     }
     else
     {
         echo "inscription invalide <br/>" ;
         deleteUserIcon($icon);
-        //redirect::to("accueil.php");
+        redirect::to("/front/PHP/Utilisateur/inscription.php&error='inscription invalide !'");
     }
 }
 
@@ -77,12 +78,13 @@ function login($email, $password)
         $_SESSION["userID"] = $user->get("id");
         $_SESSION["admin"] = $user->get("admin");
 
-        echo "bienvenue";
-        //redirect::to("PagePersoUser.php");
+        //echo "bienvenue";
+        redirect::to("/front/PHP/Utilisateur/profil.php");
     }
     else
     {
-        echo "connexion invalide";
-        //redirect::to("PageConnexion.php");
+        //echo "connexion invalide";
+
+        redirect::to("/front/PHP/Utilisateur/connexion.php?error='Connexion invalide !'");
     }
 }

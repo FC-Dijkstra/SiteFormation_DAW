@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr" >
 <link rel="stylesheet" href="../../CSS/Utilisateur/profil.css" type="text/css"/>
-<?php include_once($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");
+<?php include_once($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");?>
+<?php
+echo $_SESSION["userID"];
+echo $_SESSION["admin"];
 ?>
-
     <body>
         <h1 id="profiltitre"> Mon profil </h1>
         <div id="profil">
