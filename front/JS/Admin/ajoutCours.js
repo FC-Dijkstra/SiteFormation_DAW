@@ -17,6 +17,15 @@ function addChap()
 {
     nombreChap++;
     
+    //Element sommaire
+
+    let chapSommaire = document.createElement("a");
+    chapSommaire.onclick=()=>{afficherMasquer(this)};
+    chapSommaire.textContent="Chapitre "+nombreChap;
+
+    $(".m_chapitre").append(chapSommaire);
+
+    //Element page
     let chapelement = document.createElement("div");
     chapelement.className="Chapitre";
 
@@ -34,19 +43,20 @@ function addChap()
     let breuh = document.createElement("br");
 
     let chapsection = document.createElement("div");
-    chapsection.className="Sections";
+    chapsection.className="LesSections";
 
     let chapadd = document.createElement("button");
     chapadd.className="addSection";
-    
-    chapadd.onclick=()=>{console.log(nombreChap);addSection(nombreChap)};
+
+    let chap = nombreChap;
+    chapadd.onclick=()=>{addSection(chap)};
     chapadd.textContent="Ajouter une section";
 
     chapelement.append(chaplabel);
     chapelement.append(chaptext);
     chapelement.append(chapbutton);
     chapelement.append(breuh);
-    chapelement.append(breuh);
+    chapelement.append(breuh.cloneNode());
     chapelement.append(chapsection);
     chapelement.append(chapadd);
 
@@ -88,7 +98,7 @@ function addSection(numChap)
     element.append(label);
     element.append(texte);
     element.append(boutton);
-    element.append(breuh); element.append(breuh);
+    element.append(breuh); element.append(breuh.cloneNode());
     element.append(area);
 
 
