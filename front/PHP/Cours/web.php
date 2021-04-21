@@ -20,14 +20,14 @@ $categories = categorie::getAllByType("Web");
 </div>
 <script src="/front/JS/Liste_Cours.js" type="text/javascript"></script>
 <script type="text/javascript">
-    let cours = <?php echo json_encode($liste); ?>;
+    let cats = <?php echo json_encode($liste); ?>;
     let listCat = [];
     <?php
         for($i=0; $i<count($categories); $i++){
             echo 'listCat['.$i.'] = '. json_encode($categories[$i]).';';
         }
         ?>
-    updateCours(cours, "Web/");
+    updateCours(cats, "Web/");
 </script>
 </body>
 <?php include('../../Header_Footer/footer.php') ?>

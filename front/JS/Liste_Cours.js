@@ -1,7 +1,7 @@
 let search = document.getElementById("searchBox");
 let container = $($(".cours_container")[0])
 
-function updateCours(cours, type) {
+function updateCours(cats, type) {
     container.empty();
     // Création des catégories
     for(let i=0; i<listCat.length; i++){
@@ -20,25 +20,25 @@ function updateCours(cours, type) {
         cat.append(cours);
         container.append(cat);
     }
-    for(let j=0; j<cours.length; j++)
+    for(let j=0; j<cats.length; j++)
     {
-        let cat = cours[j]
-        for (let i = 0; i < cat.length; i++) {
+        let cours = cats[j]
+        for (let i = 0; i < cours.length; i++) {
             let node = document.createElement("div");
-            node.onclick=()=>{location.href='/front/PHP/Cours/structureCours.php?id='+cat[i].id};
+            node.onclick=()=>{location.href='/front/PHP/Cours/structureCours.php?id='+cours[i].id};
             let img = document.createElement("img");
             img.src = "/front/IMG/girl.png";
             img.className = "box1"
 
             let title = document.createElement("h3");
             title.className = "box2";
-            title.innerText = cat[i].nom;
+            title.innerText = cours[i].nom;
 
             let diff = document.createElement("p");
             diff.className = "box3";
             /*for (let i2 = 0; i2 < 3; i2++)
                 diff.innerText += cat[i].difficulte > i2 ? '★' : '✩'*/
-            switch (cat[i].difficulte) {
+            switch (cours[i].difficulte) {
                 case 'Débutant':
                     diff.innerText = '★✩✩✩';
                     break;
@@ -55,14 +55,14 @@ function updateCours(cours, type) {
 
             let desc = document.createElement("p");
             desc.className = "box4";
-            desc.innerText = cat[i].description;
+            desc.innerText = cours[i].description;
 
             node.className = "cours";
             node.appendChild(img);
             node.appendChild(title);
             node.appendChild(diff);
             node.appendChild(desc);
-            $(".cours_"+listCat.find(e=>e.id===cat[i].categorie).titre.split('/')[1]).append(node)
+            $(".cours_"+listCat.find(e=>e.id===cours[i].categorie).titre.split('/')[1]).append(node)
 
 
 
