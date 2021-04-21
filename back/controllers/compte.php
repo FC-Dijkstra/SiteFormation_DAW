@@ -57,7 +57,7 @@ function createAccount($nom, $prenom, $email, $pHash)
     {
         echo "inscription invalide <br/>" ;
         deleteUserIcon($icon);
-        redirect::to("/front/PHP/Utilisateur/inscription.php&error='inscription invalide !'");
+        redirect::to("/front/PHP/Utilisateur/inscription.php?error='inscription invalide !'");
     }
 }
 

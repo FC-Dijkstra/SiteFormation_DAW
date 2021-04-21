@@ -56,6 +56,22 @@ echo $_SESSION["admin"];
                 <p class="box4"> Ceci est une description</p>
                 <button class="box5"  onclick="location.href='#'" type="button" value="désabo">Se désabonner</button>
             </div>
+            </br>
+            <div class="cours" onclick="location.href='/front/PHP/Cours/structureCours.php'">
+                <img class="box1" src="/front/IMG/girl.png">
+                <h3 class="box2"> Les bases du html</h3>
+                <p class="box3">Facile ★✩✩ </p>
+                <p class="box4"> Ceci est une description</p>
+                <button class="box5"  onclick="location.href='#'" type="button" value="désabo">Se désabonner</button>
+            </div>
+            </br>
+            <div class="cours" onclick="location.href='/front/PHP/Cours/structureCours.php'">
+                <img class="box1" src="/front/IMG/girl.png">
+                <h3 class="box2"> Les bases du html</h3>
+                <p class="box3">Facile ★✩✩ </p>
+                <p class="box4"> Ceci est une description</p>
+                <button class="box5"  onclick="location.href='#'" type="button" value="désabo">Se désabonner</button>
+            </div>
         </div>
 
         
