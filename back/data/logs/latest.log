@@ -1,7 +1,5 @@
-21-04-2021 02:55:03 - db::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'aaa@gmail.com' for key 'email'
-21-04-2021 04:48:24 - db::query()[62] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.categorie' doesn't exist
-21-04-2021 04:48:53 - db::query()[62] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.categorie' doesn't exist
-21-04-2021 04:49:25 - db::query()[62] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
-21-04-2021 04:49:26 - db::query()[62] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
-21-04-2021 04:50:10 - db::query()[62] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.categorie' doesn't exist
-21-04-2021 04:50:17 - db::query()[62] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+21-04-2021 08:49:35 - E:\XAMPP\htdocs\SiteFormation_DAW\back\router.php::editAccount()[64] - 1
+21-04-2021 08:49:35 - E:\XAMPP\htdocs\SiteFormation_DAW\back\router.php::editAccount()[64] - édition: mot de passe invalide
+21-04-2021 08:51:00 - E:\XAMPP\htdocs\SiteFormation_DAW\back\controllers\compte.php::update()[28] - UPDATE utilisateurs SET nom = ?, prenom = ?, email = ?, passwordhash = ?, usericon = ? WHERE id = 3
+21-04-2021 08:53:21 - router.php::editAccount()[64] - édition: mot de passe invalide
+21-04-2021 08:54:25 - compte.php::update()[28] - UPDATE utilisateurs SET nom = ?, prenom = ?, email = ?, passwordhash = ?, usericon = ? WHERE id = 3

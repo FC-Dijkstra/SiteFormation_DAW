@@ -177,15 +177,16 @@ class db
             $values = array_values($fields);
 
             $keys_string = "";
-            $i = 0;
+            $i = 1;
             foreach($keys as $key)
             {
                 $keys_string .= "{$key} = ?";
-                $i < count($keys) ? $keys_string .= ", " : null;
+                if ($i < count($values)) $keys_string .= ", ";
                 $i++;
             }
 
             $sql = "UPDATE {$table} SET {$keys_string} WHERE {$where[0]} = {$where[2]}";
+            logger::log($sql);
             $this->query($sql, $values, false);
         }
     }

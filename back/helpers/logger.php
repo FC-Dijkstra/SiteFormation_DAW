@@ -6,7 +6,7 @@ class logger
 
     public static function log(string $message)
     {
-        $origin = debug_backtrace()[1]['class'] . "::" . debug_backtrace()[1]['function'] . "()[" . debug_backtrace()[1]['line'] . "]";
+        $origin = basename(debug_backtrace()[1]['file']) . "::" . debug_backtrace()[1]['function'] . "()[" . debug_backtrace()[1]['line'] . "]";
         $date = date("d-m-Y h:i:s");
         logger::generateLatest();
 

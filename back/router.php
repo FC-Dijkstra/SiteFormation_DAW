@@ -57,12 +57,13 @@ if (Input::exists())
                 $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
                 $nom = htmlentities(Input::get("nom"), ENT_QUOTES | ENT_SUBSTITUTE);
                 $prenom = htmlentities(Input::get("prenom"), ENT_QUOTES | ENT_SUBSTITUTE);
-                $oldPassword = password_hash(Input::get("password"), PASSWORD_BCRYPT);
-                $newPassword = password_hash(Input::get("newpassword"), PASSWORD_BCRYPT);
+                $oldPassword = Input::get("password");
+                $newPassword = Input::get("newpassword");
 
                 if (isset($id) && isset($email) && isset($nom) && isset($prenom) && isset($oldPassword) && isset($newPassword))
                     editAccount($id, $nom, $prenom, $email, $newPassword, $oldPassword);
                 else
+                    logger::log("edition invalide");
                     redirect::to("/front/PHP/accueil.php");
 
             default:

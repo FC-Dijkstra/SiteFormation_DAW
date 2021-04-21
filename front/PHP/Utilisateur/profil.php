@@ -33,27 +33,29 @@ else
 
             </div>
             <div id="pbox2">
-            <form id="modifprofil">
+            <form id="modifprofil" action="/back/router.php" method="post">
                 <label id="nom" type="text">Nom :</label>
-                <input type="text" id="info_nom" value="<?= $nom?>" readonly><br>
+                <input type="text" id="info_nom" name="nom" value="<?= $nom?>" readonly><br>
 
                 <label id="prenom" type="text">Prénom :</label>
-                <input type="text" id="info_prenom" value="<?= $prenom?>" readonly><br>
+                <input type="text" id="info_prenom" name="prenom" value="<?= $prenom?>" readonly><br>
 
                 <label id="mail" type="text">Adresse mail liée:</label>
-                <input type="email" id="info_mail" value="<?= $email?>" readonly><br>
+                <input type="email" id="info_mail" name="email" value="<?= $email?>" readonly><br>
                 <label class="file">Changer de photo : </label>
                 <input type="file" name="image" class="file">
                 <br><br>
                 <a id="mdp">Mot de passe </a><br>
                 <label class="mdp" type="text">Mot de passe</label>
-                <input class="mdp" type="password"><br>
+                <input class="mdp" type="password" name="password"><br>
                 <label class="mdp" type="text">Nouveau mot de passe</label>
-                <input class="mdp" type="password" id="info_nouveaumdp" value=""><br>
+                <input class="mdp" type="password" name="newpassword" id="info_nouveaumdp" value=""><br>
 
                 <label class="mdp" type="text">Confirmation nouveau mot de passe</label>
                 <input class="mdp" type="password" id="info_nouveaumdp" value=""><br>
 
+                <input type="hidden" name="action" value="editprofile"/>
+                <input type="hidden" name="csrf_token" value="<?= $_SESSION["csrf_token"]?>"/>
                 <input type="submit" id="enregistrer" value="Enregistrer">
                 <input type="reset" id="annuler" value="Annuler" onclick="ModifierInfos()">
                 <button id="modifier" type="button" onclick="ModifierInfos()" >Modifier </button>

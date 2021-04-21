@@ -14,26 +14,23 @@ function deleteAccount($id)
 
 function editAccount($id, $nNom, $nPrenom, $nEmail, $nPassword, $oPassword)
 {
-    try {
-        $hash = db::getInstance()->get(config::$USER_TABLE, "id = {$id}")["passwordhash"];
-    }catch(Exception $e)
-    {
-        //logger::log($e->getMessage());
-    }
-
-    if (!empty($hash) && password_verify($hash, $oPassword))
+    $user = utilisateur::load($id);
+    if (!empty($user) && password_verify($oPassword, $user->get("passwordHash")))
     {
         $params =
             [
                 "nom" => $nNom,
                 "prenom"=>$nPrenom,
                 "email"=>$nEmail,
-                "passwordhash"=>$nPassword
+                "passwordhash"=>password_hash($nPassword, PASSWORD_BCRYPT),
+                "usericon"=>$user->get("userIcon")
             ];
         db::getInstance()->update("utilisateurs", "id = {$id}", $params);
+        redirect::to("/front/PHP/Utilisateur/profil.php");
     }
     else
     {
+        logger::log("édition: mot de passe invalide");
         redirect::to("/front/PHP/accueil.php");
     }
 }
