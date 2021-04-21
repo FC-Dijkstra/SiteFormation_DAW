@@ -23,9 +23,9 @@
 		$flag = false;
 		$res = array();
 		$indice = 0;
-		if(verifFichier($cours["filedir"]))
+		if(verifFichier("cours/'$id'/index.html"))
 		{
-			$coursfile = fopen("./../data/".$cours['filedir'],"r");
+			$coursfile = fopen("./../data/cours/'$id'/index.html","r");
 			while(!feof($coursfile))
 			{
 				$ligne = fgets($coursfile);
@@ -46,7 +46,7 @@
 		}
 		else
 		{
-			die("Fichier non trouvé");
+			throw new ErroreException("Fichier non trouvé");
 		}
 		return $res;
 	}
