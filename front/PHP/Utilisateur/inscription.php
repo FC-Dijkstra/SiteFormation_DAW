@@ -10,7 +10,7 @@ token::generate();
 <div id="page">
     <a href="/front/PHP/accueil.php">
         <img class="hbox1" src="/front/IMG/logo.png" alt="Logo" /></a>
-    <form>
+    <form action="/back/router.php" enctype="multipart/form-data" method="post">
         <fieldset class="form">
             <h2> Inscription </h2>
 
