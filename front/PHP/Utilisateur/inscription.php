@@ -2,7 +2,8 @@
 <html lang="fr" >
 <link rel="stylesheet" href="../../CSS/Utilisateur/inscription.css" type="text/css"/>
     <div id="page">
-        <img id="logo" src="/front/IMG/logo.png" alt="Logo" />
+        <a href="/front/PHP/accueil.php">
+        <img class="hbox1" src="/front/IMG/logo.png" alt="Logo"/></a>
         <form>
             <fieldset class="form">
                 <h2> Inscription </h2>
@@ -23,7 +24,7 @@
 
                 <input type="email" id="email" size="30" required>
                 <div><br/><br/></div>
-                
+
                 <label class="mdp" type="button"> Mot de passe</label>
 
                 <input type="password" id="pass" name="password" required>
@@ -53,5 +54,5 @@
     </form>
         <a href="/front/PHP/accueil.php">Accueil</a>
     </div>
-    </body> 
-</html> 
+    </body>
+</html>

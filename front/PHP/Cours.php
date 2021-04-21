@@ -2,6 +2,7 @@
 include_once("../Header_Footer/header.php");
 ?>
 <link rel="stylesheet" href="../CSS/cours.css" type="text/css"/>
+<body>
 <div class="base-text">
     <h2>Une multitude de cours</h2>
     <p>
@@ -31,15 +32,17 @@ include_once("../Header_Footer/header.php");
 
 <div id="description2">
     <img src="../IMG/coursOrdi.PNG">
-    <span>
+    <span id="ordi">
       Apprenez différents langages de programmation (web, application...) gratuitement !
-      Nous nous efforçons à vous proposez un contenu ludique, complet et formateur.
+      Nous nous efforçons à vous proposer un contenu ludique, complet et formateur.
     </span>
 </div>
+<div class="egg"></div>
+
 <script type="text/javascript" src="../JS/Cours.js"></script>
 
 <?php
 include('../Header_Footer/footer.php');
 ?>
-
+</body>
 </html>

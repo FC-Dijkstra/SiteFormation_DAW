@@ -2,7 +2,8 @@
 <html lang="fr" >
 <link rel="stylesheet" href="../../CSS/Utilisateur/connexion.css" type="text/css"/>
     <div id="page">
-        <img id="logo" src="/front/IMG/logo.png" alt="Logo" />
+        <a href="/front/PHP/accueil.php">
+        <img class="hbox1" src="/front/IMG/logo.png" alt="Logo"/></a>
         <form class="connexion">
             <fieldset class="form">
                 <h2> Connexion </h2>
@@ -29,7 +30,5 @@
         </form>
         <a href="../accueil.php">Accueil</a>
     </div>
-    </body> 
+    </body>
 </html>
-
-
