@@ -1,4 +1,7 @@
 21-04-2021 02:55:03 - db::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'aaa@gmail.com' for key 'email'
-21-04-2021 04:20:26 - db::query()[107] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'where clause'
-21-04-2021 04:21:23 - db::query()[107] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'where clause'
-21-04-2021 04:22:28 - db::query()[107] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'where clause'
+21-04-2021 04:48:24 - db::query()[62] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.categorie' doesn't exist
+21-04-2021 04:48:53 - db::query()[62] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.categorie' doesn't exist
+21-04-2021 04:49:25 - db::query()[62] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+21-04-2021 04:49:26 - db::query()[62] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+21-04-2021 04:50:10 - db::query()[62] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.categorie' doesn't exist
+21-04-2021 04:50:17 - db::query()[62] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1

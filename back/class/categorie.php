@@ -23,7 +23,7 @@ class categorie extends DBObject
             $params["titre"]
         );
     }
-
+	
     public static function delete($id)
     {
         return db::getInstance()->delete(config::$CAT_TABLE, $id);
@@ -56,4 +56,9 @@ class categorie extends DBObject
 
         return $output;
     }
+	
+	public static function getAllByType($type)
+	{
+		return db::getInstance()->query("SELECT * FROM categories WHERE titre LIKE '".$type."%'");
+	}
 }
