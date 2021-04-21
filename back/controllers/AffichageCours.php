@@ -3,12 +3,10 @@
 	require_once(__DIR__ . "./../class/cours.php");
 	require_once(__DIR__ . "./../class/categorie.php");
 	
-	$filepath;
-	function verifFichier($nom)
+	function verifFichier($id)
 	{
-		if(file_exists("./../data/$nom"))
+		if(file_exists(__DIR__ ."./../data/cours/$id/index.html"))
 		{
-			$filepath = "./../data/$nom";
 			return true;
 		}
 		else
@@ -19,25 +17,25 @@
 	
 	function returnView($id)
 	{
-		$cours = cours::load($id);
 		$flag = false;
 		$res = array();
 		$indice = 0;
-		if(verifFichier("cours/'$id'/index.html"))
+		if(verifFichier($id))
 		{
-			$coursfile = fopen("./../data/cours/'$id'/index.html","r");
+			
+			$coursfile = fopen(__DIR__ . "./../data/cours/$id/index.html","r");
 			while(!feof($coursfile))
 			{
 				$ligne = fgets($coursfile);
-				if(str_contains("<body",$ligne))
+				if(str_contains($ligne,"<body"))
 				{
 					$flag = true;
 				}
-				if(str_contains("</body",$ligne))
+				if(str_contains($ligne,"</body"))
 				{
 					$flag = false;
 				}
-				if(flag)
+				if($flag)
 				{
 					$res[$indice] = $ligne;
 					$indice++;
@@ -55,7 +53,6 @@
 	{
 		$res = array();
 		$categorie = categorie::getAllByType($type);
-		var_dump($categorie);
 		for($i = 0; $i < count($categorie);$i++)
 		{
 			$rescat = $categorie[$i]["id"];

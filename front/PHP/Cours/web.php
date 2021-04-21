@@ -2,12 +2,11 @@
 <html lang="fr" >
 <link rel="stylesheet" href="../../CSS/web.css" type="text/css"/>
 <?php
-include_once($_SERVER['DOCUMENT_ROOT']."/back/class/cours.php");
 include_once($_SERVER['DOCUMENT_ROOT']."/back/controllers/AffichageCours.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/back/class/categorie.php");
 $liste = getByCategorie("Web");
+$listecat = categorie::getAllByType("Web");
 
-
-var_dump($liste);
 ?>
 
     <?php include ('../../Header_Footer/header.php') ?>
