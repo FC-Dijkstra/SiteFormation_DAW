@@ -25,7 +25,7 @@ function updateCours(cours, type) {
         let cat = cours[j]
         for (let i = 0; i < cat.length; i++) {
             let node = document.createElement("div");
-            node.onclick=()=>{location.href='/front/PHP/Cours/structureCours.php'};
+            node.onclick=()=>{location.href='/front/PHP/Cours/structureCours.php?id='+cat[i].id};
             let img = document.createElement("img");
             img.src = "/front/IMG/girl.png";
             img.className = "box1"
@@ -38,7 +38,20 @@ function updateCours(cours, type) {
             diff.className = "box3";
             /*for (let i2 = 0; i2 < 3; i2++)
                 diff.innerText += cat[i].difficulte > i2 ? '★' : '✩'*/
-            diff.innerText = cat[i].difficulte
+            switch (cat[i].difficulte) {
+                case 'Débutant':
+                    diff.innerText = '★✩✩✩';
+                    break;
+                case 'Intermédiaire':
+                    diff.innerText = '★★✩✩';
+                    break;
+                case 'Avancé':
+                    diff.innerText = '★★★✩';
+                    break;
+                case 'Expert':
+                    diff.innerText = '★★★★';
+                    break;
+            }
 
             let desc = document.createElement("p");
             desc.className = "box4";
