@@ -16,14 +16,15 @@
 		}
 	}
 	
-	function returnView($nom)
+	function returnView($id)
 	{
+		$cours = cours::load($id);
 		$flag = false;
 		$res = array();
 		$indice = 0;
-		if(verifFichier($nom))
+		if(verifFichier($cours["filedir"]))
 		{
-			$coursfile = fopen("./../data/$nom","r");
+			$coursfile = fopen("./../data/".$cours['filedir'],"r");
 			while(!feof($coursfile))
 			{
 				$ligne = fgets($coursfile);
@@ -48,5 +49,7 @@
 		}
 		return $res;
 	}
+	
+	
 	
 ?>
