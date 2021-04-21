@@ -1,6 +1,6 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/token.php");
-session_start();
+//session_start();
 $csrf = token::generate();
 ?>
 
