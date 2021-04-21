@@ -1,37 +1,14 @@
 
 .apprendre{
-    width: 97%;
+    width: 88%;
     resize: none;
-    margin-left: 1%;
+    margin-left: 5%;
     height: 75px;
 }
 
 
 .delChap {
-    position: absolute;
-    right: 32px;
-    top: 32px;
-    width: 32px;
-    height: 32px;
-    opacity: 0.3;
-  }
-  .delChap:hover {
-    opacity: 1;
-  }
-  .delChap:before, .close:after {
-    position: absolute;
-    left: 15px;
-    content: ' ';
-    height: 33px;
-    width: 2px;
-    background-color: #333;
-  }
-  .delChap:before {
-    transform: rotate(45deg);
-  }
-  .delChap:after {
-    transform: rotate(-45deg);
-  }
+}
   
 
 .addSection, .addChap{
@@ -118,10 +95,11 @@ form{
 }
 
 #apprendre{
-    margin-left: 27%;
-    margin-right: 27%;
+    margin-left: 30%;
+    margin-right: 30%;
     background-color: #EBC098;
     text-align: left;
+    height: 150px;
 }
 
 #progress{
