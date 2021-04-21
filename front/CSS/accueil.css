@@ -16,7 +16,7 @@
 #debut img{
   width: 160px;
   height: 170px;
-  float:left;
+  float: left;
 }
 
 #debut h3{
@@ -32,43 +32,49 @@ font-size: 22px;
 }
 
 #gauche{
-  margin-left: 10%;
-  margin-top: 10%;
+  width: 20%;
+  display: inline-block;
+
 }
 
 #gauche h3{
 font-size: 22px;
-margin-right: 75%;
 text-align: center;
 }
 
 #gauche p{
-  margin-right: 75%;
   margin-top: 2%;
   font-size: 20px;
 }
 
 #milieu{
-  margin-left: 10%;
   margin-top: 10%;
-  position:relative;
+  width: 20%;
+  display: inline-block;
 }
 
 
 #milieu h3{
 font-size: 22px;
-margin-right: 70%;
 text-align: center;
 }
 
 #milieu p{
-  margin-right: 65%;
   margin-top: 2%;
   font-size: 20px;
-  float: right;
 }
 
 #droite{
-  margin-left: 10%;
-  margin-top: 10%;
+  width: 20%;
+  display: inline-block;
+}
+
+#droite h3{
+font-size: 22px;
+text-align: center;
+}
+
+#droite p{
+  margin-top: 2%;
+  font-size: 20px;
 }
