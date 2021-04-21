@@ -29,14 +29,12 @@ echo $_SESSION["userID"];
 echo $_SESSION["admin"];
 ?>
     <body>
-        <h1 id="profiltitre"> Mon profil </h1>
+        <h1 class="profiltitre"> Mon profil </h1>
         <div id="profil">
             
             <div id="pbox1">
                 <img id="photoprofil" src="<?= $userIcon?>" alt="profil" />
-                <label class="file">Changer de photo : </label>
 
-                <input type="file" name="image" class="file">
             </div>
             <div id="pbox2">
             <form id="modifprofil">
@@ -47,8 +45,10 @@ echo $_SESSION["admin"];
                 <input type="text" id="info_prenom" value="<?= $prenom?>" readonly><br>
 
                 <label id="mail" type="text">Adresse mail liée:</label>
-                <input type="email" id="info_mail" value="<?= $email?>" readonly><br><br>
-
+                <input type="email" id="info_mail" value="<?= $email?>" readonly><br>
+                <label class="file">Changer de photo : </label>
+                <input type="file" name="image" class="file">
+                <br><br>
                 <a id="mdp">Mot de passe </a><br>
 
                 <label class="mdp" type="text">Nouveau mot de passe</label>

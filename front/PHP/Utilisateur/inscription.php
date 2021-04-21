@@ -62,6 +62,12 @@ token::generate();
     </form>
     <a href="/front/PHP/accueil.php">Accueil</a>
 </div>
+<?php
+if (isset($_GET["error"]))
+{
+    echo "<script> alert(" . $_GET["error"] . "); </script>";
+}
+?>
 </body>
 
 </html>
