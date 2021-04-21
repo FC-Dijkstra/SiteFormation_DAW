@@ -46,7 +46,7 @@
 		}
 		else
 		{
-			throw new ErroreException("Fichier non trouvé");
+			throw new ErrorException("Fichier non trouvé");
 		}
 		return $res;
 	}
