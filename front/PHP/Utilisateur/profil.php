@@ -24,12 +24,8 @@ else
 <html lang="fr" >
 <link rel="stylesheet" href="../../CSS/Utilisateur/profil.css" type="text/css"/>
 <?php include_once($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");?>
-<?php
-echo $_SESSION["userID"];
-echo $_SESSION["admin"];
-?>
     <body>
-        <h1 class="profiltitre"> Mon profil </h1>
+        <h1 id="profiltitre"> Mon profil </h1>
         <div id="profil">
             
             <div id="pbox1">
@@ -50,12 +46,13 @@ echo $_SESSION["admin"];
                 <input type="file" name="image" class="file">
                 <br><br>
                 <a id="mdp">Mot de passe </a><br>
-
+                <label class="mdp" type="text">Mot de passe</label>
+                <input class="mdp" type="password"><br>
                 <label class="mdp" type="text">Nouveau mot de passe</label>
-                <input class="mdp" type=text id="info_nouveaumdp" value=""><br>
+                <input class="mdp" type="password" id="info_nouveaumdp" value=""><br>
 
                 <label class="mdp" type="text">Confirmation nouveau mot de passe</label>
-                <input class="mdp" type=text id="info_nouveaumdp" value=""><br>
+                <input class="mdp" type="password" id="info_nouveaumdp" value=""><br>
 
                 <input type="submit" id="enregistrer" value="Enregistrer">
                 <input type="reset" id="annuler" value="Annuler" onclick="ModifierInfos()">

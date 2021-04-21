@@ -52,6 +52,10 @@ if (Input::exists())
 
                 break;
 
+            case "editprofile":
+                $nEmail = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+                $nNo
+
             default:
                 echo "action inconnue";
                 println();
