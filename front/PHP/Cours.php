@@ -5,6 +5,7 @@ include_once("../Header_Footer/header.php");
 <body>
 <div class="base-text">
     <h2>Une multitude de cours</h2>
+    <hr>
     <p>
         Sur cette page, venez choisir vos cours : vous pouvez apprendre
         des langages web comme HTML, CSS ou Javascript mais également des langages logiciels comme Java ou C !
@@ -12,7 +13,7 @@ include_once("../Header_Footer/header.php");
 </div>
 
 <div id="cours">
-    <p>Nous vous proposons différentes catégories de cours<br/><br/><br/></p>
+    <p>Nous vous proposons différentes catégories de cours :<br/><hr></p>
     <div id="coursDiv">
     <div class="slide-cours" onclick="window.location.href='./Cours/web.php'">
         <img src="../IMG/DevWeb.PNG">
@@ -26,7 +27,7 @@ include_once("../Header_Footer/header.php");
 <div id="description">
     <img src="../IMG/cours.PNG">
     <p>
-      Nous avons différents professeurs qui vous donnent des cours. Passez un quizz pour voir votre niveau, puis accéder ensuite aux cours qui vous plaisent ! Chaque jours, nous postons de nouveaux cours avec des professeurs différents. 
+      Nous avons différents professeurs qui vous donnent des cours. Passez un quizz pour voir votre niveau, puis accéder ensuite aux cours qui vous plaisent ! Chaque jour, nous postons de nouveaux cours avec des professeurs différents. 
     </p>
 </div>
 
@@ -37,12 +38,16 @@ include_once("../Header_Footer/header.php");
       Nous nous efforçons à vous proposer un contenu ludique, complet et formateur.
     </span>
 </div>
-<div class="egg"></div>
 
-<script type="text/javascript" src="../JS/Cours.js"></script>
+<div class="egg">
+</div>
+</body>
 
 <?php
 include('../Header_Footer/footer.php');
 ?>
-</body>
+
+<script type="text/javascript" src="../JS/Cours.js"></script>
+
+
 </html>

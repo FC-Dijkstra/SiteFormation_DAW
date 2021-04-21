@@ -2,7 +2,6 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/token.php");
 session_start();
 $csrf = token::generate();
-echo $csrf;
 ?>
 
 <!DOCTYPE html>
@@ -10,8 +9,9 @@ echo $csrf;
 <link rel="stylesheet" href="../../CSS/Utilisateur/connexion.css" type="text/css" />
 <div id="page">
     <a href="/front/PHP/accueil.php">
-        <img class="hbox1" src="/front/IMG/logo.png" alt="Logo" /></a>
-    <form class="connexion">
+        <img class="hbox1" src="/front/IMG/logo.png" alt="Logo" />
+    </a>
+    <form class="connexion" action="/back/router.php" method="post">
         <fieldset class="form">
             <h2> Connexion </h2>
             <p> Pressé d'apprendre ? <br /> Connecte-toi ! </p>

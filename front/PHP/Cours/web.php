@@ -3,11 +3,11 @@
 <link rel="stylesheet" href="../../CSS/web.css" type="text/css"/>
 <?php
 include_once($_SERVER['DOCUMENT_ROOT']."/back/class/cours.php");
-$liste = array();
-array_push($liste, new cours(1, "Apprenez HTML", 1, "", -1, 1));
-array_push($liste, new cours(2, "Allez plus loin avec HTML", 1, "", -1, 1));
-array_push($liste, new cours(3, "Apprenez CSS", 3, "", -1, 2));
-array_push($liste, new cours(4, "Apprenez JS", 1, "", -1, 3));
+include_once($_SERVER['DOCUMENT_ROOT']."/back/controllers/AffichageCours.php");
+$liste = getByCategorie("Web");
+
+
+var_dump($liste);
 ?>
 
     <?php include ('../../Header_Footer/header.php') ?>

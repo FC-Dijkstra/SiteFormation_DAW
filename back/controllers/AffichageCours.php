@@ -1,6 +1,7 @@
 <?php 
 	// ./../data/fichier.html
 	require_once(__DIR__ . "./../class/cours.php");
+	require_once(__DIR__ . "./../class/categorie.php");
 	
 	$filepath;
 	function verifFichier($nom)
@@ -22,9 +23,9 @@
 		$flag = false;
 		$res = array();
 		$indice = 0;
-		if(verifFichier($cours["filedir"]))
+		if(verifFichier("cours/'$id'/index.html"))
 		{
-			$coursfile = fopen("./../data/".$cours['filedir'],"r");
+			$coursfile = fopen("./../data/cours/'$id'/index.html","r");
 			while(!feof($coursfile))
 			{
 				$ligne = fgets($coursfile);
@@ -45,11 +46,22 @@
 		}
 		else
 		{
-			die("Fichier non trouvé")
+			throw new ErrorException("Fichier non trouvé");
 		}
 		return $res;
 	}
 	
-	
+	function getByCategorie($type)
+	{
+		$res = array();
+		$categorie = categorie::getAllByType($type);
+		var_dump($categorie);
+		for($i = 0; $i < count($categorie);$i++)
+		{
+			$rescat = $categorie[$i]["id"];
+			array_push($res,db::getInstance()->get("cours","categorie = $rescat",false));
+		}
+		return $res;
+	}
 	
 ?>

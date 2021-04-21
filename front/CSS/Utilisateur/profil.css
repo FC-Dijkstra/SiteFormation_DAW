@@ -6,7 +6,12 @@ hr{
     bottom: auto;
 }
 
-#profil, #cours, #recommandations {
+#profiltitre
+{
+    margin-left: 5%;
+}
+
+#profil, #cours, #recommandations{
     margin-right: 5%;
     margin-left: 5%;
 }

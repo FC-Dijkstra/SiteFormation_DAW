@@ -2,10 +2,10 @@
 
 class config
 {
-    public static string $login = "root";
-    public static string $password = "";
-    public static string $hostname = "localhost";
-    public static string $dbname = "sf_daw";
+    public static string $login = "daw";
+    public static string $password = "J8zh7Mr1WPoe";
+    public static string $hostname = "mysql.thaksprod.ml";
+    public static string $dbname = "daw";
     public static bool $verbose = true;
 
     public static string $ADMIN_TABLE = "admins";

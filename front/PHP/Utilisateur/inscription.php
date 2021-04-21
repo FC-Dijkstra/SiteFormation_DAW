@@ -9,8 +9,9 @@ token::generate();
 <link rel="stylesheet" href="../../CSS/Utilisateur/inscription.css" type="text/css" />
 <div id="page">
     <a href="/front/PHP/accueil.php">
-        <img class="hbox1" src="/front/IMG/logo.png" alt="Logo" /></a>
-    <form>
+        <img class="hbox1" src="/front/IMG/logo.png" alt="Logo" />
+    </a>
+    <form action="/back/router.php" enctype="multipart/form-data" method="post">
         <fieldset class="form">
             <h2> Inscription </h2>
 
@@ -61,6 +62,12 @@ token::generate();
     </form>
     <a href="/front/PHP/accueil.php">Accueil</a>
 </div>
+<?php
+if (isset($_GET["error"]))
+{
+    echo "<script> alert(" . $_GET["error"] . "); </script>";
+}
+?>
 </body>
 
 </html>
