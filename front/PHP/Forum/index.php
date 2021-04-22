@@ -35,7 +35,7 @@
     <table class="forum_category_table">
         <tbody>
         <tr>
-            <td onclick=location.href="web.php">Conversations sur les cours d'HTML</td>
+            <td onclick=location.href="index.php?page=web">Conversations sur les cours d'HTML</td>
         </tr>
         <tr>
             <td>Conversations sur les cours de CSS</td>

@@ -5,8 +5,6 @@ require_once(__DIR__ . "./../helpers/warning2error.php");
 require_once(__DIR__ . "./../helpers/logger.php");
 require_once(__DIR__ . "./../helpers/redirect.php");
 
-//TODO: Suppression et modification de compte.
-
 function deleteAccount($id)
 {
     utilisateur::delete($id);
@@ -26,7 +24,7 @@ function editAccount($id, $nNom, $nPrenom, $nEmail, $nPassword, $oPassword)
                 "usericon"=>$user->get("userIcon")
             ];
         db::getInstance()->update("utilisateurs", "id = {$id}", $params);
-        redirect::to("/index.php?page=profil");
+        redirect::to("profil");
     }
     else
     {

@@ -4,9 +4,9 @@
         <a href="/front/PHP/accueil.php">
             <img class="hbox1" src="/front/IMG/logo.png" alt="Logo"/></a>
         <ul class="hbox2">
-            <li class="menu-item"><a href="/front/PHP/accueil.php">Accueil</a></li>
-            <li class="menu-item"><a href="/front/PHP/cours.php">Cours</a></li>
-            <li class="menu-item"><a href="/front/PHP/Forum">Forum</a></li>
+            <li class="menu-item"><a href="index.php?page=accueil">Accueil</a></li>
+            <li class="menu-item"><a href="index.php?page=cours">Cours</a></li>
+            <li class="menu-item"><a href="index.php?page=accueilForum">Forum</a></li>
             <div class="htrait">
             </div>
         </ul>
