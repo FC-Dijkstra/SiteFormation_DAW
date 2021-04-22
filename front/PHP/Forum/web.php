@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
 <link rel="stylesheet" href="/front/CSS/Forum/index.css" type="text/css">
-<?php
-include_once(__DIR__ . "./../../Include/header_base.php");
-?>
 <body>
 
 <div class="forum_header">
@@ -18,7 +12,7 @@ include_once(__DIR__ . "./../../Include/header_base.php");
   <table class="forum_category_table">
     <tbody>
     <tr>
-      <td onclick=location.href="conversation.php?id=1">Comment faire de la ratatouille en html ?</td>
+      <td onclick=location.href="index.php?page=conversationForum&id=1">Comment faire de la ratatouille en html ?</td>
     </tr>
     <tr>
       <td>c quoi un div</td>
@@ -32,10 +26,4 @@ include_once(__DIR__ . "./../../Include/header_base.php");
     </tbody>
   </table>
 </div>
-
-
 </body>
-
-
-<?php include(__DIR__ . './../../Include/footer.php') ?>
-</html>

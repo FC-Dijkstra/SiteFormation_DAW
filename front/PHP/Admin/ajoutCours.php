@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr" >
 <link rel="stylesheet" href="/front/CSS/Admin/ajoutCours.css" type="text/css"/>
 <div id="progress"></div>
 <body>
@@ -65,5 +63,3 @@
 </form>
 </body>
 <script type="text/javascript" src="../../JS/Admin/ajoutCours.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</html>

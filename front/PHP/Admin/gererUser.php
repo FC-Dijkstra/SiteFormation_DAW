@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr" >
-<?php
-include($_SERVER['DOCUMENT_ROOT'] . "/front/Include/header_base.php");
-?>
 <link rel="stylesheet" href="../../CSS/Admin/gererUser.css" type="text/css"/>
 <body>
   <div id="corps">
@@ -43,7 +38,4 @@ include($_SERVER['DOCUMENT_ROOT'] . "/front/Include/header_base.php");
     </div>
   </div>
 <script type="text/javascript" src="../../JS/Admin/gererUser.js"></script>
-    </body>
-
-  <?php include_once($_SERVER['DOCUMENT_ROOT']."//front/Include/footer.php"); ?>
-    </html>
+</body>

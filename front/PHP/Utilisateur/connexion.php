@@ -1,14 +1,6 @@
-<?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/token.php");
-session_start();
-$csrf = token::generate();
-?>
-
-<!DOCTYPE html>
-<html lang="fr">
-<link rel="stylesheet" href="../../CSS/Utilisateur/connexion.css" type="text/css" />
+<link rel="stylesheet" href="/front/CSS/Utilisateur/connexion.css" type="text/css" />
 <div id="page">
-    <a href="/front/PHP/accueil.php">
+    <a href="index.php">
         <img class="hbox1" src="/front/IMG/logo.png" alt="Logo" />
     </a>
     <form class="connexion" action="/back/router.php" method="post">
@@ -33,17 +25,9 @@ $csrf = token::generate();
 
             <h2> Inscription </h2>
             <p> Pas encore inscrit ? <br /> Rejoins-nous ! </p>
-            <button class="inscription" type="button" onclick="location.href='/front/PHP/utilisateur/inscription.php'"> Je m'inscris ! </button>
+            <button class="inscription" type="button" onclick="location.href='index.php?page=inscription'"> Je m'inscris ! </button>
         </fieldset>
     </form>
-    <a href="../accueil.php">Accueil</a>
+    <a href="index.php">Accueil</a>
 </div>
-<?php
-if (isset($_GET["error"]))
-{
-    echo "<script> alert(" . $_GET["error"] . "); </script>";
-}
-?>
 </body>
-
-</html>

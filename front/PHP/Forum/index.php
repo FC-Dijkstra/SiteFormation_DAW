@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
 <link rel="stylesheet" href="/front/CSS/Forum/index.css" type="text/css">
-<?php
-include_once(__DIR__ . "./../../Include/header_base.php");
-?>
 <body>
 
 <div class="forum_header">
@@ -74,10 +68,4 @@ include_once(__DIR__ . "./../../Include/header_base.php");
         </tbody>
     </table>
 </div>
-
-
 </body>
-
-
-    <?php include(__DIR__ . './../../Include/footer.php') ?>
-</html>

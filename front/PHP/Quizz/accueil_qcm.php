@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr" >
-<?php
-include_once("../../Include/header_base.php");
-?>
 <link rel="stylesheet" href="/front/CSS/Quizz/accueil_qcm.css" type="text/css"/>
 <body class="light">
 <div id="centre">
@@ -13,28 +8,26 @@ include_once("../../Include/header_base.php");
   <div id="line1"><hr></div>
   <br/>
 <div>
-  <a id="webhtml" href="/front/PHP/Quizz/qcm.php"> HTML </a> <br/>
+  <a id="webhtml" href="index.php?page=QCM"> HTML </a> <br/>
 </div>
 <br/>
 <div>
-  <a id="webcss" href="/front/PHP/Quizz/qcm.php"> CSS </a> <br/>
+  <a id="webcss" href="index.php?page=QCM"> CSS </a> <br/>
 </div>
 <br/>
 <div>
-  <a id="webjs" href="/front/PHP/Quizz/qcm.php"> JavaScript </a> <br/>
+  <a id="webjs" href="index.php?page=QCM"> JavaScript </a> <br/>
 </div>
 <p id="app"> Développement d'applications </p>
   <div id="line1"><hr></div>
   <br/>
 <div>
-  <a id="appjava" href="/front/PHP/Quizz/qcm.php"> Java </a> <br/>
+  <a id="appjava" href="index.php?page=QCM"> Java </a> <br/>
 </div>
 <br/>
 <div>
-  <a id="appswift" href="/front/PHP/Quizz/qcm.php"> Swift </a> <br/>
+  <a id="appswift" href="index.php?page=QCM"> Swift </a> <br/>
 </div>
 </div>
 <br/>
 </body>
-<?php include('../../Include/footer.php') ?>
-</html>

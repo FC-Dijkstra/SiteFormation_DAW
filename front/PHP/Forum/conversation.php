@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-
 <link rel="stylesheet" href="/front/CSS/Forum/index.css" type="text/css">
 <?php
-include(__DIR__ . "./../../Include/header_base.php");
 include_once($_SERVER['DOCUMENT_ROOT'] . "/back/class/conversation.php");
 $test = new conversation(1, 1, "Titre de la conversation");
 ?>
@@ -75,7 +71,3 @@ $test = new conversation(1, 1, "Titre de la conversation");
     $("#next").attr('href', 'conversation.php?'+params.toString())
 </script>
 </body>
-
-
-<?php include(__DIR__ . './../../Include/footer.php') ?>
-</html>

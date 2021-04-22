@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr" >
-<?php
-include_once("../../Include/header_base.php");
-?>
 <link rel="stylesheet" href="/front/CSS/Quizz/qcm.css" type="text/css"/>
 <script type="text/javascript" src="/front/JS/qcm.js"></script>
 <body class="light">
@@ -68,5 +63,3 @@ include_once("../../Include/header_base.php");
 </fieldset>
 </div>
 </body>
-<?php include('../../Include/footer.php') ?>
-</html>

@@ -1,10 +1,3 @@
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="/front/CSS/header.css" type="text/css">
-    <script type="text/javascript" src="/front/JS/Sombre.js"></script>
-    <title><?= isset($title)?$title:"" ?></title>
-</head>
-
 <header>
     <div class="header">
 

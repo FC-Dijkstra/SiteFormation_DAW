@@ -1,14 +1,6 @@
-<?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "back/helpers/token.php");
-session_start();
-token::generate();
-?>
-
-<!DOCTYPE html>
-<html lang="fr">
-<link rel="stylesheet" href="../../CSS/Utilisateur/inscription.css" type="text/css" />
+<link rel="stylesheet" href="/front/CSS/Utilisateur/inscription.css" type="text/css" />
 <div id="page">
-    <a href="/front/PHP/accueil.php">
+    <a href="index.php">
         <img class="hbox1" src="/front/IMG/logo.png" alt="Logo" />
     </a>
     <form action="/back/router.php" enctype="multipart/form-data" method="post">
@@ -57,17 +49,9 @@ token::generate();
 
                 <p> Tu as déjà un compte ? <br /> Connecte-toi ! </p>
 
-                <button class="connexion" type="button" onclick="location.href='/front/PHP/utilisateur/connexion.php'"> Je me connecte ! </button>
+                <button class="connexion" type="button" onclick="location.href='index.php?page=connexion'"> Je me connecte ! </button>
         </fieldset>
     </form>
-    <a href="/front/PHP/accueil.php">Accueil</a>
+    <a href="index.php">Accueil</a>
 </div>
-<?php
-if (isset($_GET["error"]))
-{
-    echo "<script> alert(" . $_GET["error"] . "); </script>";
-}
-?>
 </body>
-
-</html>

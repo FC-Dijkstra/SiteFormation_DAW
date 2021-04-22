@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
 <link rel="stylesheet" href="../../CSS/web.css" type="text/css"/>
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . "/back/class/categorie.php");
@@ -8,9 +6,6 @@ include_once($_SERVER['DOCUMENT_ROOT'] . "/back/controllers/AffichageCours.php")
 $liste = getByCategorie("Web");
 $categories = categorie::getAllByType("Web");
 ?>
-
-<?php include('../../Include/header_base.php') ?>
-
 <body>
 <div class="search">
     <input type="text" id="searchBox" placeholder="Recherche..."/>
@@ -30,5 +25,3 @@ $categories = categorie::getAllByType("Web");
     updateCours(cats, "Web/");
 </script>
 </body>
-<?php include('../../Include/footer.php') ?>
-</html>
