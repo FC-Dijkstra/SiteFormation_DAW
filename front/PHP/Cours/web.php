@@ -9,7 +9,7 @@ $liste = getByCategorie("Web");
 $categories = categorie::getAllByType("Web");
 ?>
 
-<?php include('../../Header_Footer/header.php') ?>
+<?php include('../../Include/header_base.php') ?>
 
 <body>
 <div class="search">
@@ -30,5 +30,5 @@ $categories = categorie::getAllByType("Web");
     updateCours(cats, "Web/");
 </script>
 </body>
-<?php include('../../Header_Footer/footer.php') ?>
+<?php include('../../Include/footer.php') ?>
 </html>

@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="/front/CSS/Forum/index.css" type="text/css">
 <?php
-include(__DIR__ . "./../../Header_Footer/header.php");
+include(__DIR__ . "./../../Include/header_base.php");
 include_once($_SERVER['DOCUMENT_ROOT'] . "/back/class/conversation.php");
 $test = new conversation(1, 1, "Titre de la conversation");
 ?>
@@ -77,5 +77,5 @@ $test = new conversation(1, 1, "Titre de la conversation");
 </body>
 
 
-<?php include(__DIR__ . './../../Header_Footer/footer.php') ?>
+<?php include(__DIR__ . './../../Include/footer.php') ?>
 </html>

@@ -1,9 +1,3 @@
-<?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/token.php");
-//session_start();
-$csrf = token::generate();
-?>
-
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/front/CSS/header.css" type="text/css">
@@ -38,10 +32,5 @@ $csrf = token::generate();
         </ul>
 
     </div>
-    <?= isset($content)?$content:"" ?>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-    <?= isset($scripts)?$scripts:"" ?>
 </header>

@@ -1,5 +1,5 @@
 <?php
-include_once("../Header_Footer/header.php");
+include_once("../Include/header_base.php");
 ?>
 <link rel="stylesheet" href="../CSS/cours.css" type="text/css"/>
 <body>
@@ -44,7 +44,7 @@ include_once("../Header_Footer/header.php");
 </body>
 
 <?php
-include('../Header_Footer/footer.php');
+include('../Include/footer.php');
 ?>
 
 <script type="text/javascript" src="../JS/Cours.js"></script>

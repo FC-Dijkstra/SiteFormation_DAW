@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" >
-<?php include_once ('../Header_Footer/header.php'); ?>
+<?php include_once('../Include/header_base.php'); ?>
 <link rel="stylesheet" href="../CSS/accueil.css" type="text/css"/>
 <body>
 <h2 id="bvn"> Bienvenue sur notre site de cours en ligne ! </h2>
@@ -45,5 +45,5 @@
 </div>
 
 </body>
-<?php include ('../Header_Footer/footer.php'); ?>
+<?php include('../Include/footer.php'); ?>
 </html>

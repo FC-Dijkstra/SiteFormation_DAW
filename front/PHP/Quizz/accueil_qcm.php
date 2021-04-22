@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" >
 <?php
-include_once("../../Header_Footer/header.php");
+include_once("../../Include/header_base.php");
 ?>
 <link rel="stylesheet" href="/front/CSS/Quizz/accueil_qcm.css" type="text/css"/>
 <body class="light">
@@ -36,5 +36,5 @@ include_once("../../Header_Footer/header.php");
 </div>
 <br/>
 </body>
-<?php include ('../../Header_Footer/footer.php') ?>
+<?php include('../../Include/footer.php') ?>
 </html>

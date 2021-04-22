@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" >
 <link rel="stylesheet" href="../../CSS/Admin/profilAdmin.css" type="text/css"/>
-<?php include_once($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");
+<?php include_once($_SERVER['DOCUMENT_ROOT'] . "/front/Include/header_base.php");
 ?>
 
     <body>
@@ -68,5 +68,5 @@
           </div>
         </div>
     </body>
-    <?php include_once($_SERVER['DOCUMENT_ROOT']."//front/Header_Footer/footer.php"); ?>
+    <?php include_once($_SERVER['DOCUMENT_ROOT']."//front/Include/footer.php"); ?>
 </html>

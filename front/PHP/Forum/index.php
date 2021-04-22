@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="/front/CSS/Forum/index.css" type="text/css">
 <?php
-include_once(__DIR__."./../../Header_Footer/header.php");
+include_once(__DIR__ . "./../../Include/header_base.php");
 ?>
 <body>
 
@@ -79,5 +79,5 @@ include_once(__DIR__."./../../Header_Footer/header.php");
 </body>
 
 
-    <?php include(__DIR__.'./../../Header_Footer/footer.php') ?>
+    <?php include(__DIR__ . './../../Include/footer.php') ?>
 </html>

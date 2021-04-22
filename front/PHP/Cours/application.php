@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="../../CSS/web.css" type="text/css"/>
 <?php
 include_once($_SERVER['DOCUMENT_ROOT']."/back/class/cours.php");
-include($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/front/Include/header_base.php");
 
 $liste = array();
 array_push($liste, new cours(1, "Apprenez HTML", "EZ","", -1, 1));
@@ -32,4 +32,4 @@ array_push($liste, new cours(4, "Apprenez JS", "EZ","", -1, 3));
         </div>
     </body>
 <?php
-include($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/footer.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/front/Include/footer.php");

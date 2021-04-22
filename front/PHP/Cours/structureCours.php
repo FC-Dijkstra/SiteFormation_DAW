@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" >
 <?php
-include_once("../../Header_Footer/header.php");
+include_once("../../Include/header_base.php");
 include_once("../../../back/controllers/AffichageCours.php");
 ?>
 <link rel="stylesheet" href="/front/CSS/structureCours.css" type="text/css"/>
@@ -14,5 +14,5 @@ include_once("../../../back/controllers/AffichageCours.php");
 		echo $html[$i];
 	}
 ?>
-<?php include ('../../Header_Footer/footer.php') ?>
+<?php include('../../Include/footer.php') ?>
 </html>

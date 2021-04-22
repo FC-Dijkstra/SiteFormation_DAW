@@ -23,7 +23,7 @@ else
 <!DOCTYPE html>
 <html lang="fr" >
 <link rel="stylesheet" href="../../CSS/Utilisateur/profil.css" type="text/css"/>
-<?php include_once($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");?>
+<?php include_once($_SERVER['DOCUMENT_ROOT'] . "/front/Include/header_base.php");?>
     <body>
         <h1 id="profiltitre"> Mon profil </h1>
         <div id="profil">
@@ -124,5 +124,5 @@ else
         </div>
     </body>
     <script type="text/javascript" src="../../JS/Utilisateur/profil.js"></script>
-    <?php include_once($_SERVER['DOCUMENT_ROOT']."//front/Header_Footer/footer.php"); ?>
+    <?php include_once($_SERVER['DOCUMENT_ROOT']."//front/Include/footer.php"); ?>
 </html>

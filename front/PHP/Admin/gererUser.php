@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" >
 <?php
-include($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/front/Include/header_base.php");
 ?>
 <link rel="stylesheet" href="../../CSS/Admin/gererUser.css" type="text/css"/>
 <body>
@@ -45,5 +45,5 @@ include($_SERVER['DOCUMENT_ROOT']."/front/Header_Footer/header.php");
 <script type="text/javascript" src="../../JS/Admin/gererUser.js"></script>
     </body>
 
-  <?php include_once($_SERVER['DOCUMENT_ROOT']."//front/Header_Footer/footer.php"); ?>
+  <?php include_once($_SERVER['DOCUMENT_ROOT']."//front/Include/footer.php"); ?>
     </html>
