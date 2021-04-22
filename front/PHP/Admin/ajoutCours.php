@@ -62,4 +62,4 @@
        
 </form>
 </body>
-<script type="text/javascript" src="../../JS/Admin/ajoutCours.js"></script>
+<script type="text/javascript" src="/front/JS/Admin/ajoutCours.js"></script>

@@ -34,7 +34,7 @@ if (Input::exists())
                 if (isset($nom) && isset($prenom) && isset($email) && isset($pHash))
                     createAccount($nom, $prenom, $email, $pHash);
                 else
-                    redirect::to($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Utilisateur/inscription.php");
+                    redirect::to("inscription");
                 break;
 
             case "connexion":
@@ -44,7 +44,7 @@ if (Input::exists())
                 if (isset($email) && isset($password))
                     login($email, $password);
                 else
-                    redirect::to($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Utilisateur/connexion.php");
+                    redirect::to("connexion");
                 break;
 
             case "deconnexion":
@@ -64,7 +64,7 @@ if (Input::exists())
                 if (isset($id) && isset($email) && isset($nom) && isset($prenom) && isset($oldPassword) && isset($newPassword))
                     editAccount($id, $nom, $prenom, $email, $newPassword, $oldPassword);
                 else
-                    redirect::to("/front/PHP/accueil.php");
+                    redirect::to("accueil");
 
                 break;
 
@@ -75,7 +75,7 @@ if (Input::exists())
                 if (isset($id) && isset($coursID))
                     unfollow($id, $coursID);
                 else
-                    redirect::to("/front/PHP/accueil.php");
+                    redirect::to("accueil");
 
                 break;
 
@@ -86,18 +86,16 @@ if (Input::exists())
                 if(isset($id) && isset($coursID))
                     follow($id, $coursID);
                 else
-                    redirect::to("/front/PHP/accueil.php");
+                    redirect::to("accueil");
 
                 break;
             default:
-                echo "action inconnue";
-                println();
+                redirect::to("accueil");
                 break;
         }
     }
     else
     {
-        echo "token invalide";
-        println();
+        redirect::to("accueil", "Vérification CSRF invalide !");
     }
 }

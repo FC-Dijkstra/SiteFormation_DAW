@@ -2,15 +2,15 @@
 
 class Input
 {
-    public static function exists(string $type = "POST"): bool
+    public static function exists(): bool
     {
-        if ($type == "POST")
+        if (!empty($_POST))
         {
-            return (!empty($_POST)) ? true : false;
+            return true;
         }
-        elseif ($type == "GET")
+        else if (!empty($_GET))
         {
-            return (!empty($_GET)) ? true : false;
+            return true;
         }
         else
         {

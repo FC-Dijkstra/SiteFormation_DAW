@@ -26,12 +26,12 @@ function editAccount($id, $nNom, $nPrenom, $nEmail, $nPassword, $oPassword)
                 "usericon"=>$user->get("userIcon")
             ];
         db::getInstance()->update("utilisateurs", "id = {$id}", $params);
-        redirect::to("/front/PHP/Utilisateur/profil.php");
+        redirect::to("/index.php?page=profil");
     }
     else
     {
         logger::log("édition: mot de passe invalide");
-        redirect::to("/front/PHP/accueil.php");
+        redirect::to("accueil");
     }
 }
 
@@ -40,7 +40,7 @@ function disconnect()
     unset($_SESSION["userID"]);
     unset($_SESSION["admin"]);
     //echo "déconnecté";
-    redirect::to("/front/PHP/accueil.php");
+    redirect::to("accueil");
 }
 
 function createAccount($nom, $prenom, $email, $pHash)
@@ -61,13 +61,13 @@ function createAccount($nom, $prenom, $email, $pHash)
     if (!db::getInstance()->hasError())
     {
         //echo "inscription valide";
-        redirect::to("/front/PHP/Utilisateur/connexion.php");
+        redirect::to("profil");
     }
     else
     {
         echo "inscription invalide <br/>" ;
         deleteUserIcon($icon);
-        redirect::to("/front/PHP/Utilisateur/inscription.php?error='inscription invalide !'");
+        redirect::to("inscription", "Paramètres invalides !");
     }
 }
 
@@ -89,12 +89,12 @@ function login($email, $password)
         $_SESSION["admin"] = $user->get("admin");
 
         //echo "bienvenue";
-        redirect::to("/front/PHP/Utilisateur/profil.php");
+        redirect::to("profil");
     }
     else
     {
         //echo "connexion invalide";
 
-        redirect::to("/front/PHP/Utilisateur/connexion.php?error='Connexion invalide !'");
+        redirect::to("connexion", "Paramètres invalides!");
     }
 }

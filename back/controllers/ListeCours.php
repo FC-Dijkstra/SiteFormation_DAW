@@ -39,12 +39,12 @@ function follow($id, $coursID)
             "utilisateur"=>$id
         ];
     db::getInstance()->insert("abonnements", $params);
-    redirect::to("/front/PHP/Utilisateur/profil.php");
+    redirect::to("profil.php");
 }
 
 function unfollow($id, $coursID)
 {
     db::getInstance()->query("DELETE FROM abonnements WHERE utilisateur = ? AND cours = ?", [$id, $coursID], false);
-    redirect::to("/front/PHP/Utilisateur/profil.php");
+    redirect::to("profil.php");
 }
 ?>

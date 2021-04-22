@@ -12,8 +12,8 @@
         </ul>
 
         <ul class="hbox3">
-            <li class="menu-item connexion"><a href="/front/PHP/utilisateur/profil.php">Profil</a></li>
-            <li class="menu-item inscription"><a href="/back/router.php?action=deconnexion">Déconnexion</a></li>
+            <li class="menu-item connexion"><a href="index.php?page=profil">Profil</a></li>
+            <li class="menu-item inscription"><a href="/back/router.php?action=deconnexion&csrf_token=<?= $_SESSION["csrf_token"]?>">Déconnexion</a></li>
             <li class="menu-item-dark-mode">
                 <div class="switch-dark-light">
                     <label class="theme-switch" for="checkbox">

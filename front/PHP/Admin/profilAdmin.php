@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../CSS/Admin/profilAdmin.css" type="text/css"/>
+<link rel="stylesheet" href="/front/CSS/Admin/profilAdmin.css" type="text/css"/>
 <body>
     <h1 id="profiltitre"> Mon profil </h1>
     <div id="profil">

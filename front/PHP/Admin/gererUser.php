@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../CSS/Admin/gererUser.css" type="text/css"/>
+<link rel="stylesheet" href="/front/CSS/Admin/gererUser.css" type="text/css"/>
 <body>
   <div id="corps">
     <h2> Gérer les utilisateurs </h2>
@@ -37,5 +37,5 @@
     </form>
     </div>
   </div>
-<script type="text/javascript" src="../../JS/Admin/gererUser.js"></script>
+<script type="text/javascript" src="/front/JS/Admin/gererUser.js"></script>
 </body>

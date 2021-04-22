@@ -22,10 +22,14 @@
         include_once($_SERVER["DOCUMENT_ROOT"] . "/front/Include/header_base.php");
     }
 
-    if (Input::exists("GET"))
+    if (Input::exists())
     {
         switch(Input::get("page"))
         {
+            case "accueil":
+                include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/accueil.php");
+                break;
+
             case "profil":
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Utilisateur/profil.php");
                 break;
@@ -52,6 +56,7 @@
 
             case "coursWeb":
                 include ($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Cours/web.php");
+                break;
 
             case "accueilQCM":
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Quizz/accueil_qcm.php");
@@ -85,6 +90,10 @@
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Admin/ajoutCours.php");
                 break;
         }
+        if (isset($_GET["error"]))
+        {
+            echo "<script> alert(" . $_GET["error"] . "); </script>";
+        }
     }
     else
     {
@@ -92,10 +101,5 @@
     }
 
     include_once($_SERVER["DOCUMENT_ROOT"] . "/front/Include/Footer.php");
-
-    if (isset($_GET["error"]))
-    {
-        echo "<script> alert(" . $_GET["error"] . "); </script>";
-    }
     ?>
 </html>

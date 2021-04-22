@@ -2,7 +2,6 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . "/back/controllers/ListeCours.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/back/class/utilisateur.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/redirect.php");
-session_start();
 ?>
 
 <?php
