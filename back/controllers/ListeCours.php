@@ -31,4 +31,20 @@ function coursCree($user) : array
 	//return db::getInstance()->get("utilisateurs u,cours c","u.nom = $user AND u.id = a.auteur");
 }
 
+function follow($id, $coursID)
+{
+    $params=
+        [
+            "cours"=>$coursID,
+            "utilisateur"=>$id
+        ];
+    db::getInstance()->insert("abonnements", $params);
+    redirect::to("/front/PHP/Utilisateur/profil.php");
+}
+
+function unfollow($id, $coursID)
+{
+    db::getInstance()->query("DELETE FROM abonnements WHERE utilisateur = ? AND cours = ?", [$id, $coursID], false);
+    redirect::to("/front/PHP/Utilisateur/profil.php");
+}
 ?>

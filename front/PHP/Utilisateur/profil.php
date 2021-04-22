@@ -88,20 +88,20 @@ else
 
                     switch ($c->get("difficulte"))
                     {
-                        case "Debutant":
+                        case "Débutant":
                             $difficulte = "Débutant ★✩✩✩";
                             break;
-                        case "Intermediaire":
+                        case "Intermédiaire":
                             $difficulte = "Intermédiaire ★★✩✩";
                             break;
-                        case "Avance":
+                        case "Avancé":
                             $difficulte = "Avancé ★★★✩";
                             break;
                         case "Expert":
                             $difficulte = "Expert ★★★★";
                             break;
                         default:
-                            $difficulte = "Difficulte";
+                            $difficulte = "n/a";
                             break;
                     }
                     include ("template/CoursSuivi.php");
