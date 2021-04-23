@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/front/CSS/Admin/ajoutCours.css" type="text/css"/>
 <div id="progress"></div>
 <body>
+
 <form class="createCours">
     <input class="text" id="bvn" placeholder="Titre du cours"></input>
     <div id="line0"><hr></div>
@@ -10,9 +11,8 @@
         </input>
     </div>
 
-
+    <h3> Sommaire : </h3>
     <div id="sommaire">
-        <h3> Sommaire : </h3>
         <ul class="m_Chapitre" id="Chapitre_1">
 
             <a onclick="afficherMasquer('listeChapitre1')"><li>Chapitre 1</li></a>
@@ -21,7 +21,7 @@
                 <li class="liste"><a href="#Chapitre1_Section1">Section1</a></li>
             </ul>
         </ul>
-        <br>
+    
     </div>
 
         <div id="Cours">
@@ -29,7 +29,7 @@
             <div class="Chapitre">
                 <label>Chapitre 1</label> 
                 <input type="text" placeholder="Titre du Chapitre 1">
-                <input type="button" class="delChap" value="X" href="#">
+                <input type="button" class="delChap" value="X" onclick="removeChap(this)">
                 
                 <br><br>
                 
@@ -38,19 +38,19 @@
                     <div class="Section">
                         <label>Section 1</label>
                         <input type="text" id="Chapitre1_Section1" placeholder="Titre de la Section 1">
-                        <input type="button" class="delChap" value="X" href="#">
+                        <input type="button" class="delChap" value="X" onclick="removeSection(this)">
                         <br><br>
                         <textarea class="sectiontxt" id="sectiontxt1" placeholder="Contenue de section"></textarea>
                     </div>
                     
                 </div>
 
-                <button class="addSection" onclick="addSection(1)">Ajouter une section</button>
+                <button type="button" class="addSection" onclick="addSection(this.parentNode)">Ajouter une section</button>
 
             </div>
         </div>
 
-        <button class="addChap" onclick="addChap()">Ajouter un chapitre</button>
+        <button type="button" class="addChap" onclick="addChap()">Ajouter un chapitre</button>
         <br>
        
         <br>
@@ -63,3 +63,4 @@
 </form>
 </body>
 <script type="text/javascript" src="/front/JS/Admin/ajoutCours.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
