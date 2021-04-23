@@ -3,3 +3,4 @@
 21-04-2021 08:51:00 - E:\XAMPP\htdocs\SiteFormation_DAW\back\controllers\compte.php::update()[28] - UPDATE utilisateurs SET nom = ?, prenom = ?, email = ?, passwordhash = ?, usericon = ? WHERE id = 3
 21-04-2021 08:53:21 - router.php::editAccount()[64] - édition: mot de passe invalide
 21-04-2021 08:54:25 - compte.php::update()[28] - UPDATE utilisateurs SET nom = ?, prenom = ?, email = ?, passwordhash = ?, usericon = ? WHERE id = 3
+23-04-2021 02:20:51 - compte.php::update()[26] - UPDATE utilisateurs SET nom = ?, prenom = ?, email = ?, passwordhash = ?, usericon = ? WHERE id = 14

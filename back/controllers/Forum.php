@@ -6,13 +6,22 @@ function RecupMsg($conv) //recup tous les messages a partir d'une conv
 }
 
  
-function RecupConv($res)
+function RecupConv($type)
 {
-    $id = 5;
-    $res = db::getInstance()->query("SELECT * FROM conversations, categories WHERE ID = {$id}");
-    var_dump($res);
-    println();
+    $res = array();
+    $categorie = categorie::getAllByType($type);
+    for ($i =0; $i< count ($categorie); $i++)
+    {
+        $rescat = $categorie[$i]["id"];
+        array_push($res, db::getInstance()->get("conversation","categorie = $rescat", false));
+    }
+    return $res;
 }
 
+function Recup1Conv($id)
+{
+    return db::getInstance()->get(config::$CONV_TABLE, "$id = id", true);
+
+}
 
 //Recup toutes les conv dans une seul catégorie 
