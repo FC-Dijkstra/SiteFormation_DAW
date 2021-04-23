@@ -1,5 +1,6 @@
 .footer{
     bottom: auto;
+    position: relative !important;
 }
 
 #bvn{
@@ -9,8 +10,9 @@
 }
 
 #debut{
-  margin-left: 25%;
-  margin-top: 5%;
+  margin-left:30%;
+  margin-top: 4em;
+  margin-bottom: 7%;
 }
 
 #debut img{
@@ -20,21 +22,28 @@
 }
 
 #debut h3{
-margin-left: 40%;
+margin-left: 35%;
 font-size: 22px;
 }
 
 #debut p{
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 25%;
+  width: 40%;
   margin-top: 2%;
   font-size: 20px;
 }
 
+
+#presentation{
+  margin-left: 17%;
+  margin-bottom: 50px;
+  margin-top: 5%;
+}
+
+
 #gauche{
   width: 20%;
   display: inline-block;
-
 }
 
 #gauche h3{
@@ -42,14 +51,19 @@ font-size: 22px;
 text-align: center;
 }
 
+#gauche img{
+margin-left: 9%;
+}
+
 #gauche p{
+  text-align: center;
   margin-top: 2%;
   font-size: 20px;
 }
 
 #milieu{
-  margin-top: 10%;
-  width: 20%;
+  margin-left: 10%;
+  width: 25%;
   display: inline-block;
 }
 
@@ -57,16 +71,23 @@ text-align: center;
 #milieu h3{
 font-size: 22px;
 text-align: center;
+margin-left: 15%;
 }
 
 #milieu p{
-  margin-top: 2%;
   font-size: 20px;
+  text-align: center;
+  margin-left: 15%;
 }
 
 #droite{
+  margin-left: 10%;
   width: 20%;
   display: inline-block;
+}
+
+#droite img{
+margin-left: 9%;
 }
 
 #droite h3{
@@ -75,6 +96,75 @@ text-align: center;
 }
 
 #droite p{
-  margin-top: 2%;
   font-size: 20px;
+  text-align: center;
+}
+
+#cours img{
+  width: 200px;
+  height: 190px;
+}
+
+#cours h3{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 22px;
+}
+
+a{
+  text-decoration: none;
+  color:black;
+}
+
+#a1, #a2{
+  display: inline-block;
+  width: 15%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#a1{
+  margin-left: 33.5%;
+}
+
+#a2{
+  margin-left: 5%;
+}
+
+#cours p{
+  text-align: center;
+  font-size: 17px;
+}
+
+
+#forum img{
+  width: 200px;
+  height: 190px;
+  margin-left: 44%;
+}
+
+#forum h3{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 22px;
+}
+
+#forum p{
+  text-align: center;
+  font-size: 17px;
+  margin-bottom: 50px;
+}
+
+/* DARK */
+
+body.dark
+{
+    background-color: #424242;
+    color:#3E9D89;
+    transition: all 500ms;
+}
+
+body.light
+{
+    transition: all 500ms;
 }
