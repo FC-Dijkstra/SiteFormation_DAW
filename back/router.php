@@ -70,7 +70,7 @@ if (Input::exists())
 
             case "unfollow":
                 $id = $_SESSION["userID"];
-                $coursID = filter_input(INPUT_POST, "cours", FILTER_SANITIZE_NUMBER_INT);
+                $coursID = filter_input(INPUT_GET, "cours", FILTER_SANITIZE_NUMBER_INT);
 
                 if (isset($id) && isset($coursID))
                     unfollow($id, $coursID);

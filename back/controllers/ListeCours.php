@@ -45,6 +45,6 @@ function follow($id, $coursID)
 function unfollow($id, $coursID)
 {
     db::getInstance()->query("DELETE FROM abonnements WHERE utilisateur = ? AND cours = ?", [$id, $coursID], false);
-    redirect::to("profil.php");
+    redirect::to("profil");
 }
 ?>
