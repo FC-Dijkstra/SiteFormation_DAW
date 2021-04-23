@@ -33,10 +33,13 @@ function AboDesabo()
   if(document.getElementById("abonnement").innerHTML == "S'abonner"){
     document.getElementById("abonnement").value = "Se désabonner";
     document.getElementById("abonnement").innerHTML = "Se désabonner";
-
+    // TODO: ajax to /back/router.php&action=follow&cours=<ID>&csrf_token=<?= $_SESSION["csrf_token"]?>
+    // (ping Yann)
   }
   else{
     document.getElementById("abonnement").value = "S'abonner";
     document.getElementById("abonnement").innerHTML = "S'abonner";
+    // TODO: ajax to /back/router.php?action=unfollow&cours=<ID>&csrf_token=<?= $_SESSION["csrf_token"]?>
+    // (ping Yann)
   }
 }

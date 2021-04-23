@@ -38,9 +38,7 @@ else
 
             <label id="mail" type="text">Adresse mail liée:</label>
             <input type="email" id="info_mail" name="email" value="<?= $email?>" readonly><br>
-            <label class="file">Changer de photo : </label>
-            <input type="file" name="image" class="file">
-            <br><br>
+            <br>
             <a id="mdp">Mot de passe </a><br>
             <label class="mdp" type="text">Mot de passe</label>
             <input class="mdp" type="password" name="password"><br>
@@ -63,8 +61,9 @@ else
 
 
     <div id="cours">
-        <h1> Cours suivis : </h1>
         <hr>
+        <h1> Cours suivis : </h1>
+
 
         <?php
             $cours = coursSuivi($_SESSION["userID"]);
@@ -109,8 +108,8 @@ else
 
     <div id="recommandations">
     <p>Tu ne sais pas quels cours suivre ? <a href="index.php?page=accueilQCM">Teste ton niveau !</a></p>
-        <h1> Mes recommandations : </h1>
         <hr>
+        <h1> Mes recommandations : </h1>
         </br>
         <div class="reco">
             <img src="/front/IMG/girl.png">

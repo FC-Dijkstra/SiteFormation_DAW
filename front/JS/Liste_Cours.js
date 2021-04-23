@@ -25,7 +25,7 @@ function updateCours(cats, type) {
         let cours = cats[j]
         for (let i = 0; i < cours.length; i++) {
             let node = document.createElement("div");
-            node.onclick=()=>{location.href='/front/PHP/Cours/structureCours.php?id='+cours[i].id};
+            node.onclick=()=>{location.href='/index.php?page=structureCours&id='+cours[i].id};
             let img = document.createElement("img");
             img.src = "/front/IMG/girl.png";
             img.className = "box1"

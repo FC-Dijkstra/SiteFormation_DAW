@@ -1,0 +1,27 @@
+Fonctions admin:
+    -> ajout cours
+    -> edition cours ?
+    -> suppression cours
+
+Fonction modération:
+    -> verrouillage conversation
+    -> suppression message
+    -> ban utilisateur
+
+Fonctions Forum:
+    -> Ajout categorie
+    -> Ajout conversation
+    -> Ajout message
+
+Fonctions QCM:
+    -> affichage QCM (penser cooldown)
+    -> Validation QCM
+
+Fonctions Cours:
+    -> visualisation cours                  DONE
+    -> abonnement à un cours a tester.
+
+Frontend:
+    -> patch CSS connexion/inscription
+    -> thème sombre auto par cookie + js
+    -> thème sombre pour le contenu des pages ?
