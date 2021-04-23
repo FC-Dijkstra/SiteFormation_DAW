@@ -35,13 +35,14 @@ font-size: 22px;
 
 
 #presentation{
-  margin-left: 17%;
+  /*background-color: #F5F5F5;*/
   margin-bottom: 50px;
   margin-top: 5%;
 }
 
 
 #gauche{
+  margin-left: 15%;
   width: 20%;
   display: inline-block;
 }
@@ -62,7 +63,7 @@ margin-left: 9%;
 }
 
 #milieu{
-  margin-left: 10%;
+  margin-left: 5%;
   width: 25%;
   display: inline-block;
 }
@@ -81,7 +82,7 @@ margin-left: 15%;
 }
 
 #droite{
-  margin-left: 10%;
+  margin-left: 5%;
   width: 20%;
   display: inline-block;
 }
