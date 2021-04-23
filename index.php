@@ -70,12 +70,12 @@
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Forum/index.php");
                 break;
 
-            case "conversationForum":   //TODO: voir pour les params
-                include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Forum/conversation.php");
+            case "messagesForum":   //TODO: voir pour les params
+                include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Forum/messages.php");
                 break;
 
-            case "web":     //TODO: voir pour les params
-                include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Forum/web.php");
+            case "conversations":     //TODO: voir pour les params
+                include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Forum/conversations.php");
                 break;
 
             case "profilAdmin":     //TODO: voir pour les params
