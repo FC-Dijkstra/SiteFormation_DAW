@@ -1,30 +1,28 @@
 <link rel="stylesheet" href="/front/CSS/web.css" type="text/css"/>
 <?php
+include_once($_SERVER['DOCUMENT_ROOT'] . "/back/class/categorie.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "/back/controllers/AffichageCours.php");
 
-$liste = array();
-array_push($liste, new cours(1, "Apprenez HTML", "EZ","", -1, 1));
-array_push($liste, new cours(2, "Allez plus loin avec HTML", "EZ","", -1, 1));
-array_push($liste, new cours(3, "Apprenez CSS", "WANNA KMS", "",-1, 2));
-array_push($liste, new cours(4, "Apprenez JS", "EZ","", -1, 3));
+$liste = getByCategorie("App");
+$categories = categorie::getAllByType("App");
 
 ?>
- <body>
-    <div class="html">
-        <h4 class="langage">HTML</h4>
-        <div class="cours">
-            <img class="box1" src="/front/IMG/girl.png">
-            <h3 class="box2"> Les bases du html</h3>
-            <p class="box3">Facile ★✩✩ </p>
-            <p class="box4"> Ceci est une description</p>
-        </div>
-    </div>
-    <div class="CSS">
-        <h4 class="langage">CSS</h4>
-    </div>
-    <div class="JS">
-        <h4 class="langage">JAVASCRIPT</h4>
-    </div>
-    <div class="PHP">
-        <h4 class="langage">PHP</h4>
-    </div>
+<body>
+<div class="search">
+    <input type="text" id="searchBox" placeholder="Recherche..."/>
+</div>
+<div class="cours_container">
+
+</div>
+<script src="/front/JS/Liste_Cours.js" type="text/javascript"></script>
+<script type="text/javascript">
+    let cats = <?php echo json_encode($liste); ?>;
+    let listCat = [];
+    <?php
+        for($i=0; $i<count($categories); $i++){
+            echo 'listCat['.$i.'] = '. json_encode($categories[$i]).';';
+        }
+        ?>
+    updateCours(cats, "App/");
+</script>
 </body>
