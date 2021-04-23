@@ -100,6 +100,6 @@
         include ($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/accueil.php");
     }
 
-    include_once($_SERVER["DOCUMENT_ROOT"] . "/front/Include/Footer.php");
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/front/Include/footer.php");
     ?>
 </html>

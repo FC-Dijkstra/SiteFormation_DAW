@@ -2,28 +2,93 @@ let nombreChap = 1;
 let nombreSection =1;
 
 
-function removeChap()
+function updateSommaire()
 {
+  $("#sommaire").empty();
 
+  //Create chapitres
+  let chapitres = $("#Cours").children();
+  for(let i = 0; i < chapitres.length;i++)
+  {
+
+    let chapitre = chapitres[i];
+    chapitre.children[0].innerText="Chapitre "+(i+1);
+    chapitre.children[1].placeholder="Titre du Chapitre "+(i+1);
+    
+
+
+    let chapSommaire = document.createElement("ul");
+    chapSommaire.id="Chapitre_"+(i+1);
+    chapSommaire.className="m_Chapitre";
+
+    let aSommaire = document.createElement("a");
+    aSommaire.onclick=()=>{afficherMasquer("listeChapitre"+(i+1))};
+
+    let li_aSommaire = document.createElement("li");
+    li_aSommaire.textContent="Chapitre "+(i+1);
+
+    aSommaire.append(li_aSommaire);
+
+    let lstchap = document.createElement("ul");
+    lstchap.id="listeChapitre"+(i+1);
+    lstchap.className="m_section";
+    lstchap.style="display: none;"
+
+    indexSection = ($($(".Chapitre")[(i)]).children(".LesSections").children());
+
+
+
+    for(let j = 0; j < indexSection.length; j++)
+    {
+
+      indexSection[j].children[0].innerText="Section "+(j+1);
+      indexSection[j].children[1].placeholder="Titre de la Section "+(j+1);
+      indexSection[j].children[1].id="Chapitre"+(i+1)+"_Section"+(j+1);
+      indexSection[j].children[indexSection[j].children.length-1].id="sectiontxt"+(j+1);
+
+      let sommaireSection = document.createElement("li");
+      sommaireSection.className="liste";
+
+      let asommaireSection = document.createElement("a");
+      asommaireSection.href="#Chapitre"+(i+1)+"_Section"+(j+1);
+      asommaireSection.textContent="Section"+(j+1);
+
+      sommaireSection.append(asommaireSection);
+      console.log(  $("#listeChapitre"+(i+1)));
+      lstchap.append(sommaireSection);
+    }
+
+    chapSommaire.append(aSommaire);
+    chapSommaire.append(lstchap);
+
+    $("#sommaire").append(chapSommaire);
+
+  }
+
+  
+
+  //create section
+}
+function removeChap(elem)
+{
+  $(elem).parent('div').remove();
+  nombreChap--; 
+  updateSommaire()
 }
 
-function removeSection()
+function removeSection(elem)
 {
-
-
+  $(elem).parent('div').remove();
+  nombreSection--;
+  updateSommaire()
 }
 
 function addChap()
 {
     nombreChap++;
-    
     //Element sommaire
 
-    let chapSommaire = document.createElement("a");
-    chapSommaire.onclick=()=>{afficherMasquer(this)};
-    chapSommaire.textContent="Chapitre "+nombreChap;
-
-    $(".m_chapitre").append(chapSommaire);
+    
 
     //Element page
     let chapelement = document.createElement("div");
@@ -37,6 +102,7 @@ function addChap()
     chaptext.type="text";
 
     let chapbutton = document.createElement("input");
+    chapbutton.onclick=()=>removeChap(chapbutton);
     chapbutton.value="X";
     chapbutton.type="button";
 
@@ -47,9 +113,10 @@ function addChap()
 
     let chapadd = document.createElement("button");
     chapadd.className="addSection";
+    chapadd.type = "button";
 
     let chap = nombreChap;
-    chapadd.onclick=()=>{addSection(chap)};
+    chapadd.onclick=()=>{addSection(chapelement)};
     chapadd.textContent="Ajouter une section";
 
     chapelement.append(chaplabel);
@@ -61,30 +128,39 @@ function addChap()
     chapelement.append(chapadd);
 
     $("#Cours").append(chapelement);
+
+    updateSommaire()
 }
 
-function addSection(numChap)
+function addSection(chapelement)
 {
     /*
     Quand click sur bouton ajout section
     */
-    nombreSection++;
 
+
+    nombreSection++;
+    indexSection = $(chapelement).children(".LesSections").children().length +1; 
+
+    //sommaire ajout section
+
+    //Element AddSection
 
 
     let element = document.createElement("div");
     element.className="Section";
 
     let label = document.createElement("label");
-    label.innerText="Section "+nombreSection;
+    label.innerText="Section "+indexSection;
+    label.id="Chapitre"+chapelement+"_Section"+indexSection;
     
     let texte = document.createElement("input");
-    texte.placeholder="Titre de la section"+nombreSection;
+    texte.placeholder="Titre de la section"+indexSection;
     texte.type="text";
 
     let boutton = document.createElement("input");
     boutton.type="button";
-    boutton.onclick="removeSection()";
+    boutton.onclick=()=>removeSection(boutton);
     boutton.className="delChap";
     boutton.value="X";
 
@@ -101,8 +177,16 @@ function addSection(numChap)
     element.append(breuh); element.append(breuh.cloneNode());
     element.append(area);
 
+    let chapitres = $(".Chapitre");
+    let i =0;
 
-    $($(".Chapitre")[(numChap-1)]).children(".LesSections")[0].append(element); 
+    for(;i<chapitres.length;i++)
+      if(chapitres[i] === chapelement)
+        break;
+
+    $($(".Chapitre")[(i)]).children(".LesSections")[0].append(element); 
+
+    updateSommaire()
 }
 function afficherMasquer(id)
 {

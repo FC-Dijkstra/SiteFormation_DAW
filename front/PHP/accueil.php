@@ -3,7 +3,7 @@
 <h2 id="bvn"> Bienvenue sur notre site de cours en ligne ! </h2>
 <hr>
 <div id="debut">
-  <img src="/front/IMG/logo.PNG"/>
+  <img src="/front/IMG/logo.png">
   <h3> Apprenez à plusieurs !</h3>
   <p> Rejoignez notre communauté. Les enseignants postent des cours très souvent et les élèves peuvent s'aider au besoin dans notre forum. </p>
 </div>
