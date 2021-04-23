@@ -13,13 +13,13 @@ Fonctions Forum:
     -> Ajout conversation
     -> Ajout message
 
-Fonctions QCM:
+Fonctions QCM:      YANN
     -> affichage QCM (penser cooldown)
     -> Validation QCM
 
 Fonctions Cours:
     -> visualisation cours                  DONE
-    -> abonnement à un cours a tester.
+    -> abonnement à un cours a tester.      (PAS FONCTIONNEL)
 
 Frontend:
     -> patch CSS connexion/inscription

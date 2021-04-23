@@ -18,9 +18,12 @@ function getQCM($qcmID)
             {
                 //parsing + envoi à la vue
 
-                $questions = simplexml_load_file(__DIR__ . "./../" . $questionDir);
-                $_SESSION["qcmData"] = $questions;
-                redirect::to("QCM");
+                $xml = simplexml_load_file(__DIR__ . "./../" . $questionDir);
+                $json = json_encode($xml);
+                $array = json_decode($json);
+                $qcm_serialized = serialize($array);
+
+                redirect::to("QCM",null, ["qcm" => $qcm_serialized]);
             }
             else
             {

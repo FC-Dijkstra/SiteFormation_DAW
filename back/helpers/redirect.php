@@ -1,20 +1,26 @@
 <?php
 class redirect
 {
-    public static function to($page = null, $error = null)
+    public static function to($page = null, $error = null, $params = null)
     {
         if ($page)
         {
+            $urlstring = "Location: /index.php?page=" .$page;
             if ($error)
             {
-                header("Location: /index.php?page=" . $page . "&error=" . urlencode($error));
-                exit();
+                $urlstring .= "&error=" . urlencode($error);
+
             }
-            else
+
+            if ($params)
             {
-                header("Location: /index.php?page=" . $page);
-                exit();
+                foreach($params as $key => $value)
+                {
+                    $urlstring .= "&" . $key . "=" . $value;
+                }
             }
+
+            header($urlstring);
         }
     }
 }
