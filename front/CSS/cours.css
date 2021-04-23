@@ -55,6 +55,7 @@ body{
 }
 footer {
     position: relative !important;
+    bottom:0;
 }
 
 #description {
@@ -100,5 +101,4 @@ footer {
    background-color: red;
    border-radius: 50% / 60% 60% 0% 0%;
    position: absolute;
-   margin:auto;
  }
