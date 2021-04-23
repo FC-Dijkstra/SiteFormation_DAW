@@ -2,6 +2,7 @@
 	// ./../data/fichier.html
 	require_once(__DIR__ . "./../class/cours.php");
 	require_once(__DIR__ . "./../class/categorie.php");
+	require_once(__DIR__ . "./../helpers/db.php");
 	
 	function verifFichier($id)
 	{
@@ -58,7 +59,10 @@
 			$rescat = $categorie[$i]["id"];
 			array_push($res,db::getInstance()->get("cours","categorie = $rescat",false));
 		}
-		return $res;
+		if(count($res)>0)
+			return $res;
+		else
+			return null;
 	}
 	
 ?>

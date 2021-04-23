@@ -1,5 +1,15 @@
 <link rel="stylesheet" href="/front/CSS/Forum/index.css" type="text/css">
 <body>
+<?php
+include_once($_SERVER['DOCUMENT_ROOT'] . "/back/class/categorie.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "/back/controllers/Forum.php");
+
+$categorie = categorie::getAll();
+$convWeb = recupConv("Web");
+$convApp = recupConv("App");
+
+?>
+
 
 <div class="forum_header">
 <h3>Message de la page</h3>
@@ -34,18 +44,15 @@
     <h3>Dev web</h3>
     <table class="forum_category_table">
         <tbody>
-        <tr>
-            <td onclick=location.href="index.php?page=web">Conversations sur les cours d'HTML</td>
-        </tr>
-        <tr>
-            <td>Conversations sur les cours de CSS</td>
-        </tr>
-        <tr>
-            <td>Conversations sur les cours de Javascript</td>
-        </tr>
-        <tr>
-            <td>Conversations sur les cours de PHP</td>
-        </tr>
+        <?php
+		if($convWeb != null)
+		{
+			for($i = 0; $i < count($convWeb);$i++)
+			{
+				echo "<tr><td onclick='/front/PHP/Cours/structureCours.php?id='>".$convWeb[$i]["titre"]."</td></tr>";
+			}
+		}
+		?>
         </tbody>
     </table>
 </div>
@@ -53,18 +60,15 @@
     <h3>Dev apps</h3>
     <table class="forum_category_table">
         <tbody>
-        <tr>
-            <td>Conversations sur les cours de Java</td>
-        </tr>
-        <tr>
-            <td>Conversations sur les cours de C</td>
-        </tr>
-        <tr>
-            <td>Conversations sur les cours de C++</td>
-        </tr>
-        <tr>
-            <td>Conversations sur les cours de Cobol</td>
-        </tr>
+        <?php
+		if($convApp != null)
+		{
+			for($i = 0; $i < count($convWeb);$i++)
+			{
+				echo "<tr><td>".$convApp[$i]["titre"]."</td></tr>";
+			}
+		}
+		?>
         </tbody>
     </table>
 </div>

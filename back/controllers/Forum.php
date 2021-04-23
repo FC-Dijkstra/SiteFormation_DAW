@@ -13,7 +13,7 @@ function RecupConv($type)
     for ($i =0; $i< count ($categorie); $i++)
     {
         $rescat = $categorie[$i]["id"];
-        array_push($res, db::getInstance()->get("conversation","categorie = $rescat", false));
+		$res = $res + db::getInstance()->get(config::$CONV_TABLE,"categorie = $rescat", false);
     }
     return $res;
 }

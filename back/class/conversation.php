@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__ . "./DBObject.php");
 require_once(__DIR__ . "./../helpers/config.php");
+require_once(__DIR__ . "./../helpers/db.php");
 class conversation extends DBObject
 {
 
