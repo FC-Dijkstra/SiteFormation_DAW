@@ -7,7 +7,7 @@ class redirect
         {
             if ($error)
             {
-                header("Location: /index.php?page=" . $page . "&error='" . $error . "'");
+                header("Location: /index.php?page=" . $page . "&error=" . urlencode($error));
                 exit();
             }
             else

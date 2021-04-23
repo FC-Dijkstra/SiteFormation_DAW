@@ -2,29 +2,39 @@
 
 require_once(__DIR__ . "./../helpers/db.php");
 require_once(__DIR__ . "./../helpers/print.php");
-
+require_once(__DIR__ . "./../helpers/config.php");
 
 function getQCM($qcmID)
 {
-    $eval = db::getInstance()->getID("evaluation", $qcmID);
-
+    $eval = db::getInstance()->getID(config::$EVAL_TABLE, $qcmID);
     if (count($eval))
     {
         $lastTry = db::getInstance()->query("SELECT passage FROM resultats ORDER BY resultats.passage DESC")[0]["passage"];
 
         if (strtotime("-3 days") > strtotime($lastTry))
         {
-
-            $questionDir = $eval["questionfile"];
+            $questionDir = $eval["questionsFile"];
             if (file_exists(__DIR__ . "./../" . $questionDir))
             {
                 //parsing + envoi à la vue
+
+                $questions = simplexml_load_file(__DIR__ . "./../" . $questionDir);
+                $_SESSION["qcmData"] = $questions;
+                redirect::to("QCM");
+            }
+            else
+            {
+                redirect::to("profil", "Erreur interne, fichier inexistant");
             }
         }
         else
         {
-            //message cooldown.
+            redirect::to("profil", "Vous devez attendre avant de recommencer le QCM.");
         }
+    }
+    else
+    {
+        redirect::to("accueil", "Le QCM demandé n'existe pas");
     }
 }
 

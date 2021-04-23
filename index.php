@@ -92,7 +92,7 @@
         }
         if (isset($_GET["error"]))
         {
-            echo "<script> alert(" . $_GET["error"] . "); </script>";
+            echo "<script> alert(\"" . urldecode($_GET["error"]) . "\"); </script>";
         }
     }
     else

@@ -8,7 +8,7 @@
   <div id="line1"><hr></div>
   <br/>
 <div>
-  <a id="webhtml" href="index.php?page=QCM"> HTML </a> <br/>
+  <a id="webhtml" href="/back/router.php?action=getQCM&id=1&csrf_token=<?= $_SESSION['csrf_token']?>"> HTML </a> <br/>
 </div>
 <br/>
 <div>

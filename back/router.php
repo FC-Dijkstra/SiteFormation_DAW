@@ -15,7 +15,7 @@ if (Input::exists())
         switch(Input::get("action"))
         {
             case "getQCM":
-                $id = filter_input(INPUT_POST, "id", FILTER_SANITIZE_NUMBER_INT);
+                $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
                 getQCM($id);
                 break;
 

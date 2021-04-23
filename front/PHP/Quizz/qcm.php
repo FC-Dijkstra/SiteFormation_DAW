@@ -1,10 +1,19 @@
+<?php
+
+if (isset($_SESSION["qcmData"]));
+{
+    var_dump($_SESSION["qcmData"]);
+}
+?>
+
 <link rel="stylesheet" href="/front/CSS/Quizz/qcm.css" type="text/css"/>
 <script type="text/javascript" src="/front/JS/qcm.js"></script>
 <body class="light">
 <div id="centre">
 <div id="progress"></div>
 
-<h3 id="bvn"> Teste ton niveau ! </h3>
+<h3 id="bvn"> <?= $cours ?> | <?= $difficulte ?> </h3>
+    <div id="questionID" style="display: none;"><?= $id?></div>
 <div id="qcm">
 <br/>
 <br/>
