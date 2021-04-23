@@ -4,9 +4,8 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . "/back/class/categorie.php");
 include_once($_SERVER['DOCUMENT_ROOT'] . "/back/controllers/Forum.php");
 
-$categorie = categorie::getAll();
-$convWeb = recupConv("Web");
-$convApp = recupConv("App");
+$convWeb = categorie::getAllByType("Web");
+$convApp = categorie::getAllByType("App");
 
 ?>
 
@@ -49,7 +48,8 @@ $convApp = recupConv("App");
 		{
 			for($i = 0; $i < count($convWeb);$i++)
 			{
-				echo "<tr><td onclick='/front/PHP/Cours/structureCours.php?id='>".$convWeb[$i]["titre"]."</td></tr>";
+				$idconv = $convWeb[$i]["id"];
+				echo "<tr><td onclick=location.href=\"index.php?page=conversations&id=$idconv\"> ".$convWeb[$i]["titre"]."</td></tr>";
 			}
 		}
 		?>
@@ -63,7 +63,7 @@ $convApp = recupConv("App");
         <?php
 		if($convApp != null)
 		{
-			for($i = 0; $i < count($convWeb);$i++)
+			for($i = 0; $i < count($convApp);$i++)
 			{
 				echo "<tr><td>".$convApp[$i]["titre"]."</td></tr>";
 			}

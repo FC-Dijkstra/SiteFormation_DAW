@@ -58,6 +58,11 @@ class categorie extends DBObject
         return $output;
     }
 	
+	public static function getById($id)
+	{
+		return db::getInstance()->getId("categories",$id);
+	}
+	
 	public static function getAllByType($type): ?array
     {
 		return db::getInstance()->query("SELECT * FROM categories WHERE titre LIKE '".$type."%'");
