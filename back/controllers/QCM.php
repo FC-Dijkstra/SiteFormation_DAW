@@ -9,9 +9,9 @@ function getQCM($qcmID)
     $eval = db::getInstance()->getID(config::$EVAL_TABLE, $qcmID);
     if (count($eval))
     {
-        $lastTry = db::getInstance()->query("SELECT passage FROM resultats ORDER BY resultats.passage DESC")[0]["passage"];
+        $lastTry = db::getInstance()->query("SELECT passage FROM resultats WHERE utilisateur = ? ORDER BY resultats.passage DESC", [$_SESSION["userID"]]);
 
-        if (strtotime("-3 days") > strtotime($lastTry))
+        if (count($lastTry) == 0 || strtotime("-3 days") > strtotime($lastTry[0]["passage"]))
         {
             $questionDir = $eval["questionsFile"];
             if (file_exists(__DIR__ . "./../" . $questionDir))
@@ -41,7 +41,7 @@ function getQCM($qcmID)
     }
 }
 
-function validateReponses($qcmID, $reponses, $user)
+function validateReponses($qcmID, $reponses)
 {
     $eval = db::getInstance()->getID("evaluations", $qcmID);
     $dirReponses = $eval["reponsesFile"];
@@ -56,21 +56,22 @@ function validateReponses($qcmID, $reponses, $user)
         {
             if ($reponsesServer->meta->id == $reponsesUser["meta"]["id"])
             {
+                $i = 0;
                 foreach ($reponsesServer->reponse as $reponse)
                 {
 
-                    if ($reponsesUser["reponse"]["id"] == $reponse->id)
+                    if ($reponsesUser["reponse"][$i]["id"] == $reponse->id)
                     {
-                        if ($reponsesUser["reponse"]["value"] == $reponse->value)
+                        if ($reponsesUser["reponse"][$i]["value"] == $reponse->value)
                         {
                             $note++;
                         }
                     }
+                    $i++;
                 }
 
-                if ($note < $eval["maxResultat"])
+                if ($note <= $eval["maxResultat"])
                 {
-                    echo $note;
                     $params = [
                         "passage" => date("Y-m-d H:i:s"),
                         "evaluation" => $qcmID,
@@ -78,11 +79,13 @@ function validateReponses($qcmID, $reponses, $user)
                         "note" => $note
                     ];
                     db::getInstance()->insert("resultats", $params);
+                    redirect::to("profil", "Votre note est de: $note / {$eval["maxResultat"]}");
                 }
             }
         }
         catch (Exception $e)
         {
+            logger::log($e->getMessage());
         }
     }
 }

@@ -20,9 +20,13 @@ if (Input::exists())
                 break;
 
             case "validerQCM":
-                $qcmID = filter_input(INPUT_POST, "id", FILTER_SANITIZE_NUMBER_INT);
+                $qcmID = filter_input(INPUT_POST, "qcmID", FILTER_SANITIZE_NUMBER_INT);
                 $reponses = Input::get("reponses"); //TODO: sanitisation
-                validateReponses($qcmID, $reponses);
+
+                if (isset($qcmID) && isset($reponses))
+                    validateReponses($qcmID, $reponses);
+                else
+                    redirect::to("accueil");
                 break;
 
             case "inscription":

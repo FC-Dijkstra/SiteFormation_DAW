@@ -4,9 +4,9 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/Input.php");
 if (Input::exists())
 {
     $content = unserialize(Input::get("qcm"));
-    var_dump($content->question);
     $cours = $content->meta->cours;
     $difficulte = $content->meta->difficulte;
+    $qcmID = $content->meta->id;
 }
 ?>
 
@@ -16,18 +16,21 @@ if (Input::exists())
     <div id="centre">
         <div id="progress"></div>
             <h3 id="bvn"> <?= $cours ?> | <?= $difficulte ?> </h3>
-            <div id="qcm">
-            <?php
-            foreach($content->question as $question)
-                {
-                    $questionID = $question->id;
-                    $enonce = $question->enonce;
-                    $reponses = $question->reponse;
-                    include ("template/question.php");
-                }
-            ?>
-            <input id="bouton" type="button" value="Valider"/>
-            </div>
+            <form id="qcm" action="/back/router.php" method="post">
+                <input type="hidden" name="qcmID" id="qcmID" value="<?= $qcmID?>"/>
+                <?php
+                foreach($content->question as $question)
+                    {
+                        $questionID = $question->id;
+                        $enonce = $question->enonce;
+                        $reponses = $question->reponse;
+                        include ("template/question.php");
+                    }
+                ?>
+                <input type="hidden" name="action" value="validerQCM"/>
+                <input type="hidden" name="csrf_token" value="<?= $_SESSION["csrf_token"]?>"/>
+            </form>
+            <button id="bouton">Valider</button>
         <br/>
         <br/>
         </div>
