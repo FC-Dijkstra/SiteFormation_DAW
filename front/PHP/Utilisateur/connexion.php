@@ -19,7 +19,7 @@
             <input type="password" id="pass" name="password" required>
 
             <div><br /></div>
-            <input type="hidden" value="<?php echo $_SESSION["csrf_token"]; ?>" name="csrf_token">
+            <input type="hidden" value="<?= Token::get() ?>" name="csrf_token">
             <input type="hidden" value="connexion" name="action">
             <input type="submit" id="connexion" value="Connexion">
 

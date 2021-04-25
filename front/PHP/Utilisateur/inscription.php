@@ -41,7 +41,7 @@
                 <input type="file" name="photo" id="file">
 
                 <div><br /></div>
-                <input type="hidden" value="<?php echo $_SESSION["csrf_token"]; ?>" name="csrf_token">
+                <input type="hidden" value="<?= Token::get() ?>" name="csrf_token">
                 <input type="hidden" value="inscription" name="action">
                 <input class="confirmeInscription" type="submit" value="Inscription">
 

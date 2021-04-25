@@ -65,7 +65,7 @@ function createAccount($nom, $prenom, $email, $pHash)
     {
         echo "inscription invalide <br/>" ;
         deleteUserIcon($icon);
-        redirect::to("inscription", "Paramètres invalides !");
+        redirect::to("inscription", "Identifiants invalides !");
     }
 }
 
@@ -93,6 +93,6 @@ function login($email, $password)
     {
         //echo "connexion invalide";
 
-        redirect::to("connexion", "Paramètres invalides!");
+        redirect::to("connexion", "Identifiants invalides!");
     }
 }

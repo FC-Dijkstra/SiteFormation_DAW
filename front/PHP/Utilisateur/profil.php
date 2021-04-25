@@ -49,7 +49,7 @@ else
             <input class="mdp" type="password" id="info_nouveaumdp" value=""><br>
 
             <input type="hidden" name="action" value="editprofile"/>
-            <input type="hidden" name="csrf_token" value="<?= $_SESSION["csrf_token"]?>"/>
+            <input type="hidden" name="csrf_token" value="<?= Token::get()?>"/>
             <input type="submit" id="enregistrer" value="Enregistrer">
             <input type="reset" id="annuler" value="Annuler" onclick="ModifierInfos()">
             <button id="modifier" type="button" onclick="ModifierInfos()" >Modifier </button>

@@ -15,4 +15,9 @@ class Token
         }
         return false;
     }
+
+    public static function get()
+    {
+        return $_SESSION["csrf_token"];
+    }
 }

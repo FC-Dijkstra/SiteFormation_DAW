@@ -18,6 +18,7 @@ if (Input::exists())
             <h3 id="bvn"> <?= $cours ?> | <?= $difficulte ?> </h3>
             <form id="qcm" action="/back/router.php" method="post">
                 <input type="hidden" name="qcmID" id="qcmID" value="<?= $qcmID?>"/>
+
                 <?php
                 foreach($content->question as $question)
                     {
@@ -27,8 +28,9 @@ if (Input::exists())
                         include ("template/question.php");
                     }
                 ?>
+
                 <input type="hidden" name="action" value="validerQCM"/>
-                <input type="hidden" name="csrf_token" value="<?= $_SESSION["csrf_token"]?>"/>
+                <input type="hidden" name="csrf_token" value="<?= Token::get()?>"/>
             </form>
             <button id="bouton">Valider</button>
         <br/>

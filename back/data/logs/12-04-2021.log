@@ -1,9 +1,0 @@
-12-04-2021 01:03:48 - db::query()[7] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.abonnement' doesn't exist
-12-04-2021 01:04:26 - db::query()[7] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.abonnement' doesn't exist
-12-04-2021 01:04:27 - db::query()[7] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.abonnement' doesn't exist
-12-04-2021 01:04:57 - db::query()[7] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.abonnement' doesn't exist
-12-04-2021 01:05:16 - db::query()[7] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sf_daw.abonnement' doesn't exist
-12-04-2021 01:05:47 - db::query()[7] - SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)
-12-04-2021 01:05:50 - db::query()[7] - SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)
-12-04-2021 01:05:50 - db::query()[7] - SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)
-12-04-2021 01:05:50 - db::query()[7] - SQLSTATE[21000]: Cardinality violation: 1241 Operand should contain 1 column(s)

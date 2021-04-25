@@ -5,7 +5,7 @@ include_once(__DIR__ . "./logger.php");
 class db
 {
     private static $instance = null;
-    private PDO $pdo;
+    private PDO $PDO;
     private bool $error;    //mis a true s'il y a eu une erreur => VOIR LOGS POUR + DETAIL.
 
     private function __construct()
@@ -186,7 +186,6 @@ class db
             }
 
             $sql = "UPDATE {$table} SET {$keys_string} WHERE {$where[0]} = {$where[2]}";
-            logger::log($sql);
             $this->query($sql, $values, false);
         }
     }

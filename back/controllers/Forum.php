@@ -36,7 +36,7 @@ function recupAuthor($id)
 
 function recupMessages($id)
 {
-    return db::getInstance()->query("SELECT * FROM messages WHERE conversation = $id ORDER BY date");
+    return db::getInstance()->query("SELECT * FROM messages WHERE conversation = ? ORDER BY date", [$id]);
 }
 
 //Recup toutes les conv dans une seul catégorie 

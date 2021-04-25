@@ -1,3 +1,0 @@
-17-04-2021 11:03:24 - db::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'bbb@gmail.com' for key 'email'
-17-04-2021 11:03:25 - db::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'bbb@gmail.com' for key 'email'
-17-04-2021 11:03:26 - db::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'bbb@gmail.com' for key 'email'
