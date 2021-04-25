@@ -9,6 +9,7 @@ body{
 .base-text h2 {
     margin-top: 0;
     padding-top: 30px;
+    font-size: 27px;
 }
 .base-text p {
     width: 35%;
@@ -79,11 +80,13 @@ footer {
 
 #description2 {
     margin-top: 10em;
+    margin-bottom: 5em;
 }
 #description2 img {
     width:25%;
     position: relative;
     left: 10%;
+    top: 3em;
 }
 #description2 span {
     width: 37%;
@@ -104,3 +107,17 @@ footer {
    position: absolute;
  }
  */
+
+ /* DARK */
+
+  body.dark
+  {
+      background-color: #424242;
+      color:#3E9D89;
+      transition: all 500ms;
+  }
+
+  body.light
+  {
+      transition: all 500ms;
+  }

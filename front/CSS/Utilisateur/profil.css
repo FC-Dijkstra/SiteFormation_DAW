@@ -21,6 +21,14 @@ hr{
     font-size: 1.2em;
 }
 
+#recommandations #quizz{
+    top: 4em;
+    bottom: 4em;
+    text-decoration: none;
+    color: #EBC098;
+    font-weight: bold;
+}
+
 #photoprofil{
     width:350px;
     height:200px;

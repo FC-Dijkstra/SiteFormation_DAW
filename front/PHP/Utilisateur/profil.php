@@ -110,7 +110,7 @@ function printDifficulte($difficulte): string
 
 
     <div id="recommandations">
-    <p>Tu ne sais pas quels cours suivre ? <a href="index.php?page=accueilQCM">Teste ton niveau !</a></p>
+    <p>Tu ne sais pas quel cours suivre ? <a id="quizz" href="index.php?page=accueilQCM">Teste ton niveau !</a></p>
         <hr>
         <h1> Mes recommandations : </h1>
         </br>
