@@ -2,9 +2,8 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . "/back/controllers/ListeCours.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/back/class/utilisateur.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/redirect.php");
-?>
+require_once($_SERVER["DOCUMENT_ROOT"] . "/back/controllers/recommandation.php");
 
-<?php
 if (isset($_SESSION["userID"]))
 {
     $user = utilisateur::load($_SESSION["userID"]);
@@ -15,7 +14,28 @@ if (isset($_SESSION["userID"]))
 }
 else
 {
-    redirect::to("index.php");
+    redirect::to("index.config php");
+}
+
+function printDifficulte($difficulte): string
+{
+    switch($difficulte)
+    {
+        case "Débutant":
+            return "Débutant ★✩✩✩";
+
+        case "Intermédiaire":
+            return "Intermédiaire ★★✩✩";
+
+        case "Avancé":
+            return "Avancé ★★★✩";
+
+        case "Expert":
+            return "Expert ★★★★";
+
+        default:
+            return "n/a";
+    }
 }
 ?>
 
@@ -81,24 +101,7 @@ else
 
                 $nomCours = $c->get("nom");
 
-                switch ($c->get("difficulte"))
-                {
-                    case "Débutant":
-                        $difficulte = "Débutant ★✩✩✩";
-                        break;
-                    case "Intermédiaire":
-                        $difficulte = "Intermédiaire ★★✩✩";
-                        break;
-                    case "Avancé":
-                        $difficulte = "Avancé ★★★✩";
-                        break;
-                    case "Expert":
-                        $difficulte = "Expert ★★★★";
-                        break;
-                    default:
-                        $difficulte = "n/a";
-                        break;
-                }
+                $difficulte = printDifficulte($c->get("difficulte"));
                 include ("template/CoursSuivi.php");
             }
         ?>
@@ -111,11 +114,22 @@ else
         <hr>
         <h1> Mes recommandations : </h1>
         </br>
-        <div class="reco">
-            <img src="/front/IMG/girl.png">
-            <h3> Les bases du html</h3>
-            <p>facile ★✩✩</p>
-        </div>
+        <?php
+            $cours = recommandations($_SESSION["userID"]);
+
+            foreach($cours as $c)
+            {
+                $id = $c->get("id");
+                if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/back/data/cours/$id/favicon.png"))
+                    $icon = "/back/data/cours/$id/favicon.png";
+                else
+                    $icon = "/front/IMG/Girl.png";
+
+                $titre = $c->get("nom");
+                $difficulte = printDifficulte($c->get("difficulte"));
+                include ("template/CoursRecommande.php");
+            }
+        ?>
     </div>
 </body>
 <script type="text/javascript" src="/front/JS/Utilisateur/profil.js"></script>

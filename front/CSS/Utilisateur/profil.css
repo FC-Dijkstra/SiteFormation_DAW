@@ -11,7 +11,7 @@ hr{
     margin-left: 5%;
 }
 
-#profil, #cours, #recommandations{
+#cours, #recommandations{
     margin-right: 5%;
     margin-left: 5%;
 }
@@ -27,6 +27,8 @@ hr{
 }
 
 #profil{
+    margin-left: 24%;
+    margin-right: 24%;
     display:grid;
     grid-template-columns: 0.1fr 0.9fr;
 }
@@ -37,7 +39,7 @@ hr{
 
 #pbox2{
     margin-top: 2%;
-    margin-left: 5%;
+    padding-left: 15%;
     grid-column-start: 2;
     display:block;
 }
@@ -49,18 +51,21 @@ hr{
 .reco:hover{
     background-color: #e2e2e2;
     transition: .2s all;
-    .reco img{
-        opacity: 0.25;
-    }
+}
+.reco img{
+    opacity: 0.25;
 }
 
 .reco{
-background-color: #eeeeee;
-width: 250px;
-
+    display: inline-block;
+    background-color: #eeeeee;
+    width: 350px;
+    margin-left: 10%;
+    margin-bottom: 3%;
 }
+
 .reco img{
-width:250px;
+width:350px;
 height:230px;
 
 }
@@ -68,6 +73,7 @@ height:230px;
 float : bottom;
 text-align: center;
 margin-bottom: 1%;
+    height: 50px;
 }
 .reco p{
 float : bottom;
@@ -75,9 +81,25 @@ text-align: center;
 padding-bottom: 1em;
 }
 
+.reco a{
+    color: black;
+    text-decoration: none;
+}
+
+.reco a:hover
+{
+    color: black;
+    text-decoration: none;
+}
+
 #enregistrer, .mdp, #annuler, .file
 {
     display: none;
+}
+label
+{
+    display: inline-block;
+    width: 300px;
 }
 
 .box1
@@ -145,15 +167,4 @@ padding-bottom: 1em;
 
 button, input[type=submit],input[type=reset]{
     cursor: pointer;
-}
-
-#nom{
-    margin-right: 5em;
-}
-#prenom{
-    margin-right: 3.75em;
-}
-
-#mail{
-    margin-right: 0.1em;
 }

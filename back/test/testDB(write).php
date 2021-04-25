@@ -9,13 +9,13 @@ require(__DIR__ . "./../helpers/print.php");
 
 //! TESTS POUR ECRITURE
 /*
-//* tests pour db.php
+//* tests pour db.config php
 $db = db::getInstance();
 $db->insert("test", ["nom" => "IAN", "prenom" => "TRUE", "age" => "20"]);
 $db->get("test", "nom = IAN");
 */
 /*
-//* tests pour utilisateur.php
+//* tests pour utilisateur.config php
 $usr = new utilisateur(1, "IAN", "TRUE", "ian.trou@gmail.com", "aaa", false);
 $usr->setPassword("aaa");
 utilisateur::save($usr);
@@ -46,7 +46,7 @@ conversation::save($conversation);
 */
 
 /*
-//* tests pour message.php
+//* tests pour message.config php
 $message = new message(1, 1, "message de test", 1, date("Y-m-d H:i:s"));
 message::save($message);
 */

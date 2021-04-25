@@ -30,4 +30,3 @@ Frontend:
 + Vérifier comportement si paramètres incorrects
 + templatiser recommendations
 + templatiser liste QCM
-+ purge fichiers cours lors de la suppression d'un cours

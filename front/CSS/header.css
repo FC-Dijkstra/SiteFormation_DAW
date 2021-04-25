@@ -75,7 +75,6 @@ header a:hover {
 .hbox3 li{
     float:left;
     width:100px;
-    margin-top: 2.4em;
     margin-right: 1em;
 }
 
@@ -93,6 +92,10 @@ header a:hover {
 
 }
 
+.connexion, .inscription {
+    margin-top: 2.4em;
+}
+
 /*dark mode */
 .header.dark{
     background-color: #2F2F2F;
@@ -107,6 +110,8 @@ header a:hover {
 
 .menu-item-dark-mode{
   margin-bottom: 10px;
+    margin-top: 2em;
+    margin-left: 25%;
 }
 /* mise en place du bouton dark / light */
 .switch-dark-light {

@@ -39,7 +39,7 @@ function follow($id, $coursID)
             "utilisateur"=>$id
         ];
     db::getInstance()->insert("abonnements", $params);
-    redirect::to("profil.php");
+    redirect::to("profil.config php");
 }
 
 function unfollow($id, $coursID)

@@ -9,7 +9,7 @@ require(__DIR__ . "./../helpers/print.php");
 
 //! TESTS POUR LECTURE
 
-//* tests pour utilisateur.php
+//* tests pour utilisateur.config php
 $user = utilisateur::load(1);
 println();
 var_dump($user);
@@ -20,12 +20,12 @@ var_dump($users);
 println();
 
 
-//* tests pour message.php
+//* tests pour message.config php
 $message = message::load(1);
 println();
 var_dump($message);
 
-//* tests pour cours.php
+//* tests pour cours.config php
 $cours = cours::load(1);
 println();
 var_dump($cours);
@@ -33,12 +33,12 @@ println();
 $allCours = cours::getAll();
 
 
-//* tests pour categorie.php
+//* tests pour categorie.config php
 $categorie = categorie::load(1);
 println();
 var_dump($categorie);
 
-//* tests pour conversation.php
+//* tests pour conversation.config php
 $conversation = conversation::load(1);
 println();
 var_dump($conversation);

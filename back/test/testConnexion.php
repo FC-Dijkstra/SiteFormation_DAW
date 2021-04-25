@@ -7,7 +7,7 @@ echo $csrf;
 
 if (isset($_SESSION["userID"]))
 {
-    echo "<form method='post' action='../router.php'> <input type='submit' value='deco'/>
+    echo "<form method='post' action='../router.config php'> <input type='submit' value='deco'/>
         <input type='hidden' value='deconnexion' name='action'/> <input type='hidden' value='" . $_SESSION["csrf_token"] . "'name='csrf_token'/>
 </form>";
     echo $_SESSION["userID"];
