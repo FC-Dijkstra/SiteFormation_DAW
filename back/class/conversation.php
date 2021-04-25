@@ -8,13 +8,15 @@ class conversation extends DBObject
     protected int $id;
     protected string $titre;
     protected int $categorie;
+    protected int $locked;
 
 
-    public function __construct(int $id, int $categorie, string $titre)
+    public function __construct(int $id, int $categorie, string $titre, int $locked)
     {
         $this->id = $id;
         $this->titre = $titre;
         $this->categorie = $categorie;
+        $this->locked = $locked;
     }
 
 
@@ -24,12 +26,14 @@ class conversation extends DBObject
         return new conversation(
             $params["id"],
             $params["categorie"],
-            $params["titre"]
+            $params["titre"],
+            $params["locked"]
         );
     }
 
     public static function delete($id)
     {
+        //TODO: suppression fichiers dans data/cours
         return db::getInstance()->delete(config::$CONV_TABLE, $id);
     }
     public static function save($instance)
@@ -40,7 +44,7 @@ class conversation extends DBObject
                 "id" => $instance->id,
                 "categorie" => $instance->categorie,
                 "titre" => $instance->titre,
-
+                "locked" => $instance->locked
             ];
         db::getInstance()->insert(config::$CONV_TABLE, $param);
     }
@@ -55,6 +59,7 @@ class conversation extends DBObject
                 $dbValues[$i]["id"],
                 $dbValues[$i]["categorie"],
                 $dbValues[$i]["titre"],
+                $dbValues[$i]["locked"]
             );
 
             array_push($output, $conversation);

@@ -26,12 +26,14 @@ function RecupConvById($id)
 
 function recup1Conv($id)
 {
-    return db::getInstance()->get(config::$CONV_TABLE, "id = $id", true);
+    //return db::getInstance()->get(config::$CONV_TABLE, "id = $id", true);
+    return db::getInstance()->getID(config::$CONV_TABLE, $id);
 }
 
 function recupAuthor($id)
 {
-    return db::getInstance()->get(config::$USER_TABLE, "id = $id", true);
+    //return db::getInstance()->get(config::$USER_TABLE, "id = $id", true);
+    return db::getInstance()->getID(config::$USER_TABLE, $id);
 }
 
 function recupMessages($id)

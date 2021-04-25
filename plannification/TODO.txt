@@ -1,27 +1,33 @@
 Fonctions admin:
-    -> ajout cours
-    -> edition cours ?
-    -> suppression cours
+    -> ajout cours                          TODO
+    -> edition cours ?                      TODO
+    -> suppression cours                    TODO (relier front/back + supprimer fichiers)
 
 Fonction modération:
-    -> verrouillage conversation
-    -> suppression message
-    -> ban utilisateur
+    -> verrouillage conversation            Ajouter attribut db
+    -> suppression message                  TODO
+    -> ban utilisateur                      TODO
 
 Fonctions Forum:
-    -> Ajout categorie
-    -> Ajout conversation
-    -> Ajout message
+    -> Ajout categorie                      TODO
+    -> Ajout conversation                   TODO
+    -> Ajout message                        TODO
 
 Fonctions QCM:      YANN
-    -> affichage QCM (penser cooldown)
-    -> Validation QCM
+    -> affichage QCM (penser cooldown)      DONE
+    -> Validation QCM                       DONE
 
 Fonctions Cours:
     -> visualisation cours                  DONE
     -> abonnement à un cours a tester.      (PAS FONCTIONNEL)
 
 Frontend:
-    -> patch CSS connexion/inscription
-    -> thème sombre auto par cookie + js
-    -> thème sombre pour le contenu des pages ?
+    -> patch CSS connexion/inscription              TODO
+    -> thème sombre auto par cookie + js            TODO
+    -> thème sombre pour le contenu des pages ?     TODO
+
++ Vérifier redirections
++ Vérifier comportement si paramètres incorrects
++ templatiser recommendations
++ templatiser liste QCM
++ purge fichiers cours lors de la suppression d'un cours
