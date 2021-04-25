@@ -24,10 +24,10 @@
 }
 .forum_category_table tr {
     height: 2.5em;
-    background-color: #ffe672;
+    background-color: #A0A0A0;
 }
 .forum_category_table tr:nth-child(2n){
-    background-color: #ffad2f;
+    background-color: #D0D0D0;
 }
 .forum_category_table td {
     padding-left: 3em;
