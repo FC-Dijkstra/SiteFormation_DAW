@@ -1,12 +1,8 @@
-body{
-    padding: 0;
-    background-color: #f5f5f5;
-}
-
 #page{
     margin-left: 38%;
     margin-right: 38%;
-    margin-top: 8%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     text-align: center;
 }
 
@@ -19,11 +15,13 @@ body{
     background-color: #dedede;
 }
 
-button, label, #input{
+button, .formlabel, #input{
     background-color: #EBC098;
 }
 
-label{
+.formlabel{
+    display: inline-block;
     border:1px solid #e7a76b;
     padding: 1px 1em 1px;
+    width: 30%;
 }

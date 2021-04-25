@@ -1,38 +1,38 @@
 <link rel="stylesheet" href="/front/CSS/Utilisateur/inscription.css" type="text/css" />
 <div id="page">
-    <a href="index.php">
+    <!--<a href="index.php">
         <img class="hbox1" src="/front/IMG/logo.png" alt="Logo" />
-    </a>
+    </a>-->
     <form action="/back/router.php" enctype="multipart/form-data" method="post">
         <fieldset class="form">
             <h2> Inscription </h2>
 
             <p> Pas encore inscrit ? <br /> Rejoins-nous ! </p>
 
-            <label class="prenom" type="button"> Prénom</label>
+            <label class="prenom formlabel" type="button"> Prénom</label>
 
-            <input type="text" id="prenom" name="prenom" required>
+            <input type="text" id="prenom" size="30" name="prenom" required>
             <div><br /></div>
 
-            <label class="nom" type="button"> Nom</label>
+            <label class="nom formlabel" type="button"> Nom</label>
 
-            <input type="text" id="nom" name="nom" required>
+            <input type="text" id="nom" size="30" name="nom" required>
             <div><br /></div>
 
-            <label class="email" type="button"> Adresse mail</label>
+            <label class="email formlabel" type="button"> Adresse mail</label>
 
             <input type="email" id="email" name="email" size="30" required>
             <div><br /><br /></div>
 
-            <label class="mdp" type="button"> Mot de passe</label>
+            <label class="mdp formlabel" type="button" > Mot de passe</label>
 
-            <input type="password" id="pass" name="password" required>
+            <input type="password" id="pass" size="30" name="password" required>
 
             <div><br /></div>
 
-            <label class="mdp" type="button">Confirmation</label>
+            <label class="mdp formlabel" type="button">Confirmation</label>
 
-            <input type="password" id="confpass" name="confpassword" required>
+            <input type="password" id="confpass" size="30" name="confpassword" required>
 
             <div><br /></div>
 
@@ -52,6 +52,6 @@
                 <button class="connexion" type="button" onclick="location.href='index.php?page=connexion'"> Je me connecte ! </button>
         </fieldset>
     </form>
-    <a href="index.php">Accueil</a>
+    <!--<a href="index.php">Accueil</a>-->
 </div>
 </body>

@@ -14,15 +14,13 @@
     background-color: #dedede;
 }
 
-button, label, #input{
+button, .formlabel, #input{
     background-color: #EBC098;
 }
 
-label{
+.formlabel{
+    display: inline-block;
     border:1px solid #e7a76b;
     padding: 1px 1em 1px;
-}
-
-.footer{
-    bottom: 0;
+    width: 40%;
 }

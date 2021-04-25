@@ -3,7 +3,7 @@ footer{
     color: #606060;
     overflow:auto;
     position:absolute;
-    bottom:0;
+    bottom: auto;
     width: 100%;
 
 }

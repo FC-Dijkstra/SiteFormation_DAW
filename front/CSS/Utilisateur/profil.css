@@ -50,10 +50,7 @@ hr{
 
 .reco:hover{
     background-color: #e2e2e2;
-    transition: .2s all;
-}
-.reco img{
-    opacity: 0.25;
+    opacity: 1;
 }
 
 .reco{
@@ -62,6 +59,8 @@ hr{
     width: 350px;
     margin-left: 10%;
     margin-bottom: 3%;
+    transition: opacity .2s;
+    opacity: 0.40;
 }
 
 .reco img{
