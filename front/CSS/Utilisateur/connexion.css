@@ -24,3 +24,8 @@ button, .formlabel, #input{
     padding: 1px 1em 1px;
     width: 40%;
 }
+
+.footer
+{
+    bottom: 0;
+}
