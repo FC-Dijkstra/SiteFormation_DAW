@@ -42,6 +42,8 @@ font-size: 22px;
 
 
 #gauche{
+  vertical-align: top;
+  text-align:center;
   margin-left: 15%;
   width: 20%;
   display: inline-block;
@@ -53,7 +55,9 @@ text-align: center;
 }
 
 #gauche img{
-margin-left: 9%;
+margin-left: 3%;
+height: 312px;
+width: 260px;
 }
 
 #gauche p{
@@ -63,25 +67,25 @@ margin-left: 9%;
 }
 
 #milieu{
+  vertical-align: top;
+  text-align:center;
   margin-left: 5%;
   width: 25%;
   display: inline-block;
 }
 
-
 #milieu h3{
 font-size: 22px;
 text-align: center;
-margin-left: 15%;
 }
 
 #milieu p{
   font-size: 20px;
   text-align: center;
-  margin-left: 15%;
 }
 
 #droite{
+  text-align:center;
   margin-left: 5%;
   width: 20%;
   display: inline-block;

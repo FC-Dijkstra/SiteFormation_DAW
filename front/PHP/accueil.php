@@ -21,7 +21,7 @@
   </div>
   <div id="droite">
     <img src="/front/IMG/pro.PNG"/>
-    <h3> Vous êtes débutant, amateur ou expert ?</h3>
+    <h3> Débutant, amateur ou expert ?</h3>
     <p> Nous donnons des cours pour tout type de niveau ! Et si vous ne savez pas quel niveau vous avez, faites nos qcm pour avoir des recommandations !</p>
   </div>
 </div>
