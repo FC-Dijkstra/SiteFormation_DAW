@@ -37,7 +37,7 @@
             case "connexion":
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Utilisateur/connexion.php");
                 break;
-                
+
             case "inscription":
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Utilisateur/inscription.php");
                 break;
@@ -56,6 +56,18 @@
 
             case "coursWeb":
                 include ($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Cours/web.php");
+                break;
+
+            case "postuler":
+                include ($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/postuler.php");
+                break;
+
+            case "quiSommesNous":
+                include ($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/nous.php");
+                break;
+
+            case "nousContacter":
+                include ($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/contact.php");
                 break;
 
             case "accueilQCM":

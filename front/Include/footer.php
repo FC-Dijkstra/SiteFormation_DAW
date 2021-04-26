@@ -5,8 +5,8 @@
             <h6> A propos</h6>
             <div>
                 <ul>
-                    <li> <a href="#"> Qui sommes-nous ?</a> </li>
-                    <li> <a href="#"> Nous contacter</a> </li>
+                    <li> <a href="index.php?page=quiSommesNous"> Qui sommes-nous ?</a> </li>
+                    <li> <a href="index.php?page=nousContacter"> Nous contacter</a> </li>
                 </ul>
             </div>
         </div>
@@ -14,7 +14,7 @@
             <h6> Nous rejoindre </h6>
             <div>
                 <ul>
-                    <li> <a href="#"> Devenir enseignant</a> </li>
+                    <li> <a href="index.php?page=postuler"> Devenir enseignant</a> </li>
                 </ul>
             </div>
         </div>
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    
+
 </footer>
 
 </html>

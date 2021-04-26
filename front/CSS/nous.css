@@ -1,0 +1,47 @@
+.footer{
+    bottom: auto;
+    position: relative !important;
+}
+
+#bvn{
+  text-align: center;
+}
+
+#equipe {
+    text-align: center;
+    width: 100%;
+}
+
+#equipe img{
+  align-items: center;
+  margin-top: 2em;
+}
+
+#equipe p{
+  width: 30%;
+  margin-left: 34%;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+#travail {
+    margin-bottom: 5em;
+    margin-top: 5em;
+    background-color: #F5F5F5;
+}
+
+#travail img{
+  margin-top: 2em;
+  width: 275px;
+  height: 370px;
+  left: 27%;
+  position: relative;
+}
+
+#travail p{
+  width: 30%;
+  font-size: 18px;
+  float: right;
+  margin-right: 23%;
+  margin-top: 9%;
+}
