@@ -11,7 +11,7 @@ body
     height: 15%;
     display:grid;
     margin: 0 auto;
-    background-color: #d3d3d3;
+    background-color: #EFEFEF;
     grid-template-columns: 0.7fr 3fr 1.5fr;
 
     color: white;

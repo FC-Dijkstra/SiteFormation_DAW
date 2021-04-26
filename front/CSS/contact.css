@@ -1,0 +1,34 @@
+.footer{
+    bottom: auto;
+    position: relative !important;
+}
+
+#bvn{
+  text-align: center;
+}
+
+#contact p{
+  text-align: center;
+  font-size: 18px;
+}
+
+#mail, #tel{
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+
+#mail img{
+  left: 31%;
+  position: relative;
+}
+
+#tel img{
+  left: 30%;
+  position: relative;
+}
+
+#tel p, #mail p{
+  position: relative;
+  float: right;
+  width: 10%;
+}
