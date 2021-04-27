@@ -1,0 +1,1 @@
+27-04-2021 11:49:08 - db.php::query()[160] - SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'cours' at row 1

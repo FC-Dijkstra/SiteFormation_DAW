@@ -33,13 +33,27 @@ function AboDesabo()
   if(document.getElementById("abonnement").innerHTML == "S'abonner"){
     document.getElementById("abonnement").value = "Se désabonner";
     document.getElementById("abonnement").innerHTML = "Se désabonner";
-    // TODO: ajax to /back/router.config php&action=follow&cours=<ID>&csrf_token=<?= $_SESSION["csrf_token"]?>
-    // (ping Yann)
+    let csrf = $("#csrf").text();
+    let id = $("#cours").text();
+    $.ajax({
+      url: "/back/router.php",
+      type: "POST",
+      data: { action: "follow", csrf_token: csrf, cours: id},
+      success: function(html){ alert(html);},
+      error: function(result, status, error){alert("Erreur: " + error + " resultat: " + result + " statut: " + status)}
+    });
   }
   else{
     document.getElementById("abonnement").value = "S'abonner";
     document.getElementById("abonnement").innerHTML = "S'abonner";
-    // TODO: ajax to /back/router.config php?action=unfollow&cours=<ID>&csrf_token=<?= $_SESSION["csrf_token"]?>
-    // (ping Yann)
+    let csrf = $("#csrf").text();
+    let id = $("#cours").text();
+    $.ajax({
+      url: "/back/router.php",
+      type: "POST",
+      data: {action: "unfollowAsync", csrf_token: csrf, cours: id},
+      success: function(html){alert(html);},
+      error: function(result, status, error){alert("Erreur: " + error + " resultat: " + result + " statut: " + status)}
+    })
   }
 }

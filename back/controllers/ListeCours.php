@@ -38,13 +38,33 @@ function follow($id, $coursID)
             "cours"=>$coursID,
             "utilisateur"=>$id
         ];
-    db::getInstance()->insert("abonnements", $params);
-    redirect::to("profil.config php");
+    db::getInstance()->insert(config::$SUBSCR_TABLE, $params);
+    if (db::getInstance()->hasError())
+    {
+        echo "Une erreur s'est produite";
+    }
+    else
+    {
+        echo "Abonnement réussi !";
+    }
 }
 
 function unfollow($id, $coursID)
 {
     db::getInstance()->query("DELETE FROM abonnements WHERE utilisateur = ? AND cours = ?", [$id, $coursID], false);
     redirect::to("profil");
+}
+
+function unfollowAsync($id, $coursID)
+{
+    db::getInstance()->query("DELETE FROM abonnements WHERE utilisateur = ? AND cours = ?", [$id, $coursID], false);
+    if (db::getInstance()->hasError())
+    {
+        echo "Une erreur s'est produite";
+    }
+    else
+    {
+        echo "Désabonnement réussi";
+    }
 }
 ?>

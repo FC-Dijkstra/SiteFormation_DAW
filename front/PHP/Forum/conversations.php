@@ -19,7 +19,7 @@
 			for($i = 0; $i < count($conversations);$i++)
 			{
 				$idconv = $conversations[$i]["id"];
-				echo "<tr><td onclick=location.href=\"index.config php?page=messagesForum&id=$idconv\"> ".$conversations[$i]["titre"]."</td></tr>";
+				echo "<tr><td onclick=location.href=\"index.php?page=messagesForum&id=$idconv\"> ".$conversations[$i]["titre"]."</td></tr>";
 			}
 		?>
     </tbody>

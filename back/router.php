@@ -83,16 +83,33 @@ if (Input::exists())
 
                 break;
 
-            case "follow":
-                $id = $_SESSION["userID"];
+            case "unfollowAsync":
+                $coursID = filter_input(INPUT_POST, "cours", FILTER_SANITIZE_NUMBER_INT);
+                if (isset($_SESSION["userID"]) && isset($coursID))
+                {
+                    $id = $_SESSION["userID"];
+                    unfollowAsync($id, $coursID);
+                }
+                else
+                {
+                    echo "Erreur: paramètres invalides !";
+                }
+                break;
+
+            case "follow":  //! ASYNC
                 $coursID = filter_input(INPUT_POST, "cours", FILTER_SANITIZE_NUMBER_INT);
 
-                if(isset($id) && isset($coursID))
-                    follow($id, $coursID);
-                else
-                    redirect::to("accueil");
+                if(isset($_SESSION["userID"]) && isset($coursID)) {
+                    $id = $_SESSION["userID"];
 
+                    follow($id, $coursID);
+                }
+                else
+                {
+                    echo "Erreur: paramètres invalides !";
+                }
                 break;
+
             default:
                 redirect::to("accueil");
                 break;

@@ -1,5 +1,7 @@
-25-04-2021 02:34:19 - recommandation.php::query()[28] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) ORDER BY RAND() LIMIT 1' at line 1
-25-04-2021 02:34:48 - recommandation.php::query()[28] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) ORDER BY RAND() LIMIT 1' at line 1
-25-04-2021 02:35:42 - recommandation.php::query()[28] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) ORDER BY RAND() LIMIT 1' at line 1
-25-04-2021 02:40:34 - recommandation.php::query()[25] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) ORDER BY RAND() LIMIT 1' at line 1
-25-04-2021 02:40:34 - recommandation.php::query()[25] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?) ORDER BY RAND() LIMIT 1' at line 1
+28-04-2021 12:08:08 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+28-04-2021 12:11:36 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+28-04-2021 12:13:56 - db.php::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-3' for key 'abonnements.PRIMARY'
+28-04-2021 12:13:58 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+28-04-2021 12:15:25 - db.php::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-3' for key 'abonnements.PRIMARY'
+28-04-2021 12:15:27 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+28-04-2021 12:17:44 - db.php::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-3' for key 'abonnements.PRIMARY'

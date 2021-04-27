@@ -4,7 +4,7 @@ Fonctions admin:
     -> suppression cours                    TODO (relier front/back + supprimer fichiers)
 
 Fonction modération:
-    -> verrouillage conversation            Ajouter attribut db
+    -> verrouillage conversation            TODO
     -> suppression message                  TODO
     -> ban utilisateur                      TODO
 
@@ -28,5 +28,5 @@ Frontend:
 
 + Vérifier redirections
 + Vérifier comportement si paramètres incorrects
-+ templatiser recommendations
++ templatiser recommendations                       TODO
 + templatiser liste QCM
