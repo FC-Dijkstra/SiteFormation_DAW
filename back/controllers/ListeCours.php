@@ -52,19 +52,20 @@ function follow($id, $coursID)
 function unfollow($id, $coursID)
 {
     db::getInstance()->query("DELETE FROM abonnements WHERE utilisateur = ? AND cours = ?", [$id, $coursID], false);
-    redirect::to("profil");
+
+    if (db::getInstance()->hasError())
+        redirect::to("accueil", "Erreur");
+    else
+        redirect::to("profil");
 }
 
 function unfollowAsync($id, $coursID)
 {
     db::getInstance()->query("DELETE FROM abonnements WHERE utilisateur = ? AND cours = ?", [$id, $coursID], false);
+
     if (db::getInstance()->hasError())
-    {
         echo "Une erreur s'est produite";
-    }
     else
-    {
         echo "Désabonnement réussi";
-    }
 }
 ?>

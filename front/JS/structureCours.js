@@ -28,11 +28,11 @@ window.onload = () => {
   })
 }
 
+
 function AboDesabo()
 {
-  if(document.getElementById("abonnement").innerHTML == "S'abonner"){
-    document.getElementById("abonnement").value = "Se désabonner";
-    document.getElementById("abonnement").innerHTML = "Se désabonner";
+  if($("#abonnement").text() == "S'abonner"){
+    $("#abonnement").text("Se désabonner");
     let csrf = $("#csrf").text();
     let id = $("#cours").text();
     $.ajax({
@@ -44,8 +44,7 @@ function AboDesabo()
     });
   }
   else{
-    document.getElementById("abonnement").value = "S'abonner";
-    document.getElementById("abonnement").innerHTML = "S'abonner";
+    $("#abonnement").text("S'abonner");
     let csrf = $("#csrf").text();
     let id = $("#cours").text();
     $.ajax({
@@ -56,4 +55,13 @@ function AboDesabo()
       error: function(result, status, error){alert("Erreur: " + error + " resultat: " + result + " statut: " + status)}
     })
   }
+}
+
+function setFollowValue()
+{
+  let followValue = $("#isFollowing").text();
+  if (followValue === "true")
+    $("#abonnement").text("Se désabonner");
+  else if (followValue === "false")
+    $("#abonnement").text("S'abonner");
 }

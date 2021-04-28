@@ -5,6 +5,7 @@ include_once($_SERVER["DOCUMENT_ROOT"] . "/back/controllers/AffichageCours.php")
 <script type="text/javascript" src="/front/JS/structureCours.js"></script>
 <div style="display: none;" id="csrf"><?= Token::get()?></div>
 <div style="display: none;" id="cours"><?= Input::get("id")?></div>
+<div style="display: none;" id="isFollowing"><?= isFollowing(Input::get("id")) == true ? "true" : "false"?></div>
 <?php
 	
 	$html = returnView($_GET['id']);
