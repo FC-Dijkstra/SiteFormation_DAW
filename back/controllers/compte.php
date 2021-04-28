@@ -10,6 +10,12 @@ function deleteAccount($id)
     utilisateur::delete($id);
 }
 
+function isAdmin($id)
+{
+    $user = utilisateur::load($id);
+    return $user->get("admin");
+}
+
 function editAccount($id, $nNom, $nPrenom, $nEmail, $nPassword, $oPassword)
 {
     $user = utilisateur::load($id);
@@ -24,12 +30,17 @@ function editAccount($id, $nNom, $nPrenom, $nEmail, $nPassword, $oPassword)
                 "usericon"=>$user->get("userIcon")
             ];
         db::getInstance()->update("utilisateurs", "id = {$id}", $params);
-        redirect::to("profil");
+
+        if ($user->get("admin") == true && !db::getInstance()->hasError())
+            redirect::to("profilAdmin", "Informations modifiées");
+        else if ($user->get("admin") == false && !db::getInstance()->hasError())
+            redirect::to("profil", "Informations modifiées");
+        else
+            redirect::to("profil", "Une erreur s'est produite");
     }
     else
     {
-        logger::log("édition: mot de passe invalide");
-        redirect::to("accueil");
+        redirect::to("accueil", "Paramètres invalides");
     }
 }
 
@@ -87,12 +98,14 @@ function login($email, $password)
         $_SESSION["admin"] = $user->get("admin");
 
         //echo "bienvenue";
-        redirect::to("profil");
+        if ($user->get("admin") == true)
+            redirect::to("profilAdmin");
+        else
+            redirect::to("profil");
     }
     else
     {
         //echo "connexion invalide";
-
         redirect::to("connexion", "Identifiants invalides!");
     }
 }

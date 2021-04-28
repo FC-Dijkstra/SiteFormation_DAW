@@ -39,10 +39,16 @@ hr{
     bottom: auto;
 }
 
-#enregistrer, .mdp
+#enregistrer, .mdp, #annuler, .file
 {
     display: none;
 
+}
+
+label
+{
+    display: inline-block;
+    width: 300px;
 }
 
 .box1
@@ -114,15 +120,4 @@ hr{
 
 .cours:hover{
     background-color: #ececec4f;
-}
-
-#nom{
-    margin-right: 5em;
-}
-#prenom{
-    margin-right: 3.75em;
-}
-
-#mail{
-    margin-right: 0.1em;
 }

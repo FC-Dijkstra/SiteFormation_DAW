@@ -14,7 +14,7 @@ if (isset($_SESSION["userID"]))
 }
 else
 {
-    redirect::to("index.config php");
+    redirect::to("accueil");
 }
 
 function printDifficulte($difficulte): string
@@ -50,26 +50,27 @@ function printDifficulte($difficulte): string
         </div>
         <div id="pbox2">
         <form id="modifprofil" action="/back/router.php" method="post">
-            <label id="nom" type="text">Nom :</label>
+            <label for="nom" id="nom" type="text">Nom :</label>
             <input type="text" id="info_nom" name="nom" value="<?= $nom?>" readonly><br>
 
-            <label id="prenom" type="text">Prénom :</label>
+            <label for="prenom" id="prenom" type="text">Prénom :</label>
             <input type="text" id="info_prenom" name="prenom" value="<?= $prenom?>" readonly><br>
 
-            <label id="mail" type="text">Adresse mail liée:</label>
+            <label for="email" id="mail" type="text">Adresse mail liée:</label>
             <input type="email" id="info_mail" name="email" value="<?= $email?>" readonly><br>
             <br>
             <a id="mdp">Mot de passe </a><br>
-            <label class="mdp" type="text">Mot de passe</label>
+            <label for="password" class="mdp" type="text">Mot de passe</label>
             <input class="mdp" type="password" name="password"><br>
-            <label class="mdp" type="text">Nouveau mot de passe</label>
+            <label for="newpassword" class="mdp" type="text">Nouveau mot de passe</label>
             <input class="mdp" type="password" name="newpassword" id="info_nouveaumdp" value=""><br>
 
-            <label class="mdp" type="text">Confirmation nouveau mot de passe</label>
-            <input class="mdp" type="password" id="info_nouveaumdp" value=""><br>
+            <label for="conf_newpassword" class="mdp" type="text">Confirmation nouveau mot de passe</label>
+            <input class="mdp" type="password" id="info_nouveaumdp" name="conf_newpassword" value=""><br>
 
             <input type="hidden" name="action" value="editprofile"/>
             <input type="hidden" name="csrf_token" value="<?= Token::get()?>"/>
+
             <input type="submit" id="enregistrer" value="Enregistrer">
             <input type="reset" id="annuler" value="Annuler" onclick="ModifierInfos()">
             <button id="modifier" type="button" onclick="ModifierInfos()" >Modifier </button>

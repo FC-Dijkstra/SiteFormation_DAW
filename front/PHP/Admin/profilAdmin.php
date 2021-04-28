@@ -1,34 +1,76 @@
+<?php
+require_once($_SERVER["DOCUMENT_ROOT"] . "/back/controllers/ListeCours.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/back/class/utilisateur.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/redirect.php");
+
+if(isset($_SESSION["userID"]))
+{
+    $user = utilisateur::load($_SESSION["userID"]);
+    $userIcon = "/back/data/userIcons/" . $user->get("userIcon");
+    $nom = $user->get("nom");
+    $prenom = $user->get("prenom");
+    $email = $user->get("email");
+}
+else
+{
+    redirect::to("accueil");
+}
+
+function printDifficulte($difficulte): string
+{
+    switch($difficulte)
+    {
+        case "Débutant":
+            return "Débutant ★✩✩✩";
+
+        case "Intermédiaire":
+            return "Intermédiaire ★★✩✩";
+
+        case "Avancé":
+            return "Avancé ★★★✩";
+
+        case "Expert":
+            return "Expert ★★★★";
+
+        default:
+            return "n/a";
+    }
+}
+?>
+
 <link rel="stylesheet" href="/front/CSS/Admin/profilAdmin.css" type="text/css"/>
 <body>
     <h1 id="profiltitre"> Mon profil </h1>
     <div id="profil">
 
         <div id="pbox1">
-            <img id="photoprofil" src="/front/IMG/defaut_profil.png" alt="profil"/>
-            <label>Changer de photo : </label>
-
-            <input type="file" name="image" id="file">
+            <img id="photoprofil" src="<?= $userIcon ?>" alt="profil"/>
         </div>
         <div id="pbox2">
-        <form id="modifprofil">
+        <form id="modifprofil" action="/back/router.php" method="post">
             <label id="nom" type="text">Nom :</label>
-            <input type="text" id="info_nom" value="Martin" readonly><br>
+            <input type="text" name="nom" id="info_nom" value="<?= $nom?>" readonly><br>
 
             <label id="prenom" type="text">Prénom :</label>
-            <input type="text" id="info_prenom" value="Jonathan" readonly><br>
+            <input type="text" name="prenom" id="info_prenom" value="<?= $prenom?>" readonly><br>
 
             <label id="mail" type="text">Adresse mail liée:</label>
-            <input type="email" id="info_mail" value="jonathan.martinmaestre71@gmail.com" readonly><br><br>
+            <input type="email" name="email" id="info_mail" value="<?= $email?>" readonly><br><br>
 
             <a id="mdp">Mot de passe </a><br>
-
+            <label for="password" class="mdp" type="text">Mot de passe</label>
+            <input class="mdp" name="password" type="password" name="password" required><br/>
             <label class="mdp" type="text">Nouveau mot de passe</label>
-            <input class="mdp" type=text id="info_nouveaumdp" value=""><br>
+            <input class="mdp" name="newpassword" type="password" id="info_nouveaumdp" value=""><br>
 
             <label class="mdp" type="text">Confirmation nouveau mot de passe</label>
-            <input class="mdp" type=text id="info_nouveaumdp" value=""><br>
+            <input class="mdp" type="password" id="info_nouveaumdp" value=""><br>
+
+            <input type="hidden" name="action" value="editprofile" required/>
+            <input type="hidden" name="csrf_token" value="<?= Token::get()?>" required/>
 
             <input type="submit" id="enregistrer" value="Enregistrer">
+            <input type="reset" id="annuler" value="Annuler" onclick="ModifierInfos()">
             <button id="modifier" type="button" onclick="ModifierInfos()" >Modifier </button>
 
             <form>
@@ -45,12 +87,9 @@
           <hr>
           <br/>
         </div>
-        <div class="cours">
-            <img class="box1" src="/front/IMG/girl.png">
-            <h3 class="box2"> Les bases du html</h3>
-            <p class="box3">Facile ★✩✩ </p>
-            <p class="box4"> Ceci est une description</p>
-        </div>
+        <?php
+        //TODO: lister les cours postés.
+        ?>
     </div>
 
 
@@ -63,3 +102,4 @@
       </div>
     </div>
 </body>
+<script type="text/javascript" src="/front/JS/Utilisateur/profil.js"></script>

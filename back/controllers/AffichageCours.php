@@ -65,17 +65,17 @@
 			return null;
 	}
 
-	function isFollowing($cours)
+function isFollowing($cours)
+{
+    if (isset($_SESSION["userID"]) && isset($cours))
     {
-        if (isset($_SESSION["userID"]) && isset($cours))
+        $res = db::getInstance()->query("SELECT * FROM abonnements WHERE utilisateur = ? AND cours = ?", [$_SESSION["userID"], $cours]);
+        if (!db::getInstance()->hasError() && count($res) != 0)
         {
-            $res = db::getInstance()->query("SELECT * FROM abonnements WHERE utilisateur = ? AND cours = ?", [$_SESSION["userID"], $cours]);
-            if (!db::getInstance()->hasError() && count($res) != 0)
-            {
-                return true;
-            }
-            else return false;
+            return true;
         }
         else return false;
     }
+    else return false;
+}
 ?>

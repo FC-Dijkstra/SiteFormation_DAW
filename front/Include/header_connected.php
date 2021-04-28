@@ -12,7 +12,15 @@
         </ul>
 
         <ul class="hbox3">
-            <li class="menu-item connexion"><a href="index.php?page=profil">Profil</a></li>
+            <li class="menu-item connexion">
+                <?php
+                    if (isAdmin($_SESSION["userID"]))
+                        echo '<a href="index.php?page=profilAdmin">';
+                    else
+                        echo '<a href="index.php?page=profil">';
+                ?>
+                Profil</a>
+            </li>
             <li class="menu-item inscription"><a href="/back/router.php?action=deconnexion&csrf_token=<?= $_SESSION["csrf_token"]?>">Déconnexion</a></li>
             <li class="menu-item-dark-mode">
                 <div class="switch-dark-light">

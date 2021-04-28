@@ -10,6 +10,7 @@
     <?php
     require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/token.php");
     require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/Input.php");
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/back/controllers/compte.php");
     session_start();
     token::generate();
 
