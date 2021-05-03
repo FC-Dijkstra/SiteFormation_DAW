@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="/front/CSS/header.css" type="text/css">
-        <script type="text/javascript" src="/front/JS/Sombre.js"></script>
         <title>Web School</title>
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="/front/JS/Sombre.js"></script>
     <?php
     require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/token.php");
     require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/Input.php");
@@ -115,4 +116,5 @@
 
     include_once($_SERVER["DOCUMENT_ROOT"] . "/front/Include/footer.php");
     ?>
+
 </html>

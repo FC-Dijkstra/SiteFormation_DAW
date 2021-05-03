@@ -37,12 +37,16 @@ function saveUserIcon()
 
 function deleteUserIcon($iconName)
 {
-    $check = explode(".", $iconName);
-    if (count($check) != 2) die("Erreur, fichier inconnu");
-    if (file_exists(__DIR__ . "./../data/userIcons/" . $iconName))
+    if ($iconName != utilisateur::$defaultIcon)
     {
-        unlink(__DIR__ . "./../data/userIcons/" . $iconName);
+        $check = explode(".", $iconName);
+        if (count($check) != 2) die("Erreur, fichier inconnu");
+        if (file_exists(__DIR__ . "./../data/userIcons/" . $iconName))
+        {
+            unlink(__DIR__ . "./../data/userIcons/" . $iconName);
+        }
     }
+
 }
 
 function saveCours($id)

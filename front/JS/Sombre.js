@@ -1,18 +1,38 @@
-function toggleTheme()
-{
-    var header = document.getElementsByClassName("header")[0];
-    var footer = document.getElementsByClassName("footer")[0];
-    var body = document.getElementsByTagName("body")[0];
-    toggleElement(header);
-    toggleElement(footer);
-    toggleElement(body);
-}
+$(document).ready(function(){
+    if (localStorage.getItem("theme") == undefined)
+    {
+        localStorage.setItem("theme", "light");
+    }
 
-function toggleElement(e) {
-    if(e.className.includes("dark"))
-      e.className = e.className.slice(0, e.className.indexOf('dark')) + 'light';
-    else if(e.className.includes("light"))
-      e.className = e.className.slice(0, e.className.indexOf('light')) + 'dark';
-    else 
-      e.className+= ' dark';
-  }
+
+    setTheme();
+
+    $("#checkbox").on("click", function(){
+        if (localStorage.getItem("theme") == "light") {
+            localStorage.setItem("theme", "dark");
+        }
+        else
+            localStorage.setItem("theme", "light");
+
+        setTheme();
+    })
+});
+
+function setTheme()
+{
+    if (localStorage.getItem("theme") == "light")
+    {
+        $("#checkbox").attr("checked", "");
+        $(".header").removeClass("dark");
+        $(".footer").removeClass("dark");
+        $("body").removeClass("dark");
+    }
+    else
+    {
+        $("#checkbox").attr("checked", "checked");
+        $(".header").addClass("dark");
+        $(".footer").addClass("dark");
+        $("body").addClass("dark");
+    }
+
+}

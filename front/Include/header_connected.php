@@ -25,7 +25,7 @@
             <li class="menu-item-dark-mode">
                 <div class="switch-dark-light">
                     <label class="theme-switch" for="checkbox">
-                        <input type="checkbox" id="checkbox" onclick="toggleTheme()"/>
+                        <input type="checkbox" id="checkbox"/>
                         <div class="slider round"></div>
                     </label>
                 </div>
