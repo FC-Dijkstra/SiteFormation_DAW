@@ -6,15 +6,14 @@
             <div>
                 <ul>
                     <li> <a href="index.php?page=quiSommesNous"> Qui sommes-nous ?</a> </li>
-                    <li> <a href="index.php?page=nousContacter"> Nous contacter</a> </li>
                 </ul>
             </div>
         </div>
         <div class="milieu">
-            <h6> Nous rejoindre </h6>
+            <h6> Contact </h6>
             <div>
                 <ul>
-                    <li> <a href="index.php?page=postuler"> Devenir enseignant</a> </li>
+                  <li> <a href="index.php?page=nousContacter"> Nous contacter</a> </li>
                 </ul>
             </div>
         </div>

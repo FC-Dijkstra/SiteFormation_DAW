@@ -27,8 +27,30 @@
   position: relative;
 }
 
-#tel p, #mail p{
+#email{
   position: relative;
   float: right;
-  width: 10%;
+  margin-right: 45%;
+  margin-top: 30px;
 }
+
+#telephone{
+  position: relative;
+  float: right;
+  margin-right: 49.7%;
+  margin-top: 30px;
+}
+
+/* DARK */
+
+ body.dark
+ {
+     background-color: #424242;
+     color:#3E9D89;
+     transition: all 500ms;
+ }
+
+ body.light
+ {
+     transition: all 500ms;
+ }
