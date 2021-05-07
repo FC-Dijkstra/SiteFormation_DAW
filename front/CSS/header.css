@@ -103,13 +103,17 @@ header a:hover {
     transition: all 500ms;
 }
 
+body.dark header a{
+  color:rgba(255, 255, 255, 0.74);
+}
+
 .header.light
 {
     transition: all 500ms;
 }
 
 .menu-item-dark-mode{
-  margin-bottom: 10px;
+    margin-bottom: 10px;
     margin-top: 2em;
     margin-left: 25%;
 }
