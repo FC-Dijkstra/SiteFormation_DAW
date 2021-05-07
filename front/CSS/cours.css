@@ -116,6 +116,22 @@ footer {
       background-color: #424242;
       color:#3E9D89;
   }
+  body.dark .base-text p
+  {
+      background-color: #3E9D89;
+      color:rgba(255, 255, 255, 0.74);
+  }
+
+  body.dark #description, body.dark #description p
+  {
+      background-color: #0D5949 ;
+      color:rgba(255, 255, 255, 0.74);
+  }
+
+  body.dark #ordi
+  {
+    color:rgba(255, 255, 255, 0.74);
+  }
 
   body.light
   {
