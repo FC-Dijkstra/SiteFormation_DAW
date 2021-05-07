@@ -22,7 +22,7 @@ Fonctions Cours:
     -> abonnement à un cours a tester.      (PAS FONCTIONNEL)
 
 Frontend:
-    -> patch CSS connexion/inscription              TODO
+    -> patch CSS connexion/inscription              DONE
     -> thème sombre auto par cookie + js            TODO
     -> thème sombre pour le contenu des pages ?     TODO
 

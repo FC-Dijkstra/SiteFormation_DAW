@@ -49,7 +49,7 @@ $convApp = categorie::getAllByType("App");
 			for($i = 0; $i < count($convWeb);$i++)
 			{
 				$idconv = $convWeb[$i]["id"];
-				echo "<tr><td onclick=location.href=\"index.config php?page=conversations&id=$idconv\"> ".$convWeb[$i]["titre"]."</td></tr>";
+				echo "<tr><td onclick=location.href=\"index.php?page=conversations&id=$idconv\"> ".$convWeb[$i]["titre"]."</td></tr>";
 			}
 		}
 		?>

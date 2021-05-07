@@ -55,8 +55,8 @@ $messages = recupMessages($ID);
     let page = params.get('page')===null?1:params.get('page');
     $("#page").text(page);
     params.set('page', ''+(Number(page)-1<1?1:Number(page)-1))
-    $("#prev").attr('href', 'conversation.config php?'+params.toString())
+    $("#prev").attr('href', 'conversation.php?'+params.toString())
     params.set('page', ''+(Number(page)+1))
-    $("#next").attr('href', 'conversation.config php?'+params.toString())
+    $("#next").attr('href', 'conversation.php?'+params.toString())
 </script>
 </body>
