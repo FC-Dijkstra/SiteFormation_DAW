@@ -55,7 +55,6 @@ body.dark
 {
     background-color: #424242  ;
     color:#0D5949;
-    transition: all 500ms;
 
 }
 
@@ -81,5 +80,4 @@ body.dark #appswift{
 
 body.light
 {
-    transition: all 500ms;
 }

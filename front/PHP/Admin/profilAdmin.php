@@ -61,10 +61,10 @@ function printDifficulte($difficulte): string
             <label for="password" class="mdp" type="text">Mot de passe</label>
             <input class="mdp" name="password" type="password" name="password" required><br/>
             <label class="mdp" type="text">Nouveau mot de passe</label>
-            <input class="mdp" name="newpassword" type="password" id="info_nouveaumdp" value=""><br>
+            <input class="mdp" name="newpassword" type="password" id="npassword" value=""><br>
 
             <label class="mdp" type="text">Confirmation nouveau mot de passe</label>
-            <input class="mdp" type="password" id="info_nouveaumdp" value=""><br>
+            <input class="mdp" type="password" id="conf_npassword" value=""><br>
 
             <input type="hidden" name="action" value="editprofile" required/>
             <input type="hidden" name="csrf_token" value="<?= Token::get()?>" required/>
@@ -102,4 +102,4 @@ function printDifficulte($difficulte): string
       </div>
     </div>
 </body>
-<script type="text/javascript" src="/front/JS/Utilisateur/profil.js"></script>
+<script type="text/javascript" src="/front/JS/Utilisateur/profil.js" defer></script>

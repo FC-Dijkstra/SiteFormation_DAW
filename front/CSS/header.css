@@ -100,12 +100,11 @@ header a:hover {
 .header.dark{
     background-color: #2F2F2F;
     color:#95FF3D;
-    transition: all 500ms;
 }
 
 .header.light
 {
-    transition: all 500ms;
+
 }
 
 .menu-item-dark-mode{

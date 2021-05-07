@@ -115,10 +115,8 @@ footer {
   {
       background-color: #424242;
       color:#3E9D89;
-      transition: all 500ms;
   }
 
   body.light
   {
-      transition: all 500ms;
   }

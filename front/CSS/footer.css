@@ -97,10 +97,8 @@ footer a{
 .footer.dark{
     background-color: #2F2F2F;
     color:#3E9D89;
-    transition: all 500ms ;
 }
 
 .footer.light
 {
-    transition: all 500ms;
 }

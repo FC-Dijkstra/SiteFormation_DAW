@@ -13,20 +13,24 @@ Fonctions Forum:
     -> Ajout conversation                   TODO
     -> Ajout message                        TODO
 
+Page Accueil etudiant et accueil admin
+    -> template recommendations             TODO
+    -> template liste des cours             TODO
+    -> vérification saisie mot de passe     TODO
+
 Fonctions QCM:      YANN
+    -> templatiser la liste des QCM         TODO
     -> affichage QCM (penser cooldown)      DONE
     -> Validation QCM                       DONE
 
 Fonctions Cours:
     -> visualisation cours                  DONE
-    -> abonnement à un cours a tester.      (PAS FONCTIONNEL)
+    -> abonnement à un cours a tester.      DONE
 
 Frontend:
     -> patch CSS connexion/inscription              DONE
-    -> thème sombre auto par cookie + js            TODO
-    -> thème sombre pour le contenu des pages ?     TODO
+    -> thème sombre auto par cookie + js            DONE
+    -> thème sombre pour le contenu des pages ?     DONE
 
 + Vérifier redirections
 + Vérifier comportement si paramètres incorrects
-+ templatiser recommendations                       TODO
-+ templatiser liste QCM

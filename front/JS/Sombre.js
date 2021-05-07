@@ -1,11 +1,18 @@
-$(document).ready(function(){
+let firstTime = true;
+
+//on utilise DOMContentLoaded car document.ready()
+//laisse passer pendant une 10aine de frames la page dans le thème
+//clair, ce qui donne un effet de flash.
+//DOMContentLoaded -> trigger dès la fin d'analyse
+//$(document).ready(..) -> trigger dès le 1er rendu de la page.
+window.addEventListener("DOMContentLoaded", function(){
     if (getCookie("theme") == "")
     {
         setCookie("theme", "light", 30);
     }
 
-
     setTheme();
+    firstTime = false;
 
     $("#checkbox").on("click", function(){
         if (getCookie("theme") == "light")
@@ -14,7 +21,7 @@ $(document).ready(function(){
             setCookie("theme", "light", 30);
 
         setTheme();
-    })
+    });
 });
 
 function setCookie(cname, cvalue, exdays)
@@ -47,19 +54,20 @@ function getCookie(name)
 
 function setTheme()
 {
+    if (!firstTime) {
+        $("body, .header, .footer").css("transition", "all 500ms");
+    }
+
     if (getCookie("theme") == "light")
     {
+
         $("#checkbox").attr("checked", "");
-        $(".header").removeClass("dark");
-        $(".footer").removeClass("dark");
-        $("body").removeClass("dark");
+        $(".header, .footer, body").removeClass("dark");
     }
-    else
+    else if (getCookie("theme") == "dark")
     {
         $("#checkbox").attr("checked", "checked");
-        $(".header").addClass("dark");
-        $(".footer").addClass("dark");
-        $("body").addClass("dark");
+        $(".header, .footer, body").addClass("dark");
     }
 
 }
