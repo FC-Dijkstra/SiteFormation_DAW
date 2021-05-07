@@ -45,3 +45,28 @@
   margin-right: 23%;
   margin-top: 9%;
 }
+
+/* DARK */
+
+body.dark
+{
+   background-color: #424242;
+   color:rgba(238, 235, 150, 0.698);
+   transition: all 500ms;
+}
+
+body.dark p
+{
+   color:rgba(255, 255, 255, 0.74);
+}
+
+body.dark #travail
+{
+  background-color: #0D5949;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+body.light
+{
+  transition: all 500ms;
+}

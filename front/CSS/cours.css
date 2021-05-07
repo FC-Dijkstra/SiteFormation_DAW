@@ -12,6 +12,8 @@ body{
     font-size: 27px;
 }
 .base-text p {
+    border: 1px solid #8080807a;
+    border-radius: 2px;
     width: 35%;
     display: inline-block;
     padding: 2em;
@@ -114,25 +116,21 @@ footer {
   body.dark
   {
       background-color: #424242;
-      color:#3E9D89;
+      color: rgba(238, 235, 150, 0.698);
   }
   body.dark .base-text p
   {
-      background-color: #3E9D89;
-      color:rgba(255, 255, 255, 0.74);
+      background-color: #333333;
+      color:rgba(255, 255, 255, 0.534);
   }
 
-  body.dark #description, body.dark #description p
+  body.dark #description
   {
-      background-color: #0D5949 ;
+      background-color: #0D5949;
       color:rgba(255, 255, 255, 0.74);
   }
 
   body.dark #ordi
   {
     color:rgba(255, 255, 255, 0.74);
-  }
-
-  body.light
-  {
   }

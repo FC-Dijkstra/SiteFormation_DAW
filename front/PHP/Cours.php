@@ -10,7 +10,7 @@
 </div>
 
 <div id="cours">
-    <p>Nous vous proposons différentes catégories de cours :<br/><hr></p>
+    <h3>Nous vous proposons différentes catégories de cours :<br/><hr></h3>
     <div id="coursDiv">
     <div class="slide-cours" onclick="window.location.href='index.php?page=coursWeb'">
         <img src="/front/IMG/DevWeb.PNG">

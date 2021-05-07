@@ -96,9 +96,14 @@ footer a{
 
 .footer.dark{
     background-color: #2F2F2F;
-    color:#3E9D89;
+    color:rgba(255, 255, 255, 0.74);
+    transition: all 500ms ;
 }
 
-.footer.light
-{
+.body.dark a{
+    color:rgba(255, 255, 255, 0.74);
+}
+
+footer.dark .copyright p{
+    color: #606060;
 }
