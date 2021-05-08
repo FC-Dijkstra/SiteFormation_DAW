@@ -11,8 +11,16 @@
     <p id="web"> Développement web </p>
     <div id="line1"><hr></div><br/>
         <?php
-            listQCM();
+            $qcms = listQCM()[0];
+            foreach($qcms as $qcm)
+            {
+               $id = $qcm["id"];
+                $nom = getQCMname($qcm["cours"]);
+               include("template/QCM_liste.php");
+            }
         ?>
     <p id="app"> Développement d'applications </p>
     <div id="line1"><hr></div>
+    </div>
+    </div>
 </body>

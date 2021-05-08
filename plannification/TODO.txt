@@ -1,5 +1,5 @@
 Fonctions admin:
-    -> ajout cours                          TODO
+    -> ajout cours                          DONE
     -> edition cours ?                      c'est NON.
     -> suppression cours                    TODO (relier front/back + supprimer fichiers)
 
@@ -19,6 +19,7 @@ Page Accueil etudiant et accueil admin
     -> vérification saisie mot de passe     DONE
 
 Fonctions QCM:      YANN
+    -> recommendations en fonction de la note que tu a eu (c'est non)
     -> templatiser la liste des QCM         TODO
     -> affichage QCM (penser cooldown)      DONE
     -> Validation QCM                       DONE

@@ -23,7 +23,7 @@ a:link
  text-decoration:none;
 }
 
-#webhtml, #webcss, #webjs, #appjava, #appswift{
+.qcm{
   text-align: center;
   color:#EBC098;
 	font-size:25px;

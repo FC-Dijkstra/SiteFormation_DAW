@@ -7,11 +7,16 @@ require_once(__DIR__ . "./../helpers/file.php");
 
 function listQCM()
 {
-    $qcms = db::getInstance()->query("SELECT * FROM evaluation WHERE cours in (
-    SELECT id FROM cours WHERE categorie in (
-        SELECT id FROM categorie WHERE titre LIKE %web/%))", null, true);
+    $web = db::getInstance()->query("SELECT * FROM evaluations WHERE cours in ( SELECT id FROM cours WHERE categorie in (SELECT id FROM categories WHERE titre LIKE '%Web%'));", [], true);
+    $app = db::getInstance()->query("SELECT * FROM evaluations WHERE cours in ( SELECT id FROM cours WHERE categorie in (SELECT id FROM categories WHERE titre LIKE '%App%'));", [], true);
 
-    var_dump($qcms);
+    return [$web, $app];
+}
+
+function getQCMname($id)
+{
+    $name = db::getInstance()->query("SELECT nom FROM cours WHERE id = ?", [$id], true)[0]["nom"];
+    return $name;
 }
 
 function saveQCM($maxResultat, $cours)

@@ -1,7 +1,21 @@
-28-04-2021 12:08:08 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
-28-04-2021 12:11:36 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
-28-04-2021 12:13:56 - db.php::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-3' for key 'abonnements.PRIMARY'
-28-04-2021 12:13:58 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
-28-04-2021 12:15:25 - db.php::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-3' for key 'abonnements.PRIMARY'
-28-04-2021 12:15:27 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
-28-04-2021 12:17:44 - db.php::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-3' for key 'abonnements.PRIMARY'
+08-05-2021 04:28:46 - QCM.php::query()[12] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%web/%))' at line 3
+08-05-2021 04:29:23 - QCM.php::query()[12] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%Web/%))' at line 3
+08-05-2021 04:30:09 - QCM.php::query()[12] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%Web%))' at line 3
+08-05-2021 04:30:53 - QCM.php::query()[12] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'daw.evaluation' doesn't exist
+08-05-2021 04:31:22 - QCM.php::query()[12] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'daw.categorie' doesn't exist
+08-05-2021 04:32:46 - QCM.php::query()[12] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 04:34:08 - QCM.php::query()[12] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', titre in (
+    SELECT id, titre FROM cours WHERE categorie in (
+        SELE' at line 1
+08-05-2021 04:34:41 - QCM.php::query()[12] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 04:47:23 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 04:47:57 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 04:49:03 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 04:50:01 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 04:50:50 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 05:11:31 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 05:12:40 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 05:14:19 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 05:14:47 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 05:15:25 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 05:15:36 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'

@@ -1,0 +1,7 @@
+28-04-2021 12:08:08 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+28-04-2021 12:11:36 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+28-04-2021 12:13:56 - db.php::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-3' for key 'abonnements.PRIMARY'
+28-04-2021 12:13:58 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+28-04-2021 12:15:25 - db.php::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-3' for key 'abonnements.PRIMARY'
+28-04-2021 12:15:27 - ListeCours.php::query()[60] - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+28-04-2021 12:17:44 - db.php::query()[160] - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-3' for key 'abonnements.PRIMARY'
