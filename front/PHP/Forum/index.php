@@ -9,7 +9,7 @@ $convApp = categorie::getAllByType("App");
 
 ?>
 
-
+<div class="container">
 <div class="forum_header">
 <h3>Bienvenue sur notre forum !</h3>
     <p>
@@ -49,5 +49,6 @@ $convApp = categorie::getAllByType("App");
 		?>
         </tbody>
     </table>
+</div>
 </div>
 </body>

@@ -1,3 +1,8 @@
+footer {
+    position: relative !important;
+    bottom:0;
+}
+
 #page{
     margin-left: 38%;
     margin-right: 38%;
@@ -48,4 +53,3 @@ body.dark .form label, body.dark .form button, body.dark .form #connexion
     background-color: #0D5949 ;
     border-color: #0a4135d8 ;
 }
-

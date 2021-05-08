@@ -16,9 +16,10 @@ text-align: center;
 hr{
   width: 80%;
 }
+
 legend{
   color:#EBC098;
-	font-size:20pt;
+	font-size:19px;
   }
 
 .reponse{
@@ -53,7 +54,7 @@ legend{
 body.dark
 {
     background-color: #424242  ;
-    color:#0D5949;
+    color:rgba(238, 235, 150, 0.698);
     transition: all 500ms;
 
 }
@@ -67,10 +68,5 @@ body.dark .reponse{
 }
 
 body.dark legend{
-    color: #3E9D89;
-}
-
-body.light
-{
-    transition: all 500ms;
+    color: rgba(238, 235, 150, 0.698);
 }
