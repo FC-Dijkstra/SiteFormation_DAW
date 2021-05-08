@@ -3,6 +3,53 @@
 require_once(__DIR__ . "./../helpers/db.php");
 require_once(__DIR__ . "./../helpers/print.php");
 require_once(__DIR__ . "./../helpers/config.php");
+require_once(__DIR__ . "./../helpers/file.php");
+
+function saveQCM($maxResultat, $cours)
+{
+    $reponseFile;
+    $questionFile;
+    try {
+        $files = saveQCMfiles();
+        $questionFile = $files[0];
+        $reponseFile = $files[1];
+
+    }catch (Exception $e)
+    {
+        redirect::to("accueil");
+        exit();
+    }
+
+    $params = [
+        "maxResultat"=> $maxResultat,
+        "questionsFile"=>$questionFile,
+        "reponsesFile"=>$reponseFile,
+        "cours"=>$cours
+    ];
+    db::getInstance()->insert(config::$EVAL_TABLE, $params);
+    if (db::getInstance()->hasError())
+    {
+        deleteQCMfiles();
+        redirect::to("accueil");
+    }
+    else
+    {
+        redirect::to("accueil");
+    }
+}
+
+function deleteQCM($qcmID)
+{
+    $qcm = db::getInstance()->getID(config::$EVAL_TABLE, $qcmID);
+    if (!empty($qcm))
+    {
+        $questionFile = $qcm["questionsFile"];
+        $reponsesFile = $qcm["reponsesFile"];
+        deleteQCMfiles($questionFile, $reponsesFile);
+
+        db::getInstance()->delete(config::$EVAL_TABLE, $qcmID);
+    }
+}
 
 function getQCM($qcmID)
 {

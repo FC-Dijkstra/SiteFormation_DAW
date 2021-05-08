@@ -177,6 +177,25 @@ if (Input::exists())
 
                 break;
 
+            case "saveQCM":
+                $cours = filter_input(INPUT_POST, "cours", FILTER_SANITIZE_NUMBER_INT);
+                $maxResultat = filter_input(INPUT_POST, "maxResultat", FILTER_SANITIZE_NUMBER_INT);
+
+                if (!empty($_SESSION["admin"]) && isset($cours) && isset($maxResultat))
+                    saveQCM($maxResultat, $cours);
+                else
+                    redirect::to("accueil");
+                break;
+
+            case "deleteQCM":
+                $qcmID = filter_input(INPUT_POST, "qcmID", FILTER_SANITIZE_NUMBER_INT);
+
+                if (!empty($_SESSION["admin"]) && isset($qcmID))
+                    deleteQCM($qcmID);
+                else
+                    redirect::to("accueil");
+                break;
+
             default:
                 redirect::to("accueil");
                 break;

@@ -32,5 +32,7 @@ Frontend:
     -> thème sombre auto par cookie + js            DONE
     -> thème sombre pour le contenu des pages ?     DONE
 
+LE BONUS
++ Ajout QCM comme JoJo
 + Vérifier redirections
 + Vérifier comportement si paramètres incorrects
