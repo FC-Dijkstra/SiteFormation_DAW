@@ -4,6 +4,7 @@ session_start();
 require_once(__DIR__ . "./controllers/QCM.php");
 require_once(__DIR__ . "./controllers/compte.php");
 require_once(__DIR__ . "./controllers/ListeCours.php");
+require_once(__DIR__ . "./controllers/Cours.php");
 require_once(__DIR__ . "./helpers/token.php");
 require_once(__DIR__ . "./helpers/Input.php");
 require_once(__DIR__ . "./helpers/print.php");
@@ -195,6 +196,12 @@ if (Input::exists())
                 else
                     redirect::to("accueil");
                 break;
+
+            case "deleteCours":
+                $cours = filter_input(INPUT_POST, "cours", FILTER_SANITIZE_NUMBER_INT);
+
+                if (!empty($_SESSION["admin"]) && isset($cours))
+                    deleteCours();
 
             default:
                 redirect::to("accueil");

@@ -92,6 +92,7 @@ function printDifficulte($difficulte): string
             $cours = coursCree();
             foreach($cours as $c)
             {
+                $id = $c["id"];
                 if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/back/data/cours/{$c["id"]}/favicon.png"))
                 {
                     $icon = "/back/data/cours/{$c["id"]}/favicon.png";
@@ -102,6 +103,7 @@ function printDifficulte($difficulte): string
                 }
                 $titre = $c["nom"];
                 $difficulte = printDifficulte($c["difficulte"]);
+
                 include ("template/CoursPoste.php");
             }
         ?>

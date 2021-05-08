@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT QCM (meta, question+)>
+<!ELEMENT meta (id, cours, difficulte)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT cours (#PCDATA)>
+<!ELEMENT difficulte (#PCDATA)>
+<!ELEMENT question (id, enonce, reponse+)>
+<!ELEMENT enonce (#PCDATA)>
+<!ELEMENT reponse (id, value)>
+<!ELEMENT value (#PCDATA)>

@@ -118,7 +118,7 @@ function validateReponses($qcmID, $reponses)
         if (file_exists(__DIR__ . "./../data/evaluation/reponses/" . $dirReponses)) {
             $reponsesServer = simplexml_load_file(__DIR__ . "./../data/evaluation/reponses/" . $dirReponses);
             $reponsesUser = json_decode($reponses, true);
-
+                
             $note = 0;
             try {
                 if ($reponsesServer->meta->id == $reponsesUser["meta"]["id"]) {
@@ -146,7 +146,10 @@ function validateReponses($qcmID, $reponses)
                         redirect::to("accueilQCM", "Erreur, note trop élevée");
                     }
                 }
-                redirect::to("accueilQCM", "Erreur, méta invalide");
+                else
+                {
+                    redirect::to("accueilQCM", "Erreur, méta invalide");
+                }
             } catch (Exception $e) {
                 logger::log($e->getMessage());
                 redirect::to("accueilQCM", "Erreur lors de la validation du QCM");

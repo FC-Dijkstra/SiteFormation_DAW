@@ -75,14 +75,9 @@ function saveCours($id)
     }
 }
 
-function deleteCours($coursName)
+function deleteCoursFile($coursName)
 {
-	$check = explode(".", $coursName);
-    if (count($check) != 2) die("Erreur, fichier inconnu");
-    if (file_exists(__DIR__ . "./../data/cours/" . $coursName))
-    {
-        unlink(__DIR__ . "./../data/cours/" . $coursName);
-    }
+	if (is_dir(__DIR__ . "./../data/cours/{id}/")){}
 }
 
 function saveQCMfiles()
