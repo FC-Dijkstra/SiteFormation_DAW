@@ -35,3 +35,11 @@ Pour chaque classe:
 
 - evaluation : ??
     - tous les attributs
+
+ pour chaque cours d'une supercatégorie (web/ ou app/)
+    -> tous les cours dans la catégorie
+        -> tous les QCM liés à la catégorie
+
+SELECT * FROM evaluation WHERE cours in (
+    SELECT id FROM cours WHERE categorie in (
+        SELECT id FROM categorie WHERE titre LIKE %web/%));

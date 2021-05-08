@@ -26,7 +26,7 @@ if (Input::exists())
                 if (isset($qcmID) && isset($reponses))
                     validateReponses($qcmID, $reponses);
                 else
-                    redirect::to("accueil");
+                    redirect::to("accueilQCM");
                 break;
 
             case "inscription":

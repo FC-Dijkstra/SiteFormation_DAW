@@ -87,36 +87,34 @@ function deleteCours($coursName)
 
 function saveQCMfiles()
 {
+    var_dump($_FILES);
 	$formats = array("xml"=>"text/xml");
-    $total = count($_FILES["QCM"]["name"]);
 
-    if ($total == 2){
-        $filenameQuestions = $_FILES["QCM"]["name"][0];
-        $filetypeQuestions = $_FILES["QCM"]["type"][0];
-        $filesizeQuestions = $_FILES["QCM"]["size"][0];
+    $filenameQuestions = $_FILES["question"]["name"];
+    $filetypeQuestions = $_FILES["question"]["type"];
+    $filesizeQuestions = $_FILES["question"]["size"];
 
-        $filenameReponses = $_FILES["QCM"]["name"][1];
-        $filetypeReponses = $_FILES["QCM"]["type"][1];
-        $filesizeReponses = $_FILES["QCM"]["size"][1];
+    $filenameReponses = $_FILES["reponse"]["name"];
+    $filetypeReponses = $_FILES["reponse"]["type"];
+    $filesizeReponses = $_FILES["reponse"]["size"];
 
-        $extensionQuestions = pathinfo($filenameQuestions, PATHINFO_EXTENSION);
-        if (!array_key_exists($extensionQuestions, $formats)) die("Erreur, extension invalide");
+    $extensionQuestions = pathinfo($filenameQuestions, PATHINFO_EXTENSION);
+    if (!array_key_exists($extensionQuestions, $formats)) die("Erreur, extension invalide");
 
-        $extensionReponses = pathinfo($filenameReponses, PATHINFO_EXTENSION);
-        if (!array_key_exists($extensionReponses, $formats)) die("Erreur, extension invalide");
+    $extensionReponses = pathinfo($filenameReponses, PATHINFO_EXTENSION);
+    if (!array_key_exists($extensionReponses, $formats)) die("Erreur, extension invalide");
 
-        $maxsize = 5 * 1024 * 1024;
-        if ($filesizeQuestions > $maxsize) die("Erreur, fichier trop grand");
-        if ($filesizeReponses > $maxsize) die("Erreur, fichier trop grand");
+    $maxsize = 5 * 1024 * 1024;
+    if ($filesizeQuestions > $maxsize) die("Erreur, fichier trop grand");
+    if ($filesizeReponses > $maxsize) die("Erreur, fichier trop grand");
 
-        if (in_array($filetypeQuestions, $formats) && in_array($filetypeReponses, $formats))
-        {
-            $filenameQuestions = hash("sha256", $filenameQuestions . time());
-            $filenameReponses = hash("sha256", $filenameReponses . time());
-            move_uploaded_file($_FILES["photo"]["tmp_name"], __DIR__ . "./../data/evaluation/questions/" . $filenameQuestions . "." .$extensionQuestions);
-            move_uploaded_file($_FILES["photo"]["tmp_name"], __DIR__ . "./../data/evaluation/reponses/" . $filenameReponses . "." .$extensionQuestions);
-            return [$filenameQuestions . "." . $extensionQuestions, $filenameReponses . "." . $extensionQuestions];
-        }
+    if (in_array($filetypeQuestions, $formats) && in_array($filetypeReponses, $formats))
+    {
+        $filenameQuestions = hash("sha256", $filenameQuestions . time());
+        $filenameReponses = hash("sha256", $filenameReponses . time());
+        move_uploaded_file($_FILES["question"]["tmp_name"], __DIR__ . "./../data/evaluation/questions/" . $filenameQuestions . "." .$extensionQuestions);
+        move_uploaded_file($_FILES["reponse"]["tmp_name"], __DIR__ . "./../data/evaluation/reponses/" . $filenameReponses . "." .$extensionQuestions);
+        return [$filenameQuestions . "." . $extensionQuestions, $filenameReponses . "." . $extensionQuestions];
     }
 }
 

@@ -5,6 +5,15 @@ require_once(__DIR__ . "./../helpers/print.php");
 require_once(__DIR__ . "./../helpers/config.php");
 require_once(__DIR__ . "./../helpers/file.php");
 
+function listQCM()
+{
+    $qcms = db::getInstance()->query("SELECT * FROM evaluation WHERE cours in (
+    SELECT id FROM cours WHERE categorie in (
+        SELECT id FROM categorie WHERE titre LIKE %web/%))", null, true);
+
+    var_dump($qcms);
+}
+
 function saveQCM($maxResultat, $cours)
 {
     $reponseFile;
@@ -61,11 +70,11 @@ function getQCM($qcmID)
         if (count($lastTry) == 0 || strtotime("-3 days") > strtotime($lastTry[0]["passage"]))
         {
             $questionDir = $eval["questionsFile"];
-            if (file_exists(__DIR__ . "./../" . $questionDir))
+            if (file_exists(__DIR__ . "./../data/evaluation/questions/" . $questionDir))
             {
                 //parsing + envoi à la vue
 
-                $xml = simplexml_load_file(__DIR__ . "./../" . $questionDir);
+                $xml = simplexml_load_file(__DIR__ . "./../data/evaluation/questions/" . $questionDir);
                 $json = json_encode($xml);
                 $array = json_decode($json);
                 $qcm_serialized = serialize($array);
@@ -93,9 +102,9 @@ function validateReponses($qcmID, $reponses)
     $eval = db::getInstance()->getID("evaluations", $qcmID);
     $dirReponses = $eval["reponsesFile"];
 
-    if (file_exists(__DIR__ . "./../" . $dirReponses))
+    if (file_exists(__DIR__ . "./../data/evaluation/reponses/" . $dirReponses))
     {
-        $reponsesServer = simplexml_load_file(__DIR__ . "./../" . $dirReponses);
+        $reponsesServer = simplexml_load_file(__DIR__ . "./../data/evaluation/reponses/" . $dirReponses);
         $reponsesUser = json_decode($reponses, true);
 
         $note = 0;
@@ -133,6 +142,11 @@ function validateReponses($qcmID, $reponses)
         catch (Exception $e)
         {
             logger::log($e->getMessage());
+            redirect::to("accueilQCM", "Erreur lors de la validation du QCM");
         }
+    }
+    else
+    {
+        redirec::to("accueilQCM", "Erreur, évaluation inexistante");
     }
 }

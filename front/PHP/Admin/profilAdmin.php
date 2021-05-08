@@ -78,11 +78,12 @@ function printDifficulte($difficulte): string
           </div>
 
     <div id="cours">
-        <h1> Gestion des cours : </h1>
+        <h1> Gestion des cours / QCM : </h1>
         <hr>
         <br/>
         <div class="ajoutCours">
           <button id="add" type="button" onclick="location.href='index.php?page=ajoutCours'">Ajouter un cours</button>
+            <button id="addQCM" type="button" onclick="location.href='index.php?page=ajoutQCM'">Ajouter un QCM</button>
           <h1> Cours postés : </h1>
           <hr>
           <br/>

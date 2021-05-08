@@ -110,7 +110,7 @@ label
   text-align: center;
 }
 
-#add{
+#add, #addQCM{
   width: 10em;
   margin-top: 10px;
   font-size: 17px;

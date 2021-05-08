@@ -72,6 +72,10 @@
                 include ($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/contact.php");
                 break;
 
+            case "ajoutQCM":
+                include ($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Admin/ajoutQCM.php");
+                break;
+
             case "accueilQCM":
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Quizz/accueil_qcm.php");
                 break;
