@@ -2,8 +2,6 @@
 require_once (__DIR__ . "./../helpers/db.php");
 require_once (__DIR__ . "./../helpers/print.php");
 
-//TODO: optimisations SQL.
-
 function recommandations($id)
 {
     $result = db::getInstance()->query("SELECT categorie, COUNT(*) as cpt FROM cours WHERE id IN (SELECT cours FROM abonnements WHERE utilisateur = ?) GROUP BY categorie ORDER BY cpt DESC LIMIT 3", [$id]);
