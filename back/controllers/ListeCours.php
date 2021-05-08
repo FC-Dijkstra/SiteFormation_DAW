@@ -23,12 +23,10 @@ function coursSuivi($user) : array
 	//return db::getInstance()->get("utilisateurs u,cours c,abonnements a","u.nom = $user AND u.id = a.user AND a.cours = c.id");
 }
 
-function coursCree($user) : array
+function coursCree()
 {
-	$utilisateur = db::getInstance()->get("utilisateurs","nom = {$user}");
-	$cours = db::getInstance()->get("cours","auteur = {$utilisateur["id"]}");
+	$cours = db::getInstance()->get("cours","auteur = {$_SESSION["userID"]}", false);
 	return $cours;
-	//return db::getInstance()->get("utilisateurs u,cours c","u.nom = $user AND u.id = a.auteur");
 }
 
 function follow($id, $coursID)

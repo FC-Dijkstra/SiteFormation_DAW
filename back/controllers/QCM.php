@@ -19,6 +19,12 @@ function getQCMname($id)
     return $name;
 }
 
+function getAllCours()
+{
+    $output = db::getInstance()->query("SELECT id, nom FROM cours");
+    return $output;
+}
+
 function saveQCM($maxResultat, $cours)
 {
     $reponseFile;
@@ -106,52 +112,51 @@ function validateReponses($qcmID, $reponses)
 {
     $eval = db::getInstance()->getID("evaluations", $qcmID);
     $dirReponses = $eval["reponsesFile"];
-
-    if (file_exists(__DIR__ . "./../data/evaluation/reponses/" . $dirReponses))
+    $lastTry = db::getInstance()->query("SELECT passage FROM resultats WHERE utilisateur = ? ORDER BY resultats.passage DESC", [$_SESSION["userID"]]);
+    if (count($lastTry) == 0 || strtotime("-3 days") > strtotime($lastTry[0]["passage"]))
     {
-        $reponsesServer = simplexml_load_file(__DIR__ . "./../data/evaluation/reponses/" . $dirReponses);
-        $reponsesUser = json_decode($reponses, true);
+        if (file_exists(__DIR__ . "./../data/evaluation/reponses/" . $dirReponses)) {
+            $reponsesServer = simplexml_load_file(__DIR__ . "./../data/evaluation/reponses/" . $dirReponses);
+            $reponsesUser = json_decode($reponses, true);
 
-        $note = 0;
-        try
-        {
-            if ($reponsesServer->meta->id == $reponsesUser["meta"]["id"])
-            {
-                $i = 0;
-                foreach ($reponsesServer->reponse as $reponse)
-                {
+            $note = 0;
+            try {
+                if ($reponsesServer->meta->id == $reponsesUser["meta"]["id"]) {
+                    $i = 0;
+                    foreach ($reponsesServer->reponse as $reponse) {
 
-                    if ($reponsesUser["reponse"][$i]["id"] == $reponse->id)
-                    {
-                        if ($reponsesUser["reponse"][$i]["value"] == $reponse->value)
-                        {
-                            $note++;
+                        if ($reponsesUser["reponse"][$i]["id"] == $reponse->id) {
+                            if ($reponsesUser["reponse"][$i]["value"] == $reponse->value) {
+                                $note++;
+                            }
                         }
+                        $i++;
                     }
-                    $i++;
-                }
 
-                if ($note <= $eval["maxResultat"])
-                {
-                    $params = [
-                        "passage" => date("Y-m-d H:i:s"),
-                        "evaluation" => $qcmID,
-                        "utilisateur" => $_SESSION["userID"],
-                        "note" => $note
-                    ];
-                    db::getInstance()->insert("resultats", $params);
-                    redirect::to("profil", "Votre note est de: $note / {$eval["maxResultat"]}");
+                    if ($note <= $eval["maxResultat"]) {
+                        $params = [
+                            "passage" => date("Y-m-d H:i:s"),
+                            "evaluation" => $qcmID,
+                            "utilisateur" => $_SESSION["userID"],
+                            "note" => $note
+                        ];
+                        db::getInstance()->insert("resultats", $params);
+                        redirect::to("profil", "Votre note est de: $note / {$eval["maxResultat"]}");
+                    } else {
+                        redirect::to("accueilQCM", "Erreur, note trop élevée");
+                    }
                 }
+                redirect::to("accueilQCM", "Erreur, méta invalide");
+            } catch (Exception $e) {
+                logger::log($e->getMessage());
+                redirect::to("accueilQCM", "Erreur lors de la validation du QCM");
             }
-        }
-        catch (Exception $e)
-        {
-            logger::log($e->getMessage());
-            redirect::to("accueilQCM", "Erreur lors de la validation du QCM");
+        } else {
+            redirect::to("accueilQCM", "Erreur, évaluation inexistante");
         }
     }
     else
     {
-        redirec::to("accueilQCM", "Erreur, évaluation inexistante");
+        redirect::to("accueilQCM", "Erreur, cooldown actif");
     }
 }

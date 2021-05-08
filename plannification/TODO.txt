@@ -20,7 +20,7 @@ Page Accueil etudiant et accueil admin
 
 Fonctions QCM:      YANN
     -> recommendations en fonction de la note que tu a eu (c'est non)
-    -> templatiser la liste des QCM         TODO
+    -> templatiser la liste des QCM         DONE
     -> affichage QCM (penser cooldown)      DONE
     -> Validation QCM                       DONE
 

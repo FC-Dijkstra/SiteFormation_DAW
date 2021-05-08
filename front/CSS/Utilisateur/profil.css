@@ -60,18 +60,18 @@ hr{
 }
 
 .reco:hover{
-    background-color: #e2e2e2;
-    opacity: 1;
+    background-color: #eeeeee;
+    opacity: 0.80;
 }
 
 .reco{
     display: inline-block;
-    background-color: #eeeeee;
     width: 350px;
     margin-left: 10%;
     margin-bottom: 3%;
     transition: opacity .2s;
-    opacity: 0.40;
+    background-color: #e2e2e2;
+    opacity: 1;
 }
 
 .reco img{

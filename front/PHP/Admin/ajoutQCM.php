@@ -1,3 +1,7 @@
+<?php
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/back/controllers/QCM.php");
+?>
+
 <body>
   <link rel="stylesheet" href="/front/CSS/Admin/ajoutQCM.css" type="text/css"/>
     <form id="f" action="/back/router.php" method="post" enctype="multipart/form-data">
@@ -15,11 +19,13 @@
         <fieldset>
           <legend for="cours">Cours</legend>
         <select name="cours" form="f">
-            <option value="1">HTML</option>
-            <option value="2">CSS</option>
-            <option value="3">JavaScript</option>
-            <option value="4">Java</option>
-            <option value="5">Swift</option>
+            <?php
+            $cours = getAllCours();
+            foreach($cours as $c)
+            {
+                echo "<option value='{$c["id"]}'>{$c["nom"]}</option>";
+            }
+            ?>
         </select>
         </fieldset>
         <hr class="info"/>

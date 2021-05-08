@@ -2,13 +2,13 @@
 <!DOCTYPE QCM SYSTEM "questions.dtd">
 <QCM>
     <meta>
-        <id>1</id>
+        <id>2</id>
         <cours>Développement Web</cours>
         <difficulte>Facile</difficulte>
     </meta>
     <question>
         <id>1</id>
-        <enonce>Quel langage utilise t'on pour gérer une BD ?</enonce>
+        <enonce>Qpour gérer une BD ?</enonce>
         <reponse>
             <id>a</id>
             <value>SQL</value>
