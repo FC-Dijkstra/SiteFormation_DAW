@@ -261,9 +261,79 @@ function Envoie()
 { 
   let arraytest = FormPost(document.getElementsByClassName('createCours')[0]);
   let arraytest2 = SommairePost(document.getElementById("sommaire"));
-  for(let i = 0; i < arraytest2.length;i++)
+  let arraytest3 = createView(arraytest,arraytest2);
+  for(let i = 0; i < arraytest3.length;i++)
   {
-      console.log('Contenue Sommaire '+i+' : '+arraytest2[i]);
+      console.log('Contenue Sommaire '+i+' : '+arraytest3[i]);
   }
 }
+
+function createView(array,sommaire)
+	{
+		let Chap = new Array();
+		let liste = [];
+		liste[0] = "<body class='light' onload='setFollowValue()'> <div id='progress'></div>";
+		liste[1] = "<h3 id='bvn'>"+array[0]+"</h3>";
+		liste[2] = "<button id='abonnement' type='button' value='S\'abonner' onclick='AboDesabo()'>S'abonner</button>";
+		
+		liste[3] = "<div id='line0'><hr></div>";
+		liste[4] = "<div id='apprendre'> <p id='titre'> Ce que vous allez apprendre : </p> <p>"+array[1]+"</p> </div>";
+		liste[5] = "<div id='sommaire'> <h3> Sommaire : </h3>";
+		let indice = 5;
+		let n_chapitre = 0;
+		let n_section = 0;
+		let n_section_max = 0;
+		for(let i=0;i < sommaire.length ; i++)
+		{
+			if(sommaire[i].includes("Chapitre"))
+			{
+				n_section_max += n_section;
+				let chapitre = sommaire[i].split(' ');
+				n_chapitre = parseInt(chapitre[1]);
+				if(chapitre[1] != "1")
+				{
+					Chap.push(n_section);
+					liste[i+5] += "</ul> </ul>";
+				}
+				liste[i+6] = "<ul class='m_Chapitre' id='Chapitre_"+chapitre[1]+"'>";
+				liste[i+6] += "<a onclick='afficherMasquer(\"listeChapitre"+chapitre[1]+"\")'><li>"+sommaire[i]+"</li></a>";
+				liste[i+6] += "<ul id='listeChapitre"+chapitre[1]+"' class='m_Section' style='display: none;'>";
+			}
+			else
+			{
+				let section = sommaire[i].split('n');
+				n_section = parseInt(section[1]);
+				liste[i+6] = "<li class='liste'><a href='#Chapitre"+n_chapitre+"_Section"+n_section+"'>Section"+section[1]+"</a></li>";
+			}
+			if(i == sommaire.length-1)
+			{
+				if(!sommaire[i].includes("Chapitre"))
+					Chap.push(n_section);
+				n_section_max += n_section;
+				liste[i+6] += "</ul> </ul>";
+				indice += i+2;
+			}
+		}
+		liste[indice] = "</div> <div id='Cours'>";
+		indice = indice+1;
+		n_section = 0 ;
+		for(let i = 0; i < n_chapitre; i++)
+		{
+			let iC = i+1;
+			liste[indice] = "<h1 class='Chapitre' id='Chapitre"+iC+"'>"+array[i+2*n_section+2]+"</h1>";
+			indice++;
+			for(let j = 1;j <= Chap[i];j++)
+			{
+				liste[indice] = "<h2 class='Section' id='Chapitre"+iC+"_Section"+j+"'>"+array[i+2*n_section+2+j+(j-1)]+"</h2>"
+				liste[indice] += "<p>"+array[i+2*n_section+3+j+(j-1)]+"</p>"
+				console.log(i+2*n_section+2+j+(j-1));
+				indice++;
+			}
+			n_section += Chap[i];
+		}
+		console.log(array);
+		liste[indice] = "</div> </body>";
+		return liste;
+		
+	}
 
