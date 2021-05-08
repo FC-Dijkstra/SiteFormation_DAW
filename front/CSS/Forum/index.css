@@ -6,7 +6,12 @@ body{
     bottom: 0;
     position: relative !important;
 }
-
+html, body {
+    height: 100%;
+}
+.container {
+    min-height: calc(85% - 202px);
+}
 .forum_header {
     text-align: center;
     margin-bottom: 50px;

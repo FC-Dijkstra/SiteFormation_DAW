@@ -7,6 +7,7 @@ $test = recup1Conv($ID);
 $messages = recupMessages($ID);
 ?>
 <body>
+<div class="container">
 <h2 class="conversation_category">Forum HTML</h2>
 <div class="conversation_op">
     <h1><?php echo $test['titre']; ?></h1>
@@ -49,6 +50,7 @@ $messages = recupMessages($ID);
         Page <span id="page"></span>/<?php echo (int)(count($messages)/20)+1;?><br/>
         <a id="prev" href="">Prev</a> | <a id="next" href="">Next</a>
     </div>
+</div>
 </div>
 <script type="text/javascript">
     let params = new URLSearchParams(location.search);
