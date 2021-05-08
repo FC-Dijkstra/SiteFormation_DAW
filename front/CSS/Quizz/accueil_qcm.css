@@ -10,7 +10,7 @@ text-align: center;
 
 #web, #app{
   color:#93C5FF;
-  font-size: 25px;
+  font-size: 22px;
   font-family: Palatino, URW Palladio L, serif;
 }
 
@@ -26,13 +26,11 @@ a:link
 .qcm{
   text-align: center;
   color:#EBC098;
-	font-size:25px;
+	font-size:22px;
   border: solid;
   border-width:0.1px;
   border-color: grey;
   display : inline-block;
-  padding : 35px;
-  height: 2em;
   width: 60%;
   }
 
@@ -42,42 +40,31 @@ a:link
 }
 
 #bvn{
-  font-size: 28px;
-  font-family: Palatino, URW Palladio L, serif;
+  font-size: 23px;
 }
 
+a{
+  color: black;
+}
 
 .footer{
     bottom: auto;
 }
 
+/*DARK MODE*/
+
 body.dark
 {
     background-color: #424242  ;
-    color:#0D5949;
+    color:rgba(238, 235, 150, 0.698);
 
 }
 
-body.dark #webhtml{
-  color:white;
-}
-
-body.dark #webcss{
-  color:white;
-}
-
-body.dark #webjs{
-  color:white;
-}
-
-body.dark #appjava{
-  color:white;
-}
-
-body.dark #appswift{
-  color:white;
-}
-
-body.light
+body.dark h1
 {
+    background-color: #424242;
+}
+
+body.dark #web, body.dark #app{
+  color:white;
 }

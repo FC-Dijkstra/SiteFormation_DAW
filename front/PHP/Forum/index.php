@@ -9,7 +9,6 @@ $convApp = categorie::getAllByType("App");
 
 ?>
 
-
 <div class="forum_header">
 <h3>Bienvenue sur notre forum !</h3>
     <p>

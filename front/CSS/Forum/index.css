@@ -1,4 +1,9 @@
-.footer {
+body{
+  height: 100%;
+}
+
+.footer{
+    bottom: 0;
     position: relative !important;
 }
 

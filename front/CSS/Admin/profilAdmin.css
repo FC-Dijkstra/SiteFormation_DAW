@@ -138,8 +138,3 @@ body.dark label, body.dark #mdp
 {
     color:rgba(255, 255, 255, 0.534);
 }
-
-body.dark button{
-    background-color: #0D5949;
-	  color:rgba(255, 255, 255, 0.74); 
-}

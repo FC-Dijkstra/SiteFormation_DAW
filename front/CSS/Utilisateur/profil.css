@@ -200,3 +200,7 @@ body.dark .form label
 {
     color:black;
 }
+
+body.dark #quizz{
+    color: white;
+}

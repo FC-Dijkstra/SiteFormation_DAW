@@ -16,6 +16,7 @@ if (Input::exists())
     <div id="centre">
         <div id="progress"></div>
             <h3 id="bvn"> <?= $cours ?> | <?= $difficulte ?> </h3>
+            <hr/>
             <form id="qcm" action="/back/router.php" method="post">
                 <input type="hidden" name="qcmID" id="qcmID" value="<?= $qcmID?>"/>
 

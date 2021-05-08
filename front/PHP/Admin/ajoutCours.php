@@ -16,23 +16,23 @@
         <ul class="m_Chapitre" id="Chapitre_1">
 
             <a onclick="afficherMasquer('listeChapitre1')"><li>Chapitre 1</li></a>
-            
+
             <ul id="listeChapitre1" class="m_Section" style="display: none;">
                 <li class="liste"><a href="#Chapitre1_Section1">Section1</a></li>
             </ul>
         </ul>
-    
+
     </div>
 
         <div id="Cours">
 
             <div class="Chapitre">
-                <label>Chapitre 1</label> 
+                <label>Chapitre 1</label>
                 <input type="text" placeholder="Titre du Chapitre 1">
                 <input type="button" class="delChap" value="X" onclick="removeChap(this)">
-                
+
                 <br><br>
-                
+
                 <div class="LesSections">
 
                     <div class="Section">
@@ -40,19 +40,19 @@
                         <input type="text" id="Chapitre1_Section1" placeholder="Titre de la Section 1">
                         <input type="button" class="delChap" value="X" onclick="removeSection(this)">
                         <br><br>
-                        <textarea class="sectiontxt" id="sectiontxt1" placeholder="Contenue de section"></textarea>
+                        <textarea class="sectiontxt" id="sectiontxt1" placeholder="Contenu de section"></textarea>
                     </div>
-                    
+
                 </div>
 
                 <button type="button" class="addSection" onclick="addSection(this.parentNode)">Ajouter une section</button>
 
             </div>
         </div>
-        
+
         <button type="button" class="addChap" onclick="addChap()">Ajouter un chapitre</button>
         <br>
-       
+
         <br>
             <div id="butt">
                 <input type="submit" class="valider" value="Valider" onclick="">
@@ -63,4 +63,3 @@
 
 <script type="text/javascript" src="/front/JS/Admin/ajoutCours.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
