@@ -185,6 +185,7 @@ class db
                 $i++;
             }
 
+            //TODO: sanitisation where
             $sql = "UPDATE {$table} SET {$keys_string} WHERE {$where[0]} = {$where[2]}";
             $this->query($sql, $values, false);
         }

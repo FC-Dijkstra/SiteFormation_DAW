@@ -8,12 +8,27 @@ require_once(__DIR__ . "./../helpers/redirect.php");
 function deleteAccount($id)
 {
     utilisateur::delete($id);
+    if (db::getInstance()->hasError())
+    {
+        redirect::to("gererUser", "Erreur, impossible de supprimer l'utilsateur");
+    }
+    else
+    {
+        redirect::to("gererUser", "Utilisateur supprimé");
+    }
 }
 
-function isAdmin($id)
+function removeAccount($id)
 {
-    $user = utilisateur::load($id);
-    return $user->get("admin");
+    utilisateur::delete($id);
+    if (db::getInstance()->hasError())
+    {
+        redirect::to("profil", "Erreur, impossible de supprimer l'utilsateur");
+    }
+    else
+    {
+        disconnect();
+    }
 }
 
 function editAccount($id, $nNom, $nPrenom, $nEmail, $nPassword, $oPassword)

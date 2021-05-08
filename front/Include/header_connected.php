@@ -14,7 +14,7 @@
         <ul class="hbox3">
             <li class="menu-item connexion">
                 <?php
-                    if (isAdmin($_SESSION["userID"]))
+                    if ($_SESSION["admin"] == true)
                         echo '<a href="index.php?page=profilAdmin">';
                     else
                         echo '<a href="index.php?page=profil">';
