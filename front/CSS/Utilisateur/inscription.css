@@ -48,7 +48,7 @@ body.dark .form label
     color:black;
 }
 
-body.dark .form label, button, .confirmeInscription
+body.dark .form label, body.dark button, body.dark .confirmeInscription
 {
     color:rgba(255, 255, 255, 0.658);
     background-color: #0D5949 ;

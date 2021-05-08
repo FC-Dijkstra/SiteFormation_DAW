@@ -42,7 +42,7 @@ body.dark .form{
     background-color: #353535;
 }
 
-body.dark .form label, button, #connexion
+body.dark .form label, body.dark .form button, body.dark .form #connexion
 {
     color:rgba(255, 255, 255, 0.658);
     background-color: #0D5949 ;

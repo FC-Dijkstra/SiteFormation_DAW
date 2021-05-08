@@ -234,8 +234,10 @@ function FormPost(child)
 function Envoie()
 { 
   let arraytest = FormPost(document.getElementsByClassName('createCours')[0]);
+  let 
   for(let i = 0; i < arraytest.length;i++)
   {
-      console.log('array test'+i+' : '+arraytest[i]);
+      console.log('Contenue formulaire'+i+' : '+arraytest[i]);
   }
 }
+
