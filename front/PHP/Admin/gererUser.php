@@ -11,7 +11,7 @@
         <tbody>
           <caption> Liste des étudiants </caption>
         <tr>
-          <td class="check"> <input type="radio" name="liste" id="selection" checked></td>
+          <td class="check"> <input type="radio" name="liste" id="selection"></td>
           <td>Prénom Nom Mail</td>
         </tr>
         <tr>
