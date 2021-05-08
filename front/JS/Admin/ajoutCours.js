@@ -226,7 +226,33 @@ function FormPost(child)
       array[j] = rep[k];
       j++;
     }
-    
+  }
+  return array;
+}
+
+function SommairePost(child)
+{
+  let temp = child;
+  let array = [];
+  if(temp = null)
+  {
+    return;
+  }
+  let j = 0
+  for(let i = 0; i < child.childNodes.length; i++)
+  {
+    if(child.childNodes[i].nodeName == "LI")
+    {
+      array[j] = child.childNodes[i].textContent;
+      j++;
+    }
+
+    let rep = SommairePost(child.childNodes[i]);
+    for(let k = 0; k < rep.length; k++)
+    {
+      array[j] = rep[k];
+      j++;
+    }
   }
   return array;
 }
@@ -234,10 +260,10 @@ function FormPost(child)
 function Envoie()
 { 
   let arraytest = FormPost(document.getElementsByClassName('createCours')[0]);
-  let 
-  for(let i = 0; i < arraytest.length;i++)
+  let arraytest2 = SommairePost(document.getElementById("sommaire"));
+  for(let i = 0; i < arraytest2.length;i++)
   {
-      console.log('Contenue formulaire'+i+' : '+arraytest[i]);
+      console.log('Contenue Sommaire '+i+' : '+arraytest2[i]);
   }
 }
 
