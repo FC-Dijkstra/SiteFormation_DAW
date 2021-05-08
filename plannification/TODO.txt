@@ -15,11 +15,10 @@ Fonctions Forum:
 
 Page Accueil etudiant et accueil admin
     -> template recommendations             DONE
-    -> template liste des cours             TODO
+    -> template liste des cours             DONE
     -> vérification saisie mot de passe     DONE
 
 Fonctions QCM:      YANN
-    -> ///////////
     -> templatiser la liste des QCM         DONE
     -> affichage QCM (penser cooldown)      DONE
     -> Validation QCM                       DONE

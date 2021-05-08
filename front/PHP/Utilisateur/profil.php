@@ -123,7 +123,7 @@ function printDifficulte($difficulte): string
         <h1> Mes recommandations : </h1>
         </br>
         <?php
-            $cours = recommandations($_SESSION["userID"]);
+            $cours = getRecommendations();
 
             foreach($cours as $c)
             {
