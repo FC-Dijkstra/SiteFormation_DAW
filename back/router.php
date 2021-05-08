@@ -35,7 +35,7 @@ if (Input::exists())
                 $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
                 $pHash = password_hash(Input::get("password"), PASSWORD_BCRYPT);
 
-                if (isset($nom) && isset($prenom) && isset($email) && isset($pHash))
+                if (!empty($nom) && !empty($prenom) && !empty($email) && !empty($pHash))
                     createAccount($nom, $prenom, $email, $pHash);
                 else
                     redirect::to("inscription");
@@ -65,10 +65,10 @@ if (Input::exists())
                 $oldPassword = Input::get("password");
                 $newPassword = Input::get("newpassword");
 
-                if (isset($id) && isset($email) && isset($nom) && isset($prenom) && isset($oldPassword) && isset($newPassword))
+                if (!empty($id) && !empty($email) && !empty($nom) && !empty($prenom) && !empty($oldPassword) && !empty($newPassword))
                     editAccount($id, $nom, $prenom, $email, $newPassword, $oldPassword);
                 else
-                    redirect::to("accueil");
+                    redirect::to("accueil", "Erreur, informations invalides");
 
                 break;
 
@@ -108,6 +108,73 @@ if (Input::exists())
                 {
                     echo "Erreur: paramètres invalides !";
                 }
+                break;
+
+            case "sendMessage":
+                $conversation = filter_input(INPUT_POST, "conversation", FILTER_SANITIZE_NUMBER_INT);
+                $auteur = $_SESSION["userID"];
+                $contenu = htmlspecialchars(Input::get("contenu"), ENT_QUOTES | ENT_SUBSTITUTE);
+                $date = date("Y-m-d H:i:s");
+
+                if (isset($conversation) && isset($auteur) && !empty($contenu))
+                    sendMessage($conversation, $auteur, $contenu, $date);
+                else
+                {
+                    redirect::to("messagesForum", "Erreur lors de l'envoi du message", ["id"=>$conversation]);
+                    //echo "Erreur lors de l'envoi du message";
+                }
+                break;
+
+            case "createConversation":
+                $categorie = filter_input(INPUT_POST, "categorie", FILTER_SANITIZE_NUMBER_INT);
+                $titre = htmlspecialchars(Input::get("titre"), ENT_QUOTES | ENT_SUBSTITUTE);
+
+                if (isset($_SESSION["userID"]) && isset($categorie) && !empty($titre))
+                    createConversation($categorie, $titre);
+                else
+                {
+                    redirect::to("conversations", "Erreur lors de la création de la conversation", ["id"=>$categorie]);
+                    //echo "Erreur lors de la création de la conversation";
+                }
+                break;
+
+            case "createCategorie":
+                $categorie = htmlspecialchars(Input::get("categorie"), ENT_SUBSTITUTE | ENT_QUOTES);
+                $subcategorie = htmlspecialchars(Inpput::get("subcategorie"), ENT_QUOTES | ENT_SUBSTITUTE);
+
+                if(!empty($_SESSION["admin"]) && !empty($categorie) && !empty($subcategorie))
+                    createCategorie($categorie, $subcategorie);
+                else
+                {
+                    redirect::to("accueilForum", "Erreur lors de la création de la catégorie");
+                    //echo "Erreur lors de la création de la catégorie";
+                }
+                break;
+
+            case "lockConversation":
+                $conversation = filter_input(Input::get("conversation"), FILTER_SANITIZE_NUMBER_INT);
+
+                if (!empty($_SESSION["admin"]) && isset($conversation))
+                    lockConversation($conversation);
+                else
+                {
+                    redirect::to("conversations", "Erreur", ["id"=>$conversation]);
+                    //echo "Erreur";
+                }
+                break;
+
+            case "deleteMessage":
+                $id = filter_input(INPUT_POST, "message", FILTER_SANITIZE_NUMBER_INT);
+                $conversation = filter_input(INPUT_POST, "conversation", FILTER_SANITIZE_NUMBER_INT);
+                $uid = $_SESSION["userID"];
+
+                if (!empty($_SESSION["admin"]) && isset($id) && isset($conversation))
+                    deleteMessage($id, $conversation);
+                else if (isset($uid) && isset($id) && isset($conversation))
+                    removeMessage($id, $uid, $conversation);
+                else
+                    redirect::to("messagesForum", "Erreur, impossible de supprimer le message", ["id"=>$conversation]);
+
                 break;
 
             default:

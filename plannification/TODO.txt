@@ -1,22 +1,22 @@
 Fonctions admin:
     -> ajout cours                          TODO
-    -> edition cours ?                      TODO
+    -> edition cours ?                      c'est NON.
     -> suppression cours                    TODO (relier front/back + supprimer fichiers)
 
 Fonction modération:
-    -> verrouillage conversation            TODO
-    -> suppression message                  TODO
-    -> ban utilisateur                      TODO
+    -> verrouillage conversation            TODO relier front
+    -> suppression message                  TODO relier front
+    -> ban utilisateur                      TODO relier front
 
 Fonctions Forum:
-    -> Ajout categorie                      TODO
-    -> Ajout conversation                   TODO
-    -> Ajout message                        TODO
+    -> Ajout categorie                      TODO relier front
+    -> Ajout conversation                   TODO relier front
+    -> Ajout message                        TODO relier front
 
 Page Accueil etudiant et accueil admin
-    -> template recommendations             TODO
+    -> template recommendations             DONE
     -> template liste des cours             TODO
-    -> vérification saisie mot de passe     TODO
+    -> vérification saisie mot de passe     DONE
 
 Fonctions QCM:      YANN
     -> templatiser la liste des QCM         TODO

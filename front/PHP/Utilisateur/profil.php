@@ -61,12 +61,12 @@ function printDifficulte($difficulte): string
             <br>
             <a id="mdp">Mot de passe </a><br>
             <label for="password" class="mdp" type="text">Mot de passe</label>
-            <input class="mdp" type="password" name="password"><br>
+            <input class="mdp" type="password" name="password" required><br>
             <label for="newpassword" class="mdp" type="text">Nouveau mot de passe</label>
-            <input class="mdp" type="password" name="newpassword" id="info_nouveaumdp" value=""><br>
+            <input class="mdp" type="password" name="newpassword" id="npassword" value=""><br>
 
             <label for="conf_newpassword" class="mdp" type="text">Confirmation nouveau mot de passe</label>
-            <input class="mdp" type="password" id="info_nouveaumdp" name="conf_newpassword" value=""><br>
+            <input class="mdp" type="password" id="conf_npassword" name="conf_newpassword" value=""><br>
 
             <input type="hidden" name="action" value="editprofile"/>
             <input type="hidden" name="csrf_token" value="<?= Token::get()?>"/>
