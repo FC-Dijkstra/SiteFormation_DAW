@@ -11,7 +11,7 @@ if (Input::exists())
 ?>
 
 <link rel="stylesheet" href="/front/CSS/Quizz/qcm.css" type="text/css"/>
-<script type="text/javascript" src="/front/JS/qcm.js"></script>
+<script type="text/javascript" src="/front/JS/QCM.js"></script>
 <body class="light">
     <div id="centre">
         <div id="progress"></div>

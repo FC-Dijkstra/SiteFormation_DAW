@@ -2,10 +2,14 @@
 <!DOCTYPE QCM SYSTEM "reponses.dtd">
 <QCM>
     <meta>
-        <id>1</id>
+        <id>2</id>
     </meta>
     <reponse>
         <id>1</id>
+        <value>a</value>
+    </reponse>
+    <reponse>
+        <id>2</id>
         <value>a</value>
     </reponse>
 </QCM>
