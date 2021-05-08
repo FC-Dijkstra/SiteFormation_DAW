@@ -6,6 +6,15 @@
     text-align: center;
     margin-bottom: 50px;
 }
+
+.forum_header h3{
+    color:#EBC098;
+}
+
+.forum_category h3, .conversation_category{
+    color:#EBC098;
+}
+
 .forum_header p {
     text-align: left;
     padding: 0 20%;
@@ -94,4 +103,32 @@
 .forum_foot_pages {
     text-align: right;
     margin-bottom: 30px;
+}
+
+
+/* DARK MODE */
+body.dark
+{
+    background-color: #424242;
+    color:white;
+    color:rgba(255, 255, 255, 0.74);
+}
+
+body.dark .forum_category_table tr {
+    background-color: #333333;
+    color:rgba(255, 255, 255, 0.534);
+}
+body.dark .forum_category_table tr:nth-child(2n){
+    background-color: #282828;
+    color:rgba(255, 255, 255, 0.534);
+}
+
+body.dark .forum_header h3, body.dark .forum_category h3{
+    color:#3E9D89;
+    color:rgba(238, 235, 150, 0.698);
+}
+
+body.dark .conversation_category{
+    color:#3E9D89;
+    color:rgba(238, 235, 150, 0.698);
 }

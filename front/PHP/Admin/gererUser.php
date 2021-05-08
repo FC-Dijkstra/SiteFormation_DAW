@@ -5,31 +5,25 @@
     <hr/>
     </br>
     <div id="tabbut">
-    <input id="ban" type="button" onclick="afficher()" value="Bannir">
     <input id="supp" type="button" value="Supprimer">
-    <div id="dureeban" style="display:none;">
-      <label> Durée (en jour)</label>
-      <textarea id="duree" rows="1" cols="2"></textarea>
-      <input id="valider" type="button" value="Valider ban">
-    </div>
     <form name="formulaire">
     <table class="listeUser">
         <tbody>
           <caption> Liste des étudiants </caption>
         <tr>
-          <td class="check"> <input type="checkbox"></td>
+          <td class="check"> <input type="radio" name="liste" id="selection"></td>
           <td>Prénom Nom Mail</td>
         </tr>
         <tr>
-          <td class="check"> <input type="checkbox" id="selection"></td>
+          <td class="check"> <input type="radio" name="liste" id="selection"></td>
           <td> Prénom Nom Mail</td>
         </tr>
         <tr>
-          <td class="check"> <input type="checkbox" id="selection"></td>
+          <td class="check"> <input type="radio" name="liste" id="selection"></td>
           <td> Prénom Nom Mail</td>
         </tr>
         <tr>
-          <td class="check"> <input type="checkbox" id="selection"></td>
+          <td class="check"> <input type="radio" name="liste" id="selection"></td>
           <td> Prénom Nom Mail</td>
         </tr>
         </tbody>

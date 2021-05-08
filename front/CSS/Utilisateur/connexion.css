@@ -22,5 +22,30 @@ button, .formlabel, #input{
     display: inline-block;
     border:1px solid #e7a76b;
     padding: 1px 1em 1px;
-    width: 40%;
+    width: 23%;
 }
+
+/* DARK MODE*/
+
+body.dark
+{
+    background-color: #424242;
+    color:#3E9D89;
+    color:rgba(238, 235, 150, 0.698);
+}
+
+body.dark p{
+  color:rgba(255, 255, 255, 0.658);
+}
+
+body.dark .form{
+    background-color: #353535;
+}
+
+body.dark .form label, body.dark .form button, body.dark .form #connexion
+{
+    color:rgba(255, 255, 255, 0.658);
+    background-color: #0D5949 ;
+    border-color: #0a4135d8 ;
+}
+

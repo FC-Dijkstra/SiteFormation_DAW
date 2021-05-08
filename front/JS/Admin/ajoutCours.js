@@ -201,3 +201,43 @@ function afficherMasquer(id)
     document.getElementById(id).parentElement.style.listStyleType= "disclosure-closed";
   }
 }
+
+let formChild = document.form;
+function FormPost(child)
+{
+  let temp = child;
+  let array = [];
+  if(temp = null)
+  {
+    return;
+  }
+  let j = 0
+  for(let i = 0; i < child.childNodes.length; i++)
+  {
+    if((child.childNodes[i].nodeName == "INPUT" && (child.childNodes[i].type != "button") && (child.childNodes[i].type != "submit")) || child.childNodes[i].nodeName == "TEXTAREA")
+    {
+      array[j] = child.childNodes[i].value;
+      j++;
+    }
+
+    let rep = FormPost(child.childNodes[i]);
+    for(let k = 0; k < rep.length; k++)
+    {
+      array[j] = rep[k];
+      j++;
+    }
+    
+  }
+  return array;
+}
+
+function Envoie()
+{ 
+  let arraytest = FormPost(document.getElementsByClassName('createCours')[0]);
+  let 
+  for(let i = 0; i < arraytest.length;i++)
+  {
+      console.log('Contenue formulaire'+i+' : '+arraytest[i]);
+  }
+}
+

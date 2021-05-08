@@ -11,36 +11,14 @@ $convApp = categorie::getAllByType("App");
 
 
 <div class="forum_header">
-<h3>Message de la page</h3>
+<h3>Bienvenue sur notre forum !</h3>
     <p>
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
-        Description rapide
+        Choisissez dans quel cours vous voulez engager une conversation, ou bien regardez celles déjà postées, voir si elles répondront à vos interrogations !
+        Nous avons une catégorie pour chaque cours. Seuls les inscrits peuvent poster un message.
     </p>
 </div>
 <div class="forum_category">
-    <h3>Dev web</h3>
+    <h3>Développement web</h3>
     <table class="forum_category_table">
         <tbody>
         <?php
@@ -57,7 +35,7 @@ $convApp = categorie::getAllByType("App");
     </table>
 </div>
 <div class="forum_category">
-    <h3>Dev apps</h3>
+    <h3>Développement d'application</h3>
     <table class="forum_category_table">
         <tbody>
         <?php

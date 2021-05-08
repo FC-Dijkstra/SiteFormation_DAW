@@ -121,3 +121,25 @@ label
 .cours:hover{
     background-color: #ececec4f;
 }
+
+/* DARK MODE */
+body.dark
+{
+    background-color: #424242;
+    color: rgba(238, 235, 150, 0.698);
+}
+body.dark .base-text p
+{
+    background-color: #333333;
+    color:rgba(255, 255, 255, 0.534);
+}
+
+body.dark label, body.dark #mdp
+{
+    color:rgba(255, 255, 255, 0.534);
+}
+
+body.dark button{
+    background-color: #0D5949;
+	  color:rgba(255, 255, 255, 0.74); 
+}

@@ -7,16 +7,10 @@ h2{
   font-size: 26px;
 }
 
-#ban{
-  margin-left: 56%;
-  font-size: 18px;
-  color:#2F2F2F;
-}
-
 #supp{
   font-size: 18px;
   margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 65%;
   color:#2F2F2F;
 }
 
@@ -30,26 +24,10 @@ h2{
 color:#EBC098;
 }
 
-#ban:hover{
-color:#EBC098;
-}
-
 caption{
   font-size: 21px;
   margin-bottom: 20px;
   color: white;
-}
-
-
-#dureeban{
-  margin-bottom: 10px;
-  margin-left: 50.5%;
-}
-
-#duree{
-  position: relative;
-  top: 5px;
-  resize: none;
 }
 
 #tabbut{
@@ -76,4 +54,37 @@ caption{
 .listeUser .check{
     padding-left: 1px;
     width: 10px;
+}
+
+footer{
+  bottom: auto;
+  position: relative !important;
+}
+
+/* DARK MODE */
+body.dark
+{
+    background-color: #424242;
+    color: rgba(238, 235, 150, 0.698);
+}
+body.dark .base-text p
+{
+    background-color: #333333;
+    color:rgba(255, 255, 255, 0.534);
+}
+
+body.dark #tabbut{
+    background-color:#333333;
+}
+
+body.dark #supp:hover{
+color:#0D5949;
+}
+
+body.dark #supp{
+color:#424242;
+}
+
+body.dark .listeUser tr:hover{
+  background-color: grey;
 }

@@ -2,7 +2,7 @@
 <div id="progress"></div>
 <body>
 
-<form class="createCours">
+<form class="createCours" method="post">
     <input class="text" id="bvn" placeholder="Titre du cours"></input>
     <div id="line0"><hr></div>
     <div id="apprendre">
@@ -55,12 +55,12 @@
        
         <br>
             <div id="butt">
-                <input type="submit" class="valider" value="Valider">
-                <input type="button" class="retour" value="Retour">
+                <input type="submit" class="valider" value="Valider" onclick="">
+                <input type="button" class="retour" value="Retour" onclick="Envoie()">
             </div>
-
-       
 </form>
 </body>
+
 <script type="text/javascript" src="/front/JS/Admin/ajoutCours.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
