@@ -1,3 +1,7 @@
+<?php
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/back/controllers/QCM.php");
+?>
+
 <body>
     <form id="f" action="/back/router.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="action" value="saveQCM"/>
@@ -8,7 +12,13 @@
         <br/>
         <label for="cours">Cours</label>
         <select name="cours" form="f">
-            <option value="1">Nom du cours 1</option>
+            <?php
+            $cours = getAllCours();
+            foreach($cours as $c)
+            {
+                echo "<option value='{$c["id"]}'>{$c["nom"]}</option>";
+            }
+            ?>
         </select>
         <br/>
         <label for="question">Fichier de questions</label>

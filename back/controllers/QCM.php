@@ -19,6 +19,12 @@ function getQCMname($id)
     return $name;
 }
 
+function getAllCours()
+{
+    $output = db::getInstance()->query("SELECT id, nom FROM cours");
+    return $output;
+}
+
 function saveQCM($maxResultat, $cours)
 {
     $reponseFile;

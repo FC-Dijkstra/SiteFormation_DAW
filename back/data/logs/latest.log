@@ -19,3 +19,4 @@
 08-05-2021 05:14:47 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
 08-05-2021 05:15:25 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
 08-05-2021 05:15:36 - QCM.php::query()[18] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
+08-05-2021 05:51:53 - QCM.php::query()[24] - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titre' in 'field list'
