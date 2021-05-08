@@ -75,9 +75,19 @@ function saveCours($id)
     }
 }
 
-function deleteCoursFile($coursName)
+function deleteCoursFile($id)
 {
-	if (is_dir(__DIR__ . "./../data/cours/{id}/")){}
+    if ($handle = opendir(__DIR__ . "./../data/cours/{$id}"))
+    {
+        while (false !== ($file = readdir($handle)))
+        {
+            if( is_file($file) )
+            {
+                unlink($file);
+            }
+        }
+        closedir($handle);
+    }
 }
 
 function saveQCMfiles()

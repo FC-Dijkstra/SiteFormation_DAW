@@ -198,10 +198,13 @@ if (Input::exists())
                 break;
 
             case "deleteCours":
-                $cours = filter_input(INPUT_POST, "cours", FILTER_SANITIZE_NUMBER_INT);
+                $cours = filter_input(INPUT_GET, "cours", FILTER_SANITIZE_NUMBER_INT);
 
                 if (!empty($_SESSION["admin"]) && isset($cours))
-                    deleteCours();
+                    deleteCours($cours);
+                else
+                    redirect::to("profilAdmin", "Erreur, paramètres invalides");
+                break;
 
             default:
                 redirect::to("accueil");

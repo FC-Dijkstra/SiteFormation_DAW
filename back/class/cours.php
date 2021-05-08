@@ -50,8 +50,7 @@ class cours extends DBObject implements JsonSerializable
 
 	public static function delete($id)
     {
-        //TODO: supprimer fichiers résiduels dans data/cours
-        db::getInstance()->delete($id);
+        db::getInstance()->delete(config::$COURS_TABLE, $id);
     }
 
 	public static function getAll()
