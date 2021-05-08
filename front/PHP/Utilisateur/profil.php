@@ -46,6 +46,12 @@ function printDifficulte($difficulte): string
 
         <div id="pbox1">
             <img id="photoprofil" src="<?= $userIcon?>" alt="profil" />
+            <form id="modifphoto" >
+                <label for="changerImg" type="text">Changer photo de profil</label>
+                <input type="file"  id="changerImg" name="changerImg" value="">
+                <br>    
+                <input type="submit" id="enregistrerPhoto" value="Enregistrer">
+            </form>
 
         </div>
         <div id="pbox2">
@@ -60,7 +66,7 @@ function printDifficulte($difficulte): string
             <input type="email" id="info_mail" name="email" value="<?= $email?>" readonly><br>
             <br>
             <a id="mdp">Mot de passe </a><br>
-            <label for="password" class="mdp" type="text">Mot de passe</label>
+            <label for="password" class="mdp" type="text">Mot de passe actuel</label>
             <input class="mdp" type="password" name="password" required><br>
             <label for="newpassword" class="mdp" type="text">Nouveau mot de passe</label>
             <input class="mdp" type="password" name="newpassword" id="npassword" value=""><br>
@@ -74,6 +80,7 @@ function printDifficulte($difficulte): string
             <input type="submit" id="enregistrer" value="Enregistrer">
             <input type="reset" id="annuler" value="Annuler" onclick="ModifierInfos()">
             <button id="modifier" type="button" onclick="ModifierInfos()" >Modifier </button>
+
 
         <form>
         </div>
