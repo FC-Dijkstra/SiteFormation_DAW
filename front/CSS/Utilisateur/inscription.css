@@ -25,3 +25,33 @@ button, .formlabel, #input{
     padding: 1px 1em 1px;
     width: 30%;
 }
+
+/* DARK MODE*/
+
+body.dark
+{
+    background-color: #424242;
+    color:#3E9D89;
+    color:rgba(238, 235, 150, 0.698);
+}
+
+body.dark p{
+  color:rgba(255, 255, 255, 0.658);
+}
+
+body.dark .form{
+    background-color: #353535;
+}
+
+body.dark .form label
+{
+    color:black;
+}
+
+body.dark .form label, button, .confirmeInscription
+{
+    color:rgba(255, 255, 255, 0.658);
+    background-color: #0D5949 ;
+    border-color: #0a4135d8 ;
+}
+
