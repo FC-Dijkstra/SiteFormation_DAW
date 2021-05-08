@@ -89,7 +89,21 @@ function printDifficulte($difficulte): string
           <br/>
         </div>
         <?php
-        //TODO: lister les cours postés.
+            $cours = coursCree();
+            foreach($cours as $c)
+            {
+                if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/back/data/cours/{$c["id"]}/favicon.png"))
+                {
+                    $icon = "/back/data/cours/{$c["id"]}/favicon.png";
+                }
+                else
+                {
+                    $icon = "/front/IMG/girl.png";
+                }
+                $titre = $c["nom"];
+                $difficulte = printDifficulte($c["difficulte"]);
+                include ("template/CoursPoste.php");
+            }
         ?>
     </div>
 
