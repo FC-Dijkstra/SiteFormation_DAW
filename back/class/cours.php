@@ -3,7 +3,7 @@ require_once(__DIR__ . "./../helpers/db.php");
 require_once(__DIR__ . "./DBObject.php");
 require_once(__DIR__ . "./../helpers/config.php");
 
-class cours extends DBObject implements JsonSerializable
+class cours extends DBObject
 {
 
 	protected int $id;
@@ -50,8 +50,7 @@ class cours extends DBObject implements JsonSerializable
 
 	public static function delete($id)
     {
-        //TODO: supprimer fichiers résiduels dans data/cours
-        db::getInstance()->delete($id);
+        db::getInstance()->delete(config::$COURS_TABLE, $id);
     }
 
 	public static function getAll()
@@ -72,17 +71,5 @@ class cours extends DBObject implements JsonSerializable
         }
 
         return $output;
-    }
-
-    public function jsonSerialize()
-    {
-        // TODO: Implement jsonSerialize() method.
-        return array(
-            'id'=>$this->id,
-            'nom'=>$this->nom,
-            'difficulte'=>$this->difficulte,
-            'auteur'=>$this->auteur,
-            'categorie'=>$this->categorie
-        );
     }
 }

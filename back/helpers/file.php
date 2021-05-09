@@ -16,7 +16,6 @@ function saveUserIcon()
         $maxsize = 5 * 1024 * 1024;
         if ($filesize > $maxsize) throw new Exception("Erreur: fichier trop grand");
 
-        //TODO: voir avec frontend pour la taille max des images.
 
         if (in_array($filetype, $formats))
         {
@@ -75,9 +74,20 @@ function saveCours($id)
     }
 }
 
-function deleteCoursFile($coursName)
+function deleteCoursFile($id)
 {
-	if (is_dir(__DIR__ . "./../data/cours/{id}/")){}
+    $dir = __DIR__ . "./../data/cours/{$id}/";
+    $files = scandir($dir);
+
+    foreach($files as $key => $value){
+        $path = realpath($dir . DIRECTORY_SEPARATOR . $value);
+        if (!is_dir($path))
+        {
+            unlink($path);
+        }
+    }
+
+    rmdir($dir);
 }
 
 function saveQCMfiles()

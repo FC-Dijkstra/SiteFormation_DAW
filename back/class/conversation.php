@@ -33,9 +33,9 @@ class conversation extends DBObject
 
     public static function delete($id)
     {
-        //TODO: suppression fichiers dans data/cours
         return db::getInstance()->delete(config::$CONV_TABLE, $id);
     }
+
     public static function save($instance)
     {
 

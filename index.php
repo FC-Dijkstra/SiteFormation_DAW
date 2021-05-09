@@ -6,7 +6,6 @@
         <title>Web School</title>
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="/front/JS/Sombre.js"></script>
     <?php
     require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/token.php");
@@ -84,27 +83,27 @@
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Quizz/qcm.php");
                 break;
 
-            case "accueilForum":    //TODO: voir pour les params
+            case "accueilForum":
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Forum/index.php");
                 break;
 
-            case "messagesForum":   //TODO: voir pour les params
+            case "messagesForum":
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Forum/messages.php");
                 break;
 
-            case "conversations":     //TODO: voir pour les params
+            case "conversations":
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Forum/conversations.php");
                 break;
 
-            case "profilAdmin":     //TODO: voir pour les params
+            case "profilAdmin":
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Admin/profilAdmin.php");
                 break;
 
-            case "gererUser":   //TODO: voir pour les params
+            case "gererUser":
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Admin/gererUser.php");
                 break;
 
-            case "ajoutCours":  //TODO: voir pour les params
+            case "ajoutCours":
                 include($_SERVER["DOCUMENT_ROOT"] . "/front/PHP/Admin/ajoutCours.php");
                 break;
         }
