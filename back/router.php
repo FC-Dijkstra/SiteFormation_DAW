@@ -181,7 +181,7 @@ if (Input::exists())
                 break;
 
             case "saveQCM":
-                $cours = filter_var(Input::get("cours"), FILTER_SANITIZE_NUMBER_INT):
+                $cours = filter_var(Input::get("cours"), FILTER_SANITIZE_NUMBER_INT);
                 $maxResultat = filter_var(Input::get("maxResultat"), FILTER_SANITIZE_NUMBER_INT);
 
                 if (!empty($_SESSION["admin"]) && isset($cours) && isset($maxResultat))
