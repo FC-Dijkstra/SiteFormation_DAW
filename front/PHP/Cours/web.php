@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/front/CSS/web.css" type="text/css"/>
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . "/back/class/categorie.php");
-include_once($_SERVER['DOCUMENT_ROOT'] . "/back/controllers/Cours.php");
+include_once($_SERVER['DOCUMENT_ROOT'] . "/back/controllers/AffichageCours.php");
 
 $liste = getByCategorie("Web");
 $categories = categorie::getAllByType("Web");

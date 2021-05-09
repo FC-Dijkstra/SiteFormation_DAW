@@ -70,8 +70,8 @@
 			$indice = $indice++;
 			for($j = 1;$j <= count($partieC["$i"]);$j++)
 			{
-				$liste[$indice] = "<h2 class='Section' id='Chapitre".$iC."_Section$j'>".$array[$i+2*$n_section+2+$j+($j-1))]."</h2>"
-				$liste[$indice] += "<p>".$array[$i+2*$n_section+3+$j+($j-1)]."</p>"
+				$liste[$indice] = "<h2 class='Section' id='Chapitre".$iC."_Section$j'>".$array[$i+2*$n_section+2+$j+($j-1)]."</h2>";
+                $liste[$indice] += "<p>".$array[$i+2*$n_section+3+$j+($j-1)]."</p>";
 				$indice++;
 			}
 			$n_section += count($partieC["$iC"]);

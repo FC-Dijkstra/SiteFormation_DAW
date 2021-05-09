@@ -18,7 +18,7 @@ function recommendationAbo()
 
 function recommendationRand()
 {
-    return $idCours = db::getInstance()->query("SELECT id FROM cours WHERE id NOT IN (SELECT cours FROM abonnements WHERE utilisateur = ?) ORDER BY RAND() LIMIT 1", [$_SESSION["userID"]], true);
+    return db::getInstance()->query("SELECT id FROM cours WHERE id NOT IN (SELECT cours FROM abonnements WHERE utilisateur = ?) ORDER BY RAND() LIMIT 1", [$_SESSION["userID"]], true);
 }
 
 function percent($eval, $note)
