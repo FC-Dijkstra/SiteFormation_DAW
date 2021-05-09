@@ -6,6 +6,13 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/back/class/message.php");
 $ID = $_GET['id'];
 $conversation = recup1Conv($ID);
 $messages = recupMessages($ID);
+
+if (Input::exists())
+{
+    $ID = Input::get("id");
+    $ID = filter_var($ID, FILTER_SANITIZE_NUMBER_INT);
+    if (!isset(""))
+}
 ?>
 <body>
 <div class="container">

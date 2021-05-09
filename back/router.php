@@ -18,12 +18,12 @@ if (Input::exists())
         switch(Input::get("action"))
         {
             case "getQCM":
-                $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
+                $id = filter_var(Input::get("id"), FILTER_SANITIZE_NUMBER_INT);
                 getQCM($id);
                 break;
 
             case "validerQCM":
-                $qcmID = filter_input(INPUT_POST, "qcmID", FILTER_SANITIZE_NUMBER_INT);
+                $qcmID = filter_var(Input::get("qcmID"), FILTER_SANITIZE_NUMBER_INT);
                 $reponses = Input::get("reponses"); //TODO: sanitisation
 
                 if (isset($qcmID) && isset($reponses))
@@ -35,7 +35,7 @@ if (Input::exists())
             case "inscription":
                 $nom = htmlentities(Input::get("nom"), ENT_QUOTES | ENT_SUBSTITUTE);
                 $prenom = htmlentities(Input::get("prenom"), ENT_QUOTES | ENT_SUBSTITUTE);
-                $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+                $email = filter_var(Input::get("email"), FILTER_SANITIZE_EMAIL);
                 $pHash = password_hash(Input::get("password"), PASSWORD_BCRYPT);
 
                 if (!empty($nom) && !empty($prenom) && !empty($email) && !empty($pHash))
@@ -45,7 +45,7 @@ if (Input::exists())
                 break;
 
             case "connexion":
-                $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+                $email = filter_var(Input::get("email"), FILTER_SANITIZE_EMAIL);
                 $password = Input::get("password");
 
                 if (isset($email) && isset($password))
@@ -62,7 +62,7 @@ if (Input::exists())
 
             case "editprofile":
                 $id = $_SESSION["userID"];
-                $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+                $email = filter_var(Input::get("email"), FILTER_SANITIZE_EMAIL);
                 $nom = htmlentities(Input::get("nom"), ENT_QUOTES | ENT_SUBSTITUTE);
                 $prenom = htmlentities(Input::get("prenom"), ENT_QUOTES | ENT_SUBSTITUTE);
                 $oldPassword = Input::get("password");
@@ -77,7 +77,7 @@ if (Input::exists())
 
             case "unfollow":
                 $id = $_SESSION["userID"];
-                $coursID = filter_input(INPUT_GET, "cours", FILTER_SANITIZE_NUMBER_INT);
+                $coursID = filter_var(Input::get("cours"), FILTER_SANITIZE_NUMBER_INT);
 
                 if (isset($id) && isset($coursID))
                     unfollow($id, $coursID);
@@ -87,7 +87,7 @@ if (Input::exists())
                 break;
 
             case "unfollowAsync":
-                $coursID = filter_input(INPUT_POST, "cours", FILTER_SANITIZE_NUMBER_INT);
+                $coursID = filter_var(Input::get("cours"), FILTER_SANITIZE_NUMBER_INT);
                 if (isset($_SESSION["userID"]) && isset($coursID))
                 {
                     $id = $_SESSION["userID"];
@@ -100,7 +100,7 @@ if (Input::exists())
                 break;
 
             case "follow":  //! ASYNC
-                $coursID = filter_input(INPUT_POST, "cours", FILTER_SANITIZE_NUMBER_INT);
+                $coursID = filter_var(Input::get("cours"), FILTER_SANITIZE_NUMBER_INT);
 
                 if(isset($_SESSION["userID"]) && isset($coursID)) {
                     $id = $_SESSION["userID"];
@@ -114,7 +114,7 @@ if (Input::exists())
                 break;
 
             case "sendMessage":
-                $conversation = filter_input(INPUT_POST, "conversation", FILTER_SANITIZE_NUMBER_INT);
+                $conversation = filter_var(Input::get("conversation"), FILTER_SANITIZE_NUMBER_INT);
                 $auteur = $_SESSION["userID"];
                 $contenu = htmlspecialchars(Input::get("contenu"), ENT_QUOTES | ENT_SUBSTITUTE);
                 $date = date("Y-m-d H:i:s");
@@ -129,7 +129,7 @@ if (Input::exists())
                 break;
 
             case "createConversation":
-                $categorie = filter_input(INPUT_POST, "categorie", FILTER_SANITIZE_NUMBER_INT);
+                $categorie = filter_var(Input::get("categorie"), FILTER_SANITIZE_NUMBER_INT);
                 $titre = htmlspecialchars(Input::get("titre"), ENT_QUOTES | ENT_SUBSTITUTE);
 
                 if (isset($_SESSION["userID"]) && isset($categorie) && !empty($titre))
@@ -155,7 +155,7 @@ if (Input::exists())
                 break;
 
             case "lockConversation":
-                $conversation = filter_input(Input::get("conversation"), FILTER_SANITIZE_NUMBER_INT);
+                $conversation = filter_var(Input::get("conversation"), FILTER_SANITIZE_NUMBER_INT);
 
                 if (!empty($_SESSION["admin"]) && isset($conversation))
                     lockConversation($conversation);
@@ -167,8 +167,8 @@ if (Input::exists())
                 break;
 
             case "deleteMessage":
-                $id = filter_input(INPUT_POST, "message", FILTER_SANITIZE_NUMBER_INT);
-                $conversation = filter_input(INPUT_POST, "conversation", FILTER_SANITIZE_NUMBER_INT);
+                $id = filter_var(Input::get("message"), FILTER_SANITIZE_NUMBER_INT);
+                $conversation = filter_var(Input::get("conversation"), FILTER_SANITIZE_NUMBER_INT);
                 $uid = $_SESSION["userID"];
 
                 if (!empty($_SESSION["admin"]) && isset($id) && isset($conversation))
@@ -181,8 +181,8 @@ if (Input::exists())
                 break;
 
             case "saveQCM":
-                $cours = filter_input(INPUT_POST, "cours", FILTER_SANITIZE_NUMBER_INT);
-                $maxResultat = filter_input(INPUT_POST, "maxResultat", FILTER_SANITIZE_NUMBER_INT);
+                $cours = filter_var(Input::get("cours"), FILTER_SANITIZE_NUMBER_INT):
+                $maxResultat = filter_var(Input::get("maxResultat"), FILTER_SANITIZE_NUMBER_INT);
 
                 if (!empty($_SESSION["admin"]) && isset($cours) && isset($maxResultat))
                     saveQCM($maxResultat, $cours);
@@ -191,7 +191,7 @@ if (Input::exists())
                 break;
 
             case "deleteQCM":
-                $qcmID = filter_input(INPUT_POST, "qcmID", FILTER_SANITIZE_NUMBER_INT);
+                $qcmID = filter_var(Input::get("qcmID"), FILTER_SANITIZE_NUMBER_INT);
 
                 if (!empty($_SESSION["admin"]) && isset($qcmID))
                     deleteQCM($qcmID);
@@ -209,7 +209,7 @@ if (Input::exists())
 				break;
 			
             case "deleteCours":
-                $cours = filter_input(INPUT_GET, "cours", FILTER_SANITIZE_NUMBER_INT);
+                $cours = filter_var(Input::get("cours"), FILTER_SANITIZE_NUMBER_INT);
 
                 if (!empty($_SESSION["admin"]) && isset($cours))
                     deleteCours($cours);
@@ -218,7 +218,7 @@ if (Input::exists())
                 break;
 
             case "deleteUser":  //ASYNC + ADMIN
-                $utilisateur = filter_input(INPUT_POST, "utilisateur", FILTER_SANITIZE_NUMBER_INT);
+                $utilisateur = filter_var(Input::get("utilisateur"), FILTER_SANITIZE_NUMBER_INT);
 
                 if (!empty($_SESSION["admin"]) && isset($utilisateur))
                     deleteAccount($utilisateur);
