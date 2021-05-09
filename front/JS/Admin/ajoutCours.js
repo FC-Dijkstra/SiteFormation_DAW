@@ -262,16 +262,17 @@ function Envoie()
   let arraytest = FormPost(document.getElementsByClassName('createCours')[0]);
   let arraytest2 = SommairePost(document.getElementById("sommaire"));
   let arraytest3 = createView(arraytest,arraytest2);
-  for(let i = 0; i < arraytest3.length;i++)
-  {
-      console.log('Contenue Sommaire '+i+' : '+arraytest3[i]);
-  }
+  var textjson = JSON.stringify(arraytest3);
+  $("#rep").val(textjson);
+  //console.log($("#rep").val());
+  $("#formRep").submit();
 }
 
 function createView(array,sommaire)
 	{
 		let Chap = new Array();
 		let liste = [];
+		
 		liste[0] = "<body class='light' onload='setFollowValue()'> <div id='progress'></div>";
 		liste[1] = "<h3 id='bvn'>"+array[0]+"</h3>";
 		liste[2] = "<button id='abonnement' type='button' value='S\'abonner' onclick='AboDesabo()'>S'abonner</button>";
@@ -326,12 +327,10 @@ function createView(array,sommaire)
 			{
 				liste[indice] = "<h2 class='Section' id='Chapitre"+iC+"_Section"+j+"'>"+array[i+2*n_section+2+j+(j-1)]+"</h2>"
 				liste[indice] += "<p>"+array[i+2*n_section+3+j+(j-1)]+"</p>"
-				console.log(i+2*n_section+2+j+(j-1));
 				indice++;
 			}
 			n_section += Chap[i];
 		}
-		console.log(array);
 		liste[indice] = "</div> </body>";
 		return liste;
 		

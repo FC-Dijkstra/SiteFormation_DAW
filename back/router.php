@@ -9,6 +9,7 @@ require_once(__DIR__ . "./helpers/token.php");
 require_once(__DIR__ . "./helpers/Input.php");
 require_once(__DIR__ . "./helpers/print.php");
 
+
 if (Input::exists())
 {
     if (token::check(Input::get("csrf_token")))
@@ -196,7 +197,16 @@ if (Input::exists())
                 else
                     redirect::to("accueil");
                 break;
-
+			
+			case "saveCours":
+				if (!empty($_SESSION["admin"]))
+				{
+					saveCoursFold();
+				}
+				else
+					redirect::to("accueil");
+				break;
+			
             case "deleteCours":
                 $cours = filter_input(INPUT_GET, "cours", FILTER_SANITIZE_NUMBER_INT);
 
