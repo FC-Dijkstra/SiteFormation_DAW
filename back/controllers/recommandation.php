@@ -34,20 +34,20 @@ function percent($eval, $note)
  * */
 function recommendationQCM()
 {
-    $qcms = db::getInstance()->query("SELECT note,evaluation FROM resultats WHERE utilisateur = ? LIMIT 1", [$_SESSION["userID"]], true);
+    $qcm = db::getInstance()->query("SELECT note,evaluation FROM resultats WHERE utilisateur = ? LIMIT 1", [$_SESSION["userID"]], true);
 
     if (!empty($qcms))
     {
         $cid;
-        if (percent($qcm["evaluation"], $qcm["note"]) <= 25)
+        if (percent($qcm[0]["evaluation"], $qcm[0]["note"]) <= 25)
         {
             $cid = db::getInstance()->query("SELECT id FROM cours WHERE difficulte = 'Débutant' AND id NOT IN (SELECT id FROM abonnement WHERE utilisateur = ?)", [$_SESSION["userID"]], true);
         }
-        else if (percent($qcm["evaluation"], $qcm["note"]) <= 50)
+        else if (percent($qcm[0]["evaluation"], $qcm[0]["note"]) <= 50)
         {
             $cid = db::getInstance()->query("SELECT id FROM cours WHERE difficulte = 'Intermédiaire' AND id NOT IN (SELECT id FROM abonnement WHERE utilisateur = ?)", [$_SESSION["userID"]], true);
         }
-        else if (percent($qcm["evaluation"], $qcm["note"]) <= 75)
+        else if (percent($qcm[0]["evaluation"], $qcm[0]["note"]) <= 75)
         {
             $cid = db::getInstance()->query("SELECT id FROM cours WHERE difficulte = 'Avancé' AND id NOT IN (SELECT id FROM abonnement WHERE utilisateur = ?)", [$_SESSION["userID"]], true);
         }
