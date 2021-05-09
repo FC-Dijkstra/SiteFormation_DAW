@@ -158,6 +158,9 @@ class db
             $sql = "INSERT INTO {$table} (" . $keys_string . ") VALUES (" . $values_string . ");";
 
             $this->query($sql, $values, false);
+
+            if(strcmp($table, "conversations") == 0) { $sql .= ""; }
+                return $this->query('SELECT LAST_INSERT_ID();');
         }
 
 

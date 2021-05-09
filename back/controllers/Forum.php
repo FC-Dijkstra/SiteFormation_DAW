@@ -35,8 +35,8 @@ function sendMessage($cid, $auteur, $contenu, $date)
 function createConversation($categorie, $titre)
 {
     $conversation = new conversation(0, $categorie, $titre, 0);
-    conversation::save($conversation);
-
+    $res = conversation::save($conversation);
+    sendMessage($res[0]['LAST_INSERT_ID()'], $_SESSION['userID'], Input::get('contenu'), date("Y-m-d H:i:s"));
     if (db::getInstance()->hasError())
     {
         redirect::to("conversations", "Erreur lors de la création de la conversation", ["id"=>$categorie]);

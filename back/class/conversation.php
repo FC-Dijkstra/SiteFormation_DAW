@@ -46,7 +46,7 @@ class conversation extends DBObject
                 "titre" => $instance->titre,
                 "locked" => $instance->locked
             ];
-        db::getInstance()->insert(config::$CONV_TABLE, $param);
+        return db::getInstance()->insert(config::$CONV_TABLE, $param);
     }
 
     public static function getAll()

@@ -10,3 +10,7 @@ $(document).ready(function()
         document.getElementById("modal").style.display = "none";
     });
 })
+
+$(".create_cat_bt").on('click', ()=>{
+    $('.cat_detail').toggle(500);
+})
