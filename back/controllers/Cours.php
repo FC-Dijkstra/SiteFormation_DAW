@@ -53,10 +53,11 @@ function saveCoursFold()
 			"nom"=>$titre,
 			"difficulte"=>$difficulte,
 			"auteur"=>$_SESSION["admin"],
-			"categorie"=>rand(1,3)
+			"categorie"=>rand(1,4)
 			];
 			db::getInstance()->insert(config::$COURS_TABLE, $params);
 		}
+		redirect::to("profilAdmin", "Cours ajouté avec succès");
 		
 	}
 	
