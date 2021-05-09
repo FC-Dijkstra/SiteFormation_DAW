@@ -262,16 +262,17 @@ function Envoie()
   let arraytest = FormPost(document.getElementsByClassName('createCours')[0]);
   let arraytest2 = SommairePost(document.getElementById("sommaire"));
   let arraytest3 = createView(arraytest,arraytest2);
-  for(let i = 0; i < arraytest3.length;i++)
-  {
-      console.log('Contenue Sommaire '+i+' : '+arraytest3[i]);
-  }
+  var textjson = JSON.stringify(arraytest3);
+  $("#rep").val(textjson);
+  //console.log($("#rep").val());
+  $("#rep").submit();
 }
 
 function createView(array,sommaire)
 	{
 		let Chap = new Array();
 		let liste = [];
+		
 		liste[0] = "<body class='light' onload='setFollowValue()'> <div id='progress'></div>";
 		liste[1] = "<h3 id='bvn'>"+array[0]+"</h3>";
 		liste[2] = "<button id='abonnement' type='button' value='S\'abonner' onclick='AboDesabo()'>S'abonner</button>";
