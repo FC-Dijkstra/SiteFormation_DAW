@@ -17,6 +17,16 @@ function ModifierInfos()
     }
 }
 
+function removeUser()
+{
+	let test = confirm("Voulez-vous vraiment supprimer votre compte ? ");
+	if(test == true)
+	{
+		$("#removeUser").submit();
+	}
+	
+}
+
 $(document).ready(function(){
    $("#conf_npassword").on("input", function()
    {
