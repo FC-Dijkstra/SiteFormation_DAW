@@ -6,7 +6,6 @@ Fonctions admin:
 Fonction modération:
     -> verrouillage conversation            TODO relier front
     -> suppression message                  TODO relier front
-    -> ban utilisateur                      TODO relier front
 
 Fonctions Forum:
     -> Ajout categorie                      TODO relier front

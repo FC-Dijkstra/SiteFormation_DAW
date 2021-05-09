@@ -23,7 +23,7 @@ function recommendationRand()
 
 function percent($eval, $note)
 {
-    $maxResult = db::getInstance()->query("SELECT maxResult FROM evaluation WHERE id = ?", [$eval], true);
+    $maxResult = db::getInstance()->query("SELECT maxResult FROM evaluations WHERE id = ?", [$eval], true);
     return $maxResult / $note * 100;
 }
 
@@ -34,7 +34,7 @@ function percent($eval, $note)
  * */
 function recommendationQCM()
 {
-    $qcms = db::getInstance()->query("SELECT note,evaluation FROM resultat WHERE utilisateur = ? LIMIT 1", [$_SESSION["userID"]], true);
+    $qcms = db::getInstance()->query("SELECT note,evaluation FROM resultats WHERE utilisateur = ? LIMIT 1", [$_SESSION["userID"]], true);
 
     if (!empty($qcms))
     {

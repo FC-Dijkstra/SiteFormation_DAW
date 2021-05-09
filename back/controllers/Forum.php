@@ -1,25 +1,34 @@
 <?php 
 	require_once(__DIR__ . "./../helpers/db.php");
-	
+	require_once(__DIR__ . "./../class/message.php");
+	require_once(__DIR__ . "./../class/conversation.php");
 function RecupMsg($conv) //recup tous les messages a partir d'une conv
 {
     return db::getInstance()->get(config::$MES_TABLE, "$conv = conversations", true);
 }
 
-function sendMessage($conversation, $auteur, $contenu, $date)
+function sendMessage($cid, $auteur, $contenu, $date)
 {
-    $message = new message(0, $conversation, $auteur, $contenu, $date);
-    message::save($message);
-
-    if (db::getInstance()->hasError())
+    $conversation = conversation::load($cid);
+    if ($conversation->get("locked") == 0)
     {
-        redirect::to("messagesForum", "Erreur lors de l'envoi du message", ["id" => $conversation]);
-        //echo "Erreur lors de l'envoi du message";
+        $message = new message(0, $cid, $auteur, $contenu, $date);
+        message::save($message);
+
+        if (db::getInstance()->hasError())
+        {
+            redirect::to("messagesForum", "Erreur lors de l'envoi du message", ["id" => $cid]);
+            //echo "Erreur lors de l'envoi du message";
+        }
+        else
+        {
+            redirect::to("messagesForum", null, ["id"=>$cid]);
+            //echo "Message envoyé";
+        }
     }
     else
     {
-        redirect::to("messagesForum", null, ["id"=>$conversation]);
-        //echo "Message envoyé";
+        redirect::to("messagesForum", "Erreur, conversation verrouillée", ["id" => $cid]);
     }
 }
 
@@ -140,18 +149,27 @@ function RecupConvById($id)
 function recup1Conv($id)
 {
     //return db::getInstance()->get(config::$CONV_TABLE, "id = $id", true);
-    return db::getInstance()->getID(config::$CONV_TABLE, $id);
+    return conversation::load($id);
 }
 
 function recupAuthor($id)
 {
     //return db::getInstance()->get(config::$USER_TABLE, "id = $id", true);
-    return db::getInstance()->getID(config::$USER_TABLE, $id);
+    return utilisateur::load($id);
 }
 
 function recupMessages($id)
 {
-    return db::getInstance()->query("SELECT * FROM messages WHERE conversation = ? ORDER BY date", [$id]);
+
+    $uids = db::getInstance()->query("SELECT id FROM messages WHERE conversation = ? ORDER BY date ASC", [$id]);
+    $output = array();
+    for($i = 0; $i < count($uids); $i++)
+    {
+        $message = message::load($uids[$i]["id"]);
+        array_push($output, $message);
+    }
+
+    return $output;
 }
 
 function getAllUtilisateurs()

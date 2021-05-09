@@ -5,6 +5,7 @@ require_once(__DIR__ . "./controllers/QCM.php");
 require_once(__DIR__ . "./controllers/compte.php");
 require_once(__DIR__ . "./controllers/ListeCours.php");
 require_once(__DIR__ . "./controllers/Cours.php");
+require_once(__DIR__ . "./controllers/Forum.php");
 require_once(__DIR__ . "./helpers/token.php");
 require_once(__DIR__ . "./helpers/Input.php");
 require_once(__DIR__ . "./helpers/print.php");
@@ -216,7 +217,7 @@ if (Input::exists())
                     redirect::to("profilAdmin", "Erreur, paramètres invalides");
                 break;
 
-            case "deleteUser":  //ASYNC
+            case "deleteUser":  //ASYNC + ADMIN
                 $utilisateur = filter_input(INPUT_POST, "utilisateur", FILTER_SANITIZE_NUMBER_INT);
 
                 if (!empty($_SESSION["admin"]) && isset($utilisateur))

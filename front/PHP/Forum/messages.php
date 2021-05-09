@@ -1,76 +1,64 @@
 <link rel="stylesheet" href="/front/CSS/Forum/index.css" type="text/css">
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'] . "/back/class/conversation.php");
-include_once($_SERVER['DOCUMENT_ROOT'] . "/back/controllers/Forum.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/back/class/conversation.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/back/controllers/Forum.php");
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/back/class/message.php");
 $ID = $_GET['id'];
-$test = recup1Conv($ID);
+$conversation = recup1Conv($ID);
 $messages = recupMessages($ID);
 ?>
 <body>
 <div class="container">
 <h2 class="conversation_category">Forum HTML</h2>
 <div class="conversation_op">
-    <h1><?php echo $test['titre']; ?></h1>
-    <div class="message">
-        <div class="message_header">
-            <span class="message_author_name"><?php $auteur = recupAuthor($messages[0]["auteur"]);
-													echo $auteur["prenom"]." ".substr($auteur["nom"],0,1).".";?></span>
-            <span class="message_date"> <?php echo date("d/m/Y à H:i:s",strtotime($messages[0]["date"])); ?></span>
-        </div>
-        <hr>
-        <div class="message_content">
-            <?php 
-				echo $messages[0]["contenu"];
-			?>
-        </div>
-    </div>
+    <h1><?php echo $conversation->get('titre'); ?></h1>
+    <?php
+        $auteur = recupAuthor($messages[0]->get("auteur"));
+        $authorName = $auteur->get("prenom") ." ".substr($auteur->get("nom"),0,1).".";
+        $date = $messages[0]->get("date");
+        $contenu = $messages[0]->get("contenu");
+
+        include ("template/message.php");
+    ?>
 </div>
 <hr class="separator_op">
 <div class="messages">
-<?php 
+<?php
 	for($i = 1;$i < count($messages);$i++)
 	{
-		echo "<div class=\"message\">";
-		echo "<div class=\"message_header\">";
-		$auteur = recupAuthor($messages[$i]["auteur"]);
-		echo "<span class=\"message_author_name\">".$auteur["prenom"]." ".substr($auteur["nom"],0,1)."."."</span>";
-		echo "<span class=\"message_date\">".date("d/m/Y à H:i:s",strtotime($messages[0]["date"]))."</span>";
-		echo "</div>"; 
-		echo "<hr>";
-		echo "<div class=\"message_content\">";
-		echo $messages[$i]["contenu"];
-		echo "</div>";
-		echo "</div>";
+        $auteur = recupAuthor($messages[$i]->get("auteur"));
+        $authorName = $auteur->get("prenom") ." ".substr($auteur->get("nom"),0,1).".";
+        $date = $messages[$i]->get("date");
+        $contenu = $messages[$i]->get("contenu");
+
+        include ("template/message.php");
 	}
 ?>
 </div>
 <div class="forum_foot">
-    <button id="openModal">Répondre</button>
+
+    <?php
+    if ($conversation->get("locked") == 0)
+    {
+        echo '<button id="openModal">Répondre</button>';
+    }
+    ?>
+
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" id="close">&times;</span>
             <div class="modal-body">
                 <form action="/back/router.php" method="post">
-                    <input type="text" id="contenu"/>
-                    <input type="button" id="send" value="Envoyer"/>
+                    <input type="hidden" name="csrf_token" value="<?= Token::get()?>"/>
+                    <input type="hidden" name="action" value="sendMessage"/>
+                    <input type="text" id="contenu" name="contenu"/>
+                    <input type="hidden" name="conversation" value="<?=$ID?>"/>
+                    <input type="submit" id="send" value="Envoyer"/>
                 </form>
             </div>
         </div>
     </div>
-    <div class="forum_foot_pages">
-        Page <span id="page"></span>/<?php echo (int)(count($messages)/20)+1;?><br/>
-        <a id="prev" href="">Prev</a> | <a id="next" href="">Next</a>
-    </div>
 </div>
 </div>
 <script type="text/javascript" src="/front/JS/Forum.js"></script>
-<script type="text/javascript">
-    let params = new URLSearchParams(location.search);
-    let page = params.get('page')===null?1:params.get('page');
-    $("#page").text(page);
-    params.set('page', ''+(Number(page)-1<1?1:Number(page)-1))
-    $("#prev").attr('href', 'conversation.php?'+params.toString())
-    params.set('page', ''+(Number(page)+1))
-    $("#next").attr('href', 'conversation.php?'+params.toString())
-</script>
 </body>
