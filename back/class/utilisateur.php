@@ -60,7 +60,13 @@ class utilisateur extends DBObject
         $user = utilisateur::load($id);
         db::getInstance()->delete(config::$USER_TABLE, $user->get("id"));
         if (!db::getInstance()->hasError())
-            deleteUserIcon($user->get("userIcon"));
+        {
+            try{
+                deleteUserIcon($user->get("userIcon"));
+            }
+            catch(Exception $e){}
+        }
+
     }
 
     public static function saveAdmin($instance)

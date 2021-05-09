@@ -45,13 +45,25 @@ $messages = recupMessages($ID);
 ?>
 </div>
 <div class="forum_foot">
-    <button onclick='alert("Zone de texte à développer")'>Répondre</button>
+    <button id="openModal">Répondre</button>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close">&times;</span>
+            <div class="modal-body">
+                <form action="/back/router.php" method="post">
+                    <input type="text" id="contenu"/>
+                    <input type="button" id="send" value="Envoyer"/>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="forum_foot_pages">
         Page <span id="page"></span>/<?php echo (int)(count($messages)/20)+1;?><br/>
         <a id="prev" href="">Prev</a> | <a id="next" href="">Next</a>
     </div>
 </div>
 </div>
+<script type="text/javascript" src="/front/JS/Forum.js"></script>
 <script type="text/javascript">
     let params = new URLSearchParams(location.search);
     let page = params.get('page')===null?1:params.get('page');

@@ -1,3 +1,8 @@
+<?php
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/back/controllers/Forum.php");
+$utilisateurs = getAllUtilisateurs();
+?>
+
 <link rel="stylesheet" href="/front/CSS/Admin/gererUser.css" type="text/css"/>
 <body>
   <div id="corps">
@@ -5,30 +10,25 @@
     <hr/>
     </br>
     <div id="tabbut">
-    <input id="supp" type="button" value="Supprimer">
-    <form name="formulaire">
-    <table class="listeUser">
-        <tbody>
-          <caption> Liste des étudiants </caption>
-        <tr>
-          <td class="check"> <input type="radio" name="liste" id="selection"></td>
-          <td>Prénom Nom Mail</td>
-        </tr>
-        <tr>
-          <td class="check"> <input type="radio" name="liste" id="selection"></td>
-          <td> Prénom Nom Mail</td>
-        </tr>
-        <tr>
-          <td class="check"> <input type="radio" name="liste" id="selection"></td>
-          <td> Prénom Nom Mail</td>
-        </tr>
-        <tr>
-          <td class="check"> <input type="radio" name="liste" id="selection"></td>
-          <td> Prénom Nom Mail</td>
-        </tr>
-        </tbody>
-      </table>
-    </form>
+        <button id="supp" type="button" value="Supprimer">Supprimer</button>
+        <div name="formulaire">
+            <input type="hidden" id="csrf" value="<?= Token::get();?>"/>
+            <table class="listeUser">
+                <tbody>
+                  <caption> Liste des étudiants </caption>
+                  <?php
+                  foreach($utilisateurs as $utilisateur)
+                  {
+                      $prenom = $utilisateur->get("prenom");
+                      $nom = $utilisateur->get("nom");
+                      $email = $utilisateur->get("email");
+                      $id = $utilisateur->get("id");
+                      include ("template/User.php");
+                  }
+                  ?>
+                </tbody>
+              </table>
+        </div>
     </div>
   </div>
 <script type="text/javascript" src="/front/JS/Admin/gererUser.js"></script>

@@ -10,11 +10,11 @@ function deleteAccount($id)
     utilisateur::delete($id);
     if (db::getInstance()->hasError())
     {
-        redirect::to("gererUser", "Erreur, impossible de supprimer l'utilsateur");
+        echo "Impossible de supprimer l'utilisateur";
     }
     else
     {
-        redirect::to("gererUser", "Utilisateur supprimé");
+        echo "Utilisateur supprimé";
     }
 }
 

@@ -141,7 +141,7 @@ if (Input::exists())
 
             case "createCategorie":
                 $categorie = htmlspecialchars(Input::get("categorie"), ENT_SUBSTITUTE | ENT_QUOTES);
-                $subcategorie = htmlspecialchars(Inpput::get("subcategorie"), ENT_QUOTES | ENT_SUBSTITUTE);
+                $subcategorie = htmlspecialchars(Input::get("subcategorie"), ENT_QUOTES | ENT_SUBSTITUTE);
 
                 if(!empty($_SESSION["admin"]) && !empty($categorie) && !empty($subcategorie))
                     createCategorie($categorie, $subcategorie);
@@ -204,6 +204,15 @@ if (Input::exists())
                     deleteCours($cours);
                 else
                     redirect::to("profilAdmin", "Erreur, paramètres invalides");
+                break;
+
+            case "deleteUser":  //ASYNC
+                $utilisateur = filter_input(INPUT_POST, "utilisateur", FILTER_SANITIZE_NUMBER_INT);
+
+                if (!empty($_SESSION["admin"]) && isset($utilisateur))
+                    deleteAccount($utilisateur);
+                else
+                    echo "Erreur, paramètres invalides";
                 break;
 
             default:

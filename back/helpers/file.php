@@ -44,6 +44,7 @@ function deleteUserIcon($iconName)
         {
             unlink(__DIR__ . "./../data/userIcons/" . $iconName);
         }
+        else die("Erreur, fichier inexistant");
     }
 
 }

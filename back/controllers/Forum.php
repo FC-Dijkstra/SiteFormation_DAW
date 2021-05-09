@@ -154,4 +154,16 @@ function recupMessages($id)
     return db::getInstance()->query("SELECT * FROM messages WHERE conversation = ? ORDER BY date", [$id]);
 }
 
+function getAllUtilisateurs()
+{
+    $uids = db::getInstance()->query("SELECT id FROM utilisateurs", [], true);
+    $output = array();
+    for($i = 0; $i < count($uids); $i++)
+    {
+        $utilisateur = utilisateur::load($uids[$i]["id"]);
+        array_push($output, $utilisateur);
+    }
+    return $output;
+}
+
 //Recup toutes les conv dans une seul catégorie 

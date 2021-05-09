@@ -47,6 +47,7 @@ function AboDesabo()
     $("#abonnement").text("S'abonner");
     let csrf = $("#csrf").text();
     let id = $("#cours").text();
+
     $.ajax({
       url: "/back/router.php",
       type: "POST",
