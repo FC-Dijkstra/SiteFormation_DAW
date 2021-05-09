@@ -59,8 +59,8 @@
 
         <br>
             <div id="butt">
-                <input type="submit" class="valider" value="Valider" onclick="">
-                <input type="button" class="retour" value="Retour" onclick="Envoie()">
+                <input type="button" class="valider" value="Valider" onclick="Envoie()">
+                <input type="button" class="retour" value="Retour" onclick="Retour()">
             </div>
 </form>
 </body>
