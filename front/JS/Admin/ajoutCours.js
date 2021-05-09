@@ -257,6 +257,11 @@ function SommairePost(child)
   return array;
 }
 
+function Retour()
+{ 
+	document.location.href='/index.php?page=accueil';
+}
+
 function Envoie()
 { 
   let arraytest = FormPost(document.getElementsByClassName('createCours')[0]);
