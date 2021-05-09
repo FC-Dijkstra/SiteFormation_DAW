@@ -18,19 +18,46 @@ function deleteCours($id)
     }
 }
 
-function saveCours()
+function saveCoursFold()
 {
 	if(isset($_POST['repCours']))
 	{
 		$cours = $_POST['repCours'];
-		$c = db::instance()->query("SELECT * FROM cours ORDER BY id desc")[0];
+		$c = db::getInstance()->query("SELECT * FROM cours ORDER BY id desc")[0];
 		$lastID = $c['id'];
-		$lastID--;
-		mkdir("/back/data/cours/$lastID");
-	
-		$f = fopen("/back/data/cours/$lastID/index.html");
-		fputs($f,$cours);
-		fclose($f);
+		$lastID++;
+		$difficulte = "Débutant";
+		switch(rand(1,4))
+		{
+			case 1 : $difficulte = "Débutant";break;
+			case 2 : $difficulte = "Intermédiaire";break;
+			case 3 : $difficulte = "Avancé";break;
+			case 4 : $difficulte = "Expert";break;
+		}
+		if(!file_exists(__DIR__ . "./../data/cours/$lastID/index.html"))
+		{
+			$tabcours = json_decode($cours);
+			$exp = explode(">",$tabcours[1]);
+			echo $exp[1];
+			$exp = explode("<",$exp[1]);
+			echo $exp[0];
+			$titre = $exp[0];
+			mkdir(__DIR__ . "./../data/cours/$lastID");
+			$f = fopen(__DIR__ . "./../data/cours/$lastID/index.html","w+");
+			for($i = 0;$i < count($tabcours);$i++)
+			{
+				fputs($f,$tabcours[$i]."\n");
+			}
+			fclose($f);
+			$params = [
+			"nom"=>$titre,
+			"difficulte"=>$difficulte,
+			"auteur"=>$_SESSION["admin"],
+			"categorie"=>rand(1,3)
+			];
+			db::getInstance()->insert(config::$COURS_TABLE, $params);
+		}
 		
 	}
+	
 }

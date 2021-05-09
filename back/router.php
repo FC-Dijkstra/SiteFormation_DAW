@@ -200,7 +200,9 @@ if (Input::exists())
 			
 			case "saveCours":
 				if (!empty($_SESSION["admin"]))
-					saveCours();
+				{
+					saveCoursFold();
+				}
 				else
 					redirect::to("accueil");
 				break;

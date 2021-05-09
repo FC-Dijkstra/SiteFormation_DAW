@@ -265,7 +265,7 @@ function Envoie()
   var textjson = JSON.stringify(arraytest3);
   $("#rep").val(textjson);
   //console.log($("#rep").val());
-  $("#rep").submit();
+  $("#formRep").submit();
 }
 
 function createView(array,sommaire)
@@ -327,12 +327,10 @@ function createView(array,sommaire)
 			{
 				liste[indice] = "<h2 class='Section' id='Chapitre"+iC+"_Section"+j+"'>"+array[i+2*n_section+2+j+(j-1)]+"</h2>"
 				liste[indice] += "<p>"+array[i+2*n_section+3+j+(j-1)]+"</p>"
-				console.log(i+2*n_section+2+j+(j-1));
 				indice++;
 			}
 			n_section += Chap[i];
 		}
-		console.log(array);
 		liste[indice] = "</div> </body>";
 		return liste;
 		

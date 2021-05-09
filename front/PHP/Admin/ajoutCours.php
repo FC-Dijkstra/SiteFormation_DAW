@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/front/CSS/Admin/ajoutCours.css" type="text/css"/>
 <div id="progress"></div>
 <body>
-<form style="display: none;" method="post" action="/back/router.php" >
+<form style="display: none;" method="post" action="/back/router.php" id="formRep" >
 	<input type="hidden" name='action' value="saveCours"/>
 	<input type="hidden" name="csrf_token" value="<?= Token::get()?>"/>
 	<input type="hidden" name='repCours' id="rep"/>
