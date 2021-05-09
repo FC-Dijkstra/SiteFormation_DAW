@@ -113,6 +113,17 @@ if (Input::exists())
                 }
                 break;
 
+			case "removeAccount":
+                if(isset($_SESSION["userID"])) {
+                    $id = $_SESSION["userID"];
+					removeAccount($id);
+                }
+                else
+                {
+                    redirect::to("acceuil","paramètre invalide");
+                }
+                break;
+				
             case "sendMessage":
                 $conversation = filter_var(Input::get("conversation"), FILTER_SANITIZE_NUMBER_INT);
                 $auteur = $_SESSION["userID"];

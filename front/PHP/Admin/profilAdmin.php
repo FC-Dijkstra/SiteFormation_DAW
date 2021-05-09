@@ -118,5 +118,20 @@ function printDifficulte($difficulte): string
           <button id="add" type="button" onclick="location.href='index.php?page=gererUser'"> Modérer les utilisateurs</button>
       </div>
     </div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	
+	<form id="removeUser" action="/back/router.php" method="post">
+		<input type="hidden" name="action" value="removeAccount" required/>
+        <input type="hidden" name="csrf_token" value="<?= Token::get()?>" required/>
+		<button id="removeAccount" type="button" onclick="removeUser()"> Supprimer mon compte </button>
+	</form>
+	
 </body>
 <script type="text/javascript" src="/front/JS/Utilisateur/profil.js" defer></script>
