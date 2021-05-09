@@ -46,11 +46,6 @@ function printDifficulte($difficulte): string
 
         <div id="pbox1">
             <img id="photoprofil" src="<?= $userIcon?>" alt="profil" />
-            <form id="modifphoto" >
-                <label for="changerImg" type="text">Changer photo de profil</label>
-                <input type="file"  id="changerImg" name="changerImg" value="">
-                <br>    
-                <input type="submit" id="enregistrerPhoto" value="Enregistrer">
             </form>
 
         </div>
