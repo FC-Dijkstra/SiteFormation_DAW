@@ -2,3 +2,5 @@
 10-05-2021 11:33:43 - db.php::query()[193] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0 = '1' WHERE id = 1' at line 1
 10-05-2021 11:35:13 - db.php::query()[194] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0 = '1' WHERE id = 1' at line 1
 10-05-2021 11:35:25 - db.php::query()[194] - SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0 = '1' WHERE id = 1' at line 1
+10-05-2021 11:45:16 - Forum.php::query()[37] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'daw.categorie' doesn't exist
+10-05-2021 11:45:46 - Forum.php::query()[37] - SQLSTATE[42S02]: Base table or view not found: 1146 Table 'daw.categorie' doesn't exist

@@ -15,7 +15,7 @@
         echo "<input type='hidden' name='csrf_token' value='" . Token::get() . "'/>";
         echo "<input type='hidden' name='message' value='" . $id . "'/>";
         echo "<input type='hidden' name='conversation' value='" . $conv . "'/>";
-        echo "<input type='submit' value='&times' class='deleteMessages'/>";
+        echo "<input type='submit' value='Supprimer message' class='deleteMessages'/>";
         echo "</form>";
     }
     ?>

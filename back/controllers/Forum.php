@@ -32,6 +32,11 @@ function sendMessage($cid, $auteur, $contenu, $date)
     }
 }
 
+function getForumSection($section)
+{
+    return db::getInstance()->query("SELECT titre FROM categories WHERE id = ?", [$section], true);
+}
+
 function createConversation($categorie, $titre)
 {
     $conversation = new conversation(0, $categorie, $titre, 0);

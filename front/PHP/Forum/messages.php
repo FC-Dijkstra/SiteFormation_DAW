@@ -21,7 +21,11 @@ if (Input::exists())
 ?>
 <body>
 <div class="container">
-<h2 class="conversation_category">Forum HTML</h2>
+<h2 class="conversation_category"> Forum
+    <?php
+        echo getForumSection($conversation->get("categorie"))[0]["titre"];
+    ?>
+</h2>
 <div class="conversation_op">
     <h1><?php echo $conversation->get('titre'); ?></h1>
     <?php
@@ -70,26 +74,12 @@ if (Input::exists())
 <div class="forum_foot">
 
     <?php
-    if ($conversation->get("locked") == 0)
+    if ($conversation->get("locked") == 0 && isset($_SESSION["userID"]))
     {
-        echo '<button id="openModal">Répondre</button>';
+        include("template/envoiMessage.php");
     }
     ?>
 
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="close">&times;</span>
-            <div class="modal-body">
-                <form action="/back/router.php" method="post">
-                    <input type="hidden" name="csrf_token" value="<?= Token::get()?>"/>
-                    <input type="hidden" name="action" value="sendMessage"/>
-                    <input type="text" id="contenu" name="contenu"/>
-                    <input type="hidden" name="conversation" value="<?=$ID?>"/>
-                    <input type="submit" id="send" value="Envoyer"/>
-                </form>
-            </div>
-        </div>
-    </div>
 </div>
 </div>
 <script type="text/javascript" src="/front/JS/Forum.js"></script>
