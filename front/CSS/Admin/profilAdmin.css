@@ -99,9 +99,7 @@ label
 
 /*TODO: appliquer classe*/
 button{
-    cursor: pointer;
-    height: 35%;
-    width: 50%;
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
