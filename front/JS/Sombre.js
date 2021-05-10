@@ -61,12 +61,12 @@ function setTheme()
     if (getCookie("theme") == "light")
     {
 
-        $("#checkbox").attr("checked", "");
+        $("#checkbox").attr("checked", false);
         $(".header, .footer, body").removeClass("dark");
     }
     else if (getCookie("theme") == "dark")
     {
-        $("#checkbox").attr("checked", "checked");
+        $("#checkbox").attr("checked", true);
         $(".header, .footer, body").addClass("dark");
     }
 

@@ -3,7 +3,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/back/controllers/ListeCours.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/back/class/utilisateur.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/redirect.php");
 
-if(isset($_SESSION["userID"]))
+if(isset($_SESSION["userID"]) && !empty($_SESSION["admin"]))
 {
     $user = utilisateur::load($_SESSION["userID"]);
     $userIcon = "/back/data/userIcons/" . $user->get("userIcon");
@@ -13,7 +13,7 @@ if(isset($_SESSION["userID"]))
 }
 else
 {
-    redirect::to("accueil");
+    redirect::to("accueil", "Accès interdit");
 }
 
 function printDifficulte($difficulte): string

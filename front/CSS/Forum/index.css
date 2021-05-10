@@ -1,14 +1,8 @@
-body{
-  height: 100%;
-}
-
 .footer{
     bottom: 0;
     position: relative !important;
 }
-html, body {
-    height: 100%;
-}
+
 .container {
     min-height: calc(85% - 202px);
 }
@@ -121,10 +115,11 @@ html, body {
     padding: 0 3em;
 }
 .forum_foot button {
-    float: left;
-    position: relative;
-    transform: translateY(50%);
-    font-size: large;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 20px;
 }
 .forum_foot_pages {
     text-align: right;

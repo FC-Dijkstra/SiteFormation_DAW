@@ -1,5 +1,10 @@
 <?php
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/back/controllers/Forum.php");
+
+require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/redirect.php");
+if (empty($_SESSION["admin"]))
+    redirect::to("accueil", "Accès interdit");
+
 $utilisateurs = getAllUtilisateurs();
 ?>
 

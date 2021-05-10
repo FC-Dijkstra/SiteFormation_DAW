@@ -126,12 +126,13 @@ if (Input::exists())
 				
             case "sendMessage":
                 $conversation = filter_var(Input::get("conversation"), FILTER_SANITIZE_NUMBER_INT);
-                $auteur = $_SESSION["userID"];
                 $contenu = htmlspecialchars(Input::get("contenu"), ENT_QUOTES | ENT_SUBSTITUTE);
                 $date = date("Y-m-d H:i:s");
 
-                if (isset($conversation) && isset($auteur) && !empty($contenu))
-                    sendMessage($conversation, $auteur, $contenu, $date);
+                if (isset($conversation) && isset($auteur) && !empty($contenu) && isset($_SESSION["userID"]))
+                {
+                    sendMessage($conversation, $_SESSION["userID"], $contenu, $date);
+                }
                 else
                 {
                     redirect::to("messagesForum", "Erreur lors de l'envoi du message", ["id"=>$conversation]);

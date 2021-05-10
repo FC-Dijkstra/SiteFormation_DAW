@@ -1,3 +1,9 @@
+<?php
+require_once($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/redirect.php");
+if (empty($_SESSION["admin"]))
+    redirect::to("accueil", "Accès interdit");
+?>
+
 <div class="cours">
     <img class="box1" src="<?= $icon?>"/>
     <h3 class="box2"><?= $titre?></h3>
