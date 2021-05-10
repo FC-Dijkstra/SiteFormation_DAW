@@ -2,10 +2,6 @@ hr{
     width: 80%;
 }
 
-.footer{
-    bottom: auto;
-}
-
 #profil, #cours, #moderation, #profiltitre{
     margin-right: 5%;
     margin-left: 5%;
@@ -45,6 +41,7 @@ hr{
 
 }
 
+/*TODO: appliquer classe*/
 label
 {
     display: inline-block;
@@ -100,6 +97,7 @@ label
     box-shadow: 2px 2px 0px 0px rgba(221, 221, 221, 0.3);
 }
 
+/*TODO: appliquer classe*/
 button{
     cursor: pointer;
     height: 35%;
@@ -133,11 +131,6 @@ button{
 }
 
 /* DARK MODE */
-body.dark
-{
-    background-color: #424242;
-    color: rgba(238, 235, 150, 0.698);
-}
 body.dark .base-text p
 {
     background-color: #333333;

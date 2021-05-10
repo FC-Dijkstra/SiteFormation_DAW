@@ -118,14 +118,6 @@ function printDifficulte($difficulte): string
           <button id="add" type="button" onclick="location.href='index.php?page=gererUser'"> Modérer les utilisateurs</button>
       </div>
     </div>
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
 	
 	<form id="removeUser" action="/back/router.php" method="post">
 		<input type="hidden" name="action" value="removeAccount" required/>

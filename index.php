@@ -2,7 +2,9 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/front/CSS/header.css" type="text/css">
+        <link rel="stylesheet" href="/front/CSS/header.css" type="text/css"/>
+        <link rel="stylesheet" href="/front/CSS/footer.css" type="text/css"/>
+        <link rel="stylesheet" href="/front/CSS/base.css" type="text/css"/>
         <title>Web School</title>
     </head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

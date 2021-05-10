@@ -47,18 +47,6 @@ legend{
     z-index: 9999;
 }
 
-.footer{
-    bottom: auto;
-}
-
-body.dark
-{
-    background-color: #424242  ;
-    color:rgba(238, 235, 150, 0.698);
-    transition: all 500ms;
-
-}
-
 body.dark #progress{
     background-color: #93C5FF;
 }

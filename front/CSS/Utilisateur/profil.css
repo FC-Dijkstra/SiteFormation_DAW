@@ -2,10 +2,6 @@ hr{
     width: 80%;
 }
 
-.footer{
-    bottom: auto;
-}
-
 #profiltitre
 {
     margin-left: 5%;
@@ -106,6 +102,8 @@ padding-bottom: 1em;
 {
     display: none;
 }
+
+/*TODO: appliquer classe */
 label
 {
     display: inline-block;
@@ -175,22 +173,7 @@ label
     background-color: #ececec4f;
 }
 
-button, input[type=submit],input[type=reset]{
-    cursor: pointer;
-}
-
 /* DARK MODE*/
-
-body.dark
-{
-    background-color: #424242;
-    color:#3E9D89;
-    color:rgba(238, 235, 150, 0.698);
-}
-
-body.dark p{
-  color:rgba(255, 255, 255, 0.658);
-}
 
 body.dark .form{
     background-color: #353535;

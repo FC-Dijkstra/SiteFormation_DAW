@@ -84,6 +84,7 @@ input[value="X"][type="button"]:hover{
     height:20em;
 }
 
+/*TODO appliquer classe*/
 form{
     display: block;
     margin-right: auto;
@@ -175,17 +176,6 @@ form{
 }
 
 /* DARK MODE*/
-
-body.dark
-{
-    background-color: #424242;
-    color:#3E9D89;
-    color:rgba(238, 235, 150, 0.698);
-}
-
-body.dark p{
-  color:rgba(255, 255, 255, 0.658);
-}
 
 body.dark .form{
     background-color: #353535;

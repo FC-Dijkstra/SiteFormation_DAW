@@ -14,7 +14,7 @@ if (isset($_SESSION["userID"]))
 }
 else
 {
-    redirect::to("accueil");
+    redirect::to("accueil", "Erreur");
 }
 
 function printDifficulte($difficulte): string
@@ -134,14 +134,6 @@ function printDifficulte($difficulte): string
             }
         ?>
     </div>
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
 	<form id="removeUser" action="/back/router.php" method="post">
 		<input type="hidden" name="action" value="removeAccount" required />
         <input type="hidden" name="csrf_token" value="<?= Token::get()?>" required />

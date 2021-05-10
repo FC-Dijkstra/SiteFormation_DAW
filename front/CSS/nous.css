@@ -1,8 +1,3 @@
-.footer{
-    bottom: auto;
-    position: relative !important;
-}
-
 #bvn{
   text-align: center;
 }
@@ -48,13 +43,6 @@
 
 /* DARK */
 
-body.dark
-{
-   background-color: #424242;
-   color:rgba(238, 235, 150, 0.698);
-   transition: all 500ms;
-}
-
 body.dark p
 {
    color:rgba(255, 255, 255, 0.74);
@@ -66,7 +54,3 @@ body.dark #travail
   color: rgba(255, 255, 255, 0.74);
 }
 
-body.light
-{
-  transition: all 500ms;
-}

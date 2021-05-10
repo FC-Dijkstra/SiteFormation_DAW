@@ -1,7 +1,4 @@
-.footer{
-    bottom: auto;
-    position: relative !important;
-}
+
 
 #bvn{
   text-align: center;
@@ -117,6 +114,7 @@ text-align: center;
   font-size: 22px;
 }
 
+/*TODO: appliquer classe*/
 a{
   text-decoration: none;
   color:black;
@@ -137,6 +135,7 @@ a{
   margin-left: 5%;
 }
 
+/* TODO: appliquer classe*/
 #cours p{
   text-align: center;
   font-size: 17px;
@@ -161,16 +160,4 @@ a{
   margin-bottom: 50px;
 }
 
-/* DARK MODE*/
-
-body.dark
-{
-    background-color: #424242;
-    color:#3E9D89;
-    color:rgba(238, 235, 150, 0.698);
-}
-
-body.dark p{
-  color:rgba(255, 255, 255, 0.658);
-}
 

@@ -47,18 +47,7 @@ a{
   color: black;
 }
 
-.footer{
-    bottom: auto;
-}
-
 /*DARK MODE*/
-
-body.dark
-{
-    background-color: #424242  ;
-    color:rgba(238, 235, 150, 0.698);
-
-}
 
 body.dark h1
 {

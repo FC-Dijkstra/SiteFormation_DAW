@@ -1,12 +1,8 @@
-.footer{
-    bottom: auto;
-    position: relative !important;
-}
-
 #bvn{
   text-align: center;
 }
 
+/* TODO: appliquer classe*/
 #contact p{
   text-align: center;
   font-size: 18px;
@@ -40,15 +36,3 @@
   margin-right: 49.7%;
   margin-top: 30px;
 }
-
-/* DARK */
-
- body.dark
- {
-    background-color: #424242;
-    color:rgba(238, 235, 150, 0.698);
- }
- body.dark p
- {
-    color:rgba(255, 255, 255, 0.74);
- }

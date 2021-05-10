@@ -73,13 +73,6 @@
 
 /* DARK MODE*/
 
-body.dark
-{
-    background-color: #424242;
-    color:#3E9D89;
-    color:rgba(238, 235, 150, 0.698);
-}
-
 body.dark p{
   color:rgba(255, 255, 255, 0.658);
 }

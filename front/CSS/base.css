@@ -1,0 +1,41 @@
+body
+{
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif, Verdana, SansSerif;
+    padding: 0;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.footer{
+    bottom: auto;
+    position: relative !important;
+}
+
+
+button, input[type=submit],input[type=reset]{
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid white;
+    width: 40%;
+    background-color: #EBC098;
+}
+
+/* DARK MODE*/
+
+body.dark button, body.dark input[type=submit], body.dark input[type=reset]
+{
+    color: white;
+    background-color: #3E9D89;
+}
+body.dark
+{
+    background-color: #424242;
+    color:#3E9D89;
+    color:rgba(238, 235, 150, 0.698);
+}
+
+body.dark p{
+    color:rgba(255, 255, 255, 0.658);
+}
