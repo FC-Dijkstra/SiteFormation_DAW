@@ -35,3 +35,13 @@ LE BONUS
 + Ajout QCM comme JoJo
 + Vérifier redirections
 + Vérifier comportement si paramètres incorrects
+
+
+Suppression message
+Verrouillage conversation
+fix css profil utilisateur
+php hide boutons forums.
+cleanup données
+cleanup DB
+cleanup console.log
+faux cours de test

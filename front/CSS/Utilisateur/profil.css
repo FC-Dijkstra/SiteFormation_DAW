@@ -1,3 +1,28 @@
+@media all and (max-width: 2000px)
+{
+    #profil
+    {
+        margin-left:15%;
+        margin-right:15%;
+    }
+}
+
+@media all and (min-width: 2001px)
+{
+    #profil
+    {
+        margin-left: 24%;
+        margin-right: 24%;
+    }
+}
+
+.reco_container
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
 hr{
     width: 80%;
 }
@@ -34,10 +59,8 @@ hr{
 }
 
 #profil{
-    margin-left: 24%;
-    margin-right: 24%;
     display:grid;
-    grid-template-columns: 0.1fr 0.9fr;
+    grid-template-columns: 0.4fr 0.6fr;
 }
 
 #pbox1{
@@ -62,8 +85,6 @@ hr{
 
 .reco{
     display: inline-block;
-    width: 350px;
-    margin-left: 10%;
     margin-bottom: 3%;
     transition: opacity .2s;
     background-color: #e2e2e2;
@@ -101,6 +122,11 @@ padding-bottom: 1em;
 #enregistrer, .mdp, #annuler, .file
 {
     display: none;
+}
+
+#enregistrer, #annuler
+{
+    margin-top: 10px;
 }
 
 /*TODO: appliquer classe */

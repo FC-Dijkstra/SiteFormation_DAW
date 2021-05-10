@@ -117,6 +117,7 @@ function printDifficulte($difficulte): string
         <hr>
         <h1> Mes recommandations : </h1>
         </br>
+        <div class="reco_container">
         <?php
             $cours = getRecommendations();
 
@@ -133,6 +134,7 @@ function printDifficulte($difficulte): string
                 include ("template/CoursRecommande.php");
             }
         ?>
+        </div>
     </div>
 	<form id="removeUser" action="/back/router.php" method="post">
 		<input type="hidden" name="action" value="removeAccount" required />

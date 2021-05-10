@@ -1,8 +1,36 @@
+@media all and (max-width: 2000px)
+{
+    #profil
+    {
+        margin-left:15%;
+        margin-right:15%;
+    }
+}
+
+@media all and (min-width: 2001px)
+{
+    #profil
+    {
+        margin-left: 24%;
+        margin-right: 24%;
+    }
+}
+
 hr{
     width: 80%;
 }
 
-#profil, #cours, #moderation, #profiltitre{
+.supprimerCours
+{
+    width: 35%;
+    height:30px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+
+}
+
+#cours, #moderation, #profiltitre{
     margin-right: 5%;
     margin-left: 5%;
 }
@@ -13,10 +41,8 @@ hr{
 }
 
 #profil{
-    margin-left: 24%;
-    margin-right: 24%;
     display:grid;
-    grid-template-columns: 0.1fr 0.9fr;
+    grid-template-columns: 0.4fr 0.6fr;
 }
 
 #removeAccount {
@@ -53,7 +79,11 @@ hr{
 #enregistrer, .mdp, #annuler, .file
 {
     display: none;
+}
 
+#enregister, #annuler
+{
+    margin-top: 10px;
 }
 
 /*TODO: appliquer classe*/
@@ -110,13 +140,6 @@ label
     grid-template-rows: 30% 70%;
     border: 1px solid rgba(233, 233, 233, 0.205);
     box-shadow: 2px 2px 0px 0px rgba(221, 221, 221, 0.3);
-}
-
-/*TODO: appliquer classe*/
-button{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .ajoutCours{
