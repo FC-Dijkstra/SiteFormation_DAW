@@ -9,20 +9,20 @@
             <h2> Connexion </h2>
             <p> Pressé d'apprendre ? <br /> Connecte-toi ! </p>
 
-            <label id="mail" class="formlabel" type="button"> Adresse mail</label>
+            <label id="mail" class="formlabel"> Adresse mail</label>
 
             <input type="email" id="email" name="email" size="30" required>
 
             <div><br /></div>
 
-            <label id="mdp" type="button" class="formlabel"> Mot de passe</label>
+            <label id="mdp" class="formlabel"> Mot de passe</label>
 
             <input type="password" id="pass" name="password" size="30" required>
 
             <div><br /></div>
             <input type="hidden" value="<?= Token::get() ?>" name="csrf_token">
             <input type="hidden" value="connexion" name="action">
-            <input type="submit" id="connexion" value="Connexion">
+            <input type="submit" id="formConnexion" value="Connexion">
 
             <h2> Inscription </h2>
             <p> Pas encore inscrit ? <br /> Rejoins-nous ! </p>

@@ -36,7 +36,7 @@
 
             <div><br /></div>
 
-            <label">Choisir une photo de profil : </label>
+            <label>Choisir une photo de profil : </label>
 
                 <input type="file" name="photo" id="file">
 
@@ -49,7 +49,7 @@
 
                 <p> Tu as déjà un compte ? <br /> Connecte-toi ! </p>
 
-                <button class="connexion" type="button" onclick="location.href='index.php?page=connexion'"> Je me connecte ! </button>
+                <button class="formConnexion" type="button" onclick="location.href='index.php?page=connexion'"> Je me connecte ! </button>
         </fieldset>
     </form>
     <!--<a href="index.php">Accueil</a>-->

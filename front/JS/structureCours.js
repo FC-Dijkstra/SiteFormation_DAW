@@ -26,9 +26,9 @@ $(document).ready(function()
     //on calcule la largeur de la barre de progression
     let barre = position / hauteur * largeur
     //modification du css de la barre
-    document.getElementById("progress").style.width = barre +"px"
-  })
-})
+    document.getElementById("progress").style.width = barre +"px";
+  });
+});
 
 
 function AboDesabo()

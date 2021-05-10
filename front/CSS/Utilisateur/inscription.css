@@ -15,7 +15,7 @@
     background-color: #dedede;
 }
 
-button, .formlabel, #input{
+.formlabel, #input{
     background-color: #EBC098;
 }
 
@@ -26,7 +26,19 @@ button, .formlabel, #input{
     width: 30%;
 }
 
+.form .confirmeInscription, .formConnexion{
+    border-radius: 10px;
+    border: 2px solid white;
+    width: 40%;
+    background-color: #EBC098;
+    color: black;
+}
 /* DARK MODE*/
+
+body.dark .confirmeInscription, body.dark .formConnexion{
+    color: white;
+    background-color: #3E9D89;
+}
 
 body.dark
 {
@@ -45,13 +57,9 @@ body.dark .form{
 
 body.dark .form label
 {
-    color:black;
-}
-
-body.dark .form label, body.dark button, body.dark .confirmeInscription
-{
     color:rgba(255, 255, 255, 0.658);
     background-color: #0D5949 ;
     border-color: #0a4135d8 ;
+    color:white;
 }
 

@@ -47,9 +47,18 @@ body.dark .form{
     background-color: #353535;
 }
 
-.form button
+#formConnexion, .form .inscription
 {
     border-radius: 10px;
+    border: 2px solid white;
+    width: 40%;
+    background-color: #EBC098;
+}
+
+body.dark .form .inscription, body.dark #formConnexion
+{
+    color: white;
+    background-color: #3E9D89;
 }
 
 body.dark .form label
