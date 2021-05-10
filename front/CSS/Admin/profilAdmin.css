@@ -19,6 +19,21 @@ hr{
     grid-template-columns: 0.1fr 0.9fr;
 }
 
+#removeAccount {
+    display: block;
+    width: 12%;
+    margin-bottom: 2%;
+    border: solid black 1px;
+    border-radius: 2px;
+    color: black;
+}
+
+
+#removeAccount:hover {
+    background-color: #ebc098b9;
+    transition: 500ms all;
+}
+
 #pbox1{
     grid-column-start: 1;
 }
