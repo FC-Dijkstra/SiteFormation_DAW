@@ -4,11 +4,27 @@
     display:grid;
     margin: 0 auto;
     background-color: #EFEFEF;
-    grid-template-columns: 0.7fr 3fr 1.5fr;
-
     color: white;
     border-bottom:0.5px solid rgba(117, 117, 117, 0.295);
     resize: block;
+}
+
+@media all and (max-width: 2000px)
+{
+    .header
+    {
+        grid-template-columns: 0.7fr 2fr 1.5fr;
+    }
+
+
+}
+
+@media all and (min-width: 2001px)
+{
+    .header
+    {
+        grid-template-columns: 0.7fr 3fr 1.5fr;
+    }
 }
 
 header ul{
