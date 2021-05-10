@@ -12,8 +12,10 @@ function afficherMasquer(id)
   }
 }
 
-window.onload = () => {
-  window.addEventListener("scroll", () => {
+$(document).ready(function()
+{
+  $(window).on("scroll", function()
+  {
     //gestion du défilement de la barre
     //quand on est tout en bas : toute la largeur
     let hauteur = document.documentElement.scrollHeight - window.innerHeight
@@ -26,7 +28,7 @@ window.onload = () => {
     //modification du css de la barre
     document.getElementById("progress").style.width = barre +"px"
   })
-}
+})
 
 
 function AboDesabo()
