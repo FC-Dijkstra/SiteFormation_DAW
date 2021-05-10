@@ -21,66 +21,69 @@ if (Input::exists())
 ?>
 <body>
 <div class="container">
-<h2 class="conversation_category"> Forum
-    <?php
-        echo getForumSection($conversation->get("categorie"))[0]["titre"];
-    ?>
-</h2>
-<div class="conversation_op">
-    <h1><?php echo $conversation->get('titre'); ?></h1>
-    <?php
+    <h2 class="conversation_category"> Forum
+        <?php
+            echo getForumSection($conversation->get("categorie"))[0]["titre"];
+        ?>
+    </h2>
+    <div class="conversation_header">
+        <div class="conversation_title"><?php echo $conversation->get('titre'); ?></div>
+        <?php
         if (!empty($_SESSION["admin"]))
         {
             $conv = $conversation->get("id");
             include("template/lock.php");
         }
+        ?>
+    </div>
+    <div class="conversation_op">
+        <?php
+            $auteur = recupAuthor($messages[0]->get("auteur"));
+            $authorName = $auteur->get("prenom") ." ".substr($auteur->get("nom"),0,1).".";
+            $date = $messages[0]->get("date");
+            $contenu = $messages[0]->get("contenu");
+            $id = $messages[0]->get("id");
+            $conv = $conversation->get("id");
 
-        $auteur = recupAuthor($messages[0]->get("auteur"));
-        $authorName = $auteur->get("prenom") ." ".substr($auteur->get("nom"),0,1).".";
-        $date = $messages[0]->get("date");
-        $contenu = $messages[0]->get("contenu");
-        $id = $messages[0]->get("id");
-        $conv = $conversation->get("id");
+            $showDelete = false;
+            if (isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id")|| !empty($_SESSION["admin"]))
+            {
+                $showDelete = true;
+            }
+            include ("template/message.php");
+        ?>
+    </div>
+    <hr class="separator_op">
+    <div class="messages">
+        <?php
+            for($i = 1;$i < count($messages);$i++)
+            {
+                $auteur = recupAuthor($messages[$i]->get("auteur"));
+                $authorName = $auteur->get("prenom") ." ".substr($auteur->get("nom"),0,1).".";
+                $date = $messages[$i]->get("date");
+                $contenu = $messages[$i]->get("contenu");
+                $id = $messages[$i]->get("id");
+                $conv = $conversation->get("id");
 
-        $showDelete = false;
-        if (isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id")|| !empty($_SESSION["admin"]))
+                $showDelete = false;
+                if ((isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id")) || !empty($_SESSION["admin"]))
+                {
+                    $showDelete = true;
+                }
+                include ("template/message.php");
+            }
+        ?>
+    </div>
+    <div class="forum_foot">
+
+        <?php
+        if ($conversation->get("locked") == 0 && isset($_SESSION["userID"]))
         {
-            $showDelete = true;
+            include("template/envoiMessage.php");
         }
-        include ("template/message.php");
-    ?>
-</div>
-<hr class="separator_op">
-<div class="messages">
-<?php
-	for($i = 1;$i < count($messages);$i++)
-	{
-        $auteur = recupAuthor($messages[$i]->get("auteur"));
-        $authorName = $auteur->get("prenom") ." ".substr($auteur->get("nom"),0,1).".";
-        $date = $messages[$i]->get("date");
-        $contenu = $messages[$i]->get("contenu");
-        $id = $messages[$i]->get("id");
-        $conv = $conversation->get("id");
+        ?>
 
-        $showDelete = false;
-        if ((isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id")) || !empty($_SESSION["admin"]))
-        {
-            $showDelete = true;
-        }
-        include ("template/message.php");
-	}
-?>
-</div>
-<div class="forum_foot">
-
-    <?php
-    if ($conversation->get("locked") == 0 && isset($_SESSION["userID"]))
-    {
-        include("template/envoiMessage.php");
-    }
-    ?>
-
-</div>
+    </div>
 </div>
 <script type="text/javascript" src="/front/JS/Forum.js"></script>
 </body>

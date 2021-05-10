@@ -15,7 +15,7 @@ $utilisateurs = getAllUtilisateurs();
     <hr/>
     </br>
     <div id="tabbut">
-        <button id="supp" type="button" value="Supprimer">Supprimer</button>
+        <button class="bouton" id="supp" type="button" value="Supprimer">Supprimer</button>
         <div name="formulaire">
             <input type="hidden" id="csrf" value="<?= Token::get();?>"/>
             <table class="listeUser">

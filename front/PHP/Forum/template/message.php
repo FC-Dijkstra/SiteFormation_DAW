@@ -4,8 +4,8 @@
         <span class="message_date"><?=$date?></span>
     </div>
     <div class="message_content">
-        <?=$contenu?>
-    </div>
+        <div><?=$contenu?></div>
+
 
     <?php
     if ($showDelete == true)
@@ -15,11 +15,11 @@
         echo "<input type='hidden' name='csrf_token' value='" . Token::get() . "'/>";
         echo "<input type='hidden' name='message' value='" . $id . "'/>";
         echo "<input type='hidden' name='conversation' value='" . $conv . "'/>";
-        echo "<input type='submit' value='Supprimer message' class='deleteMessages'/>";
+        echo "<input type='submit' class='bouton deleteMessages' value='Supprimer message'/>";
         echo "</form>";
     }
     ?>
-    
 
+    </div>
 </div>
 

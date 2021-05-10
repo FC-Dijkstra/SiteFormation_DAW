@@ -43,13 +43,13 @@
                 <div><br /></div>
                 <input type="hidden" value="<?= Token::get() ?>" name="csrf_token">
                 <input type="hidden" value="inscription" name="action">
-                <input class="confirmeInscription" type="submit" value="Inscription">
+                <input class="bouton confirmeInscription" type="submit" value="Inscription">
 
                 <h2> Connexion </h2>
 
                 <p> Tu as déjà un compte ? <br /> Connecte-toi ! </p>
 
-                <button class="formConnexion" type="button" onclick="location.href='index.php?page=connexion'"> Je me connecte ! </button>
+                <button class="bouton formConnexion" type="button" onclick="location.href='index.php?page=connexion'"> Je me connecte ! </button>
         </fieldset>
     </form>
     <!--<a href="index.php">Accueil</a>-->

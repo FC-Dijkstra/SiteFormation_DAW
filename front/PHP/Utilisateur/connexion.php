@@ -22,11 +22,11 @@
             <div><br /></div>
             <input type="hidden" value="<?= Token::get() ?>" name="csrf_token">
             <input type="hidden" value="connexion" name="action">
-            <input type="submit" id="formConnexion" value="Connexion">
+            <input type="submit" class="bouton" id="formConnexion" value="Connexion">
 
             <h2> Inscription </h2>
             <p> Pas encore inscrit ? <br /> Rejoins-nous ! </p>
-            <button class="inscription" type="button" onclick="location.href='index.php?page=inscription'"> Je m'inscris ! </button>
+            <button class="bouton inscription" type="button" onclick="location.href='index.php?page=inscription'"> Je m'inscris ! </button>
         </fieldset>
     </form>
     <!--<a href="index.php">Accueil</a>-->

@@ -69,9 +69,9 @@ function printDifficulte($difficulte): string
             <input type="hidden" name="action" value="editprofile" required/>
             <input type="hidden" name="csrf_token" value="<?= Token::get()?>" required/>
 
-            <input type="submit" id="enregistrer" value="Enregistrer">
-            <input type="reset" id="annuler" value="Annuler" onclick="ModifierInfos()">
-            <button id="modifier" type="button" onclick="ModifierInfos()" >Modifier </button>
+            <input type="submit" class="bouton" id="enregistrer" value="Enregistrer">
+            <input type="reset" class="bouton" id="annuler" value="Annuler" onclick="ModifierInfos()">
+            <button id="modifier" class="bouton" onclick="ModifierInfos()" >Modifier </button>
 
             <form>
           </div>
@@ -82,8 +82,8 @@ function printDifficulte($difficulte): string
         <hr>
         <br/>
         <div class="ajoutCours">
-          <button id="add" type="button" onclick="location.href='index.php?page=ajoutCours'">Ajouter un cours</button>
-            <button id="addQCM" type="button" onclick="location.href='index.php?page=ajoutQCM'">Ajouter un QCM</button>
+          <button id="add" class="bouton" onclick="location.href='index.php?page=ajoutCours'">Ajouter un cours</button>
+            <button id="addQCM" class="bouton" onclick="location.href='index.php?page=ajoutQCM'">Ajouter un QCM</button>
           <h1> Cours postés : </h1>
           <hr>
           <br/>
@@ -115,14 +115,14 @@ function printDifficulte($difficulte): string
       <hr>
       </br>
       <div class="mod">
-          <button id="add" type="button" onclick="location.href='index.php?page=gererUser'"> Modérer les utilisateurs</button>
+          <button id="add" class="bouton" onclick="location.href='index.php?page=gererUser'"> Modérer les utilisateurs</button>
       </div>
     </div>
 	
 	<form id="removeUser" action="/back/router.php" method="post">
 		<input type="hidden" name="action" value="removeAccount" required/>
         <input type="hidden" name="csrf_token" value="<?= Token::get()?>" required/>
-		<button id="removeAccount" type="button" onclick="removeUser()"> Supprimer mon compte </button>
+		<button id="removeAccount" class="bouton" onclick="removeUser()"> Supprimer mon compte </button>
 	</form>
 	
 </body>

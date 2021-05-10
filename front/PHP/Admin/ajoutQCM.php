@@ -48,6 +48,6 @@ if (empty($_SESSION["admin"]))
         <hr class="info"/>
         <br/>
         </div>
-        <input type="submit" id="envoie" value="Ajouter"/>
+        <input class="bouton" type="submit" id="envoie" value="Ajouter"/>
     </form>
 </body>

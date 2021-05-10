@@ -8,5 +8,5 @@ if (empty($_SESSION["admin"]))
     <img class="box1" src="<?= $icon?>"/>
     <h3 class="box2"><?= $titre?></h3>
     <p class="box3"><?= $difficulte?></p>
-    <button class="supprimerCours"  onclick="location.href='/back/router.php?action=deleteCours&cours=<?= $id?>&csrf_token=<?= Token::get()?>'" type="button" value="désabo">Supprimer</button>
+    <button class="bouton supprimerCours"  onclick="location.href='/back/router.php?action=deleteCours&cours=<?= $id?>&csrf_token=<?= Token::get()?>'" type="button" value="désabo">Supprimer</button>
 </div>

@@ -14,7 +14,8 @@ body
 }
 
 
-button, input[type=submit],input[type=reset]{
+/*button, input[type=submit],input[type=reset]*/
+.bouton{
     cursor: pointer;
     border-radius: 2px;
     border: 1px solid black;
@@ -24,7 +25,8 @@ button, input[type=submit],input[type=reset]{
 
 /* DARK MODE*/
 
-body.dark button, body.dark input[type=submit], body.dark input[type=reset]
+/*body.dark button, body.dark input[type=submit], body.dark input[type=reset]*/
+body.dark .bouton
 {
     color: white;
     background-color: #3E9D89;
