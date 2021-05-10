@@ -101,7 +101,7 @@
 }
 
 .message_content {
-    padding-bottom: 15px;
+    padding-bottom: 5px;
 }
 .separator_op {
     width: 85%;
@@ -128,8 +128,7 @@
 
 .deleteMessages
 {
-    width: 5%;
-
+    margin-bottom: 10px;
 }
 
 /* DARK MODE */

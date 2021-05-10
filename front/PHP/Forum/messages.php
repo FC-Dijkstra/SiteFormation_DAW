@@ -25,6 +25,12 @@ if (Input::exists())
 <div class="conversation_op">
     <h1><?php echo $conversation->get('titre'); ?></h1>
     <?php
+        if (!empty($_SESSION["admin"]))
+        {
+            $conv = $conversation->get("id");
+            include("template/lock.php");
+        }
+
         $auteur = recupAuthor($messages[0]->get("auteur"));
         $authorName = $auteur->get("prenom") ." ".substr($auteur->get("nom"),0,1).".";
         $date = $messages[0]->get("date");
@@ -33,7 +39,7 @@ if (Input::exists())
         $conv = $conversation->get("id");
 
         $showDelete = false;
-        if (isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id"))
+        if (isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id")|| !empty($_SESSION["admin"]))
         {
             $showDelete = true;
         }
@@ -53,7 +59,7 @@ if (Input::exists())
         $conv = $conversation->get("id");
 
         $showDelete = false;
-        if (isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id"))
+        if ((isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id")) || !empty($_SESSION["admin"]))
         {
             $showDelete = true;
         }

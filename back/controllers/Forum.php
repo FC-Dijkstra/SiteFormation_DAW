@@ -67,25 +67,25 @@ function createCategorie($categorie, $subcategorie)
     }
 }
 
-function lockConversation($conversation)
+function lockConversation($cid)
 {
-    $conversation = conversation::load($conversation);
+    $conversation = conversation::load($cid);
     $params = [
         "id" => $conversation->get("id"),
         "categorie"=>$conversation->get("categorie"),
         "titre"=>$conversation->get("titre"),
-        1
+        "locked"=>1
     ];
-    db::getInstance()->update(config::$CONV_TABLE, "id = $conversation", $params);
+    db::getInstance()->update(config::$CONV_TABLE, "id = $cid", $params);
 
     if (db::getInstance()->hasError())
     {
-        redirect::to("conversations", "Erreur, impossible de verrouiller la conversation", ["id"=>$conversation]);
+        redirect::to("conversations", "Erreur, impossible de verrouiller la conversation", ["id"=>$cid]);
         //echo "Erreur, impossible de verrouiller la conversation";
     }
     else
     {
-        redirect::to("conversations", "Conversation verrouillée", ["id"=>$conversation]);
+        redirect::to("conversations", "Conversation verrouillée", ["id"=>$cid]);
         //echo "Conversation verrouillée";
     }
 }
