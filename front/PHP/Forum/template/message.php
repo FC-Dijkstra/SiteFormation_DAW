@@ -6,5 +6,20 @@
     <div class="message_content">
         <?=$contenu?>
     </div>
+
+    <?php
+    if ($showDelete == true)
+    {
+        echo "<form action='/back/router.php' method='post'>";
+        echo "<input type='hidden' name='action' value='deleteMessage'/>";
+        echo "<input type='hidden' name='csrf_token' value='" . Token::get() . "'/>";
+        echo "<input type='hidden' name='message' value='" . $id . "'/>";
+        echo "<input type='hidden' name='conversation' value='" . $conv . "'/>";
+        echo "<input type='submit' value='&times' class='deleteMessages'/>";
+        echo "</form>";
+    }
+    ?>
+    
+
 </div>
 

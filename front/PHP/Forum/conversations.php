@@ -22,6 +22,8 @@ else
     redirect::to("accueil", "Erreur");
 }
 ?>
+
+
 <body>
 <div class="container">
     <div class="forum_header">

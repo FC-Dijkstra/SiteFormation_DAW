@@ -29,7 +29,14 @@ if (Input::exists())
         $authorName = $auteur->get("prenom") ." ".substr($auteur->get("nom"),0,1).".";
         $date = $messages[0]->get("date");
         $contenu = $messages[0]->get("contenu");
+        $id = $messages[0]->get("id");
+        $conv = $conversation->get("id");
 
+        $showDelete = false;
+        if (isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id"))
+        {
+            $showDelete = true;
+        }
         include ("template/message.php");
     ?>
 </div>
@@ -42,7 +49,14 @@ if (Input::exists())
         $authorName = $auteur->get("prenom") ." ".substr($auteur->get("nom"),0,1).".";
         $date = $messages[$i]->get("date");
         $contenu = $messages[$i]->get("contenu");
+        $id = $messages[$i]->get("id");
+        $conv = $conversation->get("id");
 
+        $showDelete = false;
+        if (isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id"))
+        {
+            $showDelete = true;
+        }
         include ("template/message.php");
 	}
 ?>

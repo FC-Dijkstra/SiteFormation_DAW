@@ -95,12 +95,12 @@ function deleteMessage($id, $conversation)
     message::delete($id);
     if (db::getInstance()->hasError())
     {
-        redirect::to("messagesForum", "Erreur, impossible de supprimer le message", ["id"=>$conversation]);
+        redirect::to("messagesForum", "Erreur pendant la suppression", ["id"=>$conversation]);
         //echo "Erreur, impossible de supprimer le message";
     }
     else
     {
-        redirect::to("messagesForum", "Message supprimé", ["id"=>$conversation]);
+        redirect::to("messagesForum", "Ce message a été supprimé", ["id"=>$conversation]);
         //echo "Message supprimé";
     }
 }
@@ -124,7 +124,7 @@ function removeMessage($id, $author, $conversation)
     }
     else
     {
-        redirect::to("messagesForum", "Erreur, impossible de supprimer le message", ["id"=>$conversation]);
+        redirect::to("messagesForum", "Erreur, vous n'êtes pas l'auteur de ce message", ["id"=>$conversation]);
         //echo "Erreur, impossible de supprimer le message";
     }
 }

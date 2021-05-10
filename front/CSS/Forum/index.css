@@ -126,6 +126,11 @@
     margin-bottom: 30px;
 }
 
+.deleteMessages
+{
+    width: 5%;
+
+}
 
 /* DARK MODE */
 body.dark

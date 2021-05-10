@@ -179,16 +179,21 @@ if (Input::exists())
                 break;
 
             case "deleteMessage":
-                $id = filter_var(Input::get("message"), FILTER_SANITIZE_NUMBER_INT);
+                $message = filter_var(Input::get("message"), FILTER_SANITIZE_NUMBER_INT);
                 $conversation = filter_var(Input::get("conversation"), FILTER_SANITIZE_NUMBER_INT);
-                $uid = $_SESSION["userID"];
 
-                if (!empty($_SESSION["admin"]) && isset($id) && isset($conversation))
-                    deleteMessage($id, $conversation);
-                else if (isset($uid) && isset($id) && isset($conversation))
-                    removeMessage($id, $uid, $conversation);
+                if (!empty($_SESSION["admin"]) && isset($message) && isset($conversation))
+                {
+                    deleteMessage($message, $conversation);
+                }
+                else if (isset($_SESSION["userID"]) && isset($message) && isset($conversation))
+                {
+                    removeMessage($message, $_SESSION["userID"], $conversation);
+                }
                 else
-                    redirect::to("messagesForum", "Erreur, impossible de supprimer le message", ["id"=>$conversation]);
+                {
+                    redirect::to("messagesForum", "Erreur, paramètres invalides", ["id" => $conversation]);
+                }
 
                 break;
 

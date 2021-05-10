@@ -34,7 +34,7 @@ class message extends DBObject
 
     public static function delete($id)
     {
-        return db::getInstance()->delete(config::$MES_TABLE, $id);
+        return db::getInstance()->query("DELETE FROM messages WHERE id = ?", [$id], false);
     }
     public static function save($instance)
     {

@@ -1,5 +1,7 @@
 fieldset{
-  width:50em;
+  width:100%;
+    margin-left: auto;
+    margin-right: auto;
 	border-color:#d3d3d3;
 }
 
