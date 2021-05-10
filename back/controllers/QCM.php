@@ -90,7 +90,7 @@ function getQCM($qcmID)
                 $array = json_decode($json);
                 $qcm_serialized = serialize($array);
 
-                redirect::to("QCM",null, ["qcm" => $qcm_serialized]);
+                redirect::to("QCM",null, ["qcm" => $qcm_serialized, "id"=>$qcmID]);
             }
             else
             {
@@ -111,6 +111,7 @@ function getQCM($qcmID)
 function validateReponses($qcmID, $reponses)
 {
     $eval = db::getInstance()->getID("evaluations", $qcmID);
+    var_dump($eval);
     $dirReponses = $eval["reponsesFile"];
     $lastTry = db::getInstance()->query("SELECT passage FROM resultats WHERE utilisateur = ? ORDER BY resultats.passage DESC", [$_SESSION["userID"]]);
     if (count($lastTry) == 0 || strtotime("-3 days") > strtotime($lastTry[0]["passage"]))

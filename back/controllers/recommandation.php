@@ -77,8 +77,11 @@ function getRecommendations()
             }
         }
 
-        $cours = cours::load($cid[0]["id"]);
-        array_push($output, $cours);
+        if (!empty($cid))
+        {
+            $cours = cours::load($cid[0]["id"]);
+            array_push($output, $cours);
+        }
     }
 
     return $output;

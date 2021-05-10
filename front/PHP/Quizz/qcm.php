@@ -3,6 +3,7 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/back/helpers/Input.php");
 
 if (Input::exists())
 {
+    $id = Input::get("id");
     $content = unserialize(Input::get("qcm"));
     $cours = $content->meta->cours;
     $difficulte = $content->meta->difficulte;
@@ -19,7 +20,7 @@ if (Input::exists())
             <hr/>
             <form id="qcm" action="/back/router.php" method="post">
                 <input type="hidden" name="qcmID" id="qcmID" value="<?= $qcmID?>"/>
-
+                <input type="hidden" name="id" value="<?=$id?>"/>
                 <?php
                 foreach($content->question as $question)
                     {

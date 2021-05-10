@@ -23,7 +23,7 @@ if (Input::exists())
                 break;
 
             case "validerQCM":
-                $qcmID = filter_var(Input::get("qcmID"), FILTER_SANITIZE_NUMBER_INT);
+                $qcmID = filter_var(Input::get("id"), FILTER_SANITIZE_NUMBER_INT);
                 $reponses = Input::get("reponses"); //TODO: sanitisation
 
                 if (isset($qcmID) && isset($reponses))
@@ -41,7 +41,7 @@ if (Input::exists())
                 if (!empty($nom) && !empty($prenom) && !empty($email) && !empty($pHash))
                     createAccount($nom, $prenom, $email, $pHash);
                 else
-                    redirect::to("inscription");
+                    redirect::to("inscription", "Erreur, paramètres invalides");
                 break;
 
             case "connexion":

@@ -14,6 +14,7 @@ function deleteAccount($id)
     }
     else
     {
+        logger::log("Utilisateur $id supprimé");
         echo "Utilisateur supprimé";
     }
 }
@@ -27,6 +28,7 @@ function removeAccount($id)
     }
     else
     {
+        logger::log("Utilisateur $id supprimé");
         disconnect();
     }
 }
@@ -85,7 +87,7 @@ function createAccount($nom, $prenom, $email, $pHash)
     if (!db::getInstance()->hasError())
     {
         //echo "inscription valide";
-        redirect::to("profil");
+        redirect::to("connexion", "Inscription réussie, vous pouvez maintenant vous connecter");
     }
     else
     {

@@ -121,17 +121,20 @@ function printDifficulte($difficulte): string
         <?php
             $cours = getRecommendations();
 
-            foreach($cours as $c)
+            if (!empty($cours))
             {
-                $id = $c->get("id");
-                if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/back/data/cours/$id/favicon.png"))
-                    $icon = "/back/data/cours/$id/favicon.png";
-                else
-                    $icon = "/front/IMG/Girl.png";
+                foreach($cours as $c)
+                {
+                    $id = $c->get("id");
+                    if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/back/data/cours/$id/favicon.png"))
+                        $icon = "/back/data/cours/$id/favicon.png";
+                    else
+                        $icon = "/front/IMG/Girl.png";
 
-                $titre = $c->get("nom");
-                $difficulte = printDifficulte($c->get("difficulte"));
-                include ("template/CoursRecommande.php");
+                    $titre = $c->get("nom");
+                    $difficulte = printDifficulte($c->get("difficulte"));
+                    include ("template/CoursRecommande.php");
+                }
             }
         ?>
         </div>
