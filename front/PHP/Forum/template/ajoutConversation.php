@@ -9,7 +9,7 @@
             <label>
                 Contenu : <textarea name="contenu" placeholder="Contenu du message initial"></textarea>
             </label><br />
-            <button class="bouton" type="submit">Valider</button>
+            <input class="bouton" type="submit" value="valider"/>
         </form>
     </div>
 </div>

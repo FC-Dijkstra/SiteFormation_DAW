@@ -34,7 +34,7 @@ if (Input::exists())
                 <input type="hidden" name="action" value="validerQCM"/>
                 <input type="hidden" name="csrf_token" value="<?= Token::get()?>"/>
             </form>
-            <button class="bouton" id="bouton">Valider</button>
+            <button class="bouton" type="bouton" id="bouton">Valider</button>
         <br/>
         <br/>
         </div>

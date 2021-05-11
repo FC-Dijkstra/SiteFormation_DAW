@@ -38,19 +38,22 @@ if (Input::exists())
     </div>
     <div class="conversation_op">
         <?php
-            $auteur = recupAuthor($messages[0]->get("auteur"));
-            $authorName = $auteur->get("prenom") ." ".substr($auteur->get("nom"),0,1).".";
-            $date = $messages[0]->get("date");
-            $contenu = $messages[0]->get("contenu");
-            $id = $messages[0]->get("id");
-            $conv = $conversation->get("id");
-
-            $showDelete = false;
-            if (isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id")|| !empty($_SESSION["admin"]))
+            if (!empty($messages))
             {
-                $showDelete = true;
+                $auteur = recupAuthor($messages[0]->get("auteur"));
+                $authorName = $auteur->get("prenom") ." ".substr($auteur->get("nom"),0,1).".";
+                $date = $messages[0]->get("date");
+                $contenu = $messages[0]->get("contenu");
+                $id = $messages[0]->get("id");
+                $conv = $conversation->get("id");
+
+                $showDelete = false;
+                if (isset($_SESSION["userID"]) && $_SESSION["userID"] == $auteur->get("id")|| !empty($_SESSION["admin"]))
+                {
+                    $showDelete = true;
+                }
+                include ("template/message.php");
             }
-            include ("template/message.php");
         ?>
     </div>
     <hr class="separator_op">
@@ -80,6 +83,10 @@ if (Input::exists())
         if ($conversation->get("locked") == 0 && isset($_SESSION["userID"]))
         {
             include("template/envoiMessage.php");
+        }
+        else
+        {
+            echo "<h3>Conversation verrouillée</h3>";
         }
         ?>
 

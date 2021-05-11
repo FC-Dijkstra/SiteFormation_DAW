@@ -129,13 +129,13 @@ if (Input::exists())
                 $contenu = htmlspecialchars(Input::get("contenu"), ENT_QUOTES | ENT_SUBSTITUTE);
                 $date = date("Y-m-d H:i:s");
 
-                if (isset($conversation) && isset($auteur) && !empty($contenu) && isset($_SESSION["userID"]))
+                if (isset($conversation) && !empty($contenu) && isset($_SESSION["userID"]))
                 {
                     sendMessage($conversation, $_SESSION["userID"], $contenu, $date);
                 }
                 else
                 {
-                    redirect::to("messagesForum", "Erreur lors de l'envoi du message", ["id"=>$conversation]);
+                    redirect::to("messagesForum", "Erreur, paramètres invalides", ["id"=>$conversation]);
                     //echo "Erreur lors de l'envoi du message";
                 }
                 break;

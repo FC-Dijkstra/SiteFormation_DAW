@@ -74,7 +74,7 @@ function printDifficulte($difficulte): string
 
             <input type="submit" class="bouton" id="enregistrer" value="Enregistrer">
             <input type="reset"  class="bouton"id="annuler" value="Annuler" onclick="ModifierInfos()">
-            <button id="modifier" class="bouton" onclick="ModifierInfos()" >Modifier </button>
+            <button id="modifier" class="bouton" type="button" onclick="ModifierInfos()" >Modifier </button>
 
 
         </form>
@@ -144,6 +144,6 @@ function printDifficulte($difficulte): string
         <input type="hidden" name="csrf_token" value="<?= Token::get()?>" required />
 		
 	</form>
-	<button id="removeAccount" class="bouton" onclick="removeUser()"> Supprimer mon compte </button>
+	<button id="removeAccount" class="bouton" type="button" onclick="removeUser()"> Supprimer mon compte </button>
 </body>
 <script type="text/javascript" src="/front/JS/Utilisateur/profil.js"></script>

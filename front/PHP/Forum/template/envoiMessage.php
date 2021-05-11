@@ -1,4 +1,4 @@
-<button id="openModal" class="bouton">Répondre</button>
+<button id="openModal" class="bouton" type="button">Répondre</button>
 <div id="modal" class="modal">
     <div class="modal-content">
         <span class="close" id="close">&times;</span>
