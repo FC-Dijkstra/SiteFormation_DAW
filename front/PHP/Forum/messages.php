@@ -29,7 +29,7 @@ if (Input::exists())
     <div class="conversation_header">
         <div class="conversation_title"><?php echo $conversation->get('titre'); ?></div>
         <?php
-        if (!empty($_SESSION["admin"]))
+        if (!empty($_SESSION["admin"]) && $conversation->get("locked") == 0)
         {
             $conv = $conversation->get("id");
             include("template/lock.php");
